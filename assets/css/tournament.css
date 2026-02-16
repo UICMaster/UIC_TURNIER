@@ -1,42 +1,35 @@
 /* ==========================================================================
    MODULE 1: CORE LAYOUT & UTILITIES
-   Zweck: Grundlegende Container und Hilfsklassen für das Turnier-Layout.
+   Zweck: Grundlegende Container und Hilfsklassen.
    ========================================================================== */
 
-/* Der Haupt-Container für die Turnier-Views */
-.tournament-view {
+/* Haupt-Container für die verschiedenen Ansichten (Upcoming, Live, None) */
+.view-section {
     width: 100%;
-    min-height: 60vh; /* Mindesthöhe damit es nicht leer wirkt */
+    min-height: 60vh; /* Mindesthöhe damit der Screen gefüllt wirkt */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     position: relative;
+    padding: 2rem 0;
 }
 
-/* Hilfsklasse um Elemente auszublenden (wird via JS gesteuert) */
+/* WICHTIG: Versteckt inaktive Views komplett */
 .hidden {
     display: none !important;
 }
 
-/* Flex-Helper für vertikale Zentrierung in kleinen Boxen */
+/* Hilfsklasse für vertikale Zentrierung */
 .flex-center {
     display: flex;
     align-items: center;
     gap: 0.5rem;
 }
 
-/* Text-Helper */
-.text-muted {
-    color: var(--text-muted, #888);
-    font-size: 0.9rem;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-}
-
 /* ==========================================================================
-   MODULE 2: VIEW "UPCOMING" (Der Timer)
-   Zweck: Styling für den Countdown und die Ankündigung.
+   MODULE 2: COUNTDOWN & UPCOMING
+   Zweck: Styling für den Timer und die Anmeldung.
    ========================================================================== */
 
 .upcoming-container {
@@ -45,25 +38,15 @@
     margin: 0 auto;
 }
 
-.event-title {
-    font-family: var(--font-head, sans-serif);
-    font-size: clamp(2rem, 5vw, 4rem); /* Responsive Schriftgröße */
-    color: #fff;
-    text-transform: uppercase;
-    margin-bottom: 2rem;
-    line-height: 1.1;
-    text-shadow: 0 0 20px rgba(0, 240, 255, 0.2);
-}
-
-/* Der Timer-Kasten */
+/* Der Countdown Kasten */
 .countdown-box {
     display: inline-flex;
-    gap: 1rem;
-    padding: 2rem;
-    background: rgba(0, 240, 255, 0.05); /* Sehr transparentes Cyan */
+    gap: 1.5rem;
+    padding: 2rem 3rem;
+    background: rgba(0, 240, 255, 0.05); /* Transparentes Cyan */
     border: 1px solid var(--primary, #00F0FF);
     backdrop-filter: blur(5px);
-    margin-bottom: 2rem;
+    margin: 2rem 0;
     
     /* Sci-Fi Ecken (abgeschnitten) */
     clip-path: polygon(
@@ -71,150 +54,125 @@
         100% calc(100% - 20px), calc(100% - 20px) 100%, 
         0 100%, 0 20px
     );
-}
-
-.time-unit {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-width: 80px;
-}
-
-.time-val {
+    
     font-family: var(--font-head, sans-serif);
-    font-size: 2.5rem;
-    font-weight: 700;
+    font-size: clamp(1.5rem, 3vw, 3rem); /* Responsive Schrift */
     color: var(--primary, #00F0FF);
-}
-
-.time-label {
-    font-size: 0.7rem;
-    color: var(--text-muted, #888);
-    letter-spacing: 2px;
+    text-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
 }
 
 /* ==========================================================================
-   MODULE 3: VIEW "LIVE" (Das Bracket System)
-   Zweck: Das Herzstück. Muss horizontal scrollbar sein auf Mobile.
+   MODULE 3: BRACKET LAYOUT (SCROLLBAR)
+   Zweck: Das Herzstück. Ermöglicht horizontales Scrollen auf Mobile.
    ========================================================================== */
 
-.live-header {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 3rem;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-    padding-bottom: 1rem;
-    width: 100%;
-}
-
-.live-indicator {
-    width: 12px;
-    height: 12px;
-    background-color: #ff003c;
-    border-radius: 50%;
-    box-shadow: 0 0 10px #ff003c;
-    animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-    0% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.5; transform: scale(0.8); }
-    100% { opacity: 1; transform: scale(1); }
-}
-
-/* Der Container der scrollt */
 .bracket-scroll-wrapper {
-    width: 100%;
+    display: flex;
+    gap: 4rem; /* Abstand zwischen den Runden (Spalten) */
     overflow-x: auto; /* WICHTIG: Erlaubt Scrollen */
-    -webkit-overflow-scrolling: touch; /* Smooth scroll auf iOS */
-    padding-bottom: 2rem; /* Platz für Scrollbar */
-    cursor: grab; /* Zeigt an, dass man ziehen kann */
+    padding: 3rem 1rem; /* Platz oben für Header, unten für Schatten */
+    width: 100%;
+    
+    /* UX: Zeigt an, dass man ziehen kann */
+    cursor: grab; 
+    
+    /* Scrollbar Styling (Firefox) */
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary) transparent;
 }
 
 .bracket-scroll-wrapper:active {
     cursor: grabbing;
 }
 
-/* Das Grid selbst */
-.bracket-grid {
-    display: flex;
-    gap: 4rem; /* Abstand zwischen Runden */
-    min-width: max-content; /* Zwingt den Container breit zu sein */
-    padding: 0 1rem;
-}
-
-/* Eine Runde (Spalte) */
+/* Eine Runde (Die vertikale Spalte) */
 .round-column {
     display: flex;
     flex-direction: column;
-    justify-content: space-around; /* Verteilt Matches gleichmäßig */
-    width: 280px; /* Feste Breite für Karten */
+    justify-content: space-around; /* WICHTIG: Verteilt Matches gleichmäßig über die Höhe */
+    min-width: 280px; /* Feste Breite pro Match-Karte */
     position: relative;
-    gap: 2rem;
+    gap: 2rem; /* Mindestabstand zwischen Matches in R1 */
 }
 
-.round-title {
+/* Der Titel über der Spalte (Runde 1, Finale...) */
+.round-header {
+    position: absolute;
+    top: -30px;
+    width: 100%;
     text-align: center;
-    color: var(--text-muted, #888);
     font-size: 0.8rem;
-    margin-bottom: 1rem;
+    color: var(--text-muted, #888);
     letter-spacing: 2px;
     text-transform: uppercase;
+    font-weight: 700;
 }
 
 /* ==========================================================================
-   MODULE 4: THE MATCH CARD (Component)
-   Zweck: Einzelne Darstellung eines Matches.
+   MODULE 4: MATCH CARD & CONNECTORS
+   Zweck: Die einzelne Match-Box und die Verbindungslinien.
    ========================================================================== */
 
 .match-card {
-    background: rgba(10, 10, 10, 0.8);
+    background: rgba(10, 10, 10, 0.9); /* Fast schwarzer Hintergrund */
     border: 1px solid rgba(255, 255, 255, 0.15);
-    padding: 0; /* Padding innen entfernen für saubere Rows */
+    padding: 0; /* Kein Padding, damit Team-Rows den Rand berühren */
     display: flex;
     flex-direction: column;
     position: relative;
-    transition: transform 0.2s ease, border-color 0.2s ease;
+    transition: all 0.3s ease;
 }
 
 .match-card:hover {
-    border-color: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-2px);
 }
 
-/* Status: Wenn ein Match gerade LIVE gespielt wird */
+/* LIVE STATUS: Roter Glow wenn Match läuft */
 .match-card.is-live {
     border-color: #ff003c;
-    box-shadow: 0 0 15px rgba(255, 0, 60, 0.15);
+    box-shadow: 0 0 20px rgba(255, 0, 60, 0.2);
+}
+.match-card.is-live::before {
+    content: 'LIVE';
+    position: absolute;
+    top: -10px;
+    right: 10px;
+    background: #ff003c;
+    color: #fff;
+    font-size: 0.6rem;
+    padding: 2px 6px;
+    font-weight: bold;
+    border-radius: 2px;
 }
 
-/* Die Linie zum nächsten Match (Visual Connector) */
+/* VERBINDUNGSLINIE (Nach Rechts) */
 .match-card::after {
     content: '';
     position: absolute;
-    right: -2rem; /* Linie geht 2rem nach rechts */
+    right: -2rem; /* Linie geht 2rem (Lücke/2) nach rechts */
     top: 50%;
     width: 2rem;
     height: 1px;
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.2);
     z-index: 0;
 }
 
-/* Letzte Spalte braucht keine Linie nach rechts */
+/* Letzte Spalte hat KEINE Linie nach rechts */
 .round-column:last-child .match-card::after {
     display: none;
 }
 
 /* ==========================================================================
-   MODULE 5: TEAM ROWS & STATES
-   Zweck: Darstellung der Teams innerhalb der Match-Karte.
+   MODULE 5: TEAM ROWS (CONTENT)
+   Zweck: Darstellung von Name, Logo und Score.
    ========================================================================== */
 
 .team-row {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.8rem 1rem;
+    padding: 10px 14px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     background: transparent;
     transition: background 0.3s ease;
@@ -224,23 +182,18 @@
     border-bottom: none;
 }
 
-/* Gewinner Styling */
+/* GEWINNER: Cyan Hintergrund & Balken links */
 .team-row.winner {
-    background: rgba(0, 240, 255, 0.1); /* Sanftes Cyan */
+    background: rgba(0, 240, 255, 0.1); 
     border-left: 3px solid var(--primary, #00F0FF);
 }
 
-.team-row.winner .t-score {
-    color: var(--primary, #00F0FF);
-    text-shadow: 0 0 8px rgba(0, 240, 255, 0.4);
-}
-
-/* Verlierer Styling (optional: ausgegraut) */
+/* VERLIERER / LEER: Ausgegraut */
 .team-row.loser {
     opacity: 0.5;
 }
 
-/* Elemente */
+/* Elemente im Row */
 .t-logo {
     width: 24px;
     height: 24px;
@@ -252,95 +205,20 @@
     font-family: var(--font-body, sans-serif);
     font-weight: 700;
     color: #fff;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
 }
 
 .t-score {
     font-family: var(--font-head, sans-serif);
     font-weight: 700;
     font-size: 1.1rem;
-    color: #fff;
+    color: var(--primary, #00F0FF);
     min-width: 20px;
     text-align: right;
 }
 
-/* ==========================================================================
-   Add-on
-   ========================================================================== */
-
-/* Container für die Views */
-.view-section { width: 100%; min-height: 60vh; }
-.hidden { display: none !important; }
-
-/* Das Scrollbare Bracket */
-.bracket-scroll-wrapper {
-    display: flex;
-    gap: 4rem;
-    overflow-x: auto;
-    padding: 3rem 1rem;
-    cursor: grab;
+/* Farbe des Scores bei Gewinner */
+.team-row.winner .t-score {
+    text-shadow: 0 0 5px var(--primary);
 }
-
-.bracket-scroll-wrapper:active { cursor: grabbing; }
-
-/* Spalten & Karten */
-.round-column {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    min-width: 260px;
-    position: relative;
-    gap: 2rem;
-}
-
-.round-header {
-    position: absolute;
-    top: -25px;
-    width: 100%;
-    text-align: center;
-    font-size: 0.8rem;
-    color: var(--text-muted);
-    letter-spacing: 2px;
-    text-transform: uppercase;
-}
-
-/* Match Card & Linien */
-.match-card {
-    background: rgba(10, 10, 10, 0.9);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    position: relative;
-    padding: 0;
-}
-
-.match-card.is-live { border-color: #ff003c; box-shadow: 0 0 15px rgba(255, 0, 60, 0.2); }
-
-/* Verbindungslinie nach Rechts */
-.match-card::after {
-    content: '';
-    position: absolute;
-    right: -2rem; 
-    top: 50%;
-    width: 2rem; 
-    height: 1px;
-    background: rgba(255, 255, 255, 0.2);
-}
-
-.round-column:last-child .match-card::after { display: none; }
-
-/* Team Zeilen */
-.team-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 8px 12px;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
-}
-.team-row:last-child { border-bottom: none; }
-
-.team-row.winner { background: rgba(0, 240, 255, 0.1); border-left: 3px solid var(--primary); }
-.team-row.loser { opacity: 0.4; } /* Freilose oder Leere Slots ausgrauen */
-
-.t-logo { width: 20px; height: 20px; object-fit: contain; margin-right: 8px; }
-.t-name { font-weight: 700; color: #fff; font-size: 0.9rem; }
-.t-score { font-family: var(--font-head); color: var(--primary); font-weight: bold; }
-.flex-center { display: flex; align-items: center; }
