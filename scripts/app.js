@@ -1,101 +1,50 @@
-const API_PATH = './data/generated/db.json';
-
-document.addEventListener('DOMContentLoaded', initSystem);
-
-async function initSystem() {
-    try {
-        // Cache Buster ist CRITICAL für Live-Updates
-        const response = await fetch(`${API_PATH}?t=${Date.now()}`);
-        if (!response.ok) throw new Error("Database Access Denied");
-        
-        const db = await response.json();
-        renderView(db);
-
-    } catch (error) {
-        console.error("System Failure:", error);
-        document.body.innerHTML = "<h1 style='color:red; text-align:center; margin-top:50px;'>SYSTEM OFFLINE</h1>";
-    }
-}
-
-function renderView(db) {
-    const status = db.meta.status; // UPCOMING, LIVE, NONE
-    const views = ['view-none', 'view-upcoming', 'view-live'];
-    
-    // Reset Views
-    views.forEach(v => document.getElementById(v).classList.add('hidden'));
-
-    // Activate current view
-    const activeView = document.getElementById(`view-${status.toLowerCase()}`);
-    if(activeView) activeView.classList.remove('hidden');
-
-    // Logic Dispatcher
-    if (status === 'UPCOMING') {
-        setupCountdown(db.meta.start_date_iso);
-        document.getElementById('event-title').innerText = db.meta.title;
-        document.getElementById('reg-link').href = db.meta.registration_link;
-    } 
-    else if (status === 'LIVE') {
-        document.getElementById('live-title').innerText = db.meta.title;
-        renderBracket(db.bracket, db.teams);
-    }
-}
-
-/* --- LOGIC: BRACKET RENDERER --- */
 function renderBracket(matches, teams) {
-    matches.forEach(match => {
-        // Wir suchen im HTML nach dem Container für dieses Match
-        const matchEl = document.getElementById(`match-${match.match_id}`);
-        if (!matchEl) return; 
-
-        // Helper Funktion für Team Daten
-        const getTeam = (id) => teams[id] || { acronym: 'TBD', name: 'To Be Decided', logo: null };
-
-        const t1 = getTeam(match.team_1_id);
-        const t2 = getTeam(match.team_2_id);
-
-        // HTML Injection
-        matchEl.innerHTML = `
-            <div class="team-row ${match.winner_id === match.team_1_id ? 'winner' : ''}">
-                <div class="flex-center">
-                    ${t1.logo ? `<img src="${t1.logo}" class="t-logo">` : ''}
-                    <span class="t-name">${t1.acronym}</span>
-                </div>
-                <span class="t-score">${match.score_1}</span>
-            </div>
-            <div class="team-row ${match.winner_id === match.team_2_id ? 'winner' : ''}">
-                <div class="flex-center">
-                    ${t2.logo ? `<img src="${t2.logo}" class="t-logo">` : ''}
-                    <span class="t-name">${t2.acronym}</span>
-                </div>
-                <span class="t-score">${match.score_2}</span>
-            </div>
-        `;
-        
-        // Live Status Indicator im Match
-        if(match.status === 'LIVE') matchEl.classList.add('match-active');
-    });
-}
-
-/* --- LOGIC: COUNTDOWN --- */
-function setupCountdown(isoDate) {
-    const target = new Date(isoDate).getTime();
+    const container = document.querySelector('.bracket-grid'); // Oder wo dein Grid ist
+    if(!container) return;
     
-    const timer = setInterval(() => {
-        const now = new Date().getTime();
-        const diff = target - now;
+    // Leeren um Duplikate zu vermeiden
+    // container.innerHTML = ''; // Vorsicht: Wenn du statisches HTML hast, das hier weglassen
 
-        if (diff < 0) {
-            clearInterval(timer);
-            location.reload(); 
-            return;
+    matches.forEach(match => {
+        // Wir rendern vorerst nur Winners Bracket Matches
+        if (match.bracket_type !== 'WINNER') return; 
+
+        // Suche das HTML Element (muss existieren oder dynamisch erstellt werden)
+        let matchEl = document.getElementById(`match-${match.id}`);
+        
+        // Wenn du das HTML dynamisch generieren willst (empfohlen bei Auto-Bracket):
+        if (!matchEl) {
+            matchEl = document.createElement('div');
+            matchEl.id = `match-${match.id}`;
+            matchEl.className = 'match-card card card--hud';
+            // Füge es in die richtige Spalte ein (Logik nötig für Spalten)
+            // Fürs erste nehmen wir an, die Elemente existieren oder wir appenden sie einfach
+            // container.appendChild(matchEl); 
+            // ^ Das ist komplex, da wir Spalten brauchen. 
+            // Bleiben wir dabei: Das JS befüllt existierende IDs.
         }
 
-        const d = Math.floor(diff / (1000 * 60 * 60 * 24));
-        const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-        const s = Math.floor((diff % (1000 * 60)) / 1000);
+        if (matchEl) {
+            // Team Namen auflösen
+            // Wenn match.team_1 ein String ist (ID), holen wir das Objekt. Wenn null, ist es ein Bye.
+            const t1Name = match.team_1 ? (teams[match.team_1]?.acronym || teams[match.team_1]?.name) : 'BYE';
+            const t2Name = match.team_2 ? (teams[match.team_2]?.acronym || teams[match.team_2]?.name) : 'BYE';
+            
+            const t1Score = match.score_1 ?? 0;
+            const t2Score = match.score_2 ?? 0;
 
-        document.getElementById('cd-timer').innerHTML = 
-            `<span class="time-unit">${d}d</span> : <span class="time-unit">${h}h</span> : <span class="time-unit">${m}m</span> : <span class="time-unit">${s}s</span>`;
-    }, 1000);
+            matchEl.innerHTML = `
+                <div class="team-row ${match.winner_id === match.team_1 && match.team_1 ? 'winner' : ''}">
+                    <span class="t-name">${t1Name}</span> <span class="t-score">${t1Score}</span>
+                </div>
+                <div class="team-row ${match.winner_id === match.team_2 && match.team_2 ? 'winner' : ''}">
+                    <span class="t-name">${t2Name}</span> <span class="t-score">${t2Score}</span>
+                </div>
+            `;
+            
+            // Visuelles Feedback für Status
+            if(match.status === 'LIVE') matchEl.classList.add('is-live');
+            else matchEl.classList.remove('is-live');
+        }
+    });
 }
