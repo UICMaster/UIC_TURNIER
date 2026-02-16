@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-02-16T20:30:50.362Z",
+  "updated_at": "2026-02-16T20:32:08.655Z",
   "meta": {
     "title": "UIC WINTER CUP 2025",
     "status": "LIVE",
@@ -8,18 +8,18 @@
     "stream_link": "https://twitch.tv/ultrainstinctcrew"
   },
   "teams": {
+    "UIC_PRIME": {
+      "id": "UIC_PRIME",
+      "name": "UIC Prime",
+      "acronym": "UICP",
+      "logo": "assets/img/uic_logo.png"
+    },
     "fnc_academy": {
       "id": "fnc_academy",
       "name": "Fnatic Academy",
       "acronym": "FNC",
       "logo": "assets/img/fnc_logo.png",
       "socials": {}
-    },
-    "UIC_PRIME": {
-      "id": "UIC_PRIME",
-      "name": "UIC Prime",
-      "acronym": "UICP",
-      "logo": "assets/img/uic_logo.png"
     }
   },
   "bracket": [
