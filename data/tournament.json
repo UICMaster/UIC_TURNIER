@@ -1,16 +1,18 @@
 {
   "meta": {
     "title": "UIC WINTER CUP 2025",
-    "status": "LIVE", 
+    "status": "LIVE",
     "start_date_iso": "2025-11-20T18:00:00Z",
-    "registration_link": "https://forms.google.com/...",
+    "registration_link": "https://forms.google.com",
     "stream_link": "https://twitch.tv/ultrainstinctcrew"
   },
   "participants": [
-    "uic_main",
-    "uic_academy",
-    "ext_team_liquid",
-    "ext_fnatic",
-    "ext_g2"
+    "UIC_PRIME",
+    "UIC_FREEZER",
+    "UIC_EMBER",
+    "UIC_NOVA",
+    "UIC_ABYSS",
+    "UIC_NIGHT",
+    "UIC_SPARK"
   ]
 }
