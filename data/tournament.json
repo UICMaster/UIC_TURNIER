@@ -1,31 +1,17 @@
 {
   "meta": {
-    "title": "WINTER SPLIT GAP 2025",
-    "status": "UPCOMING", 
+    "title": "UIC WINTER GAP CUP",
+    "status": "LIVE",
     "start_date_iso": "2025-11-20T18:00:00Z",
-    "registration_link": "https://forms.google.com/example",
-    "stream_link": "https://twitch.tv/ultrainstinctcrew"
+    "registration_link": "...",
+    "stream_link": "..."
   },
-  "bracket": [
-    {
-      "match_id": "wb_r1_m1",
-      "next_match_id": "wb_r2_m1",
-      "team_1_id": "uic_main",
-      "team_2_id": "fnc_academy",
-      "score_1": 0,
-      "score_2": 0,
-      "winner_id": null,
-      "status": "SCHEDULED" 
-    },
-    {
-      "match_id": "wb_r1_m2",
-      "next_match_id": "wb_r2_m1",
-      "team_1_id": null,
-      "team_2_id": null,
-      "score_1": 0,
-      "score_2": 0,
-      "winner_id": null,
-      "status": "WAITING"
-    }
+  "participants": [
+    "uic_main",
+    "uic_academy",
+    "ext_team_liquid",
+    "ext_g2_esports",
+    "ext_fnatic" 
+    // Auch wenn es 5 sind -> Script macht daraus ein 8er Bracket
   ]
 }
