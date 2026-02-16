@@ -3,96 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UIC Tournament HUB</title>
-    <link rel="stylesheet" href="assets/css/uic-theme.css"> 
+    <title>UIC Turnier Hub</title>
+    <link rel="stylesheet" href="assets/css/uic-theme.css">
     <link rel="stylesheet" href="assets/css/tournament.css">
 </head>
 <body>
 
-        <input type="checkbox" id="nav-toggle" class="nav-toggle-state" style="display: none;">
+    <nav class="navbar"><div class="container">UIC TOURNAMENT HUB</div></nav>
 
-    <nav class="navbar">
-        <div class="container nav-inner">
-            
-            <a href="#hero" class="logo-module">
-                <img src="assets/logo/logo.svg" alt="UIC" class="logo-icon">
-                <div class="logo-text">
-                    <span class="brand-name">UIC</span>
-                    <span class="brand-sub">GER</span>
-                </div>
-            </a>
-
-            <div class="nav-separator desktop-only"></div>
-
-            <label for="nav-toggle" class="nav-burger">
-                <span class="line"></span>
-                <span class="line"></span>
-                <span class="line"></span>
-            </label>
-
-            <div class="nav-deck">
-                <ul class="nav-list">
-                    <li><a href="#hero" class="nav-link">Start</a></li>
-                    <li><a href="#about" class="nav-link">Projekt</a></li>
-                    <li><a href="#teams" class="nav-link">Teams</a></li>
-                    <li><a href="#stats" class="nav-link">Statistiken</a></li>
-                    <li><a href="#events" class="nav-link">Events</a></li>
-                    <li><a href="#stream" class="nav-link">Stream</a></li>
-                    <li><a href="#partners" class="nav-link">Partner</a></li>
-                    <li><a href="#media-vault" class="nav-link">Marke</a></li>
-                </ul>
-
-                <div class="nav-cta">
-                    <div class="nav-separator desktop-only"></div>
-                    <a class="btn-obsidian" href="mailto:support@ultrainstinctcrew.com?subject=Bewerbung%20UIC%20Roster&body=Hallo%20UIC%20Team,%0D%0A%0D%0AHiermit%20möchte%20ich%20mich%20für%20eines%20eurer%20Teams%20bewerben.%0D%0A%0D%0A---%20MEINE%20DATEN%20---%0D%0ASummoner%20Name:%20%0D%0AOp.gg%20Link:%20%0D%0AAktueller%20Rang:%20%0D%0APrimäre%20Rolle:%20%0D%0ADiscord%20ID:%20%0D%0A%0D%0A---%20NACHRICHT%20---%0D%0A">                    
-                        BEWIRB DICH
-                    </a>
-                </div>
-            </div>
-            
-        </div>
-    </nav>
-
-    <main class="section-pad" style="min-height: 80vh; display: flex; align-items: center; justify-content: center;">
+    <main class="section-pad">
         
-        <div id="view-none" class="container text-center hidden">
+        <div id="view-none" class="view-section container text-center hidden">
             <h1>SYSTEM STANDBY</h1>
-            <p style="color: var(--text-muted)">Keine aktiven Turniere. Prepare for next split.</p>
+            <p class="text-muted">Aktuell keine aktiven Operationen.</p>
         </div>
 
-        <div id="view-upcoming" class="container text-center hidden">
-            <h4 style="letter-spacing: 4px; color: var(--text-muted)">NEXT DEPLOYMENT</h4>
-            <h1 id="event-title" style="font-size: 4rem; margin-bottom: 0;">-</h1>
-            
-            <div id="cd-timer" class="countdown-box">Loading...</div>
-            
-            <a id="reg-link" href="#" class="btn btn-obsidian">REGISTER TEAM</a>
+        <div id="view-upcoming" class="view-section container text-center hidden">
+            <h4 style="letter-spacing: 4px; color: var(--text-muted)">NÄCHSTES EVENT</h4>
+            <h1 id="event-title" style="font-size: 3rem; margin-bottom: 2rem;">-</h1>
+            <div id="countdown" class="countdown-box">Loading...</div>
+            <br><br>
+            <a id="reg-link" href="#" class="btn btn-obsidian">JETZT ANMELDEN</a>
         </div>
 
-        <div id="view-live" class="container hidden">
-            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
-                <div style="width: 10px; height: 10px; background: red; border-radius: 50%; box-shadow: 0 0 10px red;"></div>
-                <h2 id="live-title" style="margin:0;">LIVE FEED</h2>
-            </div>
-
-            <div class="bracket-container">
-                
-                <div class="round-col">
-                    <div style="text-align:center; color: var(--text-muted); margin-bottom: 1rem;">ROUND 1</div>
-                    
-                    <div id="match-wb_r1_m1" class="match-card">
-                        </div>
-
-                    <div id="match-wb_r1_m2" class="match-card">
-                         </div>
+        <div id="view-live" class="view-section hidden">
+            <div class="container">
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                    <div class="live-indicator" style="width:10px; height:10px; background:red; border-radius:50%;"></div>
+                    <h2 id="live-title" style="margin:0;">LIVE FEED</h2>
                 </div>
+            
+                <h3 style="color: var(--primary); margin-top: 2rem;">WINNERS BRACKET</h3>
+                <div id="bracket-winners" class="bracket-scroll-wrapper">
+                    </div>
 
-                <div class="round-col">
-                     <div style="text-align:center; color: var(--text-muted); margin-bottom: 1rem;">WINNER FINAL</div>
-                     
-                     <div id="match-wb_r2_m1" class="match-card"></div>
-                </div>
-
+                <h3 id="lbl-losers" style="color: var(--text-muted); margin-top: 4rem;">LOSERS BRACKET</h3>
+                <div id="bracket-losers" class="bracket-scroll-wrapper">
+                    </div>
             </div>
         </div>
 
