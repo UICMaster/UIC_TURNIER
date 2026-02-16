@@ -1,34 +1,12 @@
 {
-  "last_updated": "2026-02-16T18:52:24.349Z",
+  "updated_at": "2026-02-16T19:58:19.023Z",
   "meta": {
-    "title": "WINTER SPLIT GAP 2025",
-    "status": "UPCOMING",
+    "title": "UIC WINTER CUP 2025",
+    "status": "LIVE",
     "start_date_iso": "2025-11-20T18:00:00Z",
-    "registration_link": "https://forms.google.com/example",
+    "registration_link": "https://forms.google.com/...",
     "stream_link": "https://twitch.tv/ultrainstinctcrew"
   },
-  "bracket": [
-    {
-      "match_id": "wb_r1_m1",
-      "next_match_id": "wb_r2_m1",
-      "team_1_id": "uic_main",
-      "team_2_id": "fnc_academy",
-      "score_1": 0,
-      "score_2": 0,
-      "winner_id": null,
-      "status": "SCHEDULED"
-    },
-    {
-      "match_id": "wb_r1_m2",
-      "next_match_id": "wb_r2_m1",
-      "team_1_id": null,
-      "team_2_id": null,
-      "score_1": 0,
-      "score_2": 0,
-      "winner_id": null,
-      "status": "WAITING"
-    }
-  ],
   "teams": {
     "fnc_academy": {
       "id": "fnc_academy",
@@ -41,11 +19,129 @@
       "id": "uic_main",
       "name": "Ultra Instinct Crew",
       "acronym": "UIC",
-      "logo": "assets/img/uic_logo.png",
-      "socials": {
-        "twitter": "https://twitter.com/uic",
-        "opgg": "https://op.gg/..."
-      }
+      "logo": "assets/img/uic_logo.png"
     }
-  }
+  },
+  "bracket": [
+    {
+      "id": "wb_r1_m1",
+      "round": 1,
+      "type": "WINNER",
+      "next_match_id": "wb_r2_m1",
+      "team_1": "uic_main",
+      "team_2": null,
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": "uic_main",
+      "status": "FINISHED"
+    },
+    {
+      "id": "wb_r1_m2",
+      "round": 1,
+      "type": "WINNER",
+      "next_match_id": "wb_r2_m1",
+      "team_1": "uic_academy",
+      "team_2": null,
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": "uic_academy",
+      "status": "FINISHED"
+    },
+    {
+      "id": "wb_r1_m3",
+      "round": 1,
+      "type": "WINNER",
+      "next_match_id": "wb_r2_m2",
+      "team_1": "ext_team_liquid",
+      "team_2": null,
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": "ext_team_liquid",
+      "status": "FINISHED"
+    },
+    {
+      "id": "wb_r1_m4",
+      "round": 1,
+      "type": "WINNER",
+      "next_match_id": "wb_r2_m2",
+      "team_1": "ext_fnatic",
+      "team_2": "ext_g2",
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "SCHEDULED"
+    },
+    {
+      "id": "wb_r2_m1",
+      "round": 2,
+      "type": "WINNER",
+      "next_match_id": "wb_r3_m1",
+      "team_1": null,
+      "team_2": null,
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "WAITING"
+    },
+    {
+      "id": "wb_r2_m2",
+      "round": 2,
+      "type": "WINNER",
+      "next_match_id": "wb_r3_m1",
+      "team_1": null,
+      "team_2": null,
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "WAITING"
+    },
+    {
+      "id": "wb_r3_m1",
+      "round": 3,
+      "type": "WINNER",
+      "next_match_id": null,
+      "team_1": null,
+      "team_2": null,
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "WAITING"
+    },
+    {
+      "id": "lb_r1_m1",
+      "round": 1,
+      "type": "LOSER",
+      "next_match_id": "lb_r2_m...",
+      "team_1": null,
+      "team_2": null,
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "WAITING"
+    },
+    {
+      "id": "lb_r1_m2",
+      "round": 1,
+      "type": "LOSER",
+      "next_match_id": "lb_r2_m...",
+      "team_1": null,
+      "team_2": null,
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "WAITING"
+    },
+    {
+      "id": "lb_r2_m1",
+      "round": 2,
+      "type": "LOSER",
+      "next_match_id": "lb_r3_m...",
+      "team_1": null,
+      "team_2": null,
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "WAITING"
+    }
+  ]
 }
