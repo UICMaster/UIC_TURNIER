@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UIC Tournament HUB</title>
+    <link rel="stylesheet" href="assets/css/uic-theme.css"> 
+    <link rel="stylesheet" href="assets/css/tournament.css">
+</head>
+<body>
+
+    <nav class="navbar"><div class="container">UIC TOURNAMENT HUB</div></nav>
+
+    <main class="section-pad" style="min-height: 80vh; display: flex; align-items: center; justify-content: center;">
+        
+        <div id="view-none" class="container text-center hidden">
+            <h1>SYSTEM STANDBY</h1>
+            <p style="color: var(--text-muted)">Keine aktiven Turniere. Prepare for next split.</p>
+        </div>
+
+        <div id="view-upcoming" class="container text-center hidden">
+            <h4 style="letter-spacing: 4px; color: var(--text-muted)">NEXT DEPLOYMENT</h4>
+            <h1 id="event-title" style="font-size: 4rem; margin-bottom: 0;">-</h1>
+            
+            <div id="cd-timer" class="countdown-box">Loading...</div>
+            
+            <a id="reg-link" href="#" class="btn btn-obsidian">REGISTER TEAM</a>
+        </div>
+
+        <div id="view-live" class="container hidden">
+            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+                <div style="width: 10px; height: 10px; background: red; border-radius: 50%; box-shadow: 0 0 10px red;"></div>
+                <h2 id="live-title" style="margin:0;">LIVE FEED</h2>
+            </div>
+
+            <div class="bracket-container">
+                
+                <div class="round-col">
+                    <div style="text-align:center; color: var(--text-muted); margin-bottom: 1rem;">ROUND 1</div>
+                    
+                    <div id="match-wb_r1_m1" class="match-card">
+                        </div>
+
+                    <div id="match-wb_r1_m2" class="match-card">
+                         </div>
+                </div>
+
+                <div class="round-col">
+                     <div style="text-align:center; color: var(--text-muted); margin-bottom: 1rem;">WINNER FINAL</div>
+                     
+                     <div id="match-wb_r2_m1" class="match-card"></div>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+    <script src="scripts/app.js"></script>
+</body>
+</html>
