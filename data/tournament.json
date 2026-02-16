@@ -12,6 +12,5 @@
     "ext_team_liquid",
     "ext_fnatic",
     "ext_g2"
-    // Füge hier IDs hinzu. Das Script füllt automatisch auf 8, 16 oder 32 auf.
   ]
 }
