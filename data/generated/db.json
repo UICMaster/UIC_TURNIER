@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-02-16T20:32:08.655Z",
+  "updated_at": "2026-02-16T20:37:24.224Z",
   "meta": {
     "title": "UIC WINTER CUP 2025",
     "status": "LIVE",
@@ -8,18 +8,47 @@
     "stream_link": "https://twitch.tv/ultrainstinctcrew"
   },
   "teams": {
+    "UIC_ABYSS": {
+      "id": "UIC_ABYSS",
+      "name": "UIC Abyss",
+      "acronym": "UICA",
+      "logo": "assets/img/uic_logo.png"
+    },
+    "UIC_EMBER": {
+      "id": "UIC_EMBER",
+      "name": "UIC Ember",
+      "acronym": "UICE",
+      "logo": "assets/img/uic_logo.png"
+    },
+    "UIC_FREEZER": {
+      "id": "UIC_FREEZER",
+      "name": "UIC Freezer",
+      "acronym": "UICF",
+      "logo": "assets/img/uic_logo.png"
+    },
+    "UIC_NIGHT": {
+      "id": "UIC_NIGHT",
+      "name": "UIC NIGHT",
+      "acronym": "UICNT",
+      "logo": "assets/img/uic_logo.png"
+    },
+    "UIC_NOVA": {
+      "id": "UIC_NOVA",
+      "name": "UIC Nova",
+      "acronym": "UICN",
+      "logo": "assets/img/uic_logo.png"
+    },
     "UIC_PRIME": {
       "id": "UIC_PRIME",
       "name": "UIC Prime",
       "acronym": "UICP",
       "logo": "assets/img/uic_logo.png"
     },
-    "fnc_academy": {
-      "id": "fnc_academy",
-      "name": "Fnatic Academy",
-      "acronym": "FNC",
-      "logo": "assets/img/fnc_logo.png",
-      "socials": {}
+    "UIC_SPARK": {
+      "id": "UIC_SPARK",
+      "name": "UIC Spark",
+      "acronym": "UICS",
+      "logo": "assets/img/uic_logo.png"
     }
   },
   "bracket": [
