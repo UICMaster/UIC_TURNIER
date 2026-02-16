@@ -1,63 +1,265 @@
-/* Container Helpers */
-.hidden { display: none !important; }
-.flex-center { display: flex; align-items: center; }
+/* ==========================================================================
+   MODULE 1: CORE LAYOUT & UTILITIES
+   Zweck: Grundlegende Container und Hilfsklassen für das Turnier-Layout.
+   ========================================================================== */
 
-/* View: Upcoming */
-.countdown-box {
-    border: 1px solid var(--primary);
-    background: rgba(0, 240, 255, 0.05);
-    padding: 2rem;
-    margin: 2rem 0;
-    font-family: var(--font-head);
-    font-size: 3rem;
-    color: var(--primary);
-    text-shadow: 0 0 10px rgba(0,240,255,0.4);
-}
-
-/* View: Live Bracket */
-.bracket-container {
-    display: flex;
-    gap: 4rem;
-    overflow-x: auto;
-    padding: 2rem 0;
-}
-
-.round-col {
+/* Der Haupt-Container für die Turnier-Views */
+.tournament-view {
+    width: 100%;
+    min-height: 60vh; /* Mindesthöhe damit es nicht leer wirkt */
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    min-width: 250px;
-    gap: 2rem;
-}
-
-.match-card {
-    background: var(--bg-glass);
-    border: 1px solid rgba(255,255,255,0.1);
-    padding: 0.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
+    align-items: center;
+    justify-content: center;
     position: relative;
 }
 
-.match-active {
-    border-color: #ff003c;
-    box-shadow: 0 0 15px rgba(255, 0, 60, 0.2);
+/* Hilfsklasse um Elemente auszublenden (wird via JS gesteuert) */
+.hidden {
+    display: none !important;
 }
+
+/* Flex-Helper für vertikale Zentrierung in kleinen Boxen */
+.flex-center {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Text-Helper */
+.text-muted {
+    color: var(--text-muted, #888);
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* ==========================================================================
+   MODULE 2: VIEW "UPCOMING" (Der Timer)
+   Zweck: Styling für den Countdown und die Ankündigung.
+   ========================================================================== */
+
+.upcoming-container {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.event-title {
+    font-family: var(--font-head, sans-serif);
+    font-size: clamp(2rem, 5vw, 4rem); /* Responsive Schriftgröße */
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    line-height: 1.1;
+    text-shadow: 0 0 20px rgba(0, 240, 255, 0.2);
+}
+
+/* Der Timer-Kasten */
+.countdown-box {
+    display: inline-flex;
+    gap: 1rem;
+    padding: 2rem;
+    background: rgba(0, 240, 255, 0.05); /* Sehr transparentes Cyan */
+    border: 1px solid var(--primary, #00F0FF);
+    backdrop-filter: blur(5px);
+    margin-bottom: 2rem;
+    
+    /* Sci-Fi Ecken (abgeschnitten) */
+    clip-path: polygon(
+        20px 0, 100% 0, 
+        100% calc(100% - 20px), calc(100% - 20px) 100%, 
+        0 100%, 0 20px
+    );
+}
+
+.time-unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 80px;
+}
+
+.time-val {
+    font-family: var(--font-head, sans-serif);
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary, #00F0FF);
+}
+
+.time-label {
+    font-size: 0.7rem;
+    color: var(--text-muted, #888);
+    letter-spacing: 2px;
+}
+
+/* ==========================================================================
+   MODULE 3: VIEW "LIVE" (Das Bracket System)
+   Zweck: Das Herzstück. Muss horizontal scrollbar sein auf Mobile.
+   ========================================================================== */
+
+.live-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 1rem;
+    width: 100%;
+}
+
+.live-indicator {
+    width: 12px;
+    height: 12px;
+    background-color: #ff003c;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #ff003c;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.8); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+/* Der Container der scrollt */
+.bracket-scroll-wrapper {
+    width: 100%;
+    overflow-x: auto; /* WICHTIG: Erlaubt Scrollen */
+    -webkit-overflow-scrolling: touch; /* Smooth scroll auf iOS */
+    padding-bottom: 2rem; /* Platz für Scrollbar */
+    cursor: grab; /* Zeigt an, dass man ziehen kann */
+}
+
+.bracket-scroll-wrapper:active {
+    cursor: grabbing;
+}
+
+/* Das Grid selbst */
+.bracket-grid {
+    display: flex;
+    gap: 4rem; /* Abstand zwischen Runden */
+    min-width: max-content; /* Zwingt den Container breit zu sein */
+    padding: 0 1rem;
+}
+
+/* Eine Runde (Spalte) */
+.round-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around; /* Verteilt Matches gleichmäßig */
+    width: 280px; /* Feste Breite für Karten */
+    position: relative;
+    gap: 2rem;
+}
+
+.round-title {
+    text-align: center;
+    color: var(--text-muted, #888);
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* ==========================================================================
+   MODULE 4: THE MATCH CARD (Component)
+   Zweck: Einzelne Darstellung eines Matches.
+   ========================================================================== */
+
+.match-card {
+    background: rgba(10, 10, 10, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 0; /* Padding innen entfernen für saubere Rows */
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.match-card:hover {
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Status: Wenn ein Match gerade LIVE gespielt wird */
+.match-card.is-live {
+    border-color: #ff003c;
+    box-shadow: 0 0 15px rgba(255, 0, 60, 0.15);
+}
+
+/* Die Linie zum nächsten Match (Visual Connector) */
+.match-card::after {
+    content: '';
+    position: absolute;
+    right: -2rem; /* Linie geht 2rem nach rechts */
+    top: 50%;
+    width: 2rem;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.15);
+    z-index: 0;
+}
+
+/* Letzte Spalte braucht keine Linie nach rechts */
+.round-column:last-child .match-card::after {
+    display: none;
+}
+
+/* ==========================================================================
+   MODULE 5: TEAM ROWS & STATES
+   Zweck: Darstellung der Teams innerhalb der Match-Karte.
+   ========================================================================== */
 
 .team-row {
     display: flex;
     justify-content: space-between;
-    padding: 8px 12px;
-    background: rgba(0,0,0,0.3);
-    font-family: var(--font-body);
+    align-items: center;
+    padding: 0.8rem 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    background: transparent;
+    transition: background 0.3s ease;
 }
 
+.team-row:last-child {
+    border-bottom: none;
+}
+
+/* Gewinner Styling */
 .team-row.winner {
-    background: rgba(0, 240, 255, 0.1);
-    border-left: 2px solid var(--primary);
+    background: rgba(0, 240, 255, 0.1); /* Sanftes Cyan */
+    border-left: 3px solid var(--primary, #00F0FF);
 }
 
-.t-logo { width: 20px; height: 20px; margin-right: 8px; object-fit: contain; }
-.t-name { font-weight: 700; color: #fff; }
-.t-score { font-family: var(--font-head); color: var(--primary); }
+.team-row.winner .t-score {
+    color: var(--primary, #00F0FF);
+    text-shadow: 0 0 8px rgba(0, 240, 255, 0.4);
+}
+
+/* Verlierer Styling (optional: ausgegraut) */
+.team-row.loser {
+    opacity: 0.5;
+}
+
+/* Elemente */
+.t-logo {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    margin-right: 10px;
+}
+
+.t-name {
+    font-family: var(--font-body, sans-serif);
+    font-weight: 700;
+    color: #fff;
+    font-size: 0.95rem;
+}
+
+.t-score {
+    font-family: var(--font-head, sans-serif);
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #fff;
+    min-width: 20px;
+    text-align: right;
+}
