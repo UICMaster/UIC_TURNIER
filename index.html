@@ -4,40 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UIC Turnier Hub</title>
-    <link rel="stylesheet" href="assets/css/uic-theme.css">
-    <link rel="stylesheet" href="assets/css/tournament.css">
+    <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
 
-    <nav class="navbar"><div class="container">UIC TOURNAMENT HUB</div></nav>
+    <nav class="navbar">
+        <div class="container nav-inner">
+            <a href="#" class="logo-module">
+                <img src="assets/img/logo.png" alt="UIC" class="logo-icon" onerror="this.style.display='none'">
+                <div class="logo-text">
+                    <span class="brand-name">UIC</span>
+                    <span class="brand-sub">TOURNAMENTS</span>
+                </div>
+            </a>
+            <div class="nav-deck desktop-only">
+                <span style="color:var(--primary); letter-spacing:2px; font-weight:bold;">OFFICIAL HUB</span>
+            </div>
+        </div>
+    </nav>
 
     <main class="section-pad">
         
         <div id="view-none" class="view-section container text-center hidden">
-            <h1>SYSTEM STANDBY</h1>
-            <p class="text-muted">Aktuell keine aktiven Operationen.</p>
+            <h1 style="font-size: 3rem; margin-bottom: 1rem;">SYSTEM STANDBY</h1>
+            <p class="text-muted" style="max-width: 600px; margin: 0 auto;">
+                Aktuell sind keine aktiven Turniere im System registriert. 
+                Die Teams bereiten sich auf den nächsten Split vor.
+            </p>
         </div>
 
         <div id="view-upcoming" class="view-section container text-center hidden">
             <h4 style="letter-spacing: 4px; color: var(--text-muted)">NÄCHSTES EVENT</h4>
-            <h1 id="event-title" style="font-size: 3rem; margin-bottom: 2rem;">-</h1>
-            <div id="countdown" class="countdown-box">Loading...</div>
-            <br><br>
-            <a id="reg-link" href="#" class="btn btn-obsidian">JETZT ANMELDEN</a>
+            <h1 id="event-title" style="font-size: clamp(2rem, 5vw, 4rem); margin-bottom: 2rem; line-height: 1.1;">-</h1>
+            
+            <div id="countdown" class="countdown-box">Lade Sequenz...</div>
+            
+            <div style="margin-top: 3rem;">
+                <a id="reg-link" href="#" target="_blank" class="btn btn-obsidian">JETZT ANMELDEN</a>
+            </div>
         </div>
 
         <div id="view-live" class="view-section hidden">
             <div class="container">
-                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
-                    <div class="live-indicator" style="width:10px; height:10px; background:red; border-radius:50%;"></div>
-                    <h2 id="live-title" style="margin:0;">LIVE FEED</h2>
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 1rem;">
+                    <div class="live-indicator" style="width:12px; height:12px; background:#ff003c; border-radius:50%; box-shadow: 0 0 10px #ff003c;"></div>
+                    <h2 id="live-title" style="margin:0; font-size: 1.5rem;">LIVE FEED</h2>
                 </div>
             
-                <h3 style="color: var(--primary); margin-top: 2rem;">WINNERS BRACKET</h3>
+                <h3 style="color: var(--primary); margin-bottom: 1rem;">WINNERS BRACKET</h3>
                 <div id="bracket-winners" class="bracket-scroll-wrapper">
                     </div>
 
-                <h3 id="lbl-losers" style="color: var(--text-muted); margin-top: 4rem;">LOSERS BRACKET</h3>
+                <h3 id="lbl-losers" style="color: var(--text-muted); margin-top: 4rem; margin-bottom: 1rem;">LOSERS BRACKET</h3>
                 <div id="bracket-losers" class="bracket-scroll-wrapper">
                     </div>
             </div>
