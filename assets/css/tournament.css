@@ -263,3 +263,84 @@
     min-width: 20px;
     text-align: right;
 }
+
+/* ==========================================================================
+   Add-on
+   ========================================================================== */
+
+/* Container für die Views */
+.view-section { width: 100%; min-height: 60vh; }
+.hidden { display: none !important; }
+
+/* Das Scrollbare Bracket */
+.bracket-scroll-wrapper {
+    display: flex;
+    gap: 4rem;
+    overflow-x: auto;
+    padding: 3rem 1rem;
+    cursor: grab;
+}
+
+.bracket-scroll-wrapper:active { cursor: grabbing; }
+
+/* Spalten & Karten */
+.round-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    min-width: 260px;
+    position: relative;
+    gap: 2rem;
+}
+
+.round-header {
+    position: absolute;
+    top: -25px;
+    width: 100%;
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* Match Card & Linien */
+.match-card {
+    background: rgba(10, 10, 10, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    position: relative;
+    padding: 0;
+}
+
+.match-card.is-live { border-color: #ff003c; box-shadow: 0 0 15px rgba(255, 0, 60, 0.2); }
+
+/* Verbindungslinie nach Rechts */
+.match-card::after {
+    content: '';
+    position: absolute;
+    right: -2rem; 
+    top: 50%;
+    width: 2rem; 
+    height: 1px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.round-column:last-child .match-card::after { display: none; }
+
+/* Team Zeilen */
+.team-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.team-row:last-child { border-bottom: none; }
+
+.team-row.winner { background: rgba(0, 240, 255, 0.1); border-left: 3px solid var(--primary); }
+.team-row.loser { opacity: 0.4; } /* Freilose oder Leere Slots ausgrauen */
+
+.t-logo { width: 20px; height: 20px; object-fit: contain; margin-right: 8px; }
+.t-name { font-weight: 700; color: #fff; font-size: 0.9rem; }
+.t-score { font-family: var(--font-head); color: var(--primary); font-weight: bold; }
+.flex-center { display: flex; align-items: center; }
