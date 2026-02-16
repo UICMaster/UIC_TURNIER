@@ -1,0 +1,31 @@
+name: Update Tournament Data
+
+on:
+  push:
+    paths:
+      - 'data/teams/**'
+      - 'data/tournament.json'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Build Database
+        run: node scripts/build.js
+
+      - name: Commit & Push
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "🤖 System Update: Tournament Data"
+          file_pattern: data/generated/db.json
