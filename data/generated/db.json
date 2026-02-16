@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-02-16T20:37:53.262Z",
+  "updated_at": "2026-02-16T20:41:19.656Z",
   "meta": {
     "title": "UIC WINTER CUP 2025",
     "status": "LIVE",
@@ -28,7 +28,7 @@
     },
     "UIC_NIGHT": {
       "id": "UIC_NIGHT",
-      "name": "UIC NIGHT",
+      "name": "UIC Night",
       "acronym": "UICNT",
       "logo": "assets/img/uic_logo.png"
     },
