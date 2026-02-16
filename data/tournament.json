@@ -1,17 +1,17 @@
 {
   "meta": {
-    "title": "UIC WINTER GAP CUP",
-    "status": "LIVE",
+    "title": "UIC WINTER CUP 2025",
+    "status": "LIVE", 
     "start_date_iso": "2025-11-20T18:00:00Z",
-    "registration_link": "...",
-    "stream_link": "..."
+    "registration_link": "https://forms.google.com/...",
+    "stream_link": "https://twitch.tv/ultrainstinctcrew"
   },
   "participants": [
     "uic_main",
     "uic_academy",
     "ext_team_liquid",
-    "ext_g2_esports",
-    "ext_fnatic" 
-    // Auch wenn es 5 sind -> Script macht daraus ein 8er Bracket
+    "ext_fnatic",
+    "ext_g2"
+    // Füge hier IDs hinzu. Das Script füllt automatisch auf 8, 16 oder 32 auf.
   ]
 }
