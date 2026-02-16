@@ -1,15 +1,11 @@
 const fs = require('fs');
 const path = require('path');
 
-// --- KONFIGURATION ---
 const DATA_DIR = path.join(__dirname, '../data');
 const TEAMS_DIR = path.join(DATA_DIR, 'teams');
-const OUTPUT_DIR = path.join(DATA_DIR, 'generated');
-const OUTPUT_FILE = path.join(OUTPUT_DIR, 'db.json');
+const OUTPUT_FILE = path.join(DATA_DIR, 'generated/db.json');
 
-// --- HELPER FUNKTIONEN ---
-
-// 1. Teams laden
+// --- 1. TEAMS LADEN ---
 function loadTeams() {
     const teams = {};
     if (fs.existsSync(TEAMS_DIR)) {
@@ -24,150 +20,120 @@ function loadTeams() {
     return teams;
 }
 
-// 2. Bracket Generator (Der "Brain")
-function generateDoubleElimination(participantIds) {
+// --- 2. BRACKET LOGIK (DEUTSCH) ---
+function generateBracket(participantIds) {
     let bracket = [];
     
-    // A. Auf nächste 2er Potenz auffüllen (4, 8, 16, 32)
+    // A. Auf 2er Potenz auffüllen (4, 8, 16, 32)
     let power = 2;
     while (power < participantIds.length) { power *= 2; }
     
     const totalSlots = power;
     const byesNeeded = totalSlots - participantIds.length;
     
-    // B. Teilnehmerliste mit "BYE" auffüllen
-    // (Einfache Logik: Wir füllen erst Teams, dann Byes)
+    // B. Seed Liste erstellen (Teams + Freilose)
     let seededList = [...participantIds];
-    for (let i = 0; i < byesNeeded; i++) {
-        seededList.push(null); // null = BYE / Freilos
-    }
+    for (let i = 0; i < byesNeeded; i++) seededList.push(null);
 
-    // C. Winners Bracket Generieren (Binary Tree)
-    // Runde 1
-    const wbRound1Matches = totalSlots / 2;
-    for (let i = 0; i < wbRound1Matches; i++) {
-        const teamA = seededList[i];
-        const teamB = seededList[totalSlots - 1 - i]; // Snake Seeding (Erster gegen Letzten)
-        
-        // Automatische Winner-Ermittlung bei BYE
-        let winner = null;
-        let status = "SCHEDULED";
-        
-        if (teamA && !teamB) { winner = teamA; status = "FINISHED"; } // A hat Freilos
-        if (!teamA && teamB) { winner = teamB; status = "FINISHED"; } // B hat Freilos
+    // C. Winners Bracket Generieren
+    const rounds = Math.log2(totalSlots);
+    let matchCount = totalSlots / 2;
 
-        bracket.push({
-            id: `wb_r1_m${i + 1}`,
-            round: 1,
-            bracket_type: "WINNER",
-            next_match_id: `wb_r2_m${Math.ceil((i + 1) / 2)}`,
-            loser_to_match_id: `lb_r1_m${Math.floor(i / 2) + 1}`, // Verlierer droppt ins Loser Bracket
-            team_1: teamA,
-            team_2: teamB,
-            score_1: 0,
-            score_2: 0,
-            winner_id: winner,
-            status: status
-        });
-    }
+    for (let r = 1; r <= rounds; r++) {
+        for (let i = 0; i < matchCount; i++) {
+            // Nur in Runde 1 setzen wir Teams, danach sind es Platzhalter
+            let t1 = (r === 1) ? seededList[i] : null;
+            let t2 = (r === 1) ? seededList[totalSlots - 1 - i] : null;
 
-    // Weitere Winners Runden (Platzhalter erstellen)
-    let currentMatches = wbRound1Matches;
-    let round = 2;
-    while (currentMatches > 1) {
-        currentMatches = currentMatches / 2;
-        for (let i = 0; i < currentMatches; i++) {
+            // Auto-Win Logik für Freilose
+            let winner = null;
+            let status = "SCHEDULED";
+            
+            if (r === 1) {
+                if (t1 && !t2) { winner = t1; status = "FINISHED"; } // T1 hat Freilos
+                if (!t1 && t2) { winner = t2; status = "FINISHED"; } // T2 hat Freilos
+            } else {
+                status = "WAITING";
+            }
+
             bracket.push({
-                id: `wb_r${round}_m${i + 1}`,
-                round: round,
-                bracket_type: "WINNER",
-                next_match_id: currentMatches === 1 ? "grand_final" : `wb_r${round + 1}_m${Math.ceil((i + 1) / 2)}`,
-                loser_to_match_id: `lb_r${round}_m${i + 1}`, // Simplifiziertes Drop-Schema
-                team_1: null, // Wird später gefüllt
-                team_2: null,
+                id: `wb_r${r}_m${i + 1}`,
+                round: r,
+                type: "WINNER",
+                next_match_id: (r === rounds) ? null : `wb_r${r + 1}_m${Math.ceil((i + 1) / 2)}`,
+                team_1: t1,
+                team_2: t2,
                 score_1: 0,
                 score_2: 0,
-                winner_id: null,
-                status: "WAITING"
+                winner_id: winner,
+                status: status
             });
         }
-        round++;
+        matchCount /= 2;
     }
 
-    // D. Losers Bracket (Basis-Struktur)
-    // Hinweis: Ein perfektes Loser Bracket automatisch zu generieren ist sehr komplex.
-    // Wir erstellen hier die Slots für Runde 1 im Loser Bracket.
-    const lbRound1Matches = wbRound1Matches / 2;
-    for (let i = 0; i < lbRound1Matches; i++) {
-        bracket.push({
-            id: `lb_r1_m${i + 1}`,
-            round: 1,
-            bracket_type: "LOSER",
-            next_match_id: `lb_r2_m${Math.ceil((i + 1) / 2)}`,
-            team_1: null, // Kommt vom Verlierer WB
-            team_2: null,
-            score_1: 0,
-            score_2: 0,
-            winner_id: null,
-            status: "WAITING"
-        });
+    // D. Losers Bracket (Vereinfacht: Slots erstellen)
+    // Wir erstellen Slots für das Loser Bracket, damit sie angezeigt werden.
+    // Die exakte Drop-Logik (wer fällt wohin) ist komplex, hier werden die Slots bereitgestellt.
+    let loserMatchCount = totalSlots / 4; // Startet kleiner
+    const loserRounds = rounds - 1; 
+    
+    if (loserRounds > 0) {
+         for (let r = 1; r <= loserRounds; r++) {
+            for (let i = 0; i < loserMatchCount; i++) {
+                bracket.push({
+                    id: `lb_r${r}_m${i + 1}`,
+                    round: r,
+                    type: "LOSER",
+                    next_match_id: `lb_r${r+1}_m...`, // Logik vereinfacht
+                    team_1: null,
+                    team_2: null,
+                    score_1: 0,
+                    score_2: 0,
+                    winner_id: null,
+                    status: "WAITING"
+                });
+            }
+            // Loser Bracket schrumpft langsamer in echten Systemen, 
+            // hier vereinfacht halbiert für Anzeige
+            if (loserMatchCount > 1) loserMatchCount /= 2; 
+         }
     }
 
     return bracket;
 }
 
-// --- MAIN PROCESS ---
+// --- MAIN ---
+console.log('🇩🇪 Starte Build Prozess...');
+if (!fs.existsSync(path.dirname(OUTPUT_FILE))) fs.mkdirSync(path.dirname(OUTPUT_FILE), { recursive: true });
 
-console.log('🔄 Starting Build Process...');
-
-// 1. Setup
-if (!fs.existsSync(OUTPUT_DIR)) fs.mkdirSync(OUTPUT_DIR, { recursive: true });
-
-// 2. Load Data
 const teams = loadTeams();
-const tournamentConfig = JSON.parse(fs.readFileSync(path.join(DATA_DIR, 'tournament.json')));
+const config = JSON.parse(fs.readFileSync(path.join(DATA_DIR, 'tournament.json')));
+const autoBracket = generateBracket(config.participants);
 
-// 3. Generate Bracket
-console.log(`📊 Generating Bracket for ${tournamentConfig.participants.length} Teams...`);
-const autoBracket = generateDoubleElimination(tournamentConfig.participants);
-
-// 4. Merge Logic (WICHTIG!)
-// Wir dürfen existierende Ergebnisse (Scores) nicht überschreiben, wenn wir neu bauen!
-// Wir laden die alte DB (falls existent) und behalten Scores.
+// --- MERGE (Alte Ergebnisse behalten!) ---
 let finalBracket = autoBracket;
-
 if (fs.existsSync(OUTPUT_FILE)) {
     try {
         const oldDb = JSON.parse(fs.readFileSync(OUTPUT_FILE));
-        // Wir mappen die Scores der alten Matches auf die neuen
         finalBracket = autoBracket.map(newMatch => {
             const oldMatch = oldDb.bracket.find(m => m.id === newMatch.id);
+            // Wenn Match existiert und Status nicht "WAITING" ist -> Daten behalten
             if (oldMatch && oldMatch.status !== "WAITING" && oldMatch.status !== "SCHEDULED") {
-                // Übernehme Ergebnisse aus der alten DB
-                return {
-                    ...newMatch,
-                    score_1: oldMatch.score_1,
-                    score_2: oldMatch.score_2,
-                    winner_id: oldMatch.winner_id,
-                    status: oldMatch.status
-                };
+                return { ...newMatch, ...oldMatch }; // Überschreibe das neue mit dem alten Status
             }
             return newMatch;
         });
-        console.log("✅ Restored match results from previous build.");
-    } catch (e) {
-        console.warn("⚠️ Could not restore old data, starting fresh.");
-    }
+        console.log("✅ Bestehende Ergebnisse wiederhergestellt.");
+    } catch (e) { console.log("⚠️ Neue Datenbank wird erstellt."); }
 }
 
-// 5. Final DB Object
 const db = {
     updated_at: new Date().toISOString(),
-    meta: tournamentConfig.meta,
+    meta: config.meta,
     teams: teams,
     bracket: finalBracket
 };
 
-// 6. Save
 fs.writeFileSync(OUTPUT_FILE, JSON.stringify(db, null, 2));
-console.log(`✅ Database generated at ${OUTPUT_FILE}`);
+console.log(`✅ Datenbank bereit: ${OUTPUT_FILE}`);
