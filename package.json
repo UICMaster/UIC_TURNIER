@@ -1,0 +1,11 @@
+{
+  "name": "uic-tournament-system",
+  "version": "1.0.0",
+  "description": "Static Tournament Generator for UIC",
+  "main": "scripts/app.js",
+  "scripts": {
+    "build": "node scripts/build.js"
+  },
+  "author": "UIC Tech Lead",
+  "license": "ISC"
+}
