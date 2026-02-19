@@ -169,7 +169,6 @@ if (fs.existsSync(OUTPUT_FILE)) {
 
 engine.processUpdates();
 fs.writeFileSync(OUTPUT_FILE, JSON.stringify({
-    updated_at: new Date().toISOString(),
     meta: config.meta,
     teams: teams,
     bracket: engine.matches
