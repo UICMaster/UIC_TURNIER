@@ -66,21 +66,22 @@ function buildColumnTree(container, matches, teams, type) {
 function createCard(m, teams) {
     const div = document.createElement('div');
     div.className = 'match-card card card--hud';
-    div.id = `match-${m.id}`; // Wichtig für Debugging
+    div.id = `match-${m.id}`; 
     if (m.status === 'LIVE') div.classList.add('is-live');
 
     const t1 = resolve(m.team_1, teams);
     const t2 = resolve(m.team_2, teams);
 
+    // Wenn kein Team eingetragen ist ODER es ein BYE ist, blenden wir die Zeile leicht aus (.loser)
     div.innerHTML = `
-        <div class="team-row ${m.winner_id === m.team_1 && m.team_1 ? 'winner' : ''} ${!m.team_1 ? 'loser' : ''}">
+        <div class="team-row ${m.winner_id === m.team_1 && m.team_1 !== '[BYE]' ? 'winner' : ''} ${(!m.team_1 || m.team_1 === '[BYE]') ? 'loser' : ''}">
             <div class="flex-center">
                 ${t1.logo ? `<img src="${t1.logo}" class="t-logo">` : ''}
                 <span class="t-name">${t1.name}</span>
             </div>
             <span class="t-score">${m.score_1}</span>
         </div>
-        <div class="team-row ${m.winner_id === m.team_2 && m.team_2 ? 'winner' : ''} ${!m.team_2 ? 'loser' : ''}">
+        <div class="team-row ${m.winner_id === m.team_2 && m.team_2 !== '[BYE]' ? 'winner' : ''} ${(!m.team_2 || m.team_2 === '[BYE]') ? 'loser' : ''}">
              <div class="flex-center">
                 ${t2.logo ? `<img src="${t2.logo}" class="t-logo">` : ''}
                 <span class="t-name">${t2.name}</span>
@@ -92,8 +93,9 @@ function createCard(m, teams) {
 }
 
 function resolve(id, teams) {
-    if (!id) return { name: 'FREILOS', logo: null };
-    if (!teams[id]) return { name: 'TBD', logo: null };
+    if (id === '[BYE]') return { name: 'FREILOS', logo: null };
+    if (!id) return { name: 'TBD', logo: null }; // Slot ist leer, wartet auf Gewinner
+    if (!teams[id]) return { name: 'TBD', logo: null }; // Team nicht gefunden
     return teams[id];
 }
 

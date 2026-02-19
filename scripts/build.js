@@ -11,11 +11,11 @@ const CONFIG_FILE = path.join(DATA_DIR, 'tournament.json');
 class TournamentEngine {
     constructor(participants) {
         this.matches = [];
-        // Power of 2 Berechnung (Padding mit NULL für Freilose)
         let size = 2;
         while (size < participants.length) size *= 2;
         this.seeded = [...participants];
-        while (this.seeded.length < size) this.seeded.push(null);
+        // FIX 1: Explizites [BYE] statt null
+        while (this.seeded.length < size) this.seeded.push('[BYE]'); 
         this.totalSlots = size;
     }
 
@@ -29,10 +29,17 @@ class TournamentEngine {
             for (let i = 0; i < count; i++) {
                 const isFinal = r === wbRounds;
                 const nextId = isFinal ? 'gf_m1' : `wb_r${r+1}_m${Math.ceil((i+1)/2)}`;
-                // Vereinfachte Drop Logik für Visualisierung
-                const loserId = isFinal ? `lb_r${(wbRounds-1)*2}_m1` : `lb_r${(r*2)-1}_m${Math.ceil((i+1)/2)}`;
                 
-                // Teams nur in Runde 1 setzen
+                // FIX 2: Korrigierte Loser-Drop-Mathematik für perfekte Double Elimination
+                let loserId = null;
+                if (r === 1) {
+                    loserId = `lb_r1_m${Math.ceil((i+1)/2)}`;
+                } else if (!isFinal) {
+                    loserId = `lb_r${(r-1)*2}_m${i+1}`; 
+                } else {
+                    loserId = `lb_r${(wbRounds-1)*2}_m1`;
+                }
+                
                 const t1 = (r === 1) ? this.seeded[i] : null;
                 const t2 = (r === 1) ? this.seeded[this.totalSlots - 1 - i] : null;
 
@@ -45,7 +52,7 @@ class TournamentEngine {
             count /= 2;
         }
 
-        // 2. LOSERS BRACKET (Falls >= 4 Teams)
+        // 2. LOSERS BRACKET
         if (this.totalSlots >= 4) {
             const lbRounds = (wbRounds - 1) * 2;
             let lbCount = this.totalSlots / 4;
@@ -73,7 +80,6 @@ class TournamentEngine {
         this.matches.push({ score_1: 0, score_2: 0, winner_id: null, status: 'WAITING', ...data });
     }
 
-    // Automatische Gewinner-Ermittlung & Weiterleitung
     processUpdates() {
         let changed = true;
         while(changed) {
@@ -81,10 +87,18 @@ class TournamentEngine {
             const map = new Map(this.matches.map(m => [m.id, m]));
             
             this.matches.forEach(m => {
-                // A. Freilose (BYE)
-                if (m.round === 1 && m.type === 'WINNER' && m.status === 'WAITING') {
-                    if (m.team_1 && !m.team_2) { this._win(m, m.team_1, map); changed = true; }
-                    else if (!m.team_1 && m.team_2) { this._win(m, m.team_2, map); changed = true; }
+                // FIX 3: BYEs (Freilose) werden wie unsichtbare "Geister" behandelt, 
+                // die durchs Bracket fließen und sofort verlieren
+                if (m.status === 'WAITING' || m.status === 'SCHEDULED') {
+                    if (m.team_1 && m.team_1 !== '[BYE]' && m.team_2 === '[BYE]') { 
+                        this._win(m, m.team_1, map); changed = true; 
+                    }
+                    else if (m.team_1 === '[BYE]' && m.team_2 && m.team_2 !== '[BYE]') { 
+                        this._win(m, m.team_2, map); changed = true; 
+                    }
+                    else if (m.team_1 === '[BYE]' && m.team_2 === '[BYE]') { 
+                        this._win(m, '[BYE]', map); changed = true; 
+                    }
                 }
                 // B. Score Updates
                 if ((m.score_1 > 0 || m.score_2 > 0) && !m.winner_id) {
@@ -93,7 +107,7 @@ class TournamentEngine {
                 }
                 // C. Status
                 if (m.winner_id) m.status = 'FINISHED';
-                else if (m.team_1 && m.team_2) m.status = 'LIVE';
+                else if (m.team_1 && m.team_1 !== '[BYE]' && m.team_2 && m.team_2 !== '[BYE]') m.status = 'LIVE';
             });
         }
     }
@@ -107,7 +121,7 @@ class TournamentEngine {
             const next = map.get(match.next_match_id);
             if (next) !next.team_1 ? next.team_1 = winnerId : next.team_2 = winnerId;
         }
-        // Loser Drop (nur wenn echtes Team)
+        // Loser Drop
         const loserId = (winnerId === match.team_1) ? match.team_2 : match.team_1;
         if (match.loser_match_id && loserId) {
             const loser = map.get(match.loser_match_id);
