@@ -5,6 +5,7 @@ on:
     paths:
       - 'data/teams/**'
       - 'data/tournament.json'
+      - 'data/generated/db.json'
   workflow_dispatch:
 
 jobs:
@@ -27,5 +28,5 @@ jobs:
       - name: Commit & Push
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: "🤖 System Update: Tournament Data"
+          commit_message: "🤖 System Update: Engine hat Bracket berechnet"
           file_pattern: data/generated/db.json
