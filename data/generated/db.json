@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-02-19T15:38:38.024Z",
+  "updated_at": "2026-02-19T15:54:43.032Z",
   "meta": {
     "title": "UIC WINTER CUP 2025",
     "status": "LIVE",
@@ -94,8 +94,8 @@
     {
       "score_1": 1,
       "score_2": 2,
-      "winner_id": null,
-      "status": "LIVE",
+      "winner_id": "UIC_ABYSS",
+      "status": "FINISHED",
       "id": "wb_r1_m4",
       "round": 1,
       "type": "WINNER",
@@ -108,27 +108,27 @@
       "score_1": 0,
       "score_2": 0,
       "winner_id": null,
-      "status": "WAITING",
+      "status": "LIVE",
       "id": "wb_r2_m1",
       "round": 2,
       "type": "WINNER",
       "next_match_id": "wb_r3_m1",
       "loser_match_id": "lb_r2_m1",
-      "team_1": "UIC_FREEZER",
-      "team_2": null
+      "team_1": "UIC_PRIME",
+      "team_2": "UIC_FREEZER"
     },
     {
       "score_1": 0,
       "score_2": 0,
       "winner_id": null,
-      "status": "WAITING",
+      "status": "LIVE",
       "id": "wb_r2_m2",
       "round": 2,
       "type": "WINNER",
       "next_match_id": "wb_r3_m1",
       "loser_match_id": "lb_r2_m2",
       "team_1": "UIC_EMBER",
-      "team_2": null
+      "team_2": "UIC_ABYSS"
     },
     {
       "score_1": 0,
@@ -146,26 +146,26 @@
     {
       "score_1": 0,
       "score_2": 0,
-      "winner_id": null,
-      "status": "WAITING",
+      "winner_id": "UIC_SPARK",
+      "status": "FINISHED",
       "id": "lb_r1_m1",
       "round": 1,
       "type": "LOSER",
       "next_match_id": "lb_r2_m1",
-      "team_1": "UIC_SPARK",
-      "team_2": null
+      "team_1": "[BYE]",
+      "team_2": "UIC_SPARK"
     },
     {
       "score_1": 0,
       "score_2": 0,
       "winner_id": null,
-      "status": "WAITING",
+      "status": "LIVE",
       "id": "lb_r1_m2",
       "round": 1,
       "type": "LOSER",
       "next_match_id": "lb_r2_m2",
       "team_1": "UIC_NIGHT",
-      "team_2": null
+      "team_2": "UIC_NOVA"
     },
     {
       "score_1": 0,
@@ -176,7 +176,7 @@
       "round": 2,
       "type": "LOSER",
       "next_match_id": "lb_r3_m1",
-      "team_1": null,
+      "team_1": "UIC_SPARK",
       "team_2": null
     },
     {
