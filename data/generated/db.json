@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-02-19T16:06:56.004Z",
+  "updated_at": "2026-02-19T16:17:23.060Z",
   "meta": {
     "title": "UIC WINTER CUP 2025",
     "status": "LIVE",
@@ -130,8 +130,8 @@
     {
       "score_1": 2,
       "score_2": 0,
-      "winner_id": null,
-      "status": "LIVE",
+      "winner_id": "UIC_EMBER",
+      "status": "FINISHED",
       "id": "wb_r2_m2",
       "round": 2,
       "type": "WINNER",
@@ -146,7 +146,7 @@
       "score_1": 0,
       "score_2": 0,
       "winner_id": null,
-      "status": "WAITING",
+      "status": "LIVE",
       "id": "wb_r3_m1",
       "round": 3,
       "type": "WINNER",
@@ -155,7 +155,7 @@
       "loser_match_id": "lb_r4_m1",
       "loser_slot": 1,
       "team_1": "UIC_FREEZER",
-      "team_2": null
+      "team_2": "UIC_EMBER"
     },
     {
       "score_1": 0,
@@ -203,7 +203,7 @@
       "type": "LOSER",
       "next_match_id": "lb_r3_m1",
       "team_1": null,
-      "team_2": null
+      "team_2": "UIC_ABYSS"
     },
     {
       "score_1": 0,
