@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-02-19T15:15:10.907Z",
+  "updated_at": "2026-02-19T15:38:38.024Z",
   "meta": {
     "title": "UIC WINTER CUP 2025",
     "status": "LIVE",
@@ -68,8 +68,8 @@
     {
       "score_1": 2,
       "score_2": 0,
-      "winner_id": null,
-      "status": "LIVE",
+      "winner_id": "UIC_FREEZER",
+      "status": "FINISHED",
       "id": "wb_r1_m2",
       "round": 1,
       "type": "WINNER",
@@ -81,8 +81,8 @@
     {
       "score_1": 2,
       "score_2": 1,
-      "winner_id": null,
-      "status": "LIVE",
+      "winner_id": "UIC_EMBER",
+      "status": "FINISHED",
       "id": "wb_r1_m3",
       "round": 1,
       "type": "WINNER",
@@ -114,7 +114,7 @@
       "type": "WINNER",
       "next_match_id": "wb_r3_m1",
       "loser_match_id": "lb_r2_m1",
-      "team_1": "UIC_PRIME",
+      "team_1": "UIC_FREEZER",
       "team_2": null
     },
     {
@@ -127,7 +127,7 @@
       "type": "WINNER",
       "next_match_id": "wb_r3_m1",
       "loser_match_id": "lb_r2_m2",
-      "team_1": null,
+      "team_1": "UIC_EMBER",
       "team_2": null
     },
     {
@@ -152,7 +152,7 @@
       "round": 1,
       "type": "LOSER",
       "next_match_id": "lb_r2_m1",
-      "team_1": "[BYE]",
+      "team_1": "UIC_SPARK",
       "team_2": null
     },
     {
@@ -164,7 +164,7 @@
       "round": 1,
       "type": "LOSER",
       "next_match_id": "lb_r2_m2",
-      "team_1": null,
+      "team_1": "UIC_NIGHT",
       "team_2": null
     },
     {
