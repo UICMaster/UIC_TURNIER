@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-02-19T15:54:43.032Z",
+  "updated_at": "2026-02-19T16:06:56.004Z",
   "meta": {
     "title": "UIC WINTER CUP 2025",
     "status": "LIVE",
@@ -61,7 +61,9 @@
       "round": 1,
       "type": "WINNER",
       "next_match_id": "wb_r2_m1",
+      "next_slot": 1,
       "loser_match_id": "lb_r1_m1",
+      "loser_slot": 1,
       "team_1": "UIC_PRIME",
       "team_2": "[BYE]"
     },
@@ -74,7 +76,9 @@
       "round": 1,
       "type": "WINNER",
       "next_match_id": "wb_r2_m1",
+      "next_slot": 2,
       "loser_match_id": "lb_r1_m1",
+      "loser_slot": 2,
       "team_1": "UIC_FREEZER",
       "team_2": "UIC_SPARK"
     },
@@ -87,7 +91,9 @@
       "round": 1,
       "type": "WINNER",
       "next_match_id": "wb_r2_m2",
+      "next_slot": 1,
       "loser_match_id": "lb_r1_m2",
+      "loser_slot": 1,
       "team_1": "UIC_EMBER",
       "team_2": "UIC_NIGHT"
     },
@@ -100,20 +106,24 @@
       "round": 1,
       "type": "WINNER",
       "next_match_id": "wb_r2_m2",
+      "next_slot": 2,
       "loser_match_id": "lb_r1_m2",
+      "loser_slot": 2,
       "team_1": "UIC_NOVA",
       "team_2": "UIC_ABYSS"
     },
     {
       "score_1": 1,
       "score_2": 2,
-      "winner_id": null,
-      "status": "LIVE",
+      "winner_id": "UIC_FREEZER",
+      "status": "FINISHED",
       "id": "wb_r2_m1",
       "round": 2,
       "type": "WINNER",
       "next_match_id": "wb_r3_m1",
+      "next_slot": 1,
       "loser_match_id": "lb_r2_m1",
+      "loser_slot": 1,
       "team_1": "UIC_PRIME",
       "team_2": "UIC_FREEZER"
     },
@@ -126,7 +136,9 @@
       "round": 2,
       "type": "WINNER",
       "next_match_id": "wb_r3_m1",
+      "next_slot": 2,
       "loser_match_id": "lb_r2_m2",
+      "loser_slot": 2,
       "team_1": "UIC_EMBER",
       "team_2": "UIC_ABYSS"
     },
@@ -139,8 +151,10 @@
       "round": 3,
       "type": "WINNER",
       "next_match_id": "gf_m1",
+      "next_slot": 1,
       "loser_match_id": "lb_r4_m1",
-      "team_1": null,
+      "loser_slot": 1,
+      "team_1": "UIC_FREEZER",
       "team_2": null
     },
     {
@@ -171,13 +185,13 @@
       "score_1": 0,
       "score_2": 0,
       "winner_id": null,
-      "status": "WAITING",
+      "status": "LIVE",
       "id": "lb_r2_m1",
       "round": 2,
       "type": "LOSER",
       "next_match_id": "lb_r3_m1",
-      "team_1": "UIC_SPARK",
-      "team_2": null
+      "team_1": "UIC_PRIME",
+      "team_2": "UIC_SPARK"
     },
     {
       "score_1": 0,
