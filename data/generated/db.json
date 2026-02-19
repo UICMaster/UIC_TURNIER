@@ -207,8 +207,8 @@
     {
       "score_1": 2,
       "score_2": 0,
-      "winner_id": null,
-      "status": "LIVE",
+      "winner_id": "UIC_PRIME",
+      "status": "FINISHED",
       "id": "lb_r3_m1",
       "round": 3,
       "type": "LOSER",
@@ -220,13 +220,13 @@
       "score_1": 0,
       "score_2": 0,
       "winner_id": null,
-      "status": "WAITING",
+      "status": "LIVE",
       "id": "lb_r4_m1",
       "round": 4,
       "type": "LOSER",
       "next_match_id": "gf_m1",
       "team_1": "UIC_FREEZER",
-      "team_2": null
+      "team_2": "UIC_PRIME"
     },
     {
       "score_1": 0,
