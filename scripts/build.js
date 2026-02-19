@@ -147,13 +147,18 @@ if (fs.existsSync(TEAMS_DIR)) {
 const engine = new TournamentEngine(config.participants);
 engine.generate();
 
-// 3. Merge Old Scores
+// 3. Merge Old Scores (DER WICHTIGE FIX!)
 if (fs.existsSync(OUTPUT_FILE)) {
     try {
         const old = JSON.parse(fs.readFileSync(OUTPUT_FILE)).bracket;
         engine.matches.forEach(m => {
             const o = old.find(x => x.id === m.id);
-            if (o) { m.score_1 = o.score_1; m.score_2 = o.score_2; if(o.winner_id) m.winner_id = o.winner_id; }
+            if (o) { 
+                // Wir übernehmen NUR noch die Scores. Den winner_id muss die Engine 
+                // jedes Mal selbst neu berechnen, damit das Vorrücken funktioniert!
+                m.score_1 = o.score_1; 
+                m.score_2 = o.score_2; 
+            }
         });
     } catch(e) {}
 }
