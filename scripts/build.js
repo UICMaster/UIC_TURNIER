@@ -116,23 +116,24 @@ class TournamentEngine {
     _win(match, winnerId, map) {
         match.winner_id = winnerId;
         
-        // Winner Move (Jetzt deterministisch!)
+        // Winner Move (JETZT MIT KORREKTEM FALLBACK FÜR DAS LOSER BRACKET)
         if (match.next_match_id) {
             const next = map.get(match.next_match_id);
             if (next) {
                 if (match.next_slot === 1) next.team_1 = winnerId;
-                else next.team_2 = winnerId;
+                else if (match.next_slot === 2) next.team_2 = winnerId;
+                else !next.team_1 ? next.team_1 = winnerId : next.team_2 = winnerId; // Verhindert Überschreiben!
             }
         }
         
-        // Loser Drop (Jetzt deterministisch!)
+        // Loser Drop
         const loserId = (winnerId === match.team_1) ? match.team_2 : match.team_1;
         if (match.loser_match_id && loserId) {
             const loser = map.get(match.loser_match_id);
             if (loser) {
                 if (match.loser_slot === 1) loser.team_1 = loserId;
                 else if (match.loser_slot === 2) loser.team_2 = loserId;
-                else !loser.team_1 ? loser.team_1 = loserId : loser.team_2 = loserId; // Fallback
+                else !loser.team_1 ? loser.team_1 = loserId : loser.team_2 = loserId;
             }
         }
     }
