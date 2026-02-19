@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-02-19T16:44:19.390Z",
+  "updated_at": "2026-02-19T16:50:48.159Z",
   "meta": {
     "title": "UIC WINTER CUP 2025",
     "status": "LIVE",
@@ -172,8 +172,8 @@
     {
       "score_1": 0,
       "score_2": 2,
-      "winner_id": null,
-      "status": "LIVE",
+      "winner_id": "UIC_NOVA",
+      "status": "FINISHED",
       "id": "lb_r1_m2",
       "round": 1,
       "type": "LOSER",
@@ -203,7 +203,7 @@
       "type": "LOSER",
       "next_match_id": "lb_r3_m1",
       "team_1": null,
-      "team_2": "UIC_ABYSS"
+      "team_2": "UIC_NOVA"
     },
     {
       "score_1": 0,
