@@ -72,16 +72,23 @@ function createCard(m, teams) {
     const t1 = resolve(m.team_1, teams);
     const t2 = resolve(m.team_2, teams);
 
-    // Wenn kein Team eingetragen ist ODER es ein BYE ist, blenden wir die Zeile leicht aus (.loser)
+    // NEUE LOGIK: Wer ist Gewinner, wer ist Verlierer?
+    const t1Winner = m.winner_id === m.team_1 && m.team_1 !== '[BYE]' && m.team_1 !== null;
+    const t2Winner = m.winner_id === m.team_2 && m.team_2 !== '[BYE]' && m.team_2 !== null;
+    
+    // Verlierer ist, wer leer ist, ein Freilos ist, ODER in einem beendeten Match nicht der Gewinner ist
+    const t1Loser = (!m.team_1 || m.team_1 === '[BYE]' || (m.winner_id && !t1Winner));
+    const t2Loser = (!m.team_2 || m.team_2 === '[BYE]' || (m.winner_id && !t2Winner));
+
     div.innerHTML = `
-        <div class="team-row ${m.winner_id === m.team_1 && m.team_1 !== '[BYE]' ? 'winner' : ''} ${(!m.team_1 || m.team_1 === '[BYE]') ? 'loser' : ''}">
+        <div class="team-row ${t1Winner ? 'winner' : ''} ${t1Loser ? 'loser' : ''}">
             <div class="flex-center">
                 ${t1.logo ? `<img src="${t1.logo}" class="t-logo">` : ''}
                 <span class="t-name">${t1.name}</span>
             </div>
             <span class="t-score">${m.score_1}</span>
         </div>
-        <div class="team-row ${m.winner_id === m.team_2 && m.team_2 !== '[BYE]' ? 'winner' : ''} ${(!m.team_2 || m.team_2 === '[BYE]') ? 'loser' : ''}">
+        <div class="team-row ${t2Winner ? 'winner' : ''} ${t2Loser ? 'loser' : ''}">
              <div class="flex-center">
                 ${t2.logo ? `<img src="${t2.logo}" class="t-logo">` : ''}
                 <span class="t-name">${t2.name}</span>
