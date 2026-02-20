@@ -219,35 +219,86 @@ h1, h2, h3 {
 .flex-center { display: flex; align-items: center; }
 
 /* ==========================================================================
-   Hightlights, Twitch & Effekte
+   Highlights, Streams & Effekte
    ========================================================================== */
 
-/* --- 1. Twitch Player Embed --- */
-.twitch-wrapper {
-    width: 100%;
-    max-width: 1100px;
-    margin: 0 auto 4rem auto;
-    aspect-ratio: 16 / 9;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
-    border-radius: 8px;
-    overflow: hidden;
-    background: #000;
+/* --- 1. Team Stream Cards --- */
+.team-streams-grid {
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 1rem; 
+    justify-content: flex-start;
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
 }
-.twitch-wrapper iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
+.stream-card {
+    background: var(--bg-glass); 
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px; 
+    padding: 10px 15px; 
+    display: flex; 
+    align-items: center; 
+    gap: 15px;
+    text-decoration: none; 
+    color: #fff; 
+    transition: all 0.2s ease;
+    min-width: 200px;
+}
+.stream-card:hover { 
+    border-color: var(--primary); 
+    transform: translateY(-3px); 
+    box-shadow: 0 5px 15px rgba(0, 240, 255, 0.15); 
+}
+.stream-avatar { 
+    width: 35px; 
+    height: 35px; 
+    border-radius: 6px; 
+    object-fit: cover;
+    background: #222;
+}
+.stream-info { display: flex; flex-direction: column; }
+.stream-name { font-family: var(--font-head); font-weight: bold; font-size: 0.9rem; letter-spacing: 1px; }
+.stream-status { font-size: 0.75rem; display: flex; align-items: center; gap: 6px; color: var(--text-muted); font-weight: bold;}
+.stream-status.is-live { color: #ff003c; }
+.live-dot { 
+    width: 8px; height: 8px; 
+    background: #ff003c; border-radius: 50%; 
+    box-shadow: 0 0 8px #ff003c;
+    animation: pulse 2s infinite;
 }
 
-/* --- 2. Interaktives Team-Highlighting (Hover) --- */
-/* Abdunkeln aller Matches, wenn im Container gehovert wird */
+@keyframes pulse {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 0, 60, 0.7); }
+    70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(255, 0, 60, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 0, 60, 0); }
+}
+
+/* --- 2. Dynamische Bracket Linien (SVG) --- */
+.bracket-scroll-wrapper {
+    position: relative; 
+}
+.match-card {
+    z-index: 2; /* Karten schweben über den Linien */
+}
+.match-card::after { 
+    display: none !important; /* Entfernt die alten CSS-Striche */
+}
+.bracket-lines-svg {
+    position: absolute;
+    top: 0; left: 0;
+    z-index: 1;
+    pointer-events: none; /* Klicks gehen durch die Linien hindurch */
+}
+
+/* --- 3. Interaktives Team-Highlighting (Hover) --- */
+/* Abdunkeln aller Matches */
 .bracket-scroll-wrapper.is-hovering .match-card {
     opacity: 0.2;
     filter: grayscale(80%);
     transition: all 0.3s ease;
 }
-/* Leuchten des spezifischen Teams/Matches */
+/* Leuchten des gehooverten Teams */
 .bracket-scroll-wrapper.is-hovering .match-card.highlight-match {
     opacity: 1;
     filter: none;
@@ -256,10 +307,9 @@ h1, h2, h3 {
     transform: scale(1.02);
     z-index: 10;
 }
-/* Kleine Anpassung an deine bestehende .team-row für den Hover */
 .team-row { cursor: pointer; } 
 
-/* --- 3. Grand Final & Champion Optik --- */
+/* --- 4. Grand Final & Champion Optik --- */
 .match-card.grand-final {
     border: 2px solid #FFD700;
     background: linear-gradient(135deg, rgba(255, 215, 0, 0.05) 0%, rgba(10, 10, 10, 0.95) 100%);
@@ -278,7 +328,7 @@ h1, h2, h3 {
     font-weight: bold;
 }
 
-/* Champion Fullscreen Overlay */
+/* Champion Fullscreen Overlay (Mit reparierter Animation!) */
 .champion-overlay {
     position: fixed;
     top: 0; left: 0; width: 100vw; height: 100vh;
@@ -288,19 +338,28 @@ h1, h2, h3 {
     justify-content: center;
     align-items: center;
     backdrop-filter: blur(15px);
+    
+    /* Animations-Setup statt display:none */
     opacity: 0;
-    transition: opacity 0.5s ease;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.5s ease, visibility 0.5s;
 }
-.champion-overlay:not(.hidden) {
+
+/* Wenn das JS die Klasse hinzufügt, blendet es sanft ein */
+.champion-overlay.show-champion {
     opacity: 1;
+    visibility: visible;
+    pointer-events: all;
 }
+
 .champion-content {
     text-align: center;
     transform: scale(0.8);
     transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
-.champion-overlay:not(.hidden) .champion-content {
-    transform: scale(1);
+.champion-overlay.show-champion .champion-content {
+    transform: scale(1); /* Zoomt episch herein */
 }
 .champion-content img {
     width: 250px; height: 250px; object-fit: contain; margin: 2rem auto;
