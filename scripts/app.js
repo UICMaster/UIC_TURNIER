@@ -21,13 +21,35 @@ async function init() {
         } else if (s === 'LIVE' || s === 'FINISHED') {
             document.getElementById('view-live').classList.remove('hidden');
             document.getElementById('live-title').innerText = db.meta.title;
+            
+            // --- NEU 1: Twitch Player Integration ---
+            const streamLink = db.meta.stream_link;
+            const twitchContainer = document.getElementById('twitch-container');
+            // Zeigt Twitch nur im "LIVE" Modus, nicht wenn das Turnier schon "FINISHED" ist
+            if (s === 'LIVE' && streamLink && streamLink.includes('twitch.tv/')) {
+                const channel = streamLink.split('twitch.tv/')[1].split('/')[0];
+                const hostname = window.location.hostname || 'localhost'; // Wichtig für Twitch Embed
+                twitchContainer.innerHTML = `<iframe src="https://player.twitch.tv/?channel=${channel}&parent=${hostname}&muted=false" allowfullscreen></iframe>`;
+                twitchContainer.classList.remove('hidden');
+            } else {
+                twitchContainer.classList.add('hidden');
+                twitchContainer.innerHTML = '';
+            }
+
+            // Bracket Zeichnen
             renderBracket(db.bracket, db.teams);
+
+            // --- NEU 2: Hover-Effekte aktivieren ---
+            setupHoverEffects();
+
+            // --- NEU 3: Champion Screen Check ---
+            checkChampion(db.bracket, db.teams);
+
         } else {
             document.getElementById('view-none').classList.remove('hidden');
         }
     } catch (e) {
         console.error(e);
-        // Optional: Error Screen anzeigen
     }
 }
 
@@ -65,30 +87,31 @@ function buildColumnTree(container, matches, teams, type) {
 
 function createCard(m, teams) {
     const div = document.createElement('div');
-    div.className = 'match-card card card--hud';
+    div.className = 'match-card'; // Habe card Klassen bereinigt
     div.id = `match-${m.id}`; 
+    
     if (m.status === 'LIVE') div.classList.add('is-live');
+    if (m.is_grand_final) div.classList.add('grand-final'); // Grand Final Optik
 
     const t1 = resolve(m.team_1, teams);
     const t2 = resolve(m.team_2, teams);
 
-    // NEUE LOGIK: Wer ist Gewinner, wer ist Verlierer?
     const t1Winner = m.winner_id === m.team_1 && m.team_1 !== '[BYE]' && m.team_1 !== null;
     const t2Winner = m.winner_id === m.team_2 && m.team_2 !== '[BYE]' && m.team_2 !== null;
     
-    // Verlierer ist, wer leer ist, ein Freilos ist, ODER in einem beendeten Match nicht der Gewinner ist
     const t1Loser = (!m.team_1 || m.team_1 === '[BYE]' || (m.winner_id && !t1Winner));
     const t2Loser = (!m.team_2 || m.team_2 === '[BYE]' || (m.winner_id && !t2Winner));
 
+    // data-team-id hinzugefügt für das Hover-Highlighting
     div.innerHTML = `
-        <div class="team-row ${t1Winner ? 'winner' : ''} ${t1Loser ? 'loser' : ''}">
+        <div class="team-row ${t1Winner ? 'winner' : ''} ${t1Loser ? 'loser' : ''}" data-team-id="${m.team_1 || ''}">
             <div class="flex-center">
                 ${t1.logo ? `<img src="${t1.logo}" class="t-logo">` : ''}
                 <span class="t-name">${t1.name}</span>
             </div>
             <span class="t-score">${m.score_1}</span>
         </div>
-        <div class="team-row ${t2Winner ? 'winner' : ''} ${t2Loser ? 'loser' : ''}">
+        <div class="team-row ${t2Winner ? 'winner' : ''} ${t2Loser ? 'loser' : ''}" data-team-id="${m.team_2 || ''}">
              <div class="flex-center">
                 ${t2.logo ? `<img src="${t2.logo}" class="t-logo">` : ''}
                 <span class="t-name">${t2.name}</span>
@@ -101,8 +124,8 @@ function createCard(m, teams) {
 
 function resolve(id, teams) {
     if (id === '[BYE]') return { name: 'FREILOS', logo: null };
-    if (!id) return { name: 'TBD', logo: null }; // Slot ist leer, wartet auf Gewinner
-    if (!teams[id]) return { name: 'TBD', logo: null }; // Team nicht gefunden
+    if (!id) return { name: 'TBD', logo: null }; 
+    if (!teams[id]) return { name: 'TBD', logo: null }; 
     return teams[id];
 }
 
@@ -126,4 +149,69 @@ function setupTimer(iso) {
         const s = Math.floor((diff % (1000 * 60)) / 1000);
         document.getElementById('countdown').innerText = `${d}T ${h}H ${m}M ${s}S`;
     }, 1000);
+}
+
+// ============================================================================
+// NEUE FUNKTIONEN: HOVER & CHAMPION
+// ============================================================================
+
+function setupHoverEffects() {
+    document.querySelectorAll('.bracket-scroll-wrapper').forEach(wrapper => {
+        // Verhindert doppelte Event-Listener
+        if (wrapper.dataset.hoverBound) return;
+        wrapper.dataset.hoverBound = "true";
+
+        wrapper.addEventListener('mouseover', (e) => {
+            const row = e.target.closest('.team-row');
+            if (!row) return;
+            
+            const teamId = row.getAttribute('data-team-id');
+            // Keine Highlights für leere Slots oder Freilose
+            if (!teamId || teamId === '[BYE]') return;
+
+            wrapper.classList.add('is-hovering');
+            
+            // Finde alle Matches, in denen dieses Team spielt, und lass sie leuchten
+            wrapper.querySelectorAll('.match-card').forEach(card => {
+                const t1 = card.querySelector('.team-row:first-child').getAttribute('data-team-id');
+                const t2 = card.querySelector('.team-row:last-child').getAttribute('data-team-id');
+                if (t1 === teamId || t2 === teamId) {
+                    card.classList.add('highlight-match');
+                }
+            });
+        });
+
+        wrapper.addEventListener('mouseout', () => {
+            wrapper.classList.remove('is-hovering');
+            wrapper.querySelectorAll('.highlight-match').forEach(card => {
+                card.classList.remove('highlight-match');
+            });
+        });
+    });
+}
+
+function checkChampion(bracket, teams) {
+    // Finde das Grand Final
+    const gf = bracket.find(m => m.is_grand_final);
+    
+    // Wenn das Finale beendet ist und einen Gewinner hat
+    if (gf && gf.status === 'FINISHED' && gf.winner_id) {
+        const champ = resolve(gf.winner_id, teams);
+        
+        document.getElementById('champ-name').innerText = champ.name;
+        if (champ.logo) {
+            document.getElementById('champ-logo').src = champ.logo;
+            document.getElementById('champ-logo').style.display = 'block';
+        } else {
+            document.getElementById('champ-logo').style.display = 'none';
+        }
+
+        // Zeige den epischen Screen an
+        document.getElementById('champion-screen').classList.remove('hidden');
+
+        // Erlaube dem User, das Overlay zu schließen, um das finale Bracket zu sehen
+        document.getElementById('close-champ').onclick = () => {
+            document.getElementById('champion-screen').classList.add('hidden');
+        };
+    }
 }
