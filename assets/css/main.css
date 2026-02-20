@@ -328,46 +328,148 @@ h1, h2, h3 {
     font-weight: bold;
 }
 
-/* Champion Fullscreen Overlay (Mit reparierter Animation!) */
+/* ==========================================================================
+   EPIC CHAMPION OVERLAY (FINAL V2)
+   ========================================================================== */
+
 .champion-overlay {
     position: fixed;
     top: 0; left: 0; width: 100vw; height: 100vh;
-    background: rgba(5, 5, 5, 0.95);
+    background: radial-gradient(circle at center, #1a1a1a 0%, #000 100%);
     z-index: 9999;
     display: flex;
     justify-content: center;
     align-items: center;
-    backdrop-filter: blur(15px);
+    overflow: hidden; /* Wichtig für fliegende Teile */
     
-    /* Animations-Setup statt display:none */
+    /* Animation State Logic */
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-    transition: opacity 0.5s ease, visibility 0.5s;
+    transition: opacity 0.8s ease, visibility 0.8s;
 }
 
-/* Wenn das JS die Klasse hinzufügt, blendet es sanft ein */
 .champion-overlay.show-champion {
     opacity: 1;
     visibility: visible;
     pointer-events: all;
 }
 
+/* --- Content Styling --- */
 .champion-content {
+    position: relative;
+    z-index: 5; /* In der Mitte */
     text-align: center;
-    transform: scale(0.8);
-    transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform: scale(0.8) translateY(50px);
+    transition: transform 1s cubic-bezier(0.34, 1.56, 0.64, 1); /* Bounce Effekt */
 }
 .champion-overlay.show-champion .champion-content {
-    transform: scale(1); /* Zoomt episch herein */
+    transform: scale(1) translateY(0);
 }
+
+.champ-subtitle {
+    color: #FFD700; 
+    letter-spacing: 8px; 
+    font-size: 1rem; 
+    margin-bottom: 2rem;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+    opacity: 0; 
+    animation: fadeInUp 1s ease 0.5s forwards;
+}
+
+.logo-wrapper {
+    position: relative;
+    display: inline-block;
+    margin: 0 auto;
+}
+
 .champion-content img {
-    width: 250px; height: 250px; object-fit: contain; margin: 2rem auto;
-    filter: drop-shadow(0 0 30px rgba(0, 240, 255, 0.5));
-    display: block;
+    width: 280px; height: 280px; 
+    object-fit: contain; 
+    margin-bottom: 2rem;
+    position: relative; 
+    z-index: 2;
+    filter: drop-shadow(0 0 50px rgba(255, 215, 0, 0.3));
+    animation: floatLogo 6s ease-in-out infinite;
 }
+
+/* Der leuchtende Halo hinter dem Logo */
+.logo-halo {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 350px; height: 350px;
+    background: radial-gradient(circle, rgba(255,215,0,0.2) 0%, rgba(0,0,0,0) 70%);
+    z-index: 1;
+    animation: pulseHalo 3s infinite;
+}
+
 .champion-content h1 { 
-    font-size: clamp(3rem, 8vw, 6rem); 
-    text-shadow: 0 0 20px var(--primary); 
+    font-size: clamp(3rem, 9vw, 7rem); 
+    color: #fff;
+    text-transform: uppercase;
+    text-shadow: 0 0 30px var(--primary); 
     margin: 0;
+    background: linear-gradient(to bottom, #fff, #888);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
+
+/* --- EBENE 1: Background Shapes (Abstract) --- */
+.champ-bg-layer {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+.abstract-shape {
+    position: absolute;
+    border: 2px solid rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+}
+.shape-1 {
+    width: 60vw; height: 60vw;
+    top: -10vw; left: -10vw;
+    border-color: rgba(0, 240, 255, 0.1);
+    animation: rotateLeft 40s linear infinite;
+}
+.shape-2 {
+    width: 50vw; height: 50vw;
+    bottom: -15vw; right: -15vw;
+    border: 1px dashed rgba(255, 215, 0, 0.1);
+    animation: rotateRight 50s linear infinite;
+}
+.abstract-glow {
+    position: absolute;
+    width: 100%; height: 100%;
+    background: radial-gradient(circle at center, rgba(0, 240, 255, 0.05) 0%, transparent 70%);
+    animation: pulseGlow 5s ease-in-out infinite alternate;
+}
+
+/* --- EBENE 3: Foreground Particles (Vorne) --- */
+.champ-fg-layer {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    z-index: 10;
+    pointer-events: none;
+}
+.particle {
+    position: absolute;
+    background: #fff;
+    border-radius: 50%;
+    opacity: 0;
+}
+.p1 { width: 4px; height: 4px; top: 80%; left: 20%; animation: flyUp 4s ease-out infinite; background: #FFD700; }
+.p2 { width: 6px; height: 6px; top: 90%; left: 80%; animation: flyUp 6s ease-out 1s infinite; background: var(--primary); }
+.p3 { width: 3px; height: 3px; top: 70%; left: 50%; animation: flyUp 5s ease-out 2s infinite; }
+.p4 { width: 5px; height: 5px; top: 85%; left: 30%; animation: flyUp 7s ease-out 0.5s infinite; background: #FFD700; }
+
+/* --- ANIMATIONS KEYFRAMES --- */
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes floatLogo { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+@keyframes rotateLeft { from { transform: rotate(0deg); } to { transform: rotate(-360deg); } }
+@keyframes rotateRight { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+@keyframes flyUp { 
+    0% { transform: translateY(0) scale(1); opacity: 0; } 
+    20% { opacity: 1; } 
+    100% { transform: translateY(-60vh) scale(0); opacity: 0; } 
+}
+@keyframes pulseHalo { 0%, 100% { opacity: 0.3; transform: translate(-50%, -50%) scale(1); } 50% { opacity: 0.6; transform: translate(-50%, -50%) scale(1.1); } }
