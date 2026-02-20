@@ -273,11 +273,24 @@ function setupHoverEffects() {
 function checkChampion(bracket, teams) {
     const gf = bracket.find(m => m.is_grand_final);
     
-    // Wenn das Finale beendet ist und einen Gewinner hat
+    // Check: Ist das Finale vorbei UND gibt es einen Gewinner?
     if (gf && gf.status === 'FINISHED' && gf.winner_id) {
-        const champ = resolve(gf.winner_id, teams);
         
+        // --- SMART CACHE CHECK ---
+        // Wir bauen einen einzigartigen Key: z.B. "seen_UIC_EMBER"
+        const storageKey = `uic_champion_seen_${gf.winner_id}`;
+        const alreadySeen = localStorage.getItem(storageKey);
+
+        // Wenn der User diesen Sieger schon gesehen hat, brechen wir hier ab!
+        if (alreadySeen === 'true') {
+            console.log("Champion screen already seen for:", gf.winner_id);
+            return; 
+        }
+
+        // --- SCREEN AUFBAUEN ---
+        const champ = resolve(gf.winner_id, teams);
         document.getElementById('champ-name').innerText = champ.name;
+        
         if (champ.logo) {
             document.getElementById('champ-logo').src = champ.logo;
             document.getElementById('champ-logo').style.display = 'block';
@@ -287,22 +300,25 @@ function checkChampion(bracket, teams) {
 
         const champScreen = document.getElementById('champion-screen');
 
-        // 1. Harte "hidden" Klasse entfernen, damit CSS überhaupt animieren kann
+        // 1. "hidden" entfernen
         champScreen.classList.remove('hidden');
 
-        // 2. Winziger Timeout, damit der Browser atmen kann, dann zündet die Animation!
+        // 2. Animation starten (mit Timeout)
         setTimeout(() => {
             champScreen.classList.add('show-champion');
+            
+            // --- JETZT SPEICHERN WIR DEN STATUS ---
+            // Damit beim nächsten Reload der Screen NICHT mehr kommt
+            localStorage.setItem(storageKey, 'true');
+            
         }, 50);
 
-        // 3. Weiches Ausblenden, wenn man auf "Zurück zum Bracket" klickt
+        // 3. Schließen Logik
         document.getElementById('close-champ').onclick = () => {
-            champScreen.classList.remove('show-champion'); // Startet den Fade-Out
-            
-            // Nach 500ms (wenn die CSS-Animation fertig ist), räumen wir auf
+            champScreen.classList.remove('show-champion');
             setTimeout(() => {
                 champScreen.classList.add('hidden');
-            }, 500);
+            }, 800); // Warten bis CSS Animation (0.8s) durch ist
         };
     }
 }
