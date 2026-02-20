@@ -126,7 +126,7 @@
       "team_2": "UIC_ABYSS"
     },
     {
-      "score_1": 0,
+      "score_1": 2,
       "score_2": 0,
       "winner_id": null,
       "status": "LIVE",
@@ -141,8 +141,8 @@
       "team_2": "UIC_FREEZER"
     },
     {
-      "score_1": 0,
-      "score_2": 0,
+      "score_1": 2,
+      "score_2": 1,
       "winner_id": null,
       "status": "LIVE",
       "id": "wb_r2_m2",
@@ -183,7 +183,7 @@
       "team_2": "UIC_SPARK"
     },
     {
-      "score_1": 0,
+      "score_1": 2,
       "score_2": 0,
       "winner_id": null,
       "status": "LIVE",
