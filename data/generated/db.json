@@ -156,8 +156,8 @@
       "team_2": "UIC_NOVA"
     },
     {
-      "score_1": 0,
-      "score_2": 0,
+      "score_1": 1,
+      "score_2": 2,
       "winner_id": null,
       "status": "LIVE",
       "id": "wb_r3_m1",
@@ -195,8 +195,8 @@
       "team_2": "UIC_ABYSS"
     },
     {
-      "score_1": 0,
-      "score_2": 0,
+      "score_1": 1,
+      "score_2": 2,
       "winner_id": null,
       "status": "LIVE",
       "id": "lb_r2_m1",
@@ -208,7 +208,7 @@
     },
     {
       "score_1": 0,
-      "score_2": 0,
+      "score_2": 2,
       "winner_id": null,
       "status": "LIVE",
       "id": "lb_r2_m2",
