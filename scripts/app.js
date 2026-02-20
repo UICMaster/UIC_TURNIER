@@ -1,15 +1,14 @@
 const API_PATH = './data/generated/db.json';
 
 document.addEventListener('DOMContentLoaded', init);
+window.addEventListener('resize', drawBracketLines); // Zeichnet Linien neu, wenn das Fenster vergrößert wird
 
 async function init() {
     try {
-        // Cache Buster für Live Updates
         const res = await fetch(`${API_PATH}?t=${Date.now()}`);
         if (!res.ok) throw new Error("DB Error");
         const db = await res.json();
         
-        // Status Weiche
         const s = db.meta.status;
         document.querySelectorAll('.view-section').forEach(el => el.classList.add('hidden'));
 
@@ -22,27 +21,16 @@ async function init() {
             document.getElementById('view-live').classList.remove('hidden');
             document.getElementById('live-title').innerText = db.meta.title;
             
-            // --- NEU 1: Twitch Player Integration ---
-            const streamLink = db.meta.stream_link;
-            const twitchContainer = document.getElementById('twitch-container');
-            // Zeigt Twitch nur im "LIVE" Modus, nicht wenn das Turnier schon "FINISHED" ist
-            if (s === 'LIVE' && streamLink && streamLink.includes('twitch.tv/')) {
-                const channel = streamLink.split('twitch.tv/')[1].split('/')[0];
-                const hostname = window.location.hostname || 'localhost'; // Wichtig für Twitch Embed
-                twitchContainer.innerHTML = `<iframe src="https://player.twitch.tv/?channel=${channel}&parent=${hostname}&muted=false" allowfullscreen></iframe>`;
-                twitchContainer.classList.remove('hidden');
-            } else {
-                twitchContainer.classList.add('hidden');
-                twitchContainer.innerHTML = '';
-            }
+            // 1. Render Team Stream Cards
+            renderTeamStreams(db.teams);
 
-            // Bracket Zeichnen
+            // 2. Render Bracket
             renderBracket(db.bracket, db.teams);
 
-            // --- NEU 2: Hover-Effekte aktivieren ---
+            // 3. Hover-Effekte aktivieren
             setupHoverEffects();
 
-            // --- NEU 3: Champion Screen Check ---
+            // 4. Champion Screen Check
             checkChampion(db.bracket, db.teams);
 
         } else {
@@ -51,6 +39,44 @@ async function init() {
     } catch (e) {
         console.error(e);
     }
+}
+
+// --- NEU: Team Stream Cards generieren ---
+function renderTeamStreams(teams) {
+    const container = document.getElementById('team-streams-container');
+    container.innerHTML = '';
+    
+    // Konvertiert das Object in ein Array und wirft Freilose raus
+    const teamsArray = Object.values(teams).filter(t => t.id !== '[BYE]');
+    
+    if(teamsArray.length === 0) return;
+    
+    container.classList.remove('hidden');
+
+    teamsArray.forEach(t => {
+        // Wir prüfen, ob ein Team einen Link oder einen "live"-Status hat
+        const hasStream = !!t.stream_link;
+        const isLive = t.is_live === true; 
+        
+        // Karte nur anzeigen, wenn es überhaupt einen Stream Link gibt
+        if (!hasStream) return;
+
+        const a = document.createElement('a');
+        a.className = 'stream-card';
+        a.href = t.stream_link;
+        a.target = '_blank';
+        
+        a.innerHTML = `
+            ${t.logo ? `<img src="${t.logo}" class="stream-avatar">` : `<div class="stream-avatar"></div>`}
+            <div class="stream-info">
+                <span class="stream-name">${t.name}</span>
+                <span class="stream-status ${isLive ? 'is-live' : ''}">
+                    ${isLive ? '<div class="live-dot"></div> LIVE AUF TWITCH' : 'OFFLINE'}
+                </span>
+            </div>
+        `;
+        container.appendChild(a);
+    });
 }
 
 function renderBracket(matches, teams) {
@@ -65,6 +91,10 @@ function renderBracket(matches, teams) {
     
     if (lMatches.length > 0) buildColumnTree(lb, lMatches, teams, "LOSER");
     else document.getElementById('lbl-losers').classList.add('hidden');
+
+    // --- NEU: Zeichne die schönen Verbindungslinien! ---
+    // Wir nutzen ein Timeout, damit das DOM und Flexbox zuerst fertig layouten können
+    setTimeout(drawBracketLines, 100); 
 }
 
 function buildColumnTree(container, matches, teams, type) {
@@ -87,11 +117,15 @@ function buildColumnTree(container, matches, teams, type) {
 
 function createCard(m, teams) {
     const div = document.createElement('div');
-    div.className = 'match-card'; // Habe card Klassen bereinigt
+    div.className = 'match-card'; 
     div.id = `match-${m.id}`; 
     
+    // Wichtig für unsere Linien-Logik!
+    div.setAttribute('data-next-match', m.next_match_id || '');
+    div.setAttribute('data-status', m.status);
+    
     if (m.status === 'LIVE') div.classList.add('is-live');
-    if (m.is_grand_final) div.classList.add('grand-final'); // Grand Final Optik
+    if (m.is_grand_final) div.classList.add('grand-final'); 
 
     const t1 = resolve(m.team_1, teams);
     const t2 = resolve(m.team_2, teams);
@@ -102,7 +136,6 @@ function createCard(m, teams) {
     const t1Loser = (!m.team_1 || m.team_1 === '[BYE]' || (m.winner_id && !t1Winner));
     const t2Loser = (!m.team_2 || m.team_2 === '[BYE]' || (m.winner_id && !t2Winner));
 
-    // data-team-id hinzugefügt für das Hover-Highlighting
     div.innerHTML = `
         <div class="team-row ${t1Winner ? 'winner' : ''} ${t1Loser ? 'loser' : ''}" data-team-id="${m.team_1 || ''}">
             <div class="flex-center">
@@ -120,6 +153,60 @@ function createCard(m, teams) {
         </div>
     `;
     return div;
+}
+
+// --- NEU: Magische SVG Verbindungslinien ---
+function drawBracketLines() {
+    ['bracket-winners', 'bracket-losers'].forEach(containerId => {
+        const container = document.getElementById(containerId);
+        if(!container || container.classList.contains('hidden')) return;
+
+        // Erstelle eine SVG Leinwand, falls noch keine da ist
+        let svg = container.querySelector('.bracket-lines-svg');
+        if(!svg) {
+            svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+            svg.setAttribute('class', 'bracket-lines-svg');
+            container.insertBefore(svg, container.firstChild);
+        }
+        
+        // Leinwand muss genauso groß sein wie der Scroll-Bereich
+        svg.style.width = Math.max(container.scrollWidth, container.clientWidth) + 'px';
+        svg.style.height = Math.max(container.scrollHeight, container.clientHeight) + 'px';
+
+        let paths = '';
+        const containerRect = container.getBoundingClientRect();
+
+        const cards = container.querySelectorAll('.match-card');
+        cards.forEach(card => {
+            const nextId = card.getAttribute('data-next-match');
+            if (nextId) {
+                const nextCard = document.getElementById(`match-${nextId}`);
+                if (nextCard && container.contains(nextCard)) { 
+                    const r1 = card.getBoundingClientRect();
+                    const r2 = nextCard.getBoundingClientRect();
+
+                    // Berechne Start (Rechts Mitte der Karte) und Ende (Links Mitte der nächsten Karte)
+                    const startX = r1.right - containerRect.left + container.scrollLeft;
+                    const startY = r1.top + (r1.height / 2) - containerRect.top + container.scrollTop;
+                    
+                    const endX = r2.left - containerRect.left + container.scrollLeft;
+                    const endY = r2.top + (r2.height / 2) - containerRect.top + container.scrollTop;
+
+                    // Für weiche Kurven berechnen wir den Mittelpunkt
+                    const curveX = (startX + endX) / 2;
+                    
+                    // Linie leuchtet auf, wenn das Match bereits abgeschlossen ist!
+                    const isFinished = card.getAttribute('data-status') === 'FINISHED';
+                    const color = isFinished ? 'rgba(0, 240, 255, 0.4)' : 'rgba(255, 255, 255, 0.1)';
+                    const strokeWidth = isFinished ? '2' : '1';
+
+                    // Zeichnet eine geschwungene Bezier-Kurve
+                    paths += `<path d="M ${startX} ${startY} C ${curveX} ${startY}, ${curveX} ${endY}, ${endX} ${endY}" fill="none" stroke="${color}" stroke-width="${strokeWidth}" />`;
+                }
+            }
+        });
+        svg.innerHTML = paths;
+    });
 }
 
 function resolve(id, teams) {
@@ -151,13 +238,8 @@ function setupTimer(iso) {
     }, 1000);
 }
 
-// ============================================================================
-// NEUE FUNKTIONEN: HOVER & CHAMPION
-// ============================================================================
-
 function setupHoverEffects() {
     document.querySelectorAll('.bracket-scroll-wrapper').forEach(wrapper => {
-        // Verhindert doppelte Event-Listener
         if (wrapper.dataset.hoverBound) return;
         wrapper.dataset.hoverBound = "true";
 
@@ -166,12 +248,10 @@ function setupHoverEffects() {
             if (!row) return;
             
             const teamId = row.getAttribute('data-team-id');
-            // Keine Highlights für leere Slots oder Freilose
             if (!teamId || teamId === '[BYE]') return;
 
             wrapper.classList.add('is-hovering');
             
-            // Finde alle Matches, in denen dieses Team spielt, und lass sie leuchten
             wrapper.querySelectorAll('.match-card').forEach(card => {
                 const t1 = card.querySelector('.team-row:first-child').getAttribute('data-team-id');
                 const t2 = card.querySelector('.team-row:last-child').getAttribute('data-team-id');
@@ -191,7 +271,6 @@ function setupHoverEffects() {
 }
 
 function checkChampion(bracket, teams) {
-    // Finde das Grand Final
     const gf = bracket.find(m => m.is_grand_final);
     
     // Wenn das Finale beendet ist und einen Gewinner hat
@@ -206,12 +285,24 @@ function checkChampion(bracket, teams) {
             document.getElementById('champ-logo').style.display = 'none';
         }
 
-        // Zeige den epischen Screen an
-        document.getElementById('champion-screen').classList.remove('hidden');
+        const champScreen = document.getElementById('champion-screen');
 
-        // Erlaube dem User, das Overlay zu schließen, um das finale Bracket zu sehen
+        // 1. Harte "hidden" Klasse entfernen, damit CSS überhaupt animieren kann
+        champScreen.classList.remove('hidden');
+
+        // 2. Winziger Timeout, damit der Browser atmen kann, dann zündet die Animation!
+        setTimeout(() => {
+            champScreen.classList.add('show-champion');
+        }, 50);
+
+        // 3. Weiches Ausblenden, wenn man auf "Zurück zum Bracket" klickt
         document.getElementById('close-champ').onclick = () => {
-            document.getElementById('champion-screen').classList.add('hidden');
+            champScreen.classList.remove('show-champion'); // Startet den Fade-Out
+            
+            // Nach 500ms (wenn die CSS-Animation fertig ist), räumen wir auf
+            setTimeout(() => {
+                champScreen.classList.add('hidden');
+            }, 500);
         };
     }
 }
