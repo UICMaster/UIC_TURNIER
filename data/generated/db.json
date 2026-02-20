@@ -233,8 +233,8 @@
     {
       "score_1": 0,
       "score_2": 2,
-      "winner_id": null,
-      "status": "LIVE",
+      "winner_id": "UIC_NOVA",
+      "status": "FINISHED",
       "id": "lb_r4_m1",
       "round": 4,
       "type": "LOSER",
@@ -246,13 +246,13 @@
       "score_1": 0,
       "score_2": 0,
       "winner_id": null,
-      "status": "WAITING",
+      "status": "LIVE",
       "id": "gf_m1",
       "round": 4,
       "type": "WINNER",
       "next_match_id": null,
       "team_1": "UIC_NIGHT",
-      "team_2": null,
+      "team_2": "UIC_NOVA",
       "is_grand_final": true
     }
   ]
