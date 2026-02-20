@@ -23,7 +23,7 @@
         </div>
     </nav>
 
-    <main class="section-pad">
+<main class="section-pad">
         
         <div id="view-none" class="view-section container text-center hidden">
             <h1 style="font-size: 3rem; margin-bottom: 1rem;">SYSTEM STANDBY</h1>
@@ -50,6 +50,9 @@
                     <div class="live-indicator" style="width:12px; height:12px; background:#ff003c; border-radius:50%; box-shadow: 0 0 10px #ff003c;"></div>
                     <h2 id="live-title" style="margin:0; font-size: 1.5rem;">LIVE FEED</h2>
                 </div>
+
+                <div id="twitch-container" class="twitch-wrapper hidden">
+                    </div>
             
                 <h3 style="color: var(--primary); margin-bottom: 1rem;">WINNERS BRACKET</h3>
                 <div id="bracket-winners" class="bracket-scroll-wrapper">
@@ -62,6 +65,15 @@
         </div>
 
     </main>
+
+    <div id="champion-screen" class="champion-overlay hidden">
+        <div class="champion-content">
+            <h2 style="color: #FFD700; letter-spacing: 5px; margin-bottom: 1rem;">TOURNAMENT CHAMPION</h2>
+            <img id="champ-logo" src="" alt="Champion Logo">
+            <h1 id="champ-name">TEAM NAME</h1>
+            <button id="close-champ" class="btn btn-obsidian" style="margin-top: 3rem;">ZURÜCK ZUM BRACKET</button>
+        </div>
+    </div>
 
     <script src="scripts/app.js"></script>
 </body>
