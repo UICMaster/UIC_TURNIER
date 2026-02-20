@@ -67,11 +67,27 @@
     </main>
 
     <div id="champion-screen" class="champion-overlay hidden">
+        
+        <div class="champ-bg-layer">
+            <div class="abstract-shape shape-1"></div>
+            <div class="abstract-shape shape-2"></div>
+            <div class="abstract-glow"></div>
+        </div>
+
         <div class="champion-content">
-            <h2 style="color: #FFD700; letter-spacing: 5px; margin-bottom: 1rem;">TOURNAMENT CHAMPION</h2>
-            <img id="champ-logo" src="" alt="Champion Logo">
+            <h2 class="champ-subtitle">TOURNAMENT CHAMPION</h2>
+            <div class="logo-wrapper">
+                <img id="champ-logo" src="" alt="Champion Logo">
+                <div class="logo-halo"></div> </div>
             <h1 id="champ-name">TEAM NAME</h1>
-            <button id="close-champ" class="btn btn-obsidian" style="margin-top: 3rem;">ZURÜCK ZUM BRACKET</button>
+            <button id="close-champ" class="btn btn-obsidian" style="margin-top: 3rem; position: relative; z-index: 10;">ZURÜCK ZUM BRACKET</button>
+        </div>
+
+        <div class="champ-fg-layer">
+            <div class="particle p1"></div>
+            <div class="particle p2"></div>
+            <div class="particle p3"></div>
+            <div class="particle p4"></div>
         </div>
     </div>
 
