@@ -1,0 +1,259 @@
+{
+  "meta": {
+    "title": "Das Turnier der Kraft Season 2026",
+    "status": "LIVE",
+    "start_date_iso": "2026-03-01T18:00:00Z",
+    "registration_link": "https://forms.google.com",
+    "stream_link": "https://twitch.tv/ultrainstinctcrew"
+  },
+  "teams": {
+    "UIC_ABYSS": {
+      "id": "UIC_ABYSS",
+      "name": "UIC Abyss",
+      "acronym": "UICA",
+      "logo": "https://cdn0.gamesports.net/league_team_logos/204000/204924.jpg?1765838352",
+      "stream_link": "https://twitch.tv/",
+      "is_live": true
+    },
+    "UIC_EMBER": {
+      "id": "UIC_EMBER",
+      "name": "UIC Ember",
+      "acronym": "UICE",
+      "logo": "https://cdn0.gamesports.net/league_team_logos/211000/211165.jpg?1765449081",
+      "stream_link": "https://twitch.tv/",
+      "is_live": true
+    },
+    "UIC_FREEZER": {
+      "id": "UIC_FREEZER",
+      "name": "UIC Freezer",
+      "acronym": "UICF",
+      "logo": "https://cdn0.gamesports.net/league_team_logos/203000/203146.jpg?1768840480",
+      "stream_link": "https://twitch.tv/",
+      "is_live": true
+    },
+    "UIC_NIGHT": {
+      "id": "UIC_NIGHT",
+      "name": "UIC Night",
+      "acronym": "UICNT",
+      "logo": "https://cdn0.gamesports.net/league_team_logos/212000/212047.jpg?1768386989",
+      "stream_link": "https://twitch.tv/",
+      "is_live": true
+    },
+    "UIC_NOVA": {
+      "id": "UIC_NOVA",
+      "name": "UIC Nova",
+      "acronym": "UICN",
+      "logo": "https://cdn0.gamesports.net/league_team_logos/203000/203447.jpg?1768386652",
+      "stream_link": "https://twitch.tv/",
+      "is_live": true
+    },
+    "UIC_PRIME": {
+      "id": "UIC_PRIME",
+      "name": "UIC Prime",
+      "acronym": "UICP",
+      "logo": "https://cdn0.gamesports.net/league_team_logos/116000/116908.jpg?1768526642",
+      "stream_link": "https://twitch.tv/",
+      "is_live": true
+    },
+    "UIC_SPARK": {
+      "id": "UIC_SPARK",
+      "name": "UIC Spark",
+      "acronym": "UICS",
+      "logo": "https://cdn0.gamesports.net/league_team_logos/208000/208694.jpg?1765150033",
+      "stream_link": "https://twitch.tv/",
+      "is_live": true
+    }
+  },
+  "bracket": [
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": "UIC_PRIME",
+      "status": "FINISHED",
+      "id": "wb_r1_m1",
+      "round": 1,
+      "type": "WINNER",
+      "next_match_id": "wb_r2_m1",
+      "next_slot": 1,
+      "loser_match_id": "lb_r1_m1",
+      "loser_slot": 1,
+      "team_1": "UIC_PRIME",
+      "team_2": "[BYE]"
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "LIVE",
+      "id": "wb_r1_m2",
+      "round": 1,
+      "type": "WINNER",
+      "next_match_id": "wb_r2_m1",
+      "next_slot": 2,
+      "loser_match_id": "lb_r1_m1",
+      "loser_slot": 2,
+      "team_1": "UIC_FREEZER",
+      "team_2": "UIC_SPARK"
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "LIVE",
+      "id": "wb_r1_m3",
+      "round": 1,
+      "type": "WINNER",
+      "next_match_id": "wb_r2_m2",
+      "next_slot": 1,
+      "loser_match_id": "lb_r1_m2",
+      "loser_slot": 1,
+      "team_1": "UIC_EMBER",
+      "team_2": "UIC_NIGHT"
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "LIVE",
+      "id": "wb_r1_m4",
+      "round": 1,
+      "type": "WINNER",
+      "next_match_id": "wb_r2_m2",
+      "next_slot": 2,
+      "loser_match_id": "lb_r1_m2",
+      "loser_slot": 2,
+      "team_1": "UIC_NOVA",
+      "team_2": "UIC_ABYSS"
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "WAITING",
+      "id": "wb_r2_m1",
+      "round": 2,
+      "type": "WINNER",
+      "next_match_id": "wb_r3_m1",
+      "next_slot": 1,
+      "loser_match_id": "lb_r2_m1",
+      "loser_slot": 1,
+      "team_1": "UIC_PRIME",
+      "team_2": null
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "WAITING",
+      "id": "wb_r2_m2",
+      "round": 2,
+      "type": "WINNER",
+      "next_match_id": "wb_r3_m1",
+      "next_slot": 2,
+      "loser_match_id": "lb_r2_m2",
+      "loser_slot": 2,
+      "team_1": null,
+      "team_2": null
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "WAITING",
+      "id": "wb_r3_m1",
+      "round": 3,
+      "type": "WINNER",
+      "next_match_id": "gf_m1",
+      "next_slot": 1,
+      "loser_match_id": "lb_r4_m1",
+      "loser_slot": 1,
+      "team_1": null,
+      "team_2": null
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "WAITING",
+      "id": "lb_r1_m1",
+      "round": 1,
+      "type": "LOSER",
+      "next_match_id": "lb_r2_m1",
+      "team_1": "[BYE]",
+      "team_2": null
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "WAITING",
+      "id": "lb_r1_m2",
+      "round": 1,
+      "type": "LOSER",
+      "next_match_id": "lb_r2_m2",
+      "team_1": null,
+      "team_2": null
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "WAITING",
+      "id": "lb_r2_m1",
+      "round": 2,
+      "type": "LOSER",
+      "next_match_id": "lb_r3_m1",
+      "team_1": null,
+      "team_2": null
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "WAITING",
+      "id": "lb_r2_m2",
+      "round": 2,
+      "type": "LOSER",
+      "next_match_id": "lb_r3_m1",
+      "team_1": null,
+      "team_2": null
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "WAITING",
+      "id": "lb_r3_m1",
+      "round": 3,
+      "type": "LOSER",
+      "next_match_id": "lb_r4_m1",
+      "team_1": null,
+      "team_2": null
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "WAITING",
+      "id": "lb_r4_m1",
+      "round": 4,
+      "type": "LOSER",
+      "next_match_id": "gf_m1",
+      "team_1": null,
+      "team_2": null
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "WAITING",
+      "id": "gf_m1",
+      "round": 4,
+      "type": "WINNER",
+      "next_match_id": null,
+      "team_1": null,
+      "team_2": null,
+      "is_grand_final": true
+    }
+  ]
+}
