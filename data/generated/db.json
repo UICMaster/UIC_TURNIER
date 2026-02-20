@@ -81,8 +81,8 @@
       "team_2": "[BYE]"
     },
     {
-      "score_1": 0,
-      "score_2": 0,
+      "score_1": 2,
+      "score_2": 1,
       "winner_id": null,
       "status": "LIVE",
       "id": "wb_r1_m2",
@@ -97,7 +97,7 @@
     },
     {
       "score_1": 0,
-      "score_2": 0,
+      "score_2": 2,
       "winner_id": null,
       "status": "LIVE",
       "id": "wb_r1_m3",
@@ -111,8 +111,8 @@
       "team_2": "UIC_NIGHT"
     },
     {
-      "score_1": 0,
-      "score_2": 0,
+      "score_1": 2,
+      "score_2": 1,
       "winner_id": null,
       "status": "LIVE",
       "id": "wb_r1_m4",
