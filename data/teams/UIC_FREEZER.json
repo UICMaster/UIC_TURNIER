@@ -2,5 +2,7 @@
   "id": "UIC_FREEZER",
   "name": "UIC Freezer",
   "acronym": "UICF",
-  "logo": "https://cdn0.gamesports.net/league_team_logos/203000/203146.jpg?1768840480"
+  "logo": "https://cdn0.gamesports.net/league_team_logos/203000/203146.jpg?1768840480",
+  "stream_link": "https://twitch.tv/", 
+  "is_live": true 
 }

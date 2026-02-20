@@ -2,5 +2,7 @@
   "id": "UIC_NIGHT",
   "name": "UIC Night",
   "acronym": "UICNT",
-  "logo": "https://cdn0.gamesports.net/league_team_logos/212000/212047.jpg?1768386989"
+  "logo": "https://cdn0.gamesports.net/league_team_logos/212000/212047.jpg?1768386989",
+  "stream_link": "https://twitch.tv/", 
+  "is_live": true 
 }

@@ -2,5 +2,7 @@
   "id": "UIC_NOVA",
   "name": "UIC Nova",
   "acronym": "UICN",
-  "logo": "https://cdn0.gamesports.net/league_team_logos/203000/203447.jpg?1768386652"
+  "logo": "https://cdn0.gamesports.net/league_team_logos/203000/203447.jpg?1768386652",
+  "stream_link": "https://twitch.tv/", 
+  "is_live": true 
 }

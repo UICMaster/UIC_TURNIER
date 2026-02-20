@@ -2,5 +2,7 @@
   "id": "UIC_ABYSS",
   "name": "UIC Abyss",
   "acronym": "UICA",
-  "logo": "https://cdn0.gamesports.net/league_team_logos/204000/204924.jpg?1765838352"
+  "logo": "https://cdn0.gamesports.net/league_team_logos/204000/204924.jpg?1765838352",
+  "stream_link": "https://twitch.tv/", 
+  "is_live": true 
 }
