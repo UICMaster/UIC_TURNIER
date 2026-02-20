@@ -245,8 +245,8 @@
     {
       "score_1": 1,
       "score_2": 2,
-      "winner_id": null,
-      "status": "LIVE",
+      "winner_id": "UIC_NOVA",
+      "status": "FINISHED",
       "id": "gf_m1",
       "round": 4,
       "type": "WINNER",
