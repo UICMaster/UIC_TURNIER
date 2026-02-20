@@ -158,8 +158,8 @@
     {
       "score_1": 1,
       "score_2": 2,
-      "winner_id": null,
-      "status": "LIVE",
+      "winner_id": "UIC_NIGHT",
+      "status": "FINISHED",
       "id": "wb_r3_m1",
       "round": 3,
       "type": "WINNER",
@@ -197,8 +197,8 @@
     {
       "score_1": 1,
       "score_2": 2,
-      "winner_id": null,
-      "status": "LIVE",
+      "winner_id": "UIC_SPARK",
+      "status": "FINISHED",
       "id": "lb_r2_m1",
       "round": 2,
       "type": "LOSER",
@@ -209,8 +209,8 @@
     {
       "score_1": 0,
       "score_2": 2,
-      "winner_id": null,
-      "status": "LIVE",
+      "winner_id": "UIC_NOVA",
+      "status": "FINISHED",
       "id": "lb_r2_m2",
       "round": 2,
       "type": "LOSER",
@@ -222,13 +222,13 @@
       "score_1": 0,
       "score_2": 0,
       "winner_id": null,
-      "status": "WAITING",
+      "status": "LIVE",
       "id": "lb_r3_m1",
       "round": 3,
       "type": "LOSER",
       "next_match_id": "lb_r4_m1",
-      "team_1": null,
-      "team_2": null
+      "team_1": "UIC_SPARK",
+      "team_2": "UIC_NOVA"
     },
     {
       "score_1": 0,
@@ -239,7 +239,7 @@
       "round": 4,
       "type": "LOSER",
       "next_match_id": "gf_m1",
-      "team_1": null,
+      "team_1": "UIC_PRIME",
       "team_2": null
     },
     {
@@ -251,7 +251,7 @@
       "round": 4,
       "type": "WINNER",
       "next_match_id": null,
-      "team_1": null,
+      "team_1": "UIC_NIGHT",
       "team_2": null,
       "is_grand_final": true
     }
