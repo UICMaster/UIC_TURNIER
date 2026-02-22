@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UIC Dashboard | Admin Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #050505;
+            --panel-bg: #111;
+            --primary: #00f0ff;
+            --text-main: #fff;
+            --text-muted: #888;
+        }
+        body { margin: 0; padding: 20px; font-family: 'Roboto', sans-serif; background: var(--bg-dark); color: var(--text-main); }
+        h1, h2, h3 { font-family: 'Rajdhani', sans-serif; text-transform: uppercase; margin: 0 0 15px 0; }
+        
+        .container { max-width: 800px; margin: 0 auto; }
+        .box { background: var(--panel-bg); border: 1px solid rgba(255,255,255,0.1); border-top: 2px solid var(--primary); padding: 30px; border-radius: 4px; box-shadow: 0 10px 30px rgba(0,0,0,0.8); }
+        
+        input[type="password"], input[type="text"] { width: 100%; padding: 12px; margin-bottom: 20px; background: rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.2); color: #fff; font-family: monospace; border-radius: 2px; }
+        input:focus { border-color: var(--primary); outline: none; }
+        
+        .btn { background: var(--primary); color: #000; border: none; padding: 12px 24px; font-family: 'Rajdhani', sans-serif; font-weight: bold; font-size: 1.1rem; cursor: pointer; text-transform: uppercase; transition: all 0.2s; border-radius: 2px; width: 100%; }
+        .btn:hover { background: #fff; }
+        .btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+        /* Match Cards */
+        .match-list { display: flex; flex-direction: column; gap: 15px; margin-top: 20px; }
+        .match-row { display: flex; justify-content: space-between; align-items: center; background: rgba(255,255,255,0.02); border-left: 2px solid rgba(255,255,255,0.1); padding: 15px; transition: border-color 0.2s; }
+        .match-row:hover { border-color: var(--primary); background: rgba(0,240,255,0.02); }
+        
+        .team-info { display: flex; flex-direction: column; gap: 5px; flex: 1; }
+        .team-name { font-family: 'Rajdhani', sans-serif; font-size: 1.2rem; font-weight: bold; }
+        .vs-text { color: var(--text-muted); font-size: 0.8rem; }
+        
+        .score-controls { display: flex; align-items: center; gap: 10px; }
+        .score-input { width: 50px; text-align: center; font-size: 1.5rem; font-weight: bold; background: rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.2); color: var(--primary); padding: 5px; font-family: 'Rajdhani', sans-serif; }
+        
+        .hidden { display: none !important; }
+        #status-msg { margin-top: 15px; text-align: center; font-family: monospace; color: var(--primary); }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div id="login-screen" class="box">
+        <h1>🔒 Admin Access</h1>
+        <p style="color: var(--text-muted); font-size: 0.9rem;">Bitte gib deinen GitHub Personal Access Token (PAT) ein. Der Token verlässt deinen Browser nicht und wird nur genutzt, um direkt mit der GitHub API zu kommunizieren.</p>
+        
+        <label style="display: block; margin-bottom: 5px; color: var(--primary); font-family: 'Rajdhani';">GITHUB TOKEN</label>
+        <input type="password" id="gh-token" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx">
+        
+        <button class="btn" onclick="login()">VERBINDEN</button>
+        <div id="login-error" style="color: #ff003c; margin-top: 10px; display: none;">Verbindung fehlgeschlagen. Token überprüfen.</div>
+    </div>
+
+    <div id="dashboard-screen" class="box hidden">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <h1>🎛️ Live Score Control</h1>
+            <button onclick="logout()" style="background:transparent; border:1px solid #ff003c; color:#ff003c; padding:5px 10px; cursor:pointer;">LOGOUT</button>
+        </div>
+        
+        <p style="color: var(--text-muted); font-size: 0.9rem;">Trage hier die neuen Scores ein. Wenn du auf "SPEICHERN & PUBLISH" klickst, wird das Bracket auf der Live-Seite in ca. 60 Sekunden automatisch aktualisiert.</p>
+        
+        <div id="matches-container" class="match-list">
+            </div>
+
+        <button id="save-btn" class="btn" style="margin-top: 30px;" onclick="saveToGitHub()">🚀 SPEICHERN & PUBLISH (COMMIT)</button>
+        <div id="status-msg"></div>
+    </div>
+</div>
+
+<script>
+    // ==========================================
+    // ⚠️ HIER DEINE GITHUB DATEN EINTRAGEN ⚠️
+    // ==========================================
+    const REPO_OWNER = "UIC_MASTER";
+    const REPO_NAME = "UIC_TURNIER";
+    const BRANCH = "main";
+    const FILE_PATH = "data/generated/db.json";
+    // ==========================================
+
+    let currentToken = localStorage.getItem('uic_admin_token') || "";
+    let fileSha = "";
+    let dbData = null;
+
+    // Wenn Token gespeichert ist, direkt Login versuchen
+    if(currentToken) {
+        document.getElementById('gh-token').value = currentToken;
+        login();
+    }
+
+    async function login() {
+        const tokenInput = document.getElementById('gh-token').value.trim();
+        if(!tokenInput) return;
+        
+        document.getElementById('login-error').style.display = 'none';
+        
+        try {
+            // Wir fragen GitHub nach der db.json Datei
+            const url = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${FILE_PATH}?ref=${BRANCH}`;
+            const res = await fetch(url, {
+                headers: { 'Authorization': `token ${tokenInput}`, 'Accept': 'application/vnd.github.v3+json' }
+            });
+
+            if(!res.ok) throw new Error("Auth Error");
+
+            const data = await res.json();
+            fileSha = data.sha; // WICHTIG: GitHub braucht den SHA-Wert, um Dateien zu überschreiben
+            
+            // Base64 Code von GitHub entschlüsseln
+            const content = decodeURIComponent(escape(atob(data.content)));
+            dbData = JSON.parse(content);
+
+            // Alles geklappt! Token speichern und UI laden
+            currentToken = tokenInput;
+            localStorage.setItem('uic_admin_token', currentToken);
+            
+            document.getElementById('login-screen').classList.add('hidden');
+            document.getElementById('dashboard-screen').classList.remove('hidden');
+            
+            renderMatches();
+
+        } catch (e) {
+            console.error(e);
+            document.getElementById('login-error').style.display = 'block';
+        }
+    }
+
+    function renderMatches() {
+        const container = document.getElementById('matches-container');
+        container.innerHTML = '';
+
+        // Wir filtern Freilose (BYE) und Matches ohne zugewiesene Teams heraus
+        const activeMatches = dbData.bracket.filter(m => 
+            m.team_1 && m.team_1 !== '[BYE]' && 
+            m.team_2 && m.team_2 !== '[BYE]'
+        );
+
+        activeMatches.forEach((m, index) => {
+            const t1Name = resolveTeamName(m.team_1);
+            const t2Name = resolveTeamName(m.team_2);
+
+            const row = document.createElement('div');
+            row.className = 'match-row';
+            row.innerHTML = `
+                <div class="team-info">
+                    <span style="color:var(--text-muted); font-size:0.7rem;">MATCH ID: ${m.id}</span>
+                    <span class="team-name">${t1Name}</span>
+                    <span class="vs-text">VS</span>
+                    <span class="team-name">${t2Name}</span>
+                </div>
+                <div class="score-controls">
+                    <input type="number" id="s1_${index}" class="score-input" value="${m.score_1}" min="0">
+                    <span style="color: #fff; font-weight: bold;">:</span>
+                    <input type="number" id="s2_${index}" class="score-input" value="${m.score_2}" min="0">
+                </div>
+            `;
+            container.appendChild(row);
+        });
+    }
+
+    async function saveToGitHub() {
+        const btn = document.getElementById('save-btn');
+        const msg = document.getElementById('status-msg');
+        
+        btn.disabled = true;
+        btn.innerText = "LÄDT... BITTE WARTEN";
+        msg.innerText = "Verbinde mit GitHub API...";
+
+        // 1. Neue Scores aus den Inputs in unser dbData Objekt schreiben
+        const activeMatches = dbData.bracket.filter(m => m.team_1 && m.team_1 !== '[BYE]' && m.team_2 && m.team_2 !== '[BYE]');
+        
+        activeMatches.forEach((m, index) => {
+            const s1 = parseInt(document.getElementById(`s1_${index}`).value) || 0;
+            const s2 = parseInt(document.getElementById(`s2_${index}`).value) || 0;
+            m.score_1 = s1;
+            m.score_2 = s2;
+        });
+
+        try {
+            // 2. Objekt wieder zu Text machen und für GitHub Base64 verschlüsseln
+            const updatedContent = btoa(unescape(encodeURIComponent(JSON.stringify(dbData, null, 2))));
+
+            const url = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${FILE_PATH}`;
+            
+            const body = {
+                message: "🎛️ Admin Dashboard: Scores aktualisiert",
+                content: updatedContent,
+                sha: fileSha,
+                branch: BRANCH
+            };
+
+            const res = await fetch(url, {
+                method: 'PUT',
+                headers: { 
+                    'Authorization': `token ${currentToken}`, 
+                    'Accept': 'application/vnd.github.v3+json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(body)
+            });
+
+            if(!res.ok) throw new Error("Fehler beim Speichern");
+
+            // Neuen SHA-Wert für zukünftige Änderungen speichern
+            const data = await res.json();
+            fileSha = data.content.sha;
+
+            msg.innerText = "✅ ERFOLGREICH GESPEICHERT! Die Website aktualisiert sich in wenigen Sekunden.";
+            setTimeout(() => { msg.innerText = ""; }, 5000);
+
+        } catch (e) {
+            console.error(e);
+            msg.innerText = "❌ Fehler beim Speichern. Prüfe die Konsole.";
+        } finally {
+            btn.disabled = false;
+            btn.innerText = "🚀 SPEICHERN & PUBLISH (COMMIT)";
+        }
+    }
+
+    function resolveTeamName(id) {
+        if(!dbData.teams[id]) return "TBD";
+        return dbData.teams[id].name;
+    }
+
+    function logout() {
+        localStorage.removeItem('uic_admin_token');
+        location.reload();
+    }
+</script>
+</body>
+</html>
