@@ -493,5 +493,3 @@ function closeModal() {
         overlay.classList.add('hidden');
     }, 300);
 }
-    }, 300);
-}
