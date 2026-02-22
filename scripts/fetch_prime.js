@@ -3,7 +3,8 @@ const path = require('path');
 
 // --- 1. CONFIGURATION ---
 const DATA_FILE = 'prime_stats.json';
-const OUTPUT_PATH = path.resolve(__dirname, '../', DATA_FILE);
+// WICHTIG: Pfad zeigt jetzt in den 'data' Ordner!
+const OUTPUT_PATH = path.resolve(__dirname, '../data', DATA_FILE);
 
 // Set this to the start of the current split
 const SEASON_START = new Date('2026-01-26T00:00:00'); 
