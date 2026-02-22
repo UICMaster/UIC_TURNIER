@@ -14,6 +14,29 @@
       "logo": "https://cdn0.gamesports.net/league_team_logos/204000/204924.jpg?1765838352",
       "stream_link": "https://twitch.tv/",
       "is_live": true,
+      "roster": [
+        {
+          "name": "Test",
+          "role": "Midlane",
+          "is_captain": true
+        },
+        {
+          "name": "Test",
+          "role": "Jungle"
+        },
+        {
+          "name": "Test",
+          "role": "ADC"
+        },
+        {
+          "name": "HealBot9000",
+          "role": "Support"
+        },
+        {
+          "name": "Test",
+          "role": "Toplane"
+        }
+      ],
       "prime_intel": {
         "id": "204924",
         "key": "abyss",
@@ -231,7 +254,7 @@
           ]
         },
         "next_match": {
-          "date": "2026-02-22T19:00:00+01:00",
+          "date": "2026-02-23T19:00:00+01:00",
           "tag": "TAUBE",
           "link": "https://www.primeleague.gg/de/leagues/matches/1154456"
         },
