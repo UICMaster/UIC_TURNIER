@@ -1,43 +1,70 @@
 const API_PATH = './data/generated/db.json';
 
+// --- NEU: Globale Variablen für unser Geister-Update ---
+let currentDbString = null; 
+let countdownInterval = null;
+
 document.addEventListener('DOMContentLoaded', init);
 window.addEventListener('resize', drawBracketLines); // Zeichnet Linien neu, wenn das Fenster vergrößert wird
 
 async function init() {
+    // 1. Erster Ladevorgang (sofort beim Öffnen der Seite)
+    await fetchAndRender();
+    
+    // 2. Geister-Updates: Alle 30 Sekunden lautlos im Hintergrund prüfen (30000 Millisekunden)
+    setInterval(fetchAndRender, 30000); 
+}
+
+// --- NEU: Die Funktion, die im Hintergrund lauscht ---
+async function fetchAndRender() {
     try {
         const res = await fetch(`${API_PATH}?t=${Date.now()}`);
         if (!res.ok) throw new Error("DB Error");
-        const db = await res.json();
         
-        const s = db.meta.status;
-        document.querySelectorAll('.view-section').forEach(el => el.classList.add('hidden'));
-
-        if (s === 'UPCOMING') {
-            document.getElementById('view-upcoming').classList.remove('hidden');
-            setupTimer(db.meta.start_date_iso);
-            document.getElementById('event-title').innerText = db.meta.title;
-            document.getElementById('reg-link').href = db.meta.registration_link;
-        } else if (s === 'LIVE' || s === 'FINISHED') {
-            document.getElementById('view-live').classList.remove('hidden');
-            document.getElementById('live-title').innerText = db.meta.title;
-            
-            // 1. Render Team Stream Cards
-            renderTeamStreams(db.teams);
-
-            // 2. Render Bracket
-            renderBracket(db.bracket, db.teams);
-
-            // 3. Hover-Effekte aktivieren
-            setupHoverEffects();
-
-            // 4. Champion Screen Check
-            checkChampion(db.bracket, db.teams);
-
-        } else {
-            document.getElementById('view-none').classList.remove('hidden');
-        }
+        const text = await res.text();
+        
+        // DIE MAGIE: Ist der Text exakt gleich wie vor 30 Sekunden? Dann brich ab!
+        if (currentDbString === text) return; 
+        
+        // Es gab ein Update! Seite neu bauen.
+        currentDbString = text;
+        const db = JSON.parse(text);
+        
+        updateUI(db);
+        
     } catch (e) {
-        console.error(e);
+        console.error("Geister-Update fehlgeschlagen:", e);
+    }
+}
+
+// Hier steckt jetzt deine bisherige Start-Logik drin
+function updateUI(db) {
+    const s = db.meta.status;
+    document.querySelectorAll('.view-section').forEach(el => el.classList.add('hidden'));
+
+    if (s === 'UPCOMING') {
+        document.getElementById('view-upcoming').classList.remove('hidden');
+        setupTimer(db.meta.start_date_iso);
+        document.getElementById('event-title').innerText = db.meta.title;
+        document.getElementById('reg-link').href = db.meta.registration_link;
+    } else if (s === 'LIVE' || s === 'FINISHED') {
+        document.getElementById('view-live').classList.remove('hidden');
+        document.getElementById('live-title').innerText = db.meta.title;
+        
+        // 1. Render Team Stream Cards
+        renderTeamStreams(db.teams);
+
+        // 2. Render Bracket
+        renderBracket(db.bracket, db.teams);
+
+        // 3. Hover-Effekte aktivieren
+        setupHoverEffects();
+
+        // 4. Champion Screen Check
+        checkChampion(db.bracket, db.teams);
+
+    } else {
+        document.getElementById('view-none').classList.remove('hidden');
     }
 }
 
@@ -225,8 +252,11 @@ function getRoundName(r, max, type) {
 }
 
 function setupTimer(iso) {
+    // WICHTIG: Wenn schon ein Timer läuft (z.B. nach einem Geister-Update), löschen wir ihn erst!
+    if (countdownInterval) clearInterval(countdownInterval);
+
     const target = new Date(iso).getTime();
-    setInterval(() => {
+    countdownInterval = setInterval(() => {
         const diff = target - new Date().getTime();
         if (diff < 0) return document.getElementById('countdown').innerText = "BEREIT";
         
