@@ -475,35 +475,32 @@ h1, h2, h3 {
 @keyframes pulseHalo { 0%, 100% { opacity: 0.3; transform: translate(-50%, -50%) scale(1); } 50% { opacity: 0.6; transform: translate(-50%, -50%) scale(1.1); } }
 
 /* ==========================================================================
-   TACTICAL 16:9 ESPORTS MODAL (MATCH & TEAM DETAILS)
+   TACTICAL 16:9 ESPORTS MODAL (PRECISION HUD)
    ========================================================================== */
 
 .modal-overlay {
     position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
-    background: rgba(0, 0, 0, 0.85); /* Tiefes, dunkles Overlay */
-    backdrop-filter: blur(4px);
+    background: rgba(0, 0, 0, 0.85); 
+    backdrop-filter: blur(6px);
     z-index: 9000;
     display: flex; justify-content: center; align-items: center;
     opacity: 0; visibility: hidden;
     transition: opacity 0.2s ease, visibility 0.2s;
 }
-.modal-overlay.active { 
-    opacity: 1; visibility: visible; 
-}
+.modal-overlay.active { opacity: 1; visibility: visible; }
 
 .custom-modal {
     position: relative;
     width: 95vw; max-width: 900px;
     aspect-ratio: 16 / 9;
-    overflow: hidden;
-    background: var(--bg-glass-heavy); /* Gleicher Hintergrund wie Brackets */
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-top: 2px solid var(--primary); /* Taktischer Akzent oben */
-    border-radius: 4px; /* Sehr scharfe Kanten */
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.9);
+    overflow: hidden; /* Die Box an sich bleibt absolut starr */
+    background: #0a0a0c; /* Sehr tiefes, neutrales Schwarz (Valorant-Style) */
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-top: 1px solid var(--primary);
+    border-radius: 0; /* Keine runden Ecken mehr! Pures Rechteck */
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.95);
     padding: 0;
     
-    /* Schnelles, präzises HUD Pop-In */
     transform: scale(0.98) translateY(10px);
     transition: transform 0.25s cubic-bezier(0, 0, 0.2, 1);
 }
@@ -511,27 +508,34 @@ h1, h2, h3 {
 
 #modal-content { width: 100%; height: 100%; }
 
-/* --- Taktisches Split-Layout --- */
-.modal-split {
-    display: flex; width: 100%; height: 100%;
-}
+/* --- Taktisches Split-Layout (30 / 70) --- */
+.modal-split { display: flex; width: 100%; height: 100%; }
+
 .modal-left {
-    flex: 0 0 40%;
-    background: rgba(0, 0, 0, 0.4); /* Etwas dunkler für den Kontrast */
+    flex: 0 0 32%; /* Kompakter! */
+    background: rgba(255, 255, 255, 0.01); 
     border-right: 1px solid rgba(255, 255, 255, 0.05);
-    padding: 3rem;
+    padding: 2rem 1.5rem;
     display: flex; flex-direction: column; justify-content: center; align-items: flex-start;
-}
-.modal-right {
-    flex: 1;
-    padding: 3rem;
-    display: flex; flex-direction: column; justify-content: center;
+    position: relative;
 }
 
+.modal-right {
+    flex: 1; /* Nimmt den restlichen Platz */
+    padding: 2rem 2.5rem;
+    display: flex; flex-direction: column; justify-content: flex-start; /* Daten fangen oben an */
+    overflow-y: auto; /* LÖSUNG FÜR ZU VIELE SPIELER: Scrollen erlaubt! */
+}
+
+/* Taktische, hauchdünne Scrollbar für die rechte Seite */
+.modal-right::-webkit-scrollbar { width: 2px; }
+.modal-right::-webkit-scrollbar-track { background: transparent; }
+.modal-right::-webkit-scrollbar-thumb { background: var(--primary); }
+
 .btn-close {
-    background: rgba(0, 0, 0, 0.5); border: 1px solid rgba(255,255,255,0.1); 
-    color: var(--text-muted); font-size: 1.5rem; width: 40px; height: 40px;
-    position: absolute; top: 15px; right: 15px; border-radius: 2px;
+    background: transparent; border: 1px solid rgba(255,255,255,0.1); 
+    color: var(--text-muted); font-size: 1.2rem; width: 30px; height: 30px;
+    position: absolute; top: 10px; right: 10px; border-radius: 0;
     cursor: pointer; transition: all 0.2s;
     display: flex; justify-content: center; align-items: center; z-index: 10;
 }
@@ -539,44 +543,59 @@ h1, h2, h3 {
 
 /* --- Typografie & HUD Elemente --- */
 .hud-label {
-    font-size: 0.75rem; color: var(--text-muted); letter-spacing: 2px;
-    text-transform: uppercase; font-weight: bold; margin-bottom: 0.5rem;
+    font-size: 0.65rem; color: var(--text-muted); letter-spacing: 2px;
+    text-transform: uppercase; font-weight: normal; margin-bottom: 0.3rem;
     display: block; font-family: var(--font-head);
 }
-.modal-title { font-size: 2.5rem; color: #fff; margin: 0 0 1rem 0; font-family: var(--font-head); text-transform: uppercase; line-height: 1.1; }
+.modal-title { 
+    font-size: 1.8rem; color: #fff; margin: 0 0 1rem 0; 
+    font-family: var(--font-head); text-transform: uppercase; 
+    line-height: 1.1; letter-spacing: 1px; 
+}
 
-/* Taktisches Roster Layout (Listenform, keine verspielten Boxen) */
-.roster-list { display: flex; flex-direction: column; gap: 8px; margin-top: 10px; }
+/* Taktisches Roster (Minimalistisch, feine Linien) */
+.roster-list { display: flex; flex-direction: column; gap: 0; margin-top: 5px; }
 .roster-row {
     display: flex; justify-content: space-between; align-items: center;
-    padding: 8px 15px; background: rgba(255, 255, 255, 0.02);
-    border-left: 2px solid rgba(255, 255, 255, 0.1);
+    padding: 8px 10px; background: transparent;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    border-left: 1px solid transparent;
+    transition: all 0.2s;
 }
-.roster-row:hover { border-left-color: var(--primary); background: rgba(0, 240, 255, 0.03); }
-.r-name { font-family: var(--font-head); font-weight: bold; font-size: 1rem; color: #fff; }
-.r-role { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; }
+.roster-row:hover { border-left-color: var(--primary); background: rgba(0, 240, 255, 0.02); padding-left: 15px; }
+.r-name { font-family: var(--font-head); font-weight: normal; font-size: 0.9rem; color: #fff; letter-spacing: 1px; }
+.r-role { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 1px; }
 
-/* Taktische Stats Boxen */
+/* HUD Stats Boxen (Mit technischen Eck-Akzenten) */
 .stat-box {
-    background: rgba(0, 0, 0, 0.3); border: 1px solid rgba(255, 255, 255, 0.05);
-    padding: 15px; display: flex; flex-direction: column; justify-content: center; align-items: center;
+    background: transparent; border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 12px 15px; display: flex; flex-direction: column; 
+    justify-content: center; align-items: flex-start;
+    position: relative;
 }
-.stat-box.highlight { border-bottom: 2px solid var(--primary); }
-.stat-value { font-size: 1.8rem; font-family: var(--font-head); color: #fff; font-weight: bold; line-height: 1; }
+/* Kleine Taktik-Ecke oben links */
+.stat-box::before {
+    content: ''; position: absolute; top: -1px; left: -1px; width: 6px; height: 6px;
+    border-top: 1px solid var(--primary); border-left: 1px solid var(--primary);
+}
+.stat-box.highlight { border-color: rgba(0, 240, 255, 0.2); }
+.stat-value { font-size: 1.4rem; font-family: var(--font-head); color: #fff; font-weight: normal; line-height: 1; margin-top: 4px; }
 .stat-value.cyan { color: var(--primary); }
 
+/* Button (Scharfkantig, weniger klobig) */
 .tactical-btn { 
-    display: inline-flex; align-items: center; justify-content: center; gap: 10px;
-    margin-top: auto; color: #000; background: var(--primary); 
-    padding: 12px 24px; text-decoration: none; text-transform: uppercase;
-    font-weight: bold; font-family: var(--font-head); letter-spacing: 1px;
-    border-radius: 2px; transition: background 0.2s; width: 100%;
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    margin-top: auto; color: var(--primary); background: transparent; 
+    border: 1px solid var(--primary);
+    padding: 10px 16px; text-decoration: none; text-transform: uppercase;
+    font-size: 0.75rem; font-family: var(--font-head); letter-spacing: 2px;
+    border-radius: 0; transition: all 0.2s; width: 100%;
 }
-.tactical-btn:hover { background: #fff; }
+.tactical-btn:hover { background: var(--primary); color: #000; }
 
 @media (max-width: 768px) {
-    .custom-modal { aspect-ratio: auto; max-height: 85vh; overflow-y: auto; display: block; border-top: none; }
+    .custom-modal { aspect-ratio: auto; max-height: 85vh; display: block; border-top: none; }
     .modal-split { flex-direction: column; height: auto; }
     .modal-left { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.05); padding: 2rem; }
-    .modal-right { padding: 2rem; }
+    .modal-right { padding: 2rem; overflow-y: visible; }
 }
