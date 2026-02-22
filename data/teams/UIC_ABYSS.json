@@ -4,5 +4,28 @@
   "acronym": "UICA",
   "logo": "https://cdn0.gamesports.net/league_team_logos/204000/204924.jpg?1765838352",
   "stream_link": "https://twitch.tv/", 
-  "is_live": true 
+  "is_live": true,
+  "roster": [
+    { 
+      "name": "Test", 
+      "role": "Midlane", 
+      "is_captain": true 
+    },
+    { 
+      "name": "Test", 
+      "role": "Jungle" 
+    },
+    { 
+      "name": "Test", 
+      "role": "ADC" 
+    },
+    { 
+      "name": "HealBot9000", 
+      "role": "Support" 
+    },
+    { 
+      "name": "Test", 
+      "role": "Toplane" 
+    }
+  ]
 }
