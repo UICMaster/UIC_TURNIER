@@ -352,7 +352,7 @@ function openTeamModal(teamId) {
 
     const content = document.getElementById('modal-content');
     
-    // 1. ROSTER (Taktische Liste)
+    // 1. ROSTER
     let rosterData = [];
     if (team.prime_intel && team.prime_intel.roster && team.prime_intel.roster.length > 0) {
         rosterData = team.prime_intel.roster;
@@ -360,7 +360,7 @@ function openTeamModal(teamId) {
         rosterData = team.roster;
     }
 
-    let rosterHTML = '<p class="text-muted" style="font-size: 0.85rem;">KEIN ROSTER HINTERLEGT.</p>';
+    let rosterHTML = '<p class="text-muted" style="font-size: 0.75rem;">// NO DATA</p>';
     if (rosterData.length > 0) {
         rosterHTML = '<div class="roster-list">' + rosterData.map(p => {
             const name = p.summoner || p.name; 
@@ -376,22 +376,23 @@ function openTeamModal(teamId) {
 
     // 2. PRIME LEAGUE STATS
     let statsHTML = '';
-    let division = team.acronym || 'UNKNOWN DIV';
+    let division = team.acronym || 'UNKNOWN';
     
     if (team.prime_intel) {
         const intel = team.prime_intel;
         division = intel.meta.div;
         
         const formBoxes = intel.stats.form.map(f => {
-            let color = 'rgba(255,255,255,0.1)';
-            let textColor = '#fff';
-            if (f === 'W') { color = 'rgba(0, 240, 255, 0.15)'; textColor = 'var(--primary)'; }
-            if (f === 'L') { color = 'rgba(255, 0, 60, 0.15)'; textColor = '#ff003c'; }
-            return `<span style="display:inline-block; width:24px; height:24px; line-height:24px; text-align:center; background:${color}; color:${textColor}; font-weight:bold; border:1px solid rgba(255,255,255,0.05); margin-right:4px;">${f}</span>`;
+            let color = 'rgba(255,255,255,0.05)';
+            let textColor = '#aaa';
+            if (f === 'W') { color = 'rgba(0, 240, 255, 0.1)'; textColor = 'var(--primary)'; }
+            if (f === 'L') { color = 'rgba(255, 0, 60, 0.1)'; textColor = '#ff003c'; }
+            // Kleinere, präzisere Boxen für W/L
+            return `<span style="display:inline-block; width:18px; height:18px; line-height:16px; text-align:center; background:${color}; color:${textColor}; font-size: 0.7rem; font-weight:normal; border:1px solid rgba(255,255,255,0.05); margin-right:3px;">${f}</span>`;
         }).join('');
 
         statsHTML = `
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 2rem;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 2rem;">
                 <div class="stat-box highlight">
                     <span class="hud-label">WIN RATE</span>
                     <div class="stat-value cyan">${intel.stats.win_rate}%</div>
@@ -403,8 +404,8 @@ function openTeamModal(teamId) {
             </div>
             
             ${intel.stats.form.length > 0 ? `
-            <div style="margin-bottom: 2rem;">
-                <span class="hud-label">LAST 5 MATCHES</span>
+            <div style="margin-bottom: 2.5rem;">
+                <span class="hud-label">FORM HISTORY</span>
                 <div style="display: flex;">${formBoxes}</div>
             </div>
             ` : ''}
@@ -416,9 +417,9 @@ function openTeamModal(teamId) {
             <div class="modal-left">
                 <span class="hud-label" style="color: var(--primary);">${division}</span>
                 <h2 class="modal-title">${team.name}</h2>
-                ${team.logo ? `<img src="${team.logo}" style="width:140px; height:140px; object-fit:contain; opacity: 0.9; margin: 1.5rem 0;">` : ''}
+                ${team.logo ? `<img src="${team.logo}" style="width:100px; height:100px; object-fit:contain; opacity: 0.8; margin: 1rem 0; filter: drop-shadow(0 0 10px rgba(0,240,255,0.2));">` : ''}
                 
-                ${team.prime_intel && team.prime_intel.team_link ? `<a href="${team.prime_intel.team_link}" target="_blank" class="tactical-btn">EXTERNAL DATA</a>` : ''}
+                ${team.prime_intel && team.prime_intel.team_link ? `<a href="${team.prime_intel.team_link}" target="_blank" class="tactical-btn">DATABASE LINK</a>` : ''}
             </div>
             
             <div class="modal-right">
@@ -443,15 +444,15 @@ function openMatchModal(matchId) {
     const t2 = resolve(match.team_2, globalTeams);
     const content = document.getElementById('modal-content');
     
-    let detailsHTML = '<div class="stat-box" style="margin-top: 10px; padding: 20px;"><span class="hud-label" style="margin:0;">NO MAP DATA</span></div>';
+    let detailsHTML = '<div class="stat-box" style="margin-top: 10px;"><span class="hud-label" style="margin:0;">// NO MAP DATA FOUND</span></div>';
 
     if (match.details && match.details.maps && match.details.maps.length > 0) {
         detailsHTML = '<div class="roster-list">' + match.details.maps.map(m => `
             <div class="roster-row">
                 <span class="hud-label" style="margin:0; color:#fff;">${m.map_name}</span>
-                <span style="font-family: var(--font-head); font-size: 1.2rem; font-weight: bold; color: var(--text-muted);">
+                <span style="font-family: var(--font-head); font-size: 1.1rem; color: var(--text-muted);">
                     <span style="${m.score_1 > m.score_2 ? 'color: var(--primary);' : ''}">${m.score_1}</span> 
-                    <span style="margin: 0 8px;">:</span> 
+                    <span style="margin: 0 4px; font-size: 0.9rem;">:</span> 
                     <span style="${m.score_2 > m.score_1 ? 'color: var(--primary);' : ''}">${m.score_2}</span>
                 </span>
             </div>
@@ -460,18 +461,18 @@ function openMatchModal(matchId) {
 
     content.innerHTML = `
         <div class="modal-split">
-            <div class="modal-left" style="align-items: center; text-align: center;">
-                <span class="hud-label">MATCH STATUS: ${match.status}</span>
-                <h2 class="modal-title" style="font-size: 1.8rem; margin: 1rem 0;">${t1.name} <br><span style="color:var(--text-muted); font-size: 1rem;">VS</span><br> ${t2.name}</h2>
+            <div class="modal-left" style="align-items: flex-start;">
+                <span class="hud-label">STATUS: ${match.status}</span>
+                <h2 class="modal-title" style="font-size: 1.6rem; margin: 1rem 0;">${t1.name} <br><span style="color:var(--text-muted); font-size: 0.9rem;">VS</span><br> ${t2.name}</h2>
                 
-                <div class="stat-box highlight" style="width: 100%; margin: 1.5rem 0; padding: 1.5rem;">
-                    <span class="hud-label">OVERALL SCORE</span>
-                    <div style="font-size: 3.5rem; font-family: var(--font-head); font-weight: bold; color: #fff; line-height: 1;">
-                        ${match.score_1} <span style="color: var(--primary);">-</span> ${match.score_2}
+                <div class="stat-box highlight" style="width: 100%; margin: 1rem 0;">
+                    <span class="hud-label">SERIES SCORE</span>
+                    <div style="font-size: 2.5rem; font-family: var(--font-head); color: #fff; line-height: 1; margin-top: 5px;">
+                        ${match.score_1} <span style="color: var(--primary); font-size: 2rem;">-</span> ${match.score_2}
                     </div>
                 </div>
 
-                ${match.details && match.details.vod_link ? `<a href="${match.details.vod_link}" target="_blank" class="tactical-btn">WATCH VOD</a>` : ''}
+                ${match.details && match.details.vod_link ? `<a href="${match.details.vod_link}" target="_blank" class="tactical-btn">WATCH REPLAY</a>` : ''}
             </div>
             
             <div class="modal-right">
