@@ -311,15 +311,18 @@ function checkChampion(bracket, teams) {
 }
 
 // ============================================================================
-// SMART SIDE PANEL LOGIK (Match & Team Profile)
+// COMPACT ESPORTS MODAL LOGIK (Match & Team Profile)
 // ============================================================================
 
 function setupPanelEvents() {
-    const overlay = document.getElementById('info-overlay');
-    const closeBtn = document.getElementById('close-panel');
+    const overlay = document.getElementById('modal-overlay');
+    const closeBtn = document.getElementById('close-modal');
     
-    overlay.onclick = closePanel;
-    closeBtn.onclick = closePanel;
+    // Modal schließen bei Klick auf Hintergrund oder X
+    overlay.onclick = (e) => {
+        if (e.target === overlay) closeModal();
+    };
+    closeBtn.onclick = closeModal;
 
     document.querySelectorAll('.bracket-scroll-wrapper').forEach(wrapper => {
         if (wrapper.dataset.clickBound) return;
@@ -330,26 +333,26 @@ function setupPanelEvents() {
             if (teamRow) {
                 e.stopPropagation(); 
                 const teamId = teamRow.getAttribute('data-team-id');
-                if (teamId && teamId !== '[BYE]') openTeamPanel(teamId);
+                if (teamId && teamId !== '[BYE]') openTeamModal(teamId);
                 return;
             }
 
             const matchCard = e.target.closest('.match-card');
             if (matchCard) {
                 const matchId = matchCard.id.replace('match-', '');
-                openMatchPanel(matchId);
+                openMatchModal(matchId);
             }
         });
     });
 }
 
-function openTeamPanel(teamId) {
+function openTeamModal(teamId) {
     const team = globalTeams[teamId];
     if(!team) return;
 
-    const content = document.getElementById('panel-content');
+    const content = document.getElementById('modal-content');
     
-    // 1. ROSTER (Prime League oder manuell)
+    // 1. ROSTER (Kompaktes Grid-Design)
     let rosterData = [];
     if (team.prime_intel && team.prime_intel.roster && team.prime_intel.roster.length > 0) {
         rosterData = team.prime_intel.roster;
@@ -357,22 +360,23 @@ function openTeamPanel(teamId) {
         rosterData = team.roster;
     }
 
-    let rosterHTML = '<p class="text-muted">Kein Roster hinterlegt.</p>';
+    let rosterHTML = '<p class="text-muted text-center">Kein Roster hinterlegt.</p>';
     if (rosterData.length > 0) {
-        rosterHTML = '<ul class="info-list">' + rosterData.map(p => {
+        rosterHTML = '<div class="roster-grid">' + rosterData.map(p => {
             const name = p.summoner || p.name; 
             const role = p.is_captain ? '👑 Captain' : (p.role || 'Player');
+            const roleColor = p.is_captain ? '#FFD700' : 'var(--text-muted)';
             return `
-            <li class="info-item">
-                <span style="font-weight: bold; font-family: var(--font-head);">${name}</span>
-                <span style="color: ${p.is_captain ? '#FFD700' : 'var(--text-muted)'}; font-size: 0.85rem;">${role}</span>
-            </li>
-        `}).join('') + '</ul>';
+            <div class="roster-card">
+                <span class="r-name">${name}</span>
+                <span class="r-role" style="color: ${roleColor};">${role}</span>
+            </div>
+        `}).join('') + '</div>';
     }
 
     // 2. PRIME LEAGUE STATS
     let statsHTML = '';
-    let division = team.acronym || 'TEAM';
+    let division = team.acronym || 'TEAM PROFILE';
     
     if (team.prime_intel) {
         const intel = team.prime_intel;
@@ -382,101 +386,112 @@ function openTeamPanel(teamId) {
             let color = '#888';
             if (f === 'W') color = '#00F0FF'; 
             if (f === 'L') color = '#ff003c'; 
-            return `<span style="display:inline-block; width:20px; height:20px; line-height:20px; text-align:center; background:${color}; color:#000; font-weight:bold; border-radius:3px; margin-right:4px;">${f}</span>`;
+            return `<span style="display:inline-block; width:22px; height:22px; line-height:22px; text-align:center; background:${color}; color:#000; font-weight:bold; border-radius:4px; margin:0 3px;">${f}</span>`;
         }).join('');
 
         statsHTML = `
-            <h3 style="color: var(--primary); margin-top: 2rem; margin-bottom: 1rem;">SEASON STATS</h3>
-            <div style="display: flex; gap: 10px; margin-bottom: 15px;">
-                <div style="flex: 1; background: rgba(255,255,255,0.05); padding: 15px; border-radius: 8px; text-align: center;">
-                    <div style="font-size: 2rem; font-weight: bold; font-family: var(--font-head); color: #fff;">${intel.stats.win_rate}%</div>
-                    <div style="font-size: 0.7rem; color: var(--text-muted); letter-spacing: 1px;">WIN RATE</div>
+            <div style="display: flex; gap: 10px; margin: 1.5rem 0;">
+                <div style="flex: 1; background: rgba(0,240,255,0.05); padding: 15px; border-radius: 8px; text-align: center; border: 1px solid rgba(0,240,255,0.1);">
+                    <div style="font-size: 2rem; font-weight: bold; font-family: var(--font-head); color: var(--primary); line-height: 1;">${intel.stats.win_rate}%</div>
+                    <div style="font-size: 0.65rem; color: var(--text-muted); letter-spacing: 1px; margin-top: 5px;">WIN RATE</div>
                 </div>
-                <div style="flex: 1; background: rgba(255,255,255,0.05); padding: 15px; border-radius: 8px; text-align: center;">
-                    <div style="font-size: 2rem; font-weight: bold; font-family: var(--font-head); color: #fff;">${intel.stats.wins} - ${intel.stats.losses}</div>
-                    <div style="font-size: 0.7rem; color: var(--text-muted); letter-spacing: 1px;">WINS / LOSSES</div>
+                <div style="flex: 1; background: rgba(255,255,255,0.03); padding: 15px; border-radius: 8px; text-align: center; border: 1px solid rgba(255,255,255,0.05);">
+                    <div style="font-size: 1.5rem; font-weight: bold; font-family: var(--font-head); color: #fff; line-height: 1; margin-top: 4px;">${intel.stats.wins} - ${intel.stats.losses}</div>
+                    <div style="font-size: 0.65rem; color: var(--text-muted); letter-spacing: 1px; margin-top: 9px;">W/L MAPS</div>
                 </div>
             </div>
             
             ${intel.stats.form.length > 0 ? `
-            <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 6px; display: flex; align-items: center; justify-content: space-between;">
-                <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: bold;">AKTUELLE FORM</span>
+            <div style="text-align: center; margin-bottom: 1.5rem;">
+                <div style="font-size: 0.75rem; color: var(--text-muted); font-weight: bold; margin-bottom: 8px; letter-spacing: 1px;">AKTUELLE FORM</div>
                 <div>${formBoxes}</div>
             </div>
             ` : ''}
 
-            ${intel.team_link ? `<a href="${intel.team_link}" target="_blank" class="vod-link" style="margin-top: 1rem; width: 100%; justify-content: center;">🔗 PRIME LEAGUE PROFIL</a>` : ''}
+            ${intel.team_link ? `<a href="${intel.team_link}" target="_blank" class="vod-link">🔗 PRIME LEAGUE PROFIL</a>` : ''}
         `;
     }
 
     content.innerHTML = `
-        <div class="panel-header">
-            ${team.logo ? `<img src="${team.logo}" style="width:70px; height:70px; object-fit:contain; margin-bottom:15px; filter: drop-shadow(0 0 10px rgba(0,240,255,0.3));">` : ''}
-            <div class="panel-subtitle">${division}</div>
-            <h2 class="panel-title">${team.name}</h2>
+        <div class="modal-header">
+            ${team.logo ? `<img src="${team.logo}" style="width:90px; height:90px; object-fit:contain; filter: drop-shadow(0 0 15px rgba(0,240,255,0.4));">` : ''}
+            <h2 class="modal-title">${team.name}</h2>
+            <div class="modal-subtitle">${division}</div>
         </div>
         
-        <h3 style="color: var(--primary); margin-bottom: 1rem;">ROSTER</h3>
+        <div style="text-align: center; margin-bottom: 10px;">
+            <span style="color: var(--primary); font-family: var(--font-head); letter-spacing: 1px; font-weight: bold;">ROSTER</span>
+        </div>
         ${rosterHTML}
         
         ${statsHTML}
     `;
     
-    showPanel();
+    showModal();
 }
 
-function openMatchPanel(matchId) {
+function openMatchModal(matchId) {
     const match = globalBracket.find(m => m.id === matchId);
     if(!match) return;
 
     const t1 = resolve(match.team_1, globalTeams);
     const t2 = resolve(match.team_2, globalTeams);
-    const content = document.getElementById('panel-content');
+    const content = document.getElementById('modal-content');
     
-    let detailsHTML = '<p class="text-muted">Noch keine detaillierten Map-Scores verfügbar.</p>';
+    let detailsHTML = '<p class="text-muted text-center" style="margin-top: 1rem;">Keine detaillierten Map-Scores verfügbar.</p>';
     let vodHTML = '';
 
     if (match.details) {
         if (match.details.maps && match.details.maps.length > 0) {
-            detailsHTML = '<ul class="info-list">' + match.details.maps.map(m => `
-                <li class="info-item">
-                    <span style="font-weight: bold;">${m.map_name}</span>
-                    <span style="color: var(--primary); font-family: var(--font-head); font-size: 1.1rem;">${m.score_1} - ${m.score_2}</span>
-                </li>
-            `).join('') + '</ul>';
+            detailsHTML = '<div style="margin-top: 1rem; background: rgba(255,255,255,0.03); border-radius: 8px; padding: 10px;">' + match.details.maps.map((m, index) => `
+                <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px; border-bottom: ${index < match.details.maps.length - 1 ? '1px solid rgba(255,255,255,0.05)' : 'none'};">
+                    <span style="font-weight: bold; color: var(--text-muted);">${m.map_name}</span>
+                    <span style="color: #fff; font-family: var(--font-head); font-size: 1.2rem; font-weight: bold;">
+                        <span style="${m.score_1 > m.score_2 ? 'color: var(--primary);' : ''}">${m.score_1}</span> 
+                        <span style="color: #555; margin: 0 5px;">-</span> 
+                        <span style="${m.score_2 > m.score_1 ? 'color: var(--primary);' : ''}">${m.score_2}</span>
+                    </span>
+                </div>
+            `).join('') + '</div>';
         }
         if (match.details.vod_link) {
-            vodHTML = `<a href="${match.details.vod_link}" target="_blank" class="vod-link">📺 Zum VOD (Replay)</a>`;
+            vodHTML = `<a href="${match.details.vod_link}" target="_blank" class="vod-link">📺 MATCH REPLAY ANSEHEN</a>`;
         }
     }
 
     content.innerHTML = `
-        <div class="panel-header">
-            <div class="panel-subtitle">MATCH INFO</div>
-            <h2 class="panel-title">${t1.name} vs ${t2.name}</h2>
-            <h3 style="color: #fff; font-size: 2rem;">${match.score_1} : ${match.score_2}</h3>
+        <div class="modal-header">
+            <div class="modal-subtitle">MATCH DETAILS</div>
+            <h2 class="modal-title" style="font-size: 1.5rem; margin-top: 1rem;">${t1.name} <span style="color:#555;">vs</span> ${t2.name}</h2>
+            <div style="background: linear-gradient(90deg, transparent, rgba(0,240,255,0.1), transparent); padding: 10px; margin-top: 1rem;">
+                <h3 style="color: var(--primary); font-size: 2.5rem; margin: 0; text-shadow: 0 0 15px rgba(0,240,255,0.5);">${match.score_1} : ${match.score_2}</h3>
+            </div>
         </div>
-        <h3 style="color: var(--primary); margin-bottom: 1rem;">MAPS</h3>
         ${detailsHTML}
         ${vodHTML}
     `;
     
-    showPanel();
+    showModal();
 }
 
-function showPanel() {
-    document.getElementById('info-overlay').classList.remove('hidden'); 
+function showModal() {
+    const overlay = document.getElementById('modal-overlay');
+    overlay.classList.remove('hidden'); 
+    
+    // Kleiner Delay, damit die CSS-Transition (Fade & Scale) feuert
     setTimeout(() => {
-        document.getElementById('info-overlay').classList.add('active');
-        document.getElementById('info-panel').classList.add('active');
+        overlay.classList.add('active');
     }, 10);
 }
 
-function closePanel() {
-    document.getElementById('info-overlay').classList.remove('active');
-    document.getElementById('info-panel').classList.remove('active');
+function closeModal() {
+    const overlay = document.getElementById('modal-overlay');
+    overlay.classList.remove('active');
     
+    // Warten, bis die CSS-Transition fertig ist, bevor es aus dem DOM verschwindet
     setTimeout(() => {
-        document.getElementById('info-overlay').classList.add('hidden');
+        overlay.classList.add('hidden');
+    }, 300);
+}
     }, 300);
 }
