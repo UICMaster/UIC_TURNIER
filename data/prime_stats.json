@@ -19,9 +19,9 @@
       ]
     },
     "next_match": {
-      "date": "2026-02-22T20:00:00+01:00",
-      "tag": "NGNS RR",
-      "link": "https://www.primeleague.gg/de/leagues/matches/1153910"
+      "date": "2026-03-01T17:00:00+01:00",
+      "tag": "RIFT",
+      "link": "https://www.primeleague.gg/de/leagues/matches/1153917"
     },
     "last_match": {
       "result": "SIEG",
@@ -78,9 +78,9 @@
       ]
     },
     "next_match": {
-      "date": "2026-02-22T19:00:00+01:00",
-      "tag": "KTN",
-      "link": "https://www.primeleague.gg/de/leagues/matches/1155324"
+      "date": "2026-03-01T19:00:00+01:00",
+      "tag": "AUT",
+      "link": "https://www.primeleague.gg/de/leagues/matches/1155330"
     },
     "last_match": {
       "result": "NIEDERLAGE",
@@ -129,15 +129,16 @@
       "div": "Division 6"
     },
     "stats": {
-      "wins": 4,
-      "losses": 2,
-      "points": 4,
-      "games": 6,
-      "win_rate": 67,
+      "wins": 5,
+      "losses": 3,
+      "points": 5,
+      "games": 8,
+      "win_rate": 63,
       "form": [
         "W",
         "L",
-        "W"
+        "W",
+        "D"
       ]
     },
     "next_match": {
@@ -146,10 +147,10 @@
       "link": "https://www.primeleague.gg/de/leagues/matches/1155078"
     },
     "last_match": {
-      "result": "SIEG",
-      "score": "2 - 0",
-      "enemy": "TLG",
-      "date": "2026-02-17T18:00:00+01:00"
+      "result": "UNENTSCHIEDEN",
+      "score": "1 - 1",
+      "enemy": "9045",
+      "date": "2026-02-22T16:00:00+01:00"
     },
     "roster": [
       {
@@ -385,9 +386,9 @@
       ]
     },
     "next_match": {
-      "date": "2026-02-22T19:00:00+01:00",
-      "tag": "TSP",
-      "link": "https://www.primeleague.gg/de/leagues/matches/1154397"
+      "date": "2026-03-01T17:00:00+01:00",
+      "tag": "ABL",
+      "link": "https://www.primeleague.gg/de/leagues/matches/1154406"
     },
     "last_match": {
       "result": "SIEG",
