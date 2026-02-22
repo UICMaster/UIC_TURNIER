@@ -475,17 +475,17 @@ h1, h2, h3 {
 @keyframes pulseHalo { 0%, 100% { opacity: 0.3; transform: translate(-50%, -50%) scale(1); } 50% { opacity: 0.6; transform: translate(-50%, -50%) scale(1.1); } }
 
 /* ==========================================================================
-   COMPACT ESPORTS MODAL (MATCH & TEAM DETAILS)
+   TACTICAL 16:9 ESPORTS MODAL (MATCH & TEAM DETAILS)
    ========================================================================== */
 
 .modal-overlay {
     position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
-    background: rgba(5, 5, 5, 0.85);
-    backdrop-filter: blur(8px);
+    background: rgba(0, 0, 0, 0.85); /* Tiefes, dunkles Overlay */
+    backdrop-filter: blur(4px);
     z-index: 9000;
     display: flex; justify-content: center; align-items: center;
     opacity: 0; visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s;
+    transition: opacity 0.2s ease, visibility 0.2s;
 }
 .modal-overlay.active { 
     opacity: 1; visibility: visible; 
@@ -493,78 +493,90 @@ h1, h2, h3 {
 
 .custom-modal {
     position: relative;
-    width: 100%; max-width: 500px; /* Kompakt und professionell */
-    max-height: 85vh; overflow-y: auto;
-    background: linear-gradient(145deg, var(--bg-glass-heavy) 0%, #050505 100%);
-    border: 1px solid rgba(0, 240, 255, 0.3);
-    border-radius: 12px;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9), 0 0 20px rgba(0, 240, 255, 0.1);
-    padding: 2.5rem;
+    width: 95vw; max-width: 900px;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: var(--bg-glass-heavy); /* Gleicher Hintergrund wie Brackets */
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-top: 2px solid var(--primary); /* Taktischer Akzent oben */
+    border-radius: 4px; /* Sehr scharfe Kanten */
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.9);
+    padding: 0;
     
-    /* Pop-In Animation */
-    transform: scale(0.95) translateY(20px);
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    /* Schnelles, präzises HUD Pop-In */
+    transform: scale(0.98) translateY(10px);
+    transition: transform 0.25s cubic-bezier(0, 0, 0.2, 1);
 }
-.modal-overlay.active .custom-modal { 
-    transform: scale(1) translateY(0); 
-}
+.modal-overlay.active .custom-modal { transform: scale(1) translateY(0); }
 
-/* Scrollbar für das Modal anpassen */
-.custom-modal::-webkit-scrollbar { width: 6px; }
-.custom-modal::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); border-radius: 8px; }
-.custom-modal::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 8px; }
+#modal-content { width: 100%; height: 100%; }
+
+/* --- Taktisches Split-Layout --- */
+.modal-split {
+    display: flex; width: 100%; height: 100%;
+}
+.modal-left {
+    flex: 0 0 40%;
+    background: rgba(0, 0, 0, 0.4); /* Etwas dunkler für den Kontrast */
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 3rem;
+    display: flex; flex-direction: column; justify-content: center; align-items: flex-start;
+}
+.modal-right {
+    flex: 1;
+    padding: 3rem;
+    display: flex; flex-direction: column; justify-content: center;
+}
 
 .btn-close {
-    background: transparent; border: none; 
-    color: var(--text-muted); font-size: 2rem;
-    position: absolute; top: 15px; right: 20px; 
-    cursor: pointer; transition: color 0.2s, transform 0.2s;
-    line-height: 1;
+    background: rgba(0, 0, 0, 0.5); border: 1px solid rgba(255,255,255,0.1); 
+    color: var(--text-muted); font-size: 1.5rem; width: 40px; height: 40px;
+    position: absolute; top: 15px; right: 15px; border-radius: 2px;
+    cursor: pointer; transition: all 0.2s;
+    display: flex; justify-content: center; align-items: center; z-index: 10;
 }
-.btn-close:hover { color: #ff003c; transform: scale(1.1); }
+.btn-close:hover { color: #fff; border-color: #ff003c; background: rgba(255, 0, 60, 0.1); }
 
-/* --- Kompakte Modal Inhalte --- */
-.modal-header {
-    text-align: center;
-    margin-bottom: 2rem; 
-    border-bottom: 1px solid rgba(255,255,255,0.1); 
-    padding-bottom: 1.5rem;
+/* --- Typografie & HUD Elemente --- */
+.hud-label {
+    font-size: 0.75rem; color: var(--text-muted); letter-spacing: 2px;
+    text-transform: uppercase; font-weight: bold; margin-bottom: 0.5rem;
+    display: block; font-family: var(--font-head);
 }
-.modal-title { font-size: 2rem; color: #fff; margin: 0.5rem 0 0.2rem 0; text-shadow: 0 0 10px rgba(0,240,255,0.2); }
-.modal-subtitle { font-size: 0.85rem; color: var(--primary); letter-spacing: 3px; text-transform: uppercase; font-weight: bold; }
+.modal-title { font-size: 2.5rem; color: #fff; margin: 0 0 1rem 0; font-family: var(--font-head); text-transform: uppercase; line-height: 1.1; }
 
-/* Grid für das Roster, damit es kompakter wirkt */
-.roster-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 10px;
-    margin-top: 1rem;
+/* Taktisches Roster Layout (Listenform, keine verspielten Boxen) */
+.roster-list { display: flex; flex-direction: column; gap: 8px; margin-top: 10px; }
+.roster-row {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 8px 15px; background: rgba(255, 255, 255, 0.02);
+    border-left: 2px solid rgba(255, 255, 255, 0.1);
 }
-.roster-card {
-    background: rgba(255,255,255,0.03);
-    border: 1px solid rgba(255,255,255,0.05);
-    border-radius: 6px;
-    padding: 10px;
-    text-align: center;
-    transition: border-color 0.2s;
+.roster-row:hover { border-left-color: var(--primary); background: rgba(0, 240, 255, 0.03); }
+.r-name { font-family: var(--font-head); font-weight: bold; font-size: 1rem; color: #fff; }
+.r-role { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; }
+
+/* Taktische Stats Boxen */
+.stat-box {
+    background: rgba(0, 0, 0, 0.3); border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 15px; display: flex; flex-direction: column; justify-content: center; align-items: center;
 }
-.roster-card:hover { border-color: var(--primary); background: rgba(0, 240, 255, 0.05); }
-.r-name { display: block; font-family: var(--font-head); font-weight: bold; font-size: 0.9rem; }
-.r-role { display: block; font-size: 0.75rem; color: var(--text-muted); margin-top: 3px; }
+.stat-box.highlight { border-bottom: 2px solid var(--primary); }
+.stat-value { font-size: 1.8rem; font-family: var(--font-head); color: #fff; font-weight: bold; line-height: 1; }
+.stat-value.cyan { color: var(--primary); }
 
-.vod-link { 
-    display: flex; justify-content: center; align-items: center; gap: 8px;
-    margin-top: 1.5rem; color: #000; background: var(--primary); 
-    padding: 12px 20px; text-decoration: none; 
-    font-weight: bold; border-radius: 6px; font-family: var(--font-head);
-    transition: transform 0.2s, box-shadow 0.2s;
+.tactical-btn { 
+    display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+    margin-top: auto; color: #000; background: var(--primary); 
+    padding: 12px 24px; text-decoration: none; text-transform: uppercase;
+    font-weight: bold; font-family: var(--font-head); letter-spacing: 1px;
+    border-radius: 2px; transition: background 0.2s; width: 100%;
 }
-.vod-link:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0, 240, 255, 0.4); }
+.tactical-btn:hover { background: #fff; }
 
-/* Hover für Bracket Karten beibehalten */
-.match-card { cursor: pointer; transition: transform 0.2s; }
-.match-card:hover { transform: translateY(-2px); }
-
-/* Hover Cursor für die Match-Karten, um zu zeigen, dass sie klickbar sind */
-.match-card { cursor: pointer; transition: transform 0.2s; }
-.match-card:hover { transform: translateY(-2px); }
+@media (max-width: 768px) {
+    .custom-modal { aspect-ratio: auto; max-height: 85vh; overflow-y: auto; display: block; border-top: none; }
+    .modal-split { flex-direction: column; height: auto; }
+    .modal-left { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.05); padding: 2rem; }
+    .modal-right { padding: 2rem; }
+}
