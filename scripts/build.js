@@ -5,6 +5,7 @@ const DATA_DIR = path.join(__dirname, '../data');
 const TEAMS_DIR = path.join(DATA_DIR, 'teams');
 const OUTPUT_FILE = path.join(DATA_DIR, 'generated/db.json');
 const CONFIG_FILE = path.join(DATA_DIR, 'tournament.json');
+const PRIME_STATS_FILE = path.join(DATA_DIR, 'prime_stats.json');
 
 class TournamentEngine {
     constructor(participants) {
@@ -27,7 +28,6 @@ class TournamentEngine {
                 const isFinal = r === wbRounds;
                 const nextId = isFinal ? 'gf_m1' : `wb_r${r+1}_m${Math.ceil((i+1)/2)}`;
                 
-                // Deterministic Slots (Verhindert Überschreiben)
                 const nextSlot = (i % 2 === 0) ? 1 : 2;
                 
                 let loserId = null;
@@ -83,9 +83,9 @@ class TournamentEngine {
             const map = new Map(this.matches.map(m => [m.id, m]));
             
             this.matches.forEach(m => {
-                if (m.winner_id) return; // Überspringt bereits fertige Matches
+                if (m.winner_id) return; 
 
-                // A. BYE Logic (Freilose)
+                // A. BYE Logic
                 if (m.status === 'WAITING' || m.status === 'SCHEDULED') {
                     if (m.team_1 && m.team_1 !== '[BYE]' && m.team_2 === '[BYE]') { 
                         this._win(m, m.team_1, map); changed = true; return;
@@ -116,13 +116,13 @@ class TournamentEngine {
     _win(match, winnerId, map) {
         match.winner_id = winnerId;
         
-        // Winner Move (JETZT MIT KORREKTEM FALLBACK FÜR DAS LOSER BRACKET)
+        // Winner Move
         if (match.next_match_id) {
             const next = map.get(match.next_match_id);
             if (next) {
                 if (match.next_slot === 1) next.team_1 = winnerId;
                 else if (match.next_slot === 2) next.team_2 = winnerId;
-                else !next.team_1 ? next.team_1 = winnerId : next.team_2 = winnerId; // Verhindert Überschreiben!
+                else !next.team_1 ? next.team_1 = winnerId : next.team_2 = winnerId; 
             }
         }
         
@@ -144,16 +144,36 @@ console.log("⚙️  Building Bracket...");
 if (!fs.existsSync(path.dirname(OUTPUT_FILE))) fs.mkdirSync(path.dirname(OUTPUT_FILE), { recursive: true });
 const config = JSON.parse(fs.readFileSync(CONFIG_FILE));
 const teams = {};
+
+// 1. Manuelle Teams laden
 if (fs.existsSync(TEAMS_DIR)) {
     fs.readdirSync(TEAMS_DIR).forEach(f => {
-        if(f.endsWith('.json')) teams[JSON.parse(fs.readFileSync(path.join(TEAMS_DIR, f))).id] = JSON.parse(fs.readFileSync(path.join(TEAMS_DIR, f)));
+        if(f.endsWith('.json')) {
+            const t = JSON.parse(fs.readFileSync(path.join(TEAMS_DIR, f)));
+            teams[t.id] = t;
+        }
     });
+}
+
+// 2. Prime League Daten laden & mergen
+if (fs.existsSync(PRIME_STATS_FILE)) {
+    try {
+        const primeData = JSON.parse(fs.readFileSync(PRIME_STATS_FILE));
+        for (const [key, pTeam] of Object.entries(primeData)) {
+            const teamId = `UIC_${key.toUpperCase()}`;
+            if (teams[teamId]) {
+                teams[teamId].prime_intel = pTeam;
+            }
+        }
+    } catch(e) {
+        console.error("Warning: Could not read prime_stats.json", e);
+    }
 }
 
 const engine = new TournamentEngine(config.participants);
 engine.generate();
 
-// SCORE MERGE (Strikte Zahlen-Konvertierung, um Text-Fehler zu vermeiden)
+// SCORE MERGE
 if (fs.existsSync(OUTPUT_FILE)) {
     try {
         const old = JSON.parse(fs.readFileSync(OUTPUT_FILE)).bracket;
@@ -162,12 +182,14 @@ if (fs.existsSync(OUTPUT_FILE)) {
             if (o) { 
                 m.score_1 = Number(o.score_1) || 0; 
                 m.score_2 = Number(o.score_2) || 0; 
+                if (o.details) m.details = o.details; // Wichtig, falls du VODs eingetragen hast!
             }
         });
     } catch(e) {}
 }
 
 engine.processUpdates();
+
 fs.writeFileSync(OUTPUT_FILE, JSON.stringify({
     meta: config.meta,
     teams: teams,
