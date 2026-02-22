@@ -572,7 +572,7 @@
     },
     {
       "score_1": 0,
-      "score_2": 0,
+      "score_2": 2,
       "winner_id": null,
       "status": "LIVE",
       "id": "wb_r2_m1",
@@ -587,7 +587,7 @@
     },
     {
       "score_1": 0,
-      "score_2": 0,
+      "score_2": 2,
       "winner_id": null,
       "status": "LIVE",
       "id": "wb_r2_m2",
@@ -628,8 +628,8 @@
       "team_2": "UIC_SPARK"
     },
     {
-      "score_1": 0,
-      "score_2": 0,
+      "score_1": 2,
+      "score_2": 1,
       "winner_id": null,
       "status": "LIVE",
       "id": "lb_r1_m2",
