@@ -473,3 +473,76 @@ h1, h2, h3 {
     100% { transform: translateY(-60vh) scale(0); opacity: 0; } 
 }
 @keyframes pulseHalo { 0%, 100% { opacity: 0.3; transform: translate(-50%, -50%) scale(1); } 50% { opacity: 0.6; transform: translate(-50%, -50%) scale(1.1); } }
+
+/* ==========================================================================
+   SMART SIDE PANEL (MATCH & TEAM DETAILS)
+   ========================================================================== */
+
+.panel-overlay {
+    position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+    z-index: 9000;
+    opacity: 0; 
+    transition: opacity 0.3s ease;
+    pointer-events: none; /* Klicks gehen durch, wenn unsichtbar */
+}
+.panel-overlay.active { 
+    opacity: 1; 
+    pointer-events: all; 
+}
+
+.side-panel {
+    position: fixed; top: 0; right: -500px; /* Startet außerhalb des Bildschirms */
+    width: 100%; max-width: 400px; height: 100vh;
+    background: var(--bg-glass-heavy); 
+    border-left: 1px solid var(--primary);
+    box-shadow: -10px 0 40px rgba(0, 240, 255, 0.15);
+    z-index: 9001;
+    transition: right 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    padding: 3rem 2rem; 
+    overflow-y: auto;
+}
+.side-panel.active { 
+    right: 0; /* Slidet flüssig rein */
+}
+
+.btn-close {
+    background: transparent; border: none; 
+    color: var(--text-muted); font-size: 2.5rem;
+    position: absolute; top: 10px; right: 20px; 
+    cursor: pointer; transition: color 0.2s;
+    line-height: 1;
+}
+.btn-close:hover { color: #ff003c; }
+
+/* --- Inhalte des Panels --- */
+.panel-header {
+    margin-bottom: 2rem; 
+    border-bottom: 1px solid rgba(255,255,255,0.1); 
+    padding-bottom: 1.5rem;
+}
+.panel-title { font-size: 1.8rem; color: #fff; margin-bottom: 0.2rem; }
+.panel-subtitle { font-size: 0.9rem; color: var(--primary); letter-spacing: 2px; text-transform: uppercase; font-weight: bold; }
+
+.info-list { list-style: none; padding: 0; margin-top: 1rem; }
+.info-item { 
+    display: flex; justify-content: space-between; align-items: center;
+    background: rgba(255,255,255,0.03); 
+    padding: 12px 15px; margin-bottom: 8px; 
+    border-radius: 6px; border-left: 2px solid rgba(255,255,255,0.1);
+}
+.info-item:hover { border-left-color: var(--primary); background: rgba(0, 240, 255, 0.05); }
+
+.vod-link { 
+    display: inline-flex; align-items: center; gap: 8px;
+    margin-top: 1.5rem; color: #000; background: var(--primary); 
+    padding: 10px 20px; text-decoration: none; 
+    font-weight: bold; border-radius: 4px; font-family: var(--font-head);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.vod-link:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0, 240, 255, 0.3); }
+
+/* Hover Cursor für die Match-Karten, um zu zeigen, dass sie klickbar sind */
+.match-card { cursor: pointer; transition: transform 0.2s; }
+.match-card:hover { transform: translateY(-2px); }
