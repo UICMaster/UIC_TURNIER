@@ -24,11 +24,15 @@ jobs:
         with:
           node-version: '18'
 
-      - name: Build Database
-        run: node scripts/build.js
+      # NEU: Hier laufen jetzt beide Skripte nacheinander ab!
+      - name: Fetch Prime Intel & Build Database
+        run: |
+          node scripts/fetch_prime.js
+          node scripts/build.js
 
+      # NEU: Das file_pattern speichert jetzt auch die Prime-Daten ab
       - name: Commit & Push
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: "🤖 System Update: Engine hat Bracket berechnet"
-          file_pattern: data/generated/db.json
+          commit_message: "🤖 System Update: Prime Stats & Bracket berechnet"
+          file_pattern: "data/generated/db.json data/prime_stats.json"
