@@ -352,7 +352,7 @@ function openTeamModal(teamId) {
 
     const content = document.getElementById('modal-content');
     
-    // 1. ROSTER (Kompaktes Grid-Design)
+    // 1. ROSTER (Taktische Liste)
     let rosterData = [];
     if (team.prime_intel && team.prime_intel.roster && team.prime_intel.roster.length > 0) {
         rosterData = team.prime_intel.roster;
@@ -360,14 +360,14 @@ function openTeamModal(teamId) {
         rosterData = team.roster;
     }
 
-    let rosterHTML = '<p class="text-muted text-center">Kein Roster hinterlegt.</p>';
+    let rosterHTML = '<p class="text-muted" style="font-size: 0.85rem;">KEIN ROSTER HINTERLEGT.</p>';
     if (rosterData.length > 0) {
-        rosterHTML = '<div class="roster-grid">' + rosterData.map(p => {
+        rosterHTML = '<div class="roster-list">' + rosterData.map(p => {
             const name = p.summoner || p.name; 
-            const role = p.is_captain ? '👑 Captain' : (p.role || 'Player');
-            const roleColor = p.is_captain ? '#FFD700' : 'var(--text-muted)';
+            const role = p.is_captain ? 'CAPTAIN' : (p.role || 'PLAYER');
+            const roleColor = p.is_captain ? 'var(--primary)' : 'var(--text-muted)';
             return `
-            <div class="roster-card">
+            <div class="roster-row">
                 <span class="r-name">${name}</span>
                 <span class="r-role" style="color: ${roleColor};">${role}</span>
             </div>
@@ -376,55 +376,60 @@ function openTeamModal(teamId) {
 
     // 2. PRIME LEAGUE STATS
     let statsHTML = '';
-    let division = team.acronym || 'TEAM PROFILE';
+    let division = team.acronym || 'UNKNOWN DIV';
     
     if (team.prime_intel) {
         const intel = team.prime_intel;
         division = intel.meta.div;
         
         const formBoxes = intel.stats.form.map(f => {
-            let color = '#888';
-            if (f === 'W') color = '#00F0FF'; 
-            if (f === 'L') color = '#ff003c'; 
-            return `<span style="display:inline-block; width:22px; height:22px; line-height:22px; text-align:center; background:${color}; color:#000; font-weight:bold; border-radius:4px; margin:0 3px;">${f}</span>`;
+            let color = 'rgba(255,255,255,0.1)';
+            let textColor = '#fff';
+            if (f === 'W') { color = 'rgba(0, 240, 255, 0.15)'; textColor = 'var(--primary)'; }
+            if (f === 'L') { color = 'rgba(255, 0, 60, 0.15)'; textColor = '#ff003c'; }
+            return `<span style="display:inline-block; width:24px; height:24px; line-height:24px; text-align:center; background:${color}; color:${textColor}; font-weight:bold; border:1px solid rgba(255,255,255,0.05); margin-right:4px;">${f}</span>`;
         }).join('');
 
         statsHTML = `
-            <div style="display: flex; gap: 10px; margin: 1.5rem 0;">
-                <div style="flex: 1; background: rgba(0,240,255,0.05); padding: 15px; border-radius: 8px; text-align: center; border: 1px solid rgba(0,240,255,0.1);">
-                    <div style="font-size: 2rem; font-weight: bold; font-family: var(--font-head); color: var(--primary); line-height: 1;">${intel.stats.win_rate}%</div>
-                    <div style="font-size: 0.65rem; color: var(--text-muted); letter-spacing: 1px; margin-top: 5px;">WIN RATE</div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 2rem;">
+                <div class="stat-box highlight">
+                    <span class="hud-label">WIN RATE</span>
+                    <div class="stat-value cyan">${intel.stats.win_rate}%</div>
                 </div>
-                <div style="flex: 1; background: rgba(255,255,255,0.03); padding: 15px; border-radius: 8px; text-align: center; border: 1px solid rgba(255,255,255,0.05);">
-                    <div style="font-size: 1.5rem; font-weight: bold; font-family: var(--font-head); color: #fff; line-height: 1; margin-top: 4px;">${intel.stats.wins} - ${intel.stats.losses}</div>
-                    <div style="font-size: 0.65rem; color: var(--text-muted); letter-spacing: 1px; margin-top: 9px;">W/L MAPS</div>
+                <div class="stat-box">
+                    <span class="hud-label">W/L MAPS</span>
+                    <div class="stat-value">${intel.stats.wins} - ${intel.stats.losses}</div>
                 </div>
             </div>
             
             ${intel.stats.form.length > 0 ? `
-            <div style="text-align: center; margin-bottom: 1.5rem;">
-                <div style="font-size: 0.75rem; color: var(--text-muted); font-weight: bold; margin-bottom: 8px; letter-spacing: 1px;">AKTUELLE FORM</div>
-                <div>${formBoxes}</div>
+            <div style="margin-bottom: 2rem;">
+                <span class="hud-label">LAST 5 MATCHES</span>
+                <div style="display: flex;">${formBoxes}</div>
             </div>
             ` : ''}
-
-            ${intel.team_link ? `<a href="${intel.team_link}" target="_blank" class="vod-link">🔗 PRIME LEAGUE PROFIL</a>` : ''}
         `;
     }
 
     content.innerHTML = `
-        <div class="modal-header">
-            ${team.logo ? `<img src="${team.logo}" style="width:90px; height:90px; object-fit:contain; filter: drop-shadow(0 0 15px rgba(0,240,255,0.4));">` : ''}
-            <h2 class="modal-title">${team.name}</h2>
-            <div class="modal-subtitle">${division}</div>
+        <div class="modal-split">
+            <div class="modal-left">
+                <span class="hud-label" style="color: var(--primary);">${division}</span>
+                <h2 class="modal-title">${team.name}</h2>
+                ${team.logo ? `<img src="${team.logo}" style="width:140px; height:140px; object-fit:contain; opacity: 0.9; margin: 1.5rem 0;">` : ''}
+                
+                ${team.prime_intel && team.prime_intel.team_link ? `<a href="${team.prime_intel.team_link}" target="_blank" class="tactical-btn">EXTERNAL DATA</a>` : ''}
+            </div>
+            
+            <div class="modal-right">
+                ${statsHTML}
+                
+                <div>
+                    <span class="hud-label">ACTIVE ROSTER</span>
+                    ${rosterHTML}
+                </div>
+            </div>
         </div>
-        
-        <div style="text-align: center; margin-bottom: 10px;">
-            <span style="color: var(--primary); font-family: var(--font-head); letter-spacing: 1px; font-weight: bold;">ROSTER</span>
-        </div>
-        ${rosterHTML}
-        
-        ${statsHTML}
     `;
     
     showModal();
@@ -438,37 +443,42 @@ function openMatchModal(matchId) {
     const t2 = resolve(match.team_2, globalTeams);
     const content = document.getElementById('modal-content');
     
-    let detailsHTML = '<p class="text-muted text-center" style="margin-top: 1rem;">Keine detaillierten Map-Scores verfügbar.</p>';
-    let vodHTML = '';
+    let detailsHTML = '<div class="stat-box" style="margin-top: 10px; padding: 20px;"><span class="hud-label" style="margin:0;">NO MAP DATA</span></div>';
 
-    if (match.details) {
-        if (match.details.maps && match.details.maps.length > 0) {
-            detailsHTML = '<div style="margin-top: 1rem; background: rgba(255,255,255,0.03); border-radius: 8px; padding: 10px;">' + match.details.maps.map((m, index) => `
-                <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px; border-bottom: ${index < match.details.maps.length - 1 ? '1px solid rgba(255,255,255,0.05)' : 'none'};">
-                    <span style="font-weight: bold; color: var(--text-muted);">${m.map_name}</span>
-                    <span style="color: #fff; font-family: var(--font-head); font-size: 1.2rem; font-weight: bold;">
-                        <span style="${m.score_1 > m.score_2 ? 'color: var(--primary);' : ''}">${m.score_1}</span> 
-                        <span style="color: #555; margin: 0 5px;">-</span> 
-                        <span style="${m.score_2 > m.score_1 ? 'color: var(--primary);' : ''}">${m.score_2}</span>
-                    </span>
-                </div>
-            `).join('') + '</div>';
-        }
-        if (match.details.vod_link) {
-            vodHTML = `<a href="${match.details.vod_link}" target="_blank" class="vod-link">📺 MATCH REPLAY ANSEHEN</a>`;
-        }
+    if (match.details && match.details.maps && match.details.maps.length > 0) {
+        detailsHTML = '<div class="roster-list">' + match.details.maps.map(m => `
+            <div class="roster-row">
+                <span class="hud-label" style="margin:0; color:#fff;">${m.map_name}</span>
+                <span style="font-family: var(--font-head); font-size: 1.2rem; font-weight: bold; color: var(--text-muted);">
+                    <span style="${m.score_1 > m.score_2 ? 'color: var(--primary);' : ''}">${m.score_1}</span> 
+                    <span style="margin: 0 8px;">:</span> 
+                    <span style="${m.score_2 > m.score_1 ? 'color: var(--primary);' : ''}">${m.score_2}</span>
+                </span>
+            </div>
+        `).join('') + '</div>';
     }
 
     content.innerHTML = `
-        <div class="modal-header">
-            <div class="modal-subtitle">MATCH DETAILS</div>
-            <h2 class="modal-title" style="font-size: 1.5rem; margin-top: 1rem;">${t1.name} <span style="color:#555;">vs</span> ${t2.name}</h2>
-            <div style="background: linear-gradient(90deg, transparent, rgba(0,240,255,0.1), transparent); padding: 10px; margin-top: 1rem;">
-                <h3 style="color: var(--primary); font-size: 2.5rem; margin: 0; text-shadow: 0 0 15px rgba(0,240,255,0.5);">${match.score_1} : ${match.score_2}</h3>
+        <div class="modal-split">
+            <div class="modal-left" style="align-items: center; text-align: center;">
+                <span class="hud-label">MATCH STATUS: ${match.status}</span>
+                <h2 class="modal-title" style="font-size: 1.8rem; margin: 1rem 0;">${t1.name} <br><span style="color:var(--text-muted); font-size: 1rem;">VS</span><br> ${t2.name}</h2>
+                
+                <div class="stat-box highlight" style="width: 100%; margin: 1.5rem 0; padding: 1.5rem;">
+                    <span class="hud-label">OVERALL SCORE</span>
+                    <div style="font-size: 3.5rem; font-family: var(--font-head); font-weight: bold; color: #fff; line-height: 1;">
+                        ${match.score_1} <span style="color: var(--primary);">-</span> ${match.score_2}
+                    </div>
+                </div>
+
+                ${match.details && match.details.vod_link ? `<a href="${match.details.vod_link}" target="_blank" class="tactical-btn">WATCH VOD</a>` : ''}
+            </div>
+            
+            <div class="modal-right">
+                <span class="hud-label">MAP BREAKDOWN</span>
+                ${detailsHTML}
             </div>
         </div>
-        ${detailsHTML}
-        ${vodHTML}
     `;
     
     showModal();
