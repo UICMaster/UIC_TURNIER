@@ -475,73 +475,95 @@ h1, h2, h3 {
 @keyframes pulseHalo { 0%, 100% { opacity: 0.3; transform: translate(-50%, -50%) scale(1); } 50% { opacity: 0.6; transform: translate(-50%, -50%) scale(1.1); } }
 
 /* ==========================================================================
-   SMART SIDE PANEL (MATCH & TEAM DETAILS)
+   COMPACT ESPORTS MODAL (MATCH & TEAM DETAILS)
    ========================================================================== */
 
-.panel-overlay {
+.modal-overlay {
     position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
-    background: rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(4px);
+    background: rgba(5, 5, 5, 0.85);
+    backdrop-filter: blur(8px);
     z-index: 9000;
-    opacity: 0; 
-    transition: opacity 0.3s ease;
-    pointer-events: none; /* Klicks gehen durch, wenn unsichtbar */
+    display: flex; justify-content: center; align-items: center;
+    opacity: 0; visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s;
 }
-.panel-overlay.active { 
-    opacity: 1; 
-    pointer-events: all; 
+.modal-overlay.active { 
+    opacity: 1; visibility: visible; 
 }
 
-.side-panel {
-    position: fixed; top: 0; right: -500px; /* Startet außerhalb des Bildschirms */
-    width: 100%; max-width: 400px; height: 100vh;
-    background: var(--bg-glass-heavy); 
-    border-left: 1px solid var(--primary);
-    box-shadow: -10px 0 40px rgba(0, 240, 255, 0.15);
-    z-index: 9001;
-    transition: right 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    padding: 3rem 2rem; 
-    overflow-y: auto;
+.custom-modal {
+    position: relative;
+    width: 100%; max-width: 500px; /* Kompakt und professionell */
+    max-height: 85vh; overflow-y: auto;
+    background: linear-gradient(145deg, var(--bg-glass-heavy) 0%, #050505 100%);
+    border: 1px solid rgba(0, 240, 255, 0.3);
+    border-radius: 12px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9), 0 0 20px rgba(0, 240, 255, 0.1);
+    padding: 2.5rem;
+    
+    /* Pop-In Animation */
+    transform: scale(0.95) translateY(20px);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
-.side-panel.active { 
-    right: 0; /* Slidet flüssig rein */
+.modal-overlay.active .custom-modal { 
+    transform: scale(1) translateY(0); 
 }
+
+/* Scrollbar für das Modal anpassen */
+.custom-modal::-webkit-scrollbar { width: 6px; }
+.custom-modal::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); border-radius: 8px; }
+.custom-modal::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 8px; }
 
 .btn-close {
     background: transparent; border: none; 
-    color: var(--text-muted); font-size: 2.5rem;
-    position: absolute; top: 10px; right: 20px; 
-    cursor: pointer; transition: color 0.2s;
+    color: var(--text-muted); font-size: 2rem;
+    position: absolute; top: 15px; right: 20px; 
+    cursor: pointer; transition: color 0.2s, transform 0.2s;
     line-height: 1;
 }
-.btn-close:hover { color: #ff003c; }
+.btn-close:hover { color: #ff003c; transform: scale(1.1); }
 
-/* --- Inhalte des Panels --- */
-.panel-header {
+/* --- Kompakte Modal Inhalte --- */
+.modal-header {
+    text-align: center;
     margin-bottom: 2rem; 
     border-bottom: 1px solid rgba(255,255,255,0.1); 
     padding-bottom: 1.5rem;
 }
-.panel-title { font-size: 1.8rem; color: #fff; margin-bottom: 0.2rem; }
-.panel-subtitle { font-size: 0.9rem; color: var(--primary); letter-spacing: 2px; text-transform: uppercase; font-weight: bold; }
+.modal-title { font-size: 2rem; color: #fff; margin: 0.5rem 0 0.2rem 0; text-shadow: 0 0 10px rgba(0,240,255,0.2); }
+.modal-subtitle { font-size: 0.85rem; color: var(--primary); letter-spacing: 3px; text-transform: uppercase; font-weight: bold; }
 
-.info-list { list-style: none; padding: 0; margin-top: 1rem; }
-.info-item { 
-    display: flex; justify-content: space-between; align-items: center;
-    background: rgba(255,255,255,0.03); 
-    padding: 12px 15px; margin-bottom: 8px; 
-    border-radius: 6px; border-left: 2px solid rgba(255,255,255,0.1);
+/* Grid für das Roster, damit es kompakter wirkt */
+.roster-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 10px;
+    margin-top: 1rem;
 }
-.info-item:hover { border-left-color: var(--primary); background: rgba(0, 240, 255, 0.05); }
+.roster-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 6px;
+    padding: 10px;
+    text-align: center;
+    transition: border-color 0.2s;
+}
+.roster-card:hover { border-color: var(--primary); background: rgba(0, 240, 255, 0.05); }
+.r-name { display: block; font-family: var(--font-head); font-weight: bold; font-size: 0.9rem; }
+.r-role { display: block; font-size: 0.75rem; color: var(--text-muted); margin-top: 3px; }
 
 .vod-link { 
-    display: inline-flex; align-items: center; gap: 8px;
+    display: flex; justify-content: center; align-items: center; gap: 8px;
     margin-top: 1.5rem; color: #000; background: var(--primary); 
-    padding: 10px 20px; text-decoration: none; 
-    font-weight: bold; border-radius: 4px; font-family: var(--font-head);
+    padding: 12px 20px; text-decoration: none; 
+    font-weight: bold; border-radius: 6px; font-family: var(--font-head);
     transition: transform 0.2s, box-shadow 0.2s;
 }
-.vod-link:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0, 240, 255, 0.3); }
+.vod-link:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0, 240, 255, 0.4); }
+
+/* Hover für Bracket Karten beibehalten */
+.match-card { cursor: pointer; transition: transform 0.2s; }
+.match-card:hover { transform: translateY(-2px); }
 
 /* Hover Cursor für die Match-Karten, um zu zeigen, dass sie klickbar sind */
 .match-card { cursor: pointer; transition: transform 0.2s; }
