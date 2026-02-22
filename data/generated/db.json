@@ -13,7 +13,71 @@
       "acronym": "UICA",
       "logo": "https://cdn0.gamesports.net/league_team_logos/204000/204924.jpg?1765838352",
       "stream_link": "https://twitch.tv/",
-      "is_live": true
+      "is_live": true,
+      "prime_intel": {
+        "id": "204924",
+        "key": "abyss",
+        "meta": {
+          "name": "Ultra Instinct Crew Abyss",
+          "div": "Division 5"
+        },
+        "stats": {
+          "wins": 0,
+          "losses": 8,
+          "points": 0,
+          "games": 8,
+          "win_rate": 0,
+          "form": [
+            "L",
+            "L",
+            "L",
+            "L"
+          ]
+        },
+        "next_match": {
+          "date": "2026-03-01T17:00:00+01:00",
+          "tag": "ODE",
+          "link": "https://www.primeleague.gg/de/leagues/matches/1154182"
+        },
+        "last_match": {
+          "result": "NIEDERLAGE",
+          "score": "0 - 2",
+          "enemy": "d5b",
+          "date": "2026-02-18T20:00:00+01:00"
+        },
+        "roster": [
+          {
+            "summoner": "UIC M Character#UIC",
+            "is_captain": false
+          },
+          {
+            "summoner": "TheEigeeen#EIGI",
+            "is_captain": false
+          },
+          {
+            "summoner": "UIC Keygasza#1337",
+            "is_captain": true
+          },
+          {
+            "summoner": "UIC Speedy#EUW",
+            "is_captain": false
+          },
+          {
+            "summoner": "UIC Goku#UIC",
+            "is_captain": true
+          },
+          {
+            "summoner": "UIC DANY#RFA40",
+            "is_captain": false
+          },
+          {
+            "summoner": "Ainvy#Ainvy",
+            "is_captain": true
+          }
+        ],
+        "team_link": "https://www.primeleague.gg/de/leagues/teams/204924",
+        "logo": "https://cdn0.gamesports.net/league_team_logos/204000/204924.jpg?1765838352"
+      }
     },
     "UIC_EMBER": {
       "id": "UIC_EMBER",
@@ -21,7 +85,62 @@
       "acronym": "UICE",
       "logo": "https://cdn0.gamesports.net/league_team_logos/211000/211165.jpg?1765449081",
       "stream_link": "https://twitch.tv/",
-      "is_live": true
+      "is_live": true,
+      "prime_intel": {
+        "id": "211165",
+        "key": "ember",
+        "meta": {
+          "name": "Ultra Instinct Crew Ember",
+          "div": "Division 6"
+        },
+        "stats": {
+          "wins": 4,
+          "losses": 2,
+          "points": 4,
+          "games": 6,
+          "win_rate": 67,
+          "form": [
+            "W",
+            "L",
+            "W"
+          ]
+        },
+        "next_match": {
+          "date": "2026-03-01T19:00:00+01:00",
+          "tag": "LBB",
+          "link": "https://www.primeleague.gg/de/leagues/matches/1155078"
+        },
+        "last_match": {
+          "result": "SIEG",
+          "score": "2 - 0",
+          "enemy": "TLG",
+          "date": "2026-02-17T18:00:00+01:00"
+        },
+        "roster": [
+          {
+            "summoner": "UIC DontMethWith#AMB",
+            "is_captain": true
+          },
+          {
+            "summoner": "UIC Envy#UIC",
+            "is_captain": true
+          },
+          {
+            "summoner": "UIC Shederen#Ger",
+            "is_captain": false
+          },
+          {
+            "summoner": "SilasX#EUWde",
+            "is_captain": false
+          },
+          {
+            "summoner": "ResetHoe#Kata",
+            "is_captain": false
+          }
+        ],
+        "team_link": "https://www.primeleague.gg/de/leagues/teams/211165",
+        "logo": "https://cdn0.gamesports.net/league_team_logos/211000/211165.jpg?1765449081"
+      }
     },
     "UIC_FREEZER": {
       "id": "UIC_FREEZER",
@@ -29,7 +148,61 @@
       "acronym": "UICF",
       "logo": "https://cdn0.gamesports.net/league_team_logos/203000/203146.jpg?1768840480",
       "stream_link": "https://twitch.tv/",
-      "is_live": true
+      "is_live": true,
+      "prime_intel": {
+        "id": "203146",
+        "key": "freezer",
+        "meta": {
+          "name": "Ultra Instinct Crew Freezer",
+          "div": "Division 5"
+        },
+        "stats": {
+          "wins": 2,
+          "losses": 2,
+          "points": 2,
+          "games": 4,
+          "win_rate": 50,
+          "form": [
+            "L",
+            "W"
+          ]
+        },
+        "next_match": {
+          "date": "2026-02-22T19:00:00+01:00",
+          "tag": "TSP",
+          "link": "https://www.primeleague.gg/de/leagues/matches/1154397"
+        },
+        "last_match": {
+          "result": "SIEG",
+          "score": "2 - 0",
+          "enemy": "CRINT",
+          "date": "2026-02-08T19:30:00+01:00"
+        },
+        "roster": [
+          {
+            "summoner": "UIC Ryu Copeland#117",
+            "is_captain": true
+          },
+          {
+            "summoner": "UIC FrozenHands#MID",
+            "is_captain": true
+          },
+          {
+            "summoner": "RG AutumnLeaf#Moo",
+            "is_captain": true
+          },
+          {
+            "summoner": "UIC Rayando07#Help",
+            "is_captain": false
+          },
+          {
+            "summoner": "BlauerKlaus#Qvy心",
+            "is_captain": true
+          }
+        ],
+        "team_link": "https://www.primeleague.gg/de/leagues/teams/203146",
+        "logo": "https://cdn0.gamesports.net/league_team_logos/203000/203146.jpg?1768840480"
+      }
     },
     "UIC_NIGHT": {
       "id": "UIC_NIGHT",
@@ -37,7 +210,70 @@
       "acronym": "UICNT",
       "logo": "https://cdn0.gamesports.net/league_team_logos/212000/212047.jpg?1768386989",
       "stream_link": "https://twitch.tv/",
-      "is_live": true
+      "is_live": true,
+      "prime_intel": {
+        "id": "212047",
+        "key": "night",
+        "meta": {
+          "name": "Ultra Instinct Crew Night",
+          "div": "Division 6"
+        },
+        "stats": {
+          "wins": 0,
+          "losses": 6,
+          "points": 0,
+          "games": 6,
+          "win_rate": 0,
+          "form": [
+            "L",
+            "L",
+            "L"
+          ]
+        },
+        "next_match": {
+          "date": "2026-02-22T19:00:00+01:00",
+          "tag": "TAUBE",
+          "link": "https://www.primeleague.gg/de/leagues/matches/1154456"
+        },
+        "last_match": {
+          "result": "NIEDERLAGE",
+          "score": "0 - 2",
+          "enemy": "ZSB",
+          "date": "2026-02-14T18:00:00+01:00"
+        },
+        "roster": [
+          {
+            "summoner": "MaZiN#EUWL9",
+            "is_captain": false
+          },
+          {
+            "summoner": "UIC ReCord#Cedo",
+            "is_captain": true
+          },
+          {
+            "summoner": "UIC Cedo#EUW",
+            "is_captain": true
+          },
+          {
+            "summoner": "UIC proStarII#UIC",
+            "is_captain": true
+          },
+          {
+            "summoner": "ривен#sabi",
+            "is_captain": false
+          },
+          {
+            "summoner": "Sylveon#mine",
+            "is_captain": false
+          },
+          {
+            "summoner": "UIC Shockwave#EUW",
+            "is_captain": true
+          }
+        ],
+        "team_link": "https://www.primeleague.gg/de/leagues/teams/212047",
+        "logo": "https://cdn0.gamesports.net/league_team_logos/212000/212047.jpg?1768386989"
+      }
     },
     "UIC_NOVA": {
       "id": "UIC_NOVA",
@@ -45,7 +281,70 @@
       "acronym": "UICN",
       "logo": "https://cdn0.gamesports.net/league_team_logos/203000/203447.jpg?1768386652",
       "stream_link": "https://twitch.tv/",
-      "is_live": true
+      "is_live": true,
+      "prime_intel": {
+        "id": "203447",
+        "key": "nova",
+        "meta": {
+          "name": "Ultra Instinct Crew Nova",
+          "div": "Division 6"
+        },
+        "stats": {
+          "wins": 0,
+          "losses": 6,
+          "points": 0,
+          "games": 6,
+          "win_rate": 0,
+          "form": [
+            "L",
+            "L",
+            "L"
+          ]
+        },
+        "next_match": {
+          "date": "2026-03-01T19:00:00+01:00",
+          "tag": "IF",
+          "link": "https://www.primeleague.gg/de/leagues/matches/1155533"
+        },
+        "last_match": {
+          "result": "NIEDERLAGE",
+          "score": "0 - 2",
+          "enemy": "W2B OE",
+          "date": "2026-02-16T20:00:00+01:00"
+        },
+        "roster": [
+          {
+            "summoner": "UIC Rubix Qube#MÖP",
+            "is_captain": true
+          },
+          {
+            "summoner": "Rhamuthra#4444",
+            "is_captain": false
+          },
+          {
+            "summoner": "UIC Muh#KATZE",
+            "is_captain": false
+          },
+          {
+            "summoner": "UIC Simply#666",
+            "is_captain": true
+          },
+          {
+            "summoner": "UIC Excellent C#1997",
+            "is_captain": true
+          },
+          {
+            "summoner": "UIC adedier#EUWE",
+            "is_captain": false
+          },
+          {
+            "summoner": "UIC Kaanto#Nova",
+            "is_captain": false
+          }
+        ],
+        "team_link": "https://www.primeleague.gg/de/leagues/teams/203447",
+        "logo": "https://cdn0.gamesports.net/league_team_logos/203000/203447.jpg?1768386652"
+      }
     },
     "UIC_PRIME": {
       "id": "UIC_PRIME",
@@ -53,7 +352,66 @@
       "acronym": "UICP",
       "logo": "https://cdn0.gamesports.net/league_team_logos/116000/116908.jpg?1768526642",
       "stream_link": "https://twitch.tv/",
-      "is_live": true
+      "is_live": true,
+      "prime_intel": {
+        "id": "116908",
+        "key": "prime",
+        "meta": {
+          "name": "Ultra Instinct Crew",
+          "div": "Division 5"
+        },
+        "stats": {
+          "wins": 6,
+          "losses": 0,
+          "points": 6,
+          "games": 6,
+          "win_rate": 100,
+          "form": [
+            "W",
+            "W",
+            "W"
+          ]
+        },
+        "next_match": {
+          "date": "2026-02-22T20:00:00+01:00",
+          "tag": "NGNS RR",
+          "link": "https://www.primeleague.gg/de/leagues/matches/1153910"
+        },
+        "last_match": {
+          "result": "SIEG",
+          "score": "2 - 0",
+          "enemy": "TBG",
+          "date": "2026-02-18T19:00:00+01:00"
+        },
+        "roster": [
+          {
+            "summoner": "UIC Baguetto#R3kt",
+            "is_captain": false
+          },
+          {
+            "summoner": "UIC Shenycrane#Vugel",
+            "is_captain": false
+          },
+          {
+            "summoner": "UIC Niki#AMB",
+            "is_captain": false
+          },
+          {
+            "summoner": "UIC Speedy#EUW",
+            "is_captain": false
+          },
+          {
+            "summoner": "UIC Giani#999",
+            "is_captain": false
+          },
+          {
+            "summoner": "Baumi#123",
+            "is_captain": false
+          }
+        ],
+        "team_link": "https://www.primeleague.gg/de/leagues/teams/116908",
+        "logo": "https://cdn0.gamesports.net/league_team_logos/116000/116908.jpg?1768526642"
+      }
     },
     "UIC_SPARK": {
       "id": "UIC_SPARK",
@@ -61,7 +419,70 @@
       "acronym": "UICS",
       "logo": "https://cdn0.gamesports.net/league_team_logos/208000/208694.jpg?1765150033",
       "stream_link": "https://twitch.tv/",
-      "is_live": true
+      "is_live": true,
+      "prime_intel": {
+        "id": "208694",
+        "key": "spark",
+        "meta": {
+          "name": "Ultra Instinct Crew Spark",
+          "div": "Division 6"
+        },
+        "stats": {
+          "wins": 3,
+          "losses": 3,
+          "points": 3,
+          "games": 6,
+          "win_rate": 50,
+          "form": [
+            "W",
+            "D",
+            "L"
+          ]
+        },
+        "next_match": {
+          "date": "2026-02-22T19:00:00+01:00",
+          "tag": "KTN",
+          "link": "https://www.primeleague.gg/de/leagues/matches/1155324"
+        },
+        "last_match": {
+          "result": "NIEDERLAGE",
+          "score": "0 - 2",
+          "enemy": "DSDS",
+          "date": "2026-02-15T19:00:00+01:00"
+        },
+        "roster": [
+          {
+            "summoner": "UIC Flare#JND",
+            "is_captain": true
+          },
+          {
+            "summoner": "UIC Lenno#UIC",
+            "is_captain": false
+          },
+          {
+            "summoner": "Lenlusz#EAZ",
+            "is_captain": false
+          },
+          {
+            "summoner": "skanpy#3005",
+            "is_captain": false
+          },
+          {
+            "summoner": "Firehand#1337",
+            "is_captain": false
+          },
+          {
+            "summoner": "soulrender#fent",
+            "is_captain": false
+          },
+          {
+            "summoner": "UIC Dragonfly#1299",
+            "is_captain": false
+          }
+        ],
+        "team_link": "https://www.primeleague.gg/de/leagues/teams/208694",
+        "logo": "https://cdn0.gamesports.net/league_team_logos/208000/208694.jpg?1765150033"
+      }
     }
   },
   "bracket": [
