@@ -10,13 +10,13 @@ const OUTPUT_PATH = path.resolve(__dirname, '../data', DATA_FILE);
 const SEASON_START = new Date('2026-01-26T00:00:00'); 
 
 const TEAMS = {
-    "prime":   { id: "116908", manual_div: "Division 5" }, 
-    "spark":   { id: "208694", manual_div: "Division 6" },
-    "ember":   { id: "211165", manual_div: "Division 6" },
-    "nova":    { id: "203447", manual_div: "Division 6" },
-    "abyss":   { id: "204924", manual_div: "Division 5" },
-    "night":   { id: "212047", manual_div: "Division 6" },
-    "freezer": { id: "203146", manual_div: "Division 5" }
+    "UIC_PRIME":   { id: "116908", manual_div: "Division 5" }, 
+    "UIC_SPARK":   { id: "208694", manual_div: "Division 6" },
+    "UIC_EMBER":   { id: "211165", manual_div: "Division 6" },
+    "UIC_NOVA":    { id: "203447", manual_div: "Division 6" },
+    "UIC_ABYSS":   { id: "204924", manual_div: "Division 5" },
+    "UIC_NIGHT":   { id: "212047", manual_div: "Division 6" },
+    "UIC_FREEZER": { id: "203146", manual_div: "Division 5" }
 };
 
 const HEADERS = { 'User-Agent': 'UIC-Dashboard-Bot/2.2' };
