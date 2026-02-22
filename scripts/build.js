@@ -160,9 +160,9 @@ if (fs.existsSync(PRIME_STATS_FILE)) {
     try {
         const primeData = JSON.parse(fs.readFileSync(PRIME_STATS_FILE));
         for (const [key, pTeam] of Object.entries(primeData)) {
-            const teamId = `UIC_${key.toUpperCase()}`;
-            if (teams[teamId]) {
-                teams[teamId].prime_intel = pTeam;
+            // 'key' ist jetzt exakt die System-ID (z.B. "UIC_EMBER" oder "BERLIN_BEARS")!
+            if (teams[key]) {
+                teams[key].prime_intel = pTeam;
             }
         }
     } catch(e) {
