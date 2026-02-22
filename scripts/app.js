@@ -1,32 +1,26 @@
 const API_PATH = './data/generated/db.json';
 
-// --- NEU: Globale Variablen für unser Geister-Update ---
 let currentDbString = null; 
 let countdownInterval = null;
+let globalTeams = {};
+let globalBracket = [];
 
 document.addEventListener('DOMContentLoaded', init);
-window.addEventListener('resize', drawBracketLines); // Zeichnet Linien neu, wenn das Fenster vergrößert wird
+window.addEventListener('resize', drawBracketLines);
 
 async function init() {
-    // 1. Erster Ladevorgang (sofort beim Öffnen der Seite)
     await fetchAndRender();
-    
-    // 2. Geister-Updates: Alle 30 Sekunden lautlos im Hintergrund prüfen (30000 Millisekunden)
-    setInterval(fetchAndRender, 30000); 
+    setInterval(fetchAndRender, 30000); // 30-Sekunden Geister-Update
 }
 
-// --- NEU: Die Funktion, die im Hintergrund lauscht ---
 async function fetchAndRender() {
     try {
         const res = await fetch(`${API_PATH}?t=${Date.now()}`);
         if (!res.ok) throw new Error("DB Error");
         
         const text = await res.text();
-        
-        // DIE MAGIE: Ist der Text exakt gleich wie vor 30 Sekunden? Dann brich ab!
         if (currentDbString === text) return; 
         
-        // Es gab ein Update! Seite neu bauen.
         currentDbString = text;
         const db = JSON.parse(text);
         
@@ -37,7 +31,6 @@ async function fetchAndRender() {
     }
 }
 
-// Hier steckt jetzt deine bisherige Start-Logik drin
 function updateUI(db) {
     const s = db.meta.status;
     document.querySelectorAll('.view-section').forEach(el => el.classList.add('hidden'));
@@ -51,16 +44,13 @@ function updateUI(db) {
         document.getElementById('view-live').classList.remove('hidden');
         document.getElementById('live-title').innerText = db.meta.title;
         
-        // 1. Render Team Stream Cards
+        globalTeams = db.teams;
+        globalBracket = db.bracket;
+
         renderTeamStreams(db.teams);
-
-        // 2. Render Bracket
         renderBracket(db.bracket, db.teams);
-
-        // 3. Hover-Effekte aktivieren
         setupHoverEffects();
-
-        // 4. Champion Screen Check
+        setupPanelEvents(); // Klick-Events für Side Panel
         checkChampion(db.bracket, db.teams);
 
     } else {
@@ -68,24 +58,19 @@ function updateUI(db) {
     }
 }
 
-// --- NEU: Team Stream Cards generieren ---
 function renderTeamStreams(teams) {
     const container = document.getElementById('team-streams-container');
     container.innerHTML = '';
     
-    // Konvertiert das Object in ein Array und wirft Freilose raus
     const teamsArray = Object.values(teams).filter(t => t.id !== '[BYE]');
-    
     if(teamsArray.length === 0) return;
     
     container.classList.remove('hidden');
 
     teamsArray.forEach(t => {
-        // Wir prüfen, ob ein Team einen Link oder einen "live"-Status hat
         const hasStream = !!t.stream_link;
         const isLive = t.is_live === true; 
         
-        // Karte nur anzeigen, wenn es überhaupt einen Stream Link gibt
         if (!hasStream) return;
 
         const a = document.createElement('a');
@@ -119,8 +104,6 @@ function renderBracket(matches, teams) {
     if (lMatches.length > 0) buildColumnTree(lb, lMatches, teams, "LOSER");
     else document.getElementById('lbl-losers').classList.add('hidden');
 
-    // --- NEU: Zeichne die schönen Verbindungslinien! ---
-    // Wir nutzen ein Timeout, damit das DOM und Flexbox zuerst fertig layouten können
     setTimeout(drawBracketLines, 100); 
 }
 
@@ -147,7 +130,6 @@ function createCard(m, teams) {
     div.className = 'match-card'; 
     div.id = `match-${m.id}`; 
     
-    // Wichtig für unsere Linien-Logik!
     div.setAttribute('data-next-match', m.next_match_id || '');
     div.setAttribute('data-status', m.status);
     
@@ -182,13 +164,11 @@ function createCard(m, teams) {
     return div;
 }
 
-// --- NEU: Magische SVG Verbindungslinien ---
 function drawBracketLines() {
     ['bracket-winners', 'bracket-losers'].forEach(containerId => {
         const container = document.getElementById(containerId);
         if(!container || container.classList.contains('hidden')) return;
 
-        // Erstelle eine SVG Leinwand, falls noch keine da ist
         let svg = container.querySelector('.bracket-lines-svg');
         if(!svg) {
             svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
@@ -196,7 +176,6 @@ function drawBracketLines() {
             container.insertBefore(svg, container.firstChild);
         }
         
-        // Leinwand muss genauso groß sein wie der Scroll-Bereich
         svg.style.width = Math.max(container.scrollWidth, container.clientWidth) + 'px';
         svg.style.height = Math.max(container.scrollHeight, container.clientHeight) + 'px';
 
@@ -212,22 +191,18 @@ function drawBracketLines() {
                     const r1 = card.getBoundingClientRect();
                     const r2 = nextCard.getBoundingClientRect();
 
-                    // Berechne Start (Rechts Mitte der Karte) und Ende (Links Mitte der nächsten Karte)
                     const startX = r1.right - containerRect.left + container.scrollLeft;
                     const startY = r1.top + (r1.height / 2) - containerRect.top + container.scrollTop;
                     
                     const endX = r2.left - containerRect.left + container.scrollLeft;
                     const endY = r2.top + (r2.height / 2) - containerRect.top + container.scrollTop;
 
-                    // Für weiche Kurven berechnen wir den Mittelpunkt
                     const curveX = (startX + endX) / 2;
                     
-                    // Linie leuchtet auf, wenn das Match bereits abgeschlossen ist!
                     const isFinished = card.getAttribute('data-status') === 'FINISHED';
                     const color = isFinished ? 'rgba(0, 240, 255, 0.4)' : 'rgba(255, 255, 255, 0.1)';
                     const strokeWidth = isFinished ? '2' : '1';
 
-                    // Zeichnet eine geschwungene Bezier-Kurve
                     paths += `<path d="M ${startX} ${startY} C ${curveX} ${startY}, ${curveX} ${endY}, ${endX} ${endY}" fill="none" stroke="${color}" stroke-width="${strokeWidth}" />`;
                 }
             }
@@ -252,7 +227,6 @@ function getRoundName(r, max, type) {
 }
 
 function setupTimer(iso) {
-    // WICHTIG: Wenn schon ein Timer läuft (z.B. nach einem Geister-Update), löschen wir ihn erst!
     if (countdownInterval) clearInterval(countdownInterval);
 
     const target = new Date(iso).getTime();
@@ -303,21 +277,12 @@ function setupHoverEffects() {
 function checkChampion(bracket, teams) {
     const gf = bracket.find(m => m.is_grand_final);
     
-    // Check: Ist das Finale vorbei UND gibt es einen Gewinner?
     if (gf && gf.status === 'FINISHED' && gf.winner_id) {
-        
-        // --- SMART CACHE CHECK ---
-        // Wir bauen einen einzigartigen Key: z.B. "seen_UIC_EMBER"
         const storageKey = `uic_champion_seen_${gf.winner_id}`;
         const alreadySeen = localStorage.getItem(storageKey);
 
-        // Wenn der User diesen Sieger schon gesehen hat, brechen wir hier ab!
-        if (alreadySeen === 'true') {
-            console.log("Champion screen already seen for:", gf.winner_id);
-            return; 
-        }
+        if (alreadySeen === 'true') return; 
 
-        // --- SCREEN AUFBAUEN ---
         const champ = resolve(gf.winner_id, teams);
         document.getElementById('champ-name').innerText = champ.name;
         
@@ -329,26 +294,189 @@ function checkChampion(bracket, teams) {
         }
 
         const champScreen = document.getElementById('champion-screen');
-
-        // 1. "hidden" entfernen
         champScreen.classList.remove('hidden');
 
-        // 2. Animation starten (mit Timeout)
         setTimeout(() => {
             champScreen.classList.add('show-champion');
-            
-            // --- JETZT SPEICHERN WIR DEN STATUS ---
-            // Damit beim nächsten Reload der Screen NICHT mehr kommt
             localStorage.setItem(storageKey, 'true');
-            
         }, 50);
 
-        // 3. Schließen Logik
         document.getElementById('close-champ').onclick = () => {
             champScreen.classList.remove('show-champion');
             setTimeout(() => {
                 champScreen.classList.add('hidden');
-            }, 800); // Warten bis CSS Animation (0.8s) durch ist
+            }, 800); 
         };
     }
+}
+
+// ============================================================================
+// SMART SIDE PANEL LOGIK (Match & Team Profile)
+// ============================================================================
+
+function setupPanelEvents() {
+    const overlay = document.getElementById('info-overlay');
+    const closeBtn = document.getElementById('close-panel');
+    
+    overlay.onclick = closePanel;
+    closeBtn.onclick = closePanel;
+
+    document.querySelectorAll('.bracket-scroll-wrapper').forEach(wrapper => {
+        if (wrapper.dataset.clickBound) return;
+        wrapper.dataset.clickBound = "true";
+
+        wrapper.addEventListener('click', (e) => {
+            const teamRow = e.target.closest('.team-row');
+            if (teamRow) {
+                e.stopPropagation(); 
+                const teamId = teamRow.getAttribute('data-team-id');
+                if (teamId && teamId !== '[BYE]') openTeamPanel(teamId);
+                return;
+            }
+
+            const matchCard = e.target.closest('.match-card');
+            if (matchCard) {
+                const matchId = matchCard.id.replace('match-', '');
+                openMatchPanel(matchId);
+            }
+        });
+    });
+}
+
+function openTeamPanel(teamId) {
+    const team = globalTeams[teamId];
+    if(!team) return;
+
+    const content = document.getElementById('panel-content');
+    
+    // 1. ROSTER (Prime League oder manuell)
+    let rosterData = [];
+    if (team.prime_intel && team.prime_intel.roster && team.prime_intel.roster.length > 0) {
+        rosterData = team.prime_intel.roster;
+    } else if (team.roster) {
+        rosterData = team.roster;
+    }
+
+    let rosterHTML = '<p class="text-muted">Kein Roster hinterlegt.</p>';
+    if (rosterData.length > 0) {
+        rosterHTML = '<ul class="info-list">' + rosterData.map(p => {
+            const name = p.summoner || p.name; 
+            const role = p.is_captain ? '👑 Captain' : (p.role || 'Player');
+            return `
+            <li class="info-item">
+                <span style="font-weight: bold; font-family: var(--font-head);">${name}</span>
+                <span style="color: ${p.is_captain ? '#FFD700' : 'var(--text-muted)'}; font-size: 0.85rem;">${role}</span>
+            </li>
+        `}).join('') + '</ul>';
+    }
+
+    // 2. PRIME LEAGUE STATS
+    let statsHTML = '';
+    let division = team.acronym || 'TEAM';
+    
+    if (team.prime_intel) {
+        const intel = team.prime_intel;
+        division = intel.meta.div;
+        
+        const formBoxes = intel.stats.form.map(f => {
+            let color = '#888';
+            if (f === 'W') color = '#00F0FF'; 
+            if (f === 'L') color = '#ff003c'; 
+            return `<span style="display:inline-block; width:20px; height:20px; line-height:20px; text-align:center; background:${color}; color:#000; font-weight:bold; border-radius:3px; margin-right:4px;">${f}</span>`;
+        }).join('');
+
+        statsHTML = `
+            <h3 style="color: var(--primary); margin-top: 2rem; margin-bottom: 1rem;">SEASON STATS</h3>
+            <div style="display: flex; gap: 10px; margin-bottom: 15px;">
+                <div style="flex: 1; background: rgba(255,255,255,0.05); padding: 15px; border-radius: 8px; text-align: center;">
+                    <div style="font-size: 2rem; font-weight: bold; font-family: var(--font-head); color: #fff;">${intel.stats.win_rate}%</div>
+                    <div style="font-size: 0.7rem; color: var(--text-muted); letter-spacing: 1px;">WIN RATE</div>
+                </div>
+                <div style="flex: 1; background: rgba(255,255,255,0.05); padding: 15px; border-radius: 8px; text-align: center;">
+                    <div style="font-size: 2rem; font-weight: bold; font-family: var(--font-head); color: #fff;">${intel.stats.wins} - ${intel.stats.losses}</div>
+                    <div style="font-size: 0.7rem; color: var(--text-muted); letter-spacing: 1px;">WINS / LOSSES</div>
+                </div>
+            </div>
+            
+            ${intel.stats.form.length > 0 ? `
+            <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 6px; display: flex; align-items: center; justify-content: space-between;">
+                <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: bold;">AKTUELLE FORM</span>
+                <div>${formBoxes}</div>
+            </div>
+            ` : ''}
+
+            ${intel.team_link ? `<a href="${intel.team_link}" target="_blank" class="vod-link" style="margin-top: 1rem; width: 100%; justify-content: center;">🔗 PRIME LEAGUE PROFIL</a>` : ''}
+        `;
+    }
+
+    content.innerHTML = `
+        <div class="panel-header">
+            ${team.logo ? `<img src="${team.logo}" style="width:70px; height:70px; object-fit:contain; margin-bottom:15px; filter: drop-shadow(0 0 10px rgba(0,240,255,0.3));">` : ''}
+            <div class="panel-subtitle">${division}</div>
+            <h2 class="panel-title">${team.name}</h2>
+        </div>
+        
+        <h3 style="color: var(--primary); margin-bottom: 1rem;">ROSTER</h3>
+        ${rosterHTML}
+        
+        ${statsHTML}
+    `;
+    
+    showPanel();
+}
+
+function openMatchPanel(matchId) {
+    const match = globalBracket.find(m => m.id === matchId);
+    if(!match) return;
+
+    const t1 = resolve(match.team_1, globalTeams);
+    const t2 = resolve(match.team_2, globalTeams);
+    const content = document.getElementById('panel-content');
+    
+    let detailsHTML = '<p class="text-muted">Noch keine detaillierten Map-Scores verfügbar.</p>';
+    let vodHTML = '';
+
+    if (match.details) {
+        if (match.details.maps && match.details.maps.length > 0) {
+            detailsHTML = '<ul class="info-list">' + match.details.maps.map(m => `
+                <li class="info-item">
+                    <span style="font-weight: bold;">${m.map_name}</span>
+                    <span style="color: var(--primary); font-family: var(--font-head); font-size: 1.1rem;">${m.score_1} - ${m.score_2}</span>
+                </li>
+            `).join('') + '</ul>';
+        }
+        if (match.details.vod_link) {
+            vodHTML = `<a href="${match.details.vod_link}" target="_blank" class="vod-link">📺 Zum VOD (Replay)</a>`;
+        }
+    }
+
+    content.innerHTML = `
+        <div class="panel-header">
+            <div class="panel-subtitle">MATCH INFO</div>
+            <h2 class="panel-title">${t1.name} vs ${t2.name}</h2>
+            <h3 style="color: #fff; font-size: 2rem;">${match.score_1} : ${match.score_2}</h3>
+        </div>
+        <h3 style="color: var(--primary); margin-bottom: 1rem;">MAPS</h3>
+        ${detailsHTML}
+        ${vodHTML}
+    `;
+    
+    showPanel();
+}
+
+function showPanel() {
+    document.getElementById('info-overlay').classList.remove('hidden'); 
+    setTimeout(() => {
+        document.getElementById('info-overlay').classList.add('active');
+        document.getElementById('info-panel').classList.add('active');
+    }, 10);
+}
+
+function closePanel() {
+    document.getElementById('info-overlay').classList.remove('active');
+    document.getElementById('info-panel').classList.remove('active');
+    
+    setTimeout(() => {
+        document.getElementById('info-overlay').classList.add('hidden');
+    }, 300);
 }
