@@ -489,6 +489,9 @@ function showModal() {
     const overlay = document.getElementById('modal-overlay');
     overlay.classList.remove('hidden'); 
     
+    // NEU: Scrollen der Hauptseite blockieren!
+    document.body.style.overflow = 'hidden';
+    
     // Kleiner Delay, damit die CSS-Transition (Fade & Scale) feuert
     setTimeout(() => {
         overlay.classList.add('active');
@@ -498,6 +501,9 @@ function showModal() {
 function closeModal() {
     const overlay = document.getElementById('modal-overlay');
     overlay.classList.remove('active');
+    
+    // NEU: Scrollen der Hauptseite wieder freigeben!
+    document.body.style.overflow = '';
     
     // Warten, bis die CSS-Transition fertig ist, bevor es aus dem DOM verschwindet
     setTimeout(() => {
