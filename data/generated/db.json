@@ -689,8 +689,8 @@
       "next_slot": 2,
       "loser_match_id": "lb_r1_m4",
       "loser_slot": 2,
-      "team_1": "EXT_TEAM1",
-      "team_2": "EXT_TEAM2"
+      "team_1": "EXT_TEST1",
+      "team_2": "EXT_TEST2"
     },
     {
       "score_1": 0,
