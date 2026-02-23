@@ -710,7 +710,7 @@
       "team_2": "[BYE]"
     },
     {
-      "score_1": 0,
+      "score_1": 2,
       "score_2": 0,
       "winner_id": null,
       "status": "LIVE",
@@ -726,7 +726,7 @@
     },
     {
       "score_1": 0,
-      "score_2": 0,
+      "score_2": 2,
       "winner_id": null,
       "status": "LIVE",
       "id": "wb_r1_m7",
@@ -740,8 +740,8 @@
       "team_2": "EXT_TEST3"
     },
     {
-      "score_1": 0,
-      "score_2": 0,
+      "score_1": 1,
+      "score_2": 2,
       "winner_id": null,
       "status": "LIVE",
       "id": "wb_r1_m8",
@@ -755,7 +755,7 @@
       "team_2": "EXT_TEST2"
     },
     {
-      "score_1": 0,
+      "score_1": 2,
       "score_2": 0,
       "winner_id": null,
       "status": "LIVE",
@@ -771,7 +771,7 @@
     },
     {
       "score_1": 0,
-      "score_2": 0,
+      "score_2": 2,
       "winner_id": null,
       "status": "LIVE",
       "id": "wb_r2_m2",
