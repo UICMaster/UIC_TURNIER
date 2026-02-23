@@ -1,0 +1,982 @@
+{
+  "meta": {
+    "title": "Das Turnier der Kraft Season 2026",
+    "status": "LIVE",
+    "start_date_iso": "2026-03-01T18:00:00Z",
+    "registration_link": "https://forms.google.com",
+    "stream_link": "https://twitch.tv/ultrainstinctcrew"
+  },
+  "teams": {
+    "EXT_TEST1": {
+      "id": "EXT_TEST1",
+      "name": "EXT_TEST1",
+      "acronym": "EXT_TEST1",
+      "logo": "",
+      "stream_link": "https://twitch.tv/",
+      "is_live": true,
+      "roster": [
+        {
+          "name": "Test1",
+          "role": "Midlane",
+          "is_captain": true
+        },
+        {
+          "name": "Test1",
+          "role": "Jungle"
+        },
+        {
+          "name": "Test1",
+          "role": "ADC"
+        },
+        {
+          "name": "Test1",
+          "role": "Support"
+        },
+        {
+          "name": "Test1",
+          "role": "Toplane"
+        }
+      ]
+    },
+    "EXT_TEST2": {
+      "id": "EXT_TEST2",
+      "name": "EXT_TEST2",
+      "acronym": "EXT_TEST2",
+      "logo": "",
+      "stream_link": "https://twitch.tv/",
+      "is_live": true,
+      "roster": [
+        {
+          "name": "Test2",
+          "role": "Midlane",
+          "is_captain": true
+        },
+        {
+          "name": "Test2",
+          "role": "Jungle"
+        },
+        {
+          "name": "Test2",
+          "role": "ADC"
+        },
+        {
+          "name": "Test2",
+          "role": "Support"
+        },
+        {
+          "name": "Test2",
+          "role": "Toplane"
+        }
+      ]
+    },
+    "UIC_ABYSS": {
+      "id": "UIC_ABYSS",
+      "name": "UIC Abyss",
+      "acronym": "UICA",
+      "logo": "https://cdn0.gamesports.net/league_team_logos/204000/204924.jpg?1765838352",
+      "stream_link": "https://twitch.tv/",
+      "is_live": true,
+      "roster": [
+        {
+          "name": "Test",
+          "role": "Midlane",
+          "is_captain": true
+        },
+        {
+          "name": "Test",
+          "role": "Jungle"
+        },
+        {
+          "name": "Test",
+          "role": "ADC"
+        },
+        {
+          "name": "HealBot9000",
+          "role": "Support"
+        },
+        {
+          "name": "Test",
+          "role": "Toplane"
+        }
+      ],
+      "prime_intel": {
+        "id": "204924",
+        "key": "UIC_ABYSS",
+        "meta": {
+          "name": "Ultra Instinct Crew Abyss",
+          "div": "Division 5"
+        },
+        "stats": {
+          "wins": 0,
+          "losses": 8,
+          "points": 0,
+          "games": 8,
+          "win_rate": 0,
+          "form": [
+            "L",
+            "L",
+            "L",
+            "L"
+          ]
+        },
+        "next_match": {
+          "date": "2026-03-01T17:00:00+01:00",
+          "tag": "ODE",
+          "link": "https://www.primeleague.gg/de/leagues/matches/1154182"
+        },
+        "last_match": {
+          "result": "NIEDERLAGE",
+          "score": "0 - 2",
+          "enemy": "d5b",
+          "date": "2026-02-18T20:00:00+01:00"
+        },
+        "roster": [
+          {
+            "summoner": "UIC M Character#UIC",
+            "is_captain": false
+          },
+          {
+            "summoner": "TheEigeeen#EIGI",
+            "is_captain": false
+          },
+          {
+            "summoner": "UIC Keygasza#1337",
+            "is_captain": true
+          },
+          {
+            "summoner": "UIC Speedy#EUW",
+            "is_captain": true
+          },
+          {
+            "summoner": "UIC Goku#UIC",
+            "is_captain": true
+          },
+          {
+            "summoner": "UIC DANY#RFA40",
+            "is_captain": false
+          },
+          {
+            "summoner": "Ainvy#Ainvy",
+            "is_captain": true
+          }
+        ],
+        "team_link": "https://www.primeleague.gg/de/leagues/teams/204924",
+        "logo": "https://cdn0.gamesports.net/league_team_logos/204000/204924.jpg?1765838352"
+      }
+    },
+    "UIC_EMBER": {
+      "id": "UIC_EMBER",
+      "name": "UIC Ember",
+      "acronym": "UICE",
+      "logo": "https://cdn0.gamesports.net/league_team_logos/211000/211165.jpg?1765449081",
+      "stream_link": "https://twitch.tv/",
+      "is_live": true,
+      "prime_intel": {
+        "id": "211165",
+        "key": "UIC_EMBER",
+        "meta": {
+          "name": "Ultra Instinct Crew Ember",
+          "div": "Division 6"
+        },
+        "stats": {
+          "wins": 5,
+          "losses": 3,
+          "points": 5,
+          "games": 8,
+          "win_rate": 63,
+          "form": [
+            "W",
+            "L",
+            "W",
+            "D"
+          ]
+        },
+        "next_match": {
+          "date": "2026-03-01T19:00:00+01:00",
+          "tag": "LBB",
+          "link": "https://www.primeleague.gg/de/leagues/matches/1155078"
+        },
+        "last_match": {
+          "result": "UNENTSCHIEDEN",
+          "score": "1 - 1",
+          "enemy": "9045",
+          "date": "2026-02-22T16:00:00+01:00"
+        },
+        "roster": [
+          {
+            "summoner": "UIC DontMethWith#AMB",
+            "is_captain": true
+          },
+          {
+            "summoner": "UIC Envy#UIC",
+            "is_captain": true
+          },
+          {
+            "summoner": "UIC Shederen#Ger",
+            "is_captain": false
+          },
+          {
+            "summoner": "SilasX#EUWde",
+            "is_captain": false
+          },
+          {
+            "summoner": "ResetHoe#Kata",
+            "is_captain": false
+          }
+        ],
+        "team_link": "https://www.primeleague.gg/de/leagues/teams/211165",
+        "logo": "https://cdn0.gamesports.net/league_team_logos/211000/211165.jpg?1765449081"
+      }
+    },
+    "UIC_FREEZER": {
+      "id": "UIC_FREEZER",
+      "name": "UIC Freezer",
+      "acronym": "UICF",
+      "logo": "https://cdn0.gamesports.net/league_team_logos/203000/203146.jpg?1768840480",
+      "stream_link": "https://twitch.tv/",
+      "is_live": true,
+      "prime_intel": {
+        "id": "203146",
+        "key": "UIC_FREEZER",
+        "meta": {
+          "name": "Ultra Instinct Crew Freezer",
+          "div": "Division 5"
+        },
+        "stats": {
+          "wins": 2,
+          "losses": 2,
+          "points": 2,
+          "games": 4,
+          "win_rate": 50,
+          "form": [
+            "L",
+            "W"
+          ]
+        },
+        "next_match": {
+          "date": "2026-03-01T17:00:00+01:00",
+          "tag": "ABL",
+          "link": "https://www.primeleague.gg/de/leagues/matches/1154406"
+        },
+        "last_match": {
+          "result": "SIEG",
+          "score": "2 - 0",
+          "enemy": "CRINT",
+          "date": "2026-02-08T19:30:00+01:00"
+        },
+        "roster": [
+          {
+            "summoner": "UIC Ryu Copeland#117",
+            "is_captain": true
+          },
+          {
+            "summoner": "UIC FrozenHands#MID",
+            "is_captain": true
+          },
+          {
+            "summoner": "RG AutumnLeaf#Moo",
+            "is_captain": true
+          },
+          {
+            "summoner": "UIC Rayando07#Help",
+            "is_captain": false
+          },
+          {
+            "summoner": "BlauerKlaus#Qvy心",
+            "is_captain": true
+          }
+        ],
+        "team_link": "https://www.primeleague.gg/de/leagues/teams/203146",
+        "logo": "https://cdn0.gamesports.net/league_team_logos/203000/203146.jpg?1768840480"
+      }
+    },
+    "UIC_NIGHT": {
+      "id": "UIC_NIGHT",
+      "name": "UIC Night",
+      "acronym": "UICNT",
+      "logo": "https://cdn0.gamesports.net/league_team_logos/212000/212047.jpg?1768386989",
+      "stream_link": "https://twitch.tv/",
+      "is_live": true,
+      "prime_intel": {
+        "id": "212047",
+        "key": "UIC_NIGHT",
+        "meta": {
+          "name": "Ultra Instinct Crew Night",
+          "div": "Division 6"
+        },
+        "stats": {
+          "wins": 0,
+          "losses": 6,
+          "points": 0,
+          "games": 6,
+          "win_rate": 0,
+          "form": [
+            "L",
+            "L",
+            "L"
+          ]
+        },
+        "next_match": {
+          "date": "2026-02-23T19:00:00+01:00",
+          "tag": "TAUBE",
+          "link": "https://www.primeleague.gg/de/leagues/matches/1154456"
+        },
+        "last_match": {
+          "result": "NIEDERLAGE",
+          "score": "0 - 2",
+          "enemy": "ZSB",
+          "date": "2026-02-14T18:00:00+01:00"
+        },
+        "roster": [
+          {
+            "summoner": "MaZiN#EUWL9",
+            "is_captain": false
+          },
+          {
+            "summoner": "UIC ReCord#Cedo",
+            "is_captain": true
+          },
+          {
+            "summoner": "UIC Cedo#EUW",
+            "is_captain": true
+          },
+          {
+            "summoner": "UIC proStarII#UIC",
+            "is_captain": true
+          },
+          {
+            "summoner": "ривен#sabi",
+            "is_captain": false
+          },
+          {
+            "summoner": "Sylveon#mine",
+            "is_captain": false
+          },
+          {
+            "summoner": "UIC Shockwave#EUW",
+            "is_captain": true
+          }
+        ],
+        "team_link": "https://www.primeleague.gg/de/leagues/teams/212047",
+        "logo": "https://cdn0.gamesports.net/league_team_logos/212000/212047.jpg?1768386989"
+      }
+    },
+    "UIC_NOVA": {
+      "id": "UIC_NOVA",
+      "name": "UIC Nova",
+      "acronym": "UICN",
+      "logo": "https://cdn0.gamesports.net/league_team_logos/203000/203447.jpg?1768386652",
+      "stream_link": "https://twitch.tv/",
+      "is_live": true,
+      "prime_intel": {
+        "id": "203447",
+        "key": "UIC_NOVA",
+        "meta": {
+          "name": "Ultra Instinct Crew Nova",
+          "div": "Division 6"
+        },
+        "stats": {
+          "wins": 0,
+          "losses": 6,
+          "points": 0,
+          "games": 6,
+          "win_rate": 0,
+          "form": [
+            "L",
+            "L",
+            "L"
+          ]
+        },
+        "next_match": {
+          "date": "2026-03-01T19:00:00+01:00",
+          "tag": "IF",
+          "link": "https://www.primeleague.gg/de/leagues/matches/1155533"
+        },
+        "last_match": {
+          "result": "NIEDERLAGE",
+          "score": "0 - 2",
+          "enemy": "W2B OE",
+          "date": "2026-02-16T20:00:00+01:00"
+        },
+        "roster": [
+          {
+            "summoner": "UIC Rubix Qube#MÖP",
+            "is_captain": true
+          },
+          {
+            "summoner": "Rhamuthra#4444",
+            "is_captain": false
+          },
+          {
+            "summoner": "UIC Muh#KATZE",
+            "is_captain": false
+          },
+          {
+            "summoner": "UIC Simply#666",
+            "is_captain": true
+          },
+          {
+            "summoner": "UIC Excellent C#1997",
+            "is_captain": true
+          },
+          {
+            "summoner": "UIC adedier#EUWE",
+            "is_captain": false
+          },
+          {
+            "summoner": "UIC Kaanto#Nova",
+            "is_captain": false
+          }
+        ],
+        "team_link": "https://www.primeleague.gg/de/leagues/teams/203447",
+        "logo": "https://cdn0.gamesports.net/league_team_logos/203000/203447.jpg?1768386652"
+      }
+    },
+    "UIC_PRIME": {
+      "id": "UIC_PRIME",
+      "name": "UIC Prime",
+      "acronym": "UICP",
+      "logo": "https://cdn0.gamesports.net/league_team_logos/116000/116908.jpg?1768526642",
+      "stream_link": "https://twitch.tv/",
+      "is_live": true,
+      "prime_intel": {
+        "id": "116908",
+        "key": "UIC_PRIME",
+        "meta": {
+          "name": "Ultra Instinct Crew",
+          "div": "Division 5"
+        },
+        "stats": {
+          "wins": 6,
+          "losses": 0,
+          "points": 6,
+          "games": 6,
+          "win_rate": 100,
+          "form": [
+            "W",
+            "W",
+            "W"
+          ]
+        },
+        "next_match": {
+          "date": "2026-03-01T17:00:00+01:00",
+          "tag": "RIFT",
+          "link": "https://www.primeleague.gg/de/leagues/matches/1153917"
+        },
+        "last_match": {
+          "result": "SIEG",
+          "score": "2 - 0",
+          "enemy": "TBG",
+          "date": "2026-02-18T19:00:00+01:00"
+        },
+        "roster": [
+          {
+            "summoner": "UIC Baguetto#R3kt",
+            "is_captain": false
+          },
+          {
+            "summoner": "UIC Shenycrane#Vugel",
+            "is_captain": false
+          },
+          {
+            "summoner": "UIC Niki#AMB",
+            "is_captain": true
+          },
+          {
+            "summoner": "UIC Speedy#EUW",
+            "is_captain": true
+          },
+          {
+            "summoner": "UIC Giani#999",
+            "is_captain": false
+          },
+          {
+            "summoner": "Baumi#123",
+            "is_captain": false
+          }
+        ],
+        "team_link": "https://www.primeleague.gg/de/leagues/teams/116908",
+        "logo": "https://cdn0.gamesports.net/league_team_logos/116000/116908.jpg?1768526642"
+      }
+    },
+    "UIC_SPARK": {
+      "id": "UIC_SPARK",
+      "name": "UIC Spark",
+      "acronym": "UICS",
+      "logo": "https://cdn0.gamesports.net/league_team_logos/208000/208694.jpg?1765150033",
+      "stream_link": "https://twitch.tv/",
+      "is_live": true,
+      "prime_intel": {
+        "id": "208694",
+        "key": "UIC_SPARK",
+        "meta": {
+          "name": "Ultra Instinct Crew Spark",
+          "div": "Division 6"
+        },
+        "stats": {
+          "wins": 3,
+          "losses": 3,
+          "points": 3,
+          "games": 6,
+          "win_rate": 50,
+          "form": [
+            "W",
+            "D",
+            "L"
+          ]
+        },
+        "next_match": {
+          "date": "2026-03-01T19:00:00+01:00",
+          "tag": "AUT",
+          "link": "https://www.primeleague.gg/de/leagues/matches/1155330"
+        },
+        "last_match": {
+          "result": "NIEDERLAGE",
+          "score": "0 - 2",
+          "enemy": "DSDS",
+          "date": "2026-02-15T19:00:00+01:00"
+        },
+        "roster": [
+          {
+            "summoner": "UIC Flare#JND",
+            "is_captain": true
+          },
+          {
+            "summoner": "UIC Lenno#UIC",
+            "is_captain": false
+          },
+          {
+            "summoner": "Lenlusz#EAZ",
+            "is_captain": false
+          },
+          {
+            "summoner": "skanpy#3005",
+            "is_captain": false
+          },
+          {
+            "summoner": "Firehand#1337",
+            "is_captain": false
+          },
+          {
+            "summoner": "soulrender#fent",
+            "is_captain": false
+          },
+          {
+            "summoner": "UIC Dragonfly#1299",
+            "is_captain": false
+          }
+        ],
+        "team_link": "https://www.primeleague.gg/de/leagues/teams/208694",
+        "logo": "https://cdn0.gamesports.net/league_team_logos/208000/208694.jpg?1765150033"
+      }
+    }
+  },
+  "bracket": [
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": "UIC_PRIME",
+      "status": "FINISHED",
+      "id": "wb_r1_m1",
+      "round": 1,
+      "type": "WINNER",
+      "next_match_id": "wb_r2_m1",
+      "next_slot": 1,
+      "loser_match_id": "lb_r1_m1",
+      "loser_slot": 1,
+      "team_1": "UIC_PRIME",
+      "team_2": "[BYE]"
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": "UIC_FREEZER",
+      "status": "FINISHED",
+      "id": "wb_r1_m2",
+      "round": 1,
+      "type": "WINNER",
+      "next_match_id": "wb_r2_m1",
+      "next_slot": 2,
+      "loser_match_id": "lb_r1_m1",
+      "loser_slot": 2,
+      "team_1": "UIC_FREEZER",
+      "team_2": "[BYE]"
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": "UIC_EMBER",
+      "status": "FINISHED",
+      "id": "wb_r1_m3",
+      "round": 1,
+      "type": "WINNER",
+      "next_match_id": "wb_r2_m2",
+      "next_slot": 1,
+      "loser_match_id": "lb_r1_m2",
+      "loser_slot": 1,
+      "team_1": "UIC_EMBER",
+      "team_2": "[BYE]"
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": "UIC_NOVA",
+      "status": "FINISHED",
+      "id": "wb_r1_m4",
+      "round": 1,
+      "type": "WINNER",
+      "next_match_id": "wb_r2_m2",
+      "next_slot": 2,
+      "loser_match_id": "lb_r1_m2",
+      "loser_slot": 2,
+      "team_1": "UIC_NOVA",
+      "team_2": "[BYE]"
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": "UIC_ABYSS",
+      "status": "FINISHED",
+      "id": "wb_r1_m5",
+      "round": 1,
+      "type": "WINNER",
+      "next_match_id": "wb_r2_m3",
+      "next_slot": 1,
+      "loser_match_id": "lb_r1_m3",
+      "loser_slot": 1,
+      "team_1": "UIC_ABYSS",
+      "team_2": "[BYE]"
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": "UIC_NIGHT",
+      "status": "FINISHED",
+      "id": "wb_r1_m6",
+      "round": 1,
+      "type": "WINNER",
+      "next_match_id": "wb_r2_m3",
+      "next_slot": 2,
+      "loser_match_id": "lb_r1_m3",
+      "loser_slot": 2,
+      "team_1": "UIC_NIGHT",
+      "team_2": "[BYE]"
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": "UIC_SPARK",
+      "status": "FINISHED",
+      "id": "wb_r1_m7",
+      "round": 1,
+      "type": "WINNER",
+      "next_match_id": "wb_r2_m4",
+      "next_slot": 1,
+      "loser_match_id": "lb_r1_m4",
+      "loser_slot": 1,
+      "team_1": "UIC_SPARK",
+      "team_2": "[BYE]"
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "LIVE",
+      "id": "wb_r1_m8",
+      "round": 1,
+      "type": "WINNER",
+      "next_match_id": "wb_r2_m4",
+      "next_slot": 2,
+      "loser_match_id": "lb_r1_m4",
+      "loser_slot": 2,
+      "team_1": "EXT_TEST1",
+      "team_2": "EXT_TEST2"
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "LIVE",
+      "id": "wb_r2_m1",
+      "round": 2,
+      "type": "WINNER",
+      "next_match_id": "wb_r3_m1",
+      "next_slot": 1,
+      "loser_match_id": "lb_r2_m1",
+      "loser_slot": 1,
+      "team_1": "UIC_PRIME",
+      "team_2": "UIC_FREEZER"
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "LIVE",
+      "id": "wb_r2_m2",
+      "round": 2,
+      "type": "WINNER",
+      "next_match_id": "wb_r3_m1",
+      "next_slot": 2,
+      "loser_match_id": "lb_r2_m2",
+      "loser_slot": 2,
+      "team_1": "UIC_EMBER",
+      "team_2": "UIC_NOVA"
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "LIVE",
+      "id": "wb_r2_m3",
+      "round": 2,
+      "type": "WINNER",
+      "next_match_id": "wb_r3_m2",
+      "next_slot": 1,
+      "loser_match_id": "lb_r2_m3",
+      "loser_slot": 1,
+      "team_1": "UIC_ABYSS",
+      "team_2": "UIC_NIGHT"
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "WAITING",
+      "id": "wb_r2_m4",
+      "round": 2,
+      "type": "WINNER",
+      "next_match_id": "wb_r3_m2",
+      "next_slot": 2,
+      "loser_match_id": "lb_r2_m4",
+      "loser_slot": 2,
+      "team_1": "UIC_SPARK",
+      "team_2": null
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "WAITING",
+      "id": "wb_r3_m1",
+      "round": 3,
+      "type": "WINNER",
+      "next_match_id": "wb_r4_m1",
+      "next_slot": 1,
+      "loser_match_id": "lb_r4_m1",
+      "loser_slot": 1,
+      "team_1": null,
+      "team_2": null
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "WAITING",
+      "id": "wb_r3_m2",
+      "round": 3,
+      "type": "WINNER",
+      "next_match_id": "wb_r4_m1",
+      "next_slot": 2,
+      "loser_match_id": "lb_r4_m2",
+      "loser_slot": 2,
+      "team_1": null,
+      "team_2": null
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "WAITING",
+      "id": "wb_r4_m1",
+      "round": 4,
+      "type": "WINNER",
+      "next_match_id": "gf_m1",
+      "next_slot": 1,
+      "loser_match_id": "lb_r6_m1",
+      "loser_slot": 1,
+      "team_1": null,
+      "team_2": null
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": "[BYE]",
+      "status": "FINISHED",
+      "id": "lb_r1_m1",
+      "round": 1,
+      "type": "LOSER",
+      "next_match_id": "lb_r2_m1",
+      "team_1": "[BYE]",
+      "team_2": "[BYE]"
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": "[BYE]",
+      "status": "FINISHED",
+      "id": "lb_r1_m2",
+      "round": 1,
+      "type": "LOSER",
+      "next_match_id": "lb_r2_m2",
+      "team_1": "[BYE]",
+      "team_2": "[BYE]"
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": "[BYE]",
+      "status": "FINISHED",
+      "id": "lb_r1_m3",
+      "round": 1,
+      "type": "LOSER",
+      "next_match_id": "lb_r2_m3",
+      "team_1": "[BYE]",
+      "team_2": "[BYE]"
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "WAITING",
+      "id": "lb_r1_m4",
+      "round": 1,
+      "type": "LOSER",
+      "next_match_id": "lb_r2_m4",
+      "team_1": "[BYE]",
+      "team_2": null
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "WAITING",
+      "id": "lb_r2_m1",
+      "round": 2,
+      "type": "LOSER",
+      "next_match_id": "lb_r3_m1",
+      "team_1": "[BYE]",
+      "team_2": null
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "WAITING",
+      "id": "lb_r2_m2",
+      "round": 2,
+      "type": "LOSER",
+      "next_match_id": "lb_r3_m1",
+      "team_1": "[BYE]",
+      "team_2": null
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "WAITING",
+      "id": "lb_r2_m3",
+      "round": 2,
+      "type": "LOSER",
+      "next_match_id": "lb_r3_m2",
+      "team_1": "[BYE]",
+      "team_2": null
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "WAITING",
+      "id": "lb_r2_m4",
+      "round": 2,
+      "type": "LOSER",
+      "next_match_id": "lb_r3_m2",
+      "team_1": null,
+      "team_2": null
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "WAITING",
+      "id": "lb_r3_m1",
+      "round": 3,
+      "type": "LOSER",
+      "next_match_id": "lb_r4_m1",
+      "team_1": null,
+      "team_2": null
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "WAITING",
+      "id": "lb_r3_m2",
+      "round": 3,
+      "type": "LOSER",
+      "next_match_id": "lb_r4_m2",
+      "team_1": null,
+      "team_2": null
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "WAITING",
+      "id": "lb_r4_m1",
+      "round": 4,
+      "type": "LOSER",
+      "next_match_id": "lb_r5_m1",
+      "team_1": null,
+      "team_2": null
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "WAITING",
+      "id": "lb_r4_m2",
+      "round": 4,
+      "type": "LOSER",
+      "next_match_id": "lb_r5_m1",
+      "team_1": null,
+      "team_2": null
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "WAITING",
+      "id": "lb_r5_m1",
+      "round": 5,
+      "type": "LOSER",
+      "next_match_id": "lb_r6_m1",
+      "team_1": null,
+      "team_2": null
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "WAITING",
+      "id": "lb_r6_m1",
+      "round": 6,
+      "type": "LOSER",
+      "next_match_id": "gf_m1",
+      "team_1": null,
+      "team_2": null
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "WAITING",
+      "id": "gf_m1",
+      "round": 5,
+      "type": "WINNER",
+      "next_match_id": null,
+      "team_1": null,
+      "team_2": null,
+      "is_grand_final": true
+    }
+  ]
+}
