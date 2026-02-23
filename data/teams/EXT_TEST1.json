@@ -1,0 +1,31 @@
+{
+  "id": "EXT_TEST1",
+  "name": "EXT_TEST1",
+  "acronym": "EXT_TEST1",
+  "logo": "",
+  "stream_link": "https://twitch.tv/", 
+  "is_live": true,
+  "roster": [
+    { 
+      "name": "Test1", 
+      "role": "Midlane", 
+      "is_captain": true 
+    },
+    { 
+      "name": "Test1", 
+      "role": "Jungle" 
+    },
+    { 
+      "name": "Test1", 
+      "role": "ADC" 
+    },
+    { 
+      "name": "Test1", 
+      "role": "Support" 
+    },
+    { 
+      "name": "Test1", 
+      "role": "Toplane" 
+    }
+  ]
+}
