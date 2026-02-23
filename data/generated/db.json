@@ -1030,8 +1030,8 @@
     {
       "score_1": 0,
       "score_2": 2,
-      "winner_id": null,
-      "status": "LIVE",
+      "winner_id": "UIC_ABYSS",
+      "status": "FINISHED",
       "id": "gf_m1",
       "round": 5,
       "type": "WINNER",
