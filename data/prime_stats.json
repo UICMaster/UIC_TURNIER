@@ -7,35 +7,37 @@
       "div": "Division 5"
     },
     "stats": {
-      "wins": 6,
+      "wins": 10,
       "losses": 0,
-      "points": 6,
-      "games": 6,
+      "points": 10,
+      "games": 10,
       "win_rate": 100,
       "form": [
+        "W",
+        "W",
         "W",
         "W",
         "W"
       ]
     },
     "next_match": {
-      "date": "2026-03-01T17:00:00+01:00",
-      "tag": "RIFT",
-      "link": "https://www.primeleague.gg/de/leagues/matches/1153917"
+      "date": "2026-03-08T17:00:00+01:00",
+      "tag": "LG",
+      "link": "https://www.primeleague.gg/de/leagues/matches/1153920"
     },
     "last_match": {
       "result": "SIEG",
       "score": "2 - 0",
-      "enemy": "TBG",
-      "date": "2026-02-18T19:00:00+01:00"
+      "enemy": "RIFT",
+      "date": "2026-02-28T19:00:00+01:00"
     },
     "roster": [
       {
-        "summoner": "UIC Baguetto#R3kt",
-        "is_captain": false
+        "summoner": "UIC Speedy#EUW",
+        "is_captain": true
       },
       {
-        "summoner": "UIC Shenycrane#Vugel",
+        "summoner": "UIC Baguetto#R3kt",
         "is_captain": false
       },
       {
@@ -43,11 +45,11 @@
         "is_captain": true
       },
       {
-        "summoner": "UIC Speedy#EUW",
-        "is_captain": true
+        "summoner": "UIC Giani#999",
+        "is_captain": false
       },
       {
-        "summoner": "UIC Giani#999",
+        "summoner": "UIC Shenycrane#Vugel",
         "is_captain": false
       },
       {
@@ -90,12 +92,16 @@
     },
     "roster": [
       {
-        "summoner": "UIC Flare#JND",
-        "is_captain": true
-      },
-      {
         "summoner": "UIC Lenno#UIC",
         "is_captain": false
+      },
+      {
+        "summoner": "Firehand#1337",
+        "is_captain": false
+      },
+      {
+        "summoner": "UIC Flare#JND",
+        "is_captain": true
       },
       {
         "summoner": "Lenlusz#EAZ",
@@ -106,15 +112,11 @@
         "is_captain": false
       },
       {
-        "summoner": "Firehand#1337",
+        "summoner": "UIC Dragonfly#1299",
         "is_captain": false
       },
       {
         "summoner": "soulrender#fent",
-        "is_captain": false
-      },
-      {
-        "summoner": "UIC Dragonfly#1299",
         "is_captain": false
       }
     ],
@@ -142,7 +144,7 @@
       ]
     },
     "next_match": {
-      "date": "2026-03-01T19:00:00+01:00",
+      "date": "2026-03-01T16:00:00+01:00",
       "tag": "LBB",
       "link": "https://www.primeleague.gg/de/leagues/matches/1155078"
     },
@@ -154,24 +156,24 @@
     },
     "roster": [
       {
+        "summoner": "ResetHoe#Kata",
+        "is_captain": false
+      },
+      {
         "summoner": "UIC DontMethWith#AMB",
         "is_captain": true
-      },
-      {
-        "summoner": "UIC Envy#UIC",
-        "is_captain": true
-      },
-      {
-        "summoner": "UIC Shederen#Ger",
-        "is_captain": false
       },
       {
         "summoner": "SilasX#EUWde",
         "is_captain": false
       },
       {
-        "summoner": "ResetHoe#Kata",
+        "summoner": "UIC Shederen#Ger",
         "is_captain": false
+      },
+      {
+        "summoner": "UIC Envy#UIC",
+        "is_captain": true
       }
     ],
     "team_link": "https://www.primeleague.gg/de/leagues/teams/211165",
@@ -197,7 +199,7 @@
       ]
     },
     "next_match": {
-      "date": "2026-03-01T19:00:00+01:00",
+      "date": "2026-03-07T15:00:00+01:00",
       "tag": "IF",
       "link": "https://www.primeleague.gg/de/leagues/matches/1155533"
     },
@@ -209,24 +211,24 @@
     },
     "roster": [
       {
-        "summoner": "UIC Rubix Qube#MÖP",
-        "is_captain": true
-      },
-      {
         "summoner": "Rhamuthra#4444",
         "is_captain": false
       },
       {
-        "summoner": "UIC Muh#KATZE",
-        "is_captain": false
+        "summoner": "UIC Excellent C#1997",
+        "is_captain": true
       },
       {
         "summoner": "UIC Simply#666",
         "is_captain": true
       },
       {
-        "summoner": "UIC Excellent C#1997",
+        "summoner": "UIC Rubix Qube#MÖP",
         "is_captain": true
+      },
+      {
+        "summoner": "UIC Muh#KATZE",
+        "is_captain": false
       },
       {
         "summoner": "UIC adedier#EUWE",
@@ -261,7 +263,7 @@
       ]
     },
     "next_match": {
-      "date": "2026-03-01T17:00:00+01:00",
+      "date": "2026-03-02T20:00:00+01:00",
       "tag": "ODE",
       "link": "https://www.primeleague.gg/de/leagues/matches/1154182"
     },
@@ -273,24 +275,24 @@
     },
     "roster": [
       {
-        "summoner": "UIC M Character#UIC",
-        "is_captain": false
-      },
-      {
-        "summoner": "TheEigeeen#EIGI",
-        "is_captain": false
+        "summoner": "UIC Speedy#EUW",
+        "is_captain": true
       },
       {
         "summoner": "UIC Keygasza#1337",
         "is_captain": true
       },
       {
-        "summoner": "UIC Speedy#EUW",
-        "is_captain": true
+        "summoner": "UIC M Character#UIC",
+        "is_captain": false
       },
       {
         "summoner": "UIC Goku#UIC",
         "is_captain": true
+      },
+      {
+        "summoner": "TheEigeeen#EIGI",
+        "is_captain": false
       },
       {
         "summoner": "UIC DANY#RFA40",
@@ -313,38 +315,39 @@
     },
     "stats": {
       "wins": 0,
-      "losses": 6,
+      "losses": 8,
       "points": 0,
-      "games": 6,
+      "games": 8,
       "win_rate": 0,
       "form": [
+        "L",
         "L",
         "L",
         "L"
       ]
     },
     "next_match": {
-      "date": "2026-02-23T19:00:00+01:00",
-      "tag": "TAUBE",
-      "link": "https://www.primeleague.gg/de/leagues/matches/1154456"
+      "date": "2026-03-01T19:00:00+01:00",
+      "tag": "SpaCo",
+      "link": "https://www.primeleague.gg/de/leagues/matches/1154462"
     },
     "last_match": {
       "result": "NIEDERLAGE",
       "score": "0 - 2",
-      "enemy": "ZSB",
-      "date": "2026-02-14T18:00:00+01:00"
+      "enemy": "TAUBE",
+      "date": "2026-02-23T19:00:00+01:00"
     },
     "roster": [
       {
-        "summoner": "MaZiN#EUWL9",
+        "summoner": "ривен#sabi",
         "is_captain": false
       },
       {
-        "summoner": "UIC ReCord#Cedo",
+        "summoner": "UIC Cedo#EUW",
         "is_captain": true
       },
       {
-        "summoner": "UIC Cedo#EUW",
+        "summoner": "UIC ReCord#Cedo",
         "is_captain": true
       },
       {
@@ -352,16 +355,16 @@
         "is_captain": true
       },
       {
-        "summoner": "ривен#sabi",
-        "is_captain": false
-      },
-      {
-        "summoner": "Sylveon#mine",
+        "summoner": "MaZiN#EUWL9",
         "is_captain": false
       },
       {
         "summoner": "UIC Shockwave#EUW",
         "is_captain": true
+      },
+      {
+        "summoner": "Sylveon#mine",
+        "is_captain": false
       }
     ],
     "team_link": "https://www.primeleague.gg/de/leagues/teams/212047",
@@ -375,34 +378,39 @@
       "div": "Division 5"
     },
     "stats": {
-      "wins": 2,
+      "wins": 4,
       "losses": 2,
-      "points": 2,
-      "games": 4,
-      "win_rate": 50,
+      "points": 4,
+      "games": 6,
+      "win_rate": 67,
       "form": [
         "L",
+        "W",
         "W"
       ]
     },
     "next_match": {
-      "date": "2026-03-01T17:00:00+01:00",
+      "date": "2026-03-05T19:00:00+01:00",
       "tag": "ABL",
       "link": "https://www.primeleague.gg/de/leagues/matches/1154406"
     },
     "last_match": {
       "result": "SIEG",
       "score": "2 - 0",
-      "enemy": "CRINT",
-      "date": "2026-02-08T19:30:00+01:00"
+      "enemy": "TSP",
+      "date": "2026-02-22T19:00:00+01:00"
     },
     "roster": [
+      {
+        "summoner": "UIC FrozenHands#MID",
+        "is_captain": true
+      },
       {
         "summoner": "UIC Ryu Copeland#117",
         "is_captain": true
       },
       {
-        "summoner": "UIC FrozenHands#MID",
+        "summoner": "BlauerKlaus#Qvy心",
         "is_captain": true
       },
       {
@@ -412,10 +420,6 @@
       {
         "summoner": "UIC Rayando07#Help",
         "is_captain": false
-      },
-      {
-        "summoner": "BlauerKlaus#Qvy心",
-        "is_captain": true
       }
     ],
     "team_link": "https://www.primeleague.gg/de/leagues/teams/203146",
