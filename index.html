@@ -1,29 +1,107 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UIC Turnier Hub</title>
-    <link rel="stylesheet" href="assets/css/main.css">
+     <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>Ultra Instinct Crew | League of Legends eSports Organisation & Community</title>
+    <meta name="description" content="  Die Ultra Instinct Crew wurde 2018 gegründet und ist mehr als nur eine Organisation. 
+                                        Wir sind eine Community, das darauf ausgelegt ist, League of Legends Athleten 
+                                        die Struktur, das Coaching und den Spaß zu bieten, die sie benötigen, um ihr maximales Potenzial auszuschöpfen.">
+    <meta name="author" content="proStarII">
+    <link rel="canonical" href="https://ultrainstinctcrew.com/">
+
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="UIC">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
+    <!-- Manifest
+    ================================================== -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0b0b0c">
+
+    <!-- CSS
+    ================================================== -->
+    <!-- <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/style-turnier.css"> -->
+    <link rel="stylesheet" href="assets/css/main_v2.css">
+
+
+    <!-- Scripts
+    ================================================== -->
+
+
+    <!-- favicons
+    ================================================== -->
+    <link rel="icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+
+    <!-- Open Graph
+    ================================================== -->
+    <meta property="og:title" content="Ultra Instinct Crew | League of Legends  eSports Organisation & Community">
+    <meta property="og:description" content="   Die Ultra Instinct Crew wurde 2018 gegründet und ist mehr als nur eine Organisation. 
+                                                Wir sind eine Community, das darauf ausgelegt ist, League of Legends Athleten 
+                                                die Struktur, das Coaching und den Spaß zu bieten, die sie benötigen, um ihr maximales Potenzial auszuschöpfen.">
+    <meta property="og:image" content="https://ultrainstinctcrew.com/icon512_maskable.png">
+    <meta property="og:url" content="https://ultrainstinctcrew.com/">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter
+    ================================================== -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Ultra Instinct Crew | League of Legends  eSports Organisation & Community">
+    <meta name="twitter:description" content="   Die Ultra Instinct Crew wurde 2018 gegründet und ist mehr als nur eine Organisation. 
+                                                Wir sind eine Community, das darauf ausgelegt ist, League of Legends Athleten 
+                                                die Struktur, das Coaching und den Spaß zu bieten, die sie benötigen, um ihr maximales Potenzial auszuschöpfen.">
+    <meta name="twitter:image" content="https://ultrainstinctcrew.com/icon512_maskable.png">
+    <meta name="twitter:site" content="@uic_gaming">
 </head>
 <body>
 
+    <input type="checkbox" id="nav-toggle" class="hidden">
+
     <nav class="navbar">
         <div class="container nav-inner">
-            <a href="#" class="logo-module">
-                <img src="assets/img/logo.png" alt="UIC" class="logo-icon" onerror="this.style.display='none'">
+            
+            <a href="https://ultrainstinctcrew.com/" class="logo-module" target="_blank">
+                <img src="assets/logo/logo.svg" alt="UIC" class="logo-icon">
                 <div class="logo-text">
                     <span class="brand-name">UIC</span>
-                    <span class="brand-sub">TOURNAMENTS</span>
+                    <span class="brand-sub">GER</span>
                 </div>
             </a>
-            <div class="nav-deck desktop-only">
-                <span style="color:var(--primary); letter-spacing:2px; font-weight:bold;">OFFICIAL HUB</span>
+
+            <div class="nav-separator desktop-only"></div>
+
+            <label for="nav-toggle" class="nav-burger">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </label>
+
+            <div class="nav-deck">
+                <ul class="nav-list">
+                    <li><a href="#view-live" class="nav-link">Start</a></li>
+                    <li><a href="#bracket-winners" class="nav-link">Winners Bracket</a></li>
+                    <li><a href="#bracket-losers" class="nav-link">Losers Bracket</a></li>
+                </ul>
+
+                <div class="nav-cta">
+                    <div class="nav-separator desktop-only"></div>
+                    <a class="btn-obsidian" href="#discord">JOIN DISCORD</a>
+                </div>
             </div>
+            
         </div>
     </nav>
 
-<main class="section-pad">
+    <main class="section-pad">
         
         <div id="view-none" class="view-section container text-center hidden">
             <h1 style="font-size: 3rem; margin-bottom: 1rem;">SYSTEM STANDBY</h1>
@@ -46,21 +124,20 @@
 
         <div id="view-live" class="view-section hidden">
             <div class="container">
+                
                 <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 1rem;">
-                    <div class="live-indicator" style="width:12px; height:12px; background:#ff003c; border-radius:50%; box-shadow: 0 0 10px #ff003c;"></div>
+                    <div class="live-dot"></div>
                     <h2 id="live-title" style="margin:0; font-size: 1.5rem;">LIVE FEED</h2>
                 </div>
 
-                <div id="team-streams-container" class="team-streams-grid hidden">
-                </div>
+                <div id="team-streams-container" class="team-streams-grid hidden"></div>
             
                 <h3 style="color: var(--primary); margin-bottom: 1rem;">WINNERS BRACKET</h3>
-                <div id="bracket-winners" class="bracket-scroll-wrapper">
-                </div>
+                <div id="bracket-winners" class="bracket-scroll-wrapper"></div>
 
                 <h3 id="lbl-losers" style="color: var(--text-muted); margin-top: 4rem; margin-bottom: 1rem;">LOSERS BRACKET</h3>
-                <div id="bracket-losers" class="bracket-scroll-wrapper">
-                    </div>
+                <div id="bracket-losers" class="bracket-scroll-wrapper"></div>
+                
             </div>
         </div>
 
@@ -78,7 +155,8 @@
             <h2 class="champ-subtitle">TOURNAMENT CHAMPION</h2>
             <div class="logo-wrapper">
                 <img id="champ-logo" src="" alt="Champion Logo">
-                <div class="logo-halo"></div> </div>
+                <div class="logo-halo"></div> 
+            </div>
             <h1 id="champ-name">TEAM NAME</h1>
             <button id="close-champ" class="btn btn-obsidian" style="margin-top: 3rem; position: relative; z-index: 10;">ZURÜCK ZUM BRACKET</button>
         </div>
@@ -94,11 +172,67 @@
     <div id="modal-overlay" class="modal-overlay hidden">
         <div id="info-modal" class="custom-modal">
             <button id="close-modal" class="btn-close">&times;</button>
-            <div id="modal-content">
-                </div>
+            <div id="modal-content"></div>
         </div>
     </div>
 
+    <footer class="site-footer section-pad">
+        <div class="container">
+            
+            <div class="grid-auto" style="--grid-gap: var(--space-lg);">
+                
+                <div>
+                    <h4 class="footer-title">Haftungsausschluss</h4>
+                    <h3 style="color: var(--text-white); font-size: 1.1rem;">Riot Games</h3>
+                    <p style="color: var(--text-muted); line-height: 1.6; font-size: 0.9rem; margin-top: 0.5rem; margin-bottom: 1.5rem;">
+                        Ultra Instinct Crew wird nicht von Riot Games unterstützt und spiegelt nicht die Ansichten oder 
+                        Meinungen von Riot Games oder anderen Personen wider, die offiziell an der 
+                        Herstellung oder Verwaltung von League of Legends beteiligt sind. League of 
+                        Legends und Riot Games sind Marken oder eingetragene Marken von Riot Games, 
+                        Inc. League of Legends © Riot Games, Inc.
+                    </p>
+                    
+                    <h3 style="color: var(--text-white); font-size: 1.1rem;">PrimeBot</h3>
+                    <p style="color: var(--text-muted); line-height: 1.6; font-size: 0.9rem; margin-top: 0.5rem;">
+                        Zur Darstellung unserer sportlichen Erfolge nutzen wir Daten der <strong>Unofficial Prime League API (primebot.me)</strong>. 
+                        Der Abruf dieser Daten erfolgt automatisiert über einen serverseitigen Prozess.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="footer-title">NAVIGATION</h4>
+                    <ul class="footer-links">
+                        <li><a href="#view-live">Start</a></li>
+                        <li><a href="#bracket-winners">Winners Bracket</a></li>
+                        <li><a href="#bracket-losers">Losers Bracket</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="footer-title">Kontakt & Rechtliches</h4>
+                    <ul class="footer-links">
+                        <li><a target="_blank" href="impressum.html">Impressum</a></li>
+                        <li><a target="_blank" href="datenschutzbestimmungen.html">Datenschutzbestimmungen</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="footer-title">SOZIAL</h4>
+                    <div class="social-links">
+                        <a target="_blank" href="https://discord.gg/VjggbjA6Q4" class="btn-obsidian-ghost">DISCORD</a>
+                        <a target="_blank" href="https://x.com/uic_gaming" class="btn-obsidian-ghost">TWITTER</a>
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2018 - 2026 Ultra Instinct Crew.</p>
+            </div>
+        </div>
+    </footer>
+
     <script src="scripts/app.js"></script>
+    <script src="scripts/script.js"></script>
 </body>
 </html>
