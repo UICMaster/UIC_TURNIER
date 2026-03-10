@@ -102,7 +102,7 @@
     const BRANCH = "main";
     
     const DB_PATH = "data/generated/db.json"; 
-    const TOURNAMENT_PATH = "data/tournament.json";
+    const TOURNAMENT_PATH = "data/tournament.json"; 
     // ==========================================
 
     let currentToken = localStorage.getItem('uic_token') || "";
@@ -121,23 +121,24 @@
     }
 
     // ==========================================
-    // ENTSCHLACKTE FUNKTION: 100% auf deine Tournament.json optimiert
+    // SIMPLIFIED & BULLETPROOF NAME RESOLVER
+    // Looks exclusively at db.json -> teams
     // ==========================================
-    function getTeamNameFromTournament(id) {
-        if (!tournamentData || !tournamentData.participants) return "TBD";
-        const list = tournamentData.participants;
+    function getTeamDisplayName(id) {
+        // Handle Empty/Null/BYE cases immediately
+        if (!id || id === '[BYE]') return "FREILOS";
+        
+        // Ensure id is a clean string
+        const searchId = String(id).trim();
 
-        // Falls es ein Array ist: [{id: "UIC_EMBER", name: "UIC Ember"}]
-        if (Array.isArray(list)) {
-            const team = list.find(t => t.id === id);
-            return team ? team.name : "TBD";
-        } 
-        // Falls es ein Objekt ist: {"UIC_EMBER": {name: "UIC Ember"}}
-        else if (list[id]) {
-            return list[id].name;
+        // Check if the team exists in the db.json teams object
+        if (dbData && dbData.teams && dbData.teams[searchId]) {
+            // Return the 'name' property (e.g., "UIC Ember")
+            return dbData.teams[searchId].name || searchId;
         }
-
-        return "TBD";
+        
+        // If all else fails, just show the ID
+        return searchId;
     }
 
     async function login() {
@@ -149,40 +150,42 @@
         document.getElementById('login-error').classList.add('hidden');
         
         try {
-            // SCHRITT 1: TOURNAMENT.JSON LADEN
+            // BEIDE DATEIEN GLEICHZEITIG LADEN
             const tourUrl = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${TOURNAMENT_PATH}?ref=${BRANCH}`;
-            const tourRes = await fetch(tourUrl, {
-                headers: { 'Authorization': `token ${tokenInput}`, 'Accept': 'application/vnd.github.v3+json' }
-            });
-            if(!tourRes.ok) throw new Error("Auth Error oder Tournament.json fehlt");
-            const tourDataRaw = await tourRes.json();
-            tournamentData = JSON.parse(decodeURIComponent(escape(atob(tourDataRaw.content))));
+            const dbUrl = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${DB_PATH}?ref=${BRANCH}`;
+            
+            const [tourRes, dbRes] = await Promise.all([
+                fetch(tourUrl, { headers: { 'Authorization': `token ${tokenInput}`, 'Accept': 'application/vnd.github.v3+json' } }),
+                fetch(dbUrl, { headers: { 'Authorization': `token ${tokenInput}`, 'Accept': 'application/vnd.github.v3+json' } })
+            ]);
 
-            // SCHRITT 2: ROLLENPRÜFUNG
-            const foundTeamName = getTeamNameFromTournament(userInput);
+            if(!tourRes.ok) throw new Error("Tournament.json konnte nicht geladen werden.");
+            if(!dbRes.ok) throw new Error("db.json konnte nicht geladen werden.");
+
+            // DATEN ENTSCHLÜSSELN
+            const tourDataRaw = await tourRes.json();
+            const dbDataRaw = await dbRes.json();
+            
+            tournamentData = JSON.parse(decodeURIComponent(escape(atob(tourDataRaw.content))));
+            dbData = JSON.parse(decodeURIComponent(escape(atob(dbDataRaw.content))));
+            fileSha = dbDataRaw.sha; 
+
+            // ROLLENPRÜFUNG
+            // Check if the userInput exists in the participants array of Tournament.json
+            const isParticipant = tournamentData.participants && tournamentData.participants.includes(userInput);
 
             if (userInput === 'ADMIN') {
                 isAdmin = true;
                 document.getElementById('display-user-name').innerText = "GLOBAL ADMIN";
                 document.getElementById('display-user-name').style.color = "#ff003c";
-            } else if (foundTeamName !== "TBD") {
+            } else if (isParticipant) {
                 isAdmin = false;
-                document.getElementById('display-user-name').innerText = foundTeamName;
+                document.getElementById('display-user-name').innerText = getTeamDisplayName(userInput);
             } else {
-                throw new Error("Benutzerkennung nicht in Tournament.json gefunden");
+                throw new Error("Zugriff verweigert: ID steht nicht in der Tournament.json");
             }
 
-            // SCHRITT 3: DB.JSON LADEN
-            const dbUrl = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${DB_PATH}?ref=${BRANCH}`;
-            const dbRes = await fetch(dbUrl, {
-                headers: { 'Authorization': `token ${tokenInput}`, 'Accept': 'application/vnd.github.v3+json' }
-            });
-            if(!dbRes.ok) throw new Error("db.json fehlt");
-            const dbDataRaw = await dbRes.json();
-            fileSha = dbDataRaw.sha; 
-            dbData = JSON.parse(decodeURIComponent(escape(atob(dbDataRaw.content))));
-
-            // SCHRITT 4: LOGIN ERFOLGREICH
+            // LOGIN ERFOLGREICH
             currentToken = tokenInput;
             currentUser = userInput;
             localStorage.setItem('uic_token', currentToken);
@@ -196,7 +199,6 @@
         } catch (e) {
             console.error(e);
             const errorDiv = document.getElementById('login-error');
-            // NEU: Wir lassen uns den exakten Fehler auf dem Bildschirm anzeigen!
             errorDiv.innerText = "❌ FEHLER: " + e.message; 
             errorDiv.classList.remove('hidden');
         }
@@ -229,12 +231,15 @@
         container.innerHTML = '';
 
         const matchesToDisplay = dbData.bracket.filter(m => {
+            // Ensure BOTH team slots are filled with actual teams
             const hasTeams = m.team_1 && m.team_1 !== '[BYE]' && m.team_2 && m.team_2 !== '[BYE]';
             if (!hasTeams) return false;
 
+            // Admin sees all, Teams see only their matches
             const isMyMatch = isAdmin || m.team_1 === currentUser || m.team_2 === currentUser;
             if (!isMyMatch) return false;
             
+            // Tab filtering logic
             if (currentTab === 'PENDING') return m.status !== 'FINISHED';
             if (currentTab === 'HISTORY') return m.status === 'FINISHED';
         });
@@ -246,18 +251,22 @@
         }
 
         matchesToDisplay.forEach((m) => {
-            const t1Name = getTeamNameFromTournament(m.team_1);
-            const t2Name = getTeamNameFromTournament(m.team_2);
+            // Retrieve actual names for the UI
+            const t1Name = getTeamDisplayName(m.team_1);
+            const t2Name = getTeamDisplayName(m.team_2);
             
             const isHistory = currentTab === 'HISTORY';
 
             const row = document.createElement('div');
             row.className = 'admin-match-row';
+            
+            // Apply history styling if necessary
             if (isHistory) {
                 row.style.borderLeftColor = 'var(--text-muted)';
                 row.style.opacity = '0.7';
             }
             
+            // Highlight the logged-in team's name
             const t1Color = (!isAdmin && m.team_1 === currentUser) ? 'var(--primary)' : '#fff';
             const t2Color = (!isAdmin && m.team_2 === currentUser) ? 'var(--primary)' : '#fff';
 
