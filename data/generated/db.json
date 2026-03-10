@@ -1,8 +1,8 @@
 {
   "meta": {
     "title": "Das Turnier der Kraft Season 2026",
-    "status": "LIVE",
-    "start_date_iso": "2026-04-024T00:00:00Z",
+    "status": "Upcoming",
+    "start_date_iso": "2026-04-01T18:00:00Z",
     "registration_link": "https://forms.google.com",
     "stream_link": "https://twitch.tv/ultrainstinctcrew"
   },
@@ -131,6 +131,79 @@
         }
       ]
     },
+    "UIC_EMBER": {
+      "id": "UIC_EMBER",
+      "name": "UIC Ember",
+      "acronym": "UICE",
+      "logo": "https://cdn0.gamesports.net/league_team_logos/211000/211165.jpg?1765449081",
+      "stream_link": "https://twitch.tv/",
+      "is_live": true,
+      "prime_intel": {
+        "id": "211165",
+        "key": "UIC_EMBER",
+        "meta": {
+          "name": "Ultra Instinct Crew Ember",
+          "div": "Division 6"
+        },
+        "stats": {
+          "wins": 7,
+          "losses": 5,
+          "points": 7,
+          "games": 12,
+          "win_rate": 58,
+          "form": [
+            "L",
+            "W",
+            "D",
+            "L",
+            "W"
+          ]
+        },
+        "next_match": {
+          "date": "2026-03-15T19:00:00+01:00",
+          "tag": "WGG",
+          "link": "https://www.primeleague.gg/de/leagues/matches/1155085"
+        },
+        "last_match": {
+          "result": "SIEG",
+          "score": "2 - 0",
+          "enemy": "INT",
+          "date": "2026-03-08T20:00:00+01:00"
+        },
+        "roster": [
+          {
+            "summoner": "UIC DontMethWith#AMB",
+            "is_captain": true
+          },
+          {
+            "summoner": "UIC Envy#UIC",
+            "is_captain": true
+          },
+          {
+            "summoner": "UIC Shederen#Ger",
+            "is_captain": false
+          },
+          {
+            "summoner": "SilasX#EUWde",
+            "is_captain": false
+          },
+          {
+            "summoner": "ResetHoe#Kata",
+            "is_captain": false
+          },
+          {
+            "summoner": "UIC Rubix Qube#MÖP",
+            "is_captain": true
+          },
+          {
+            "summoner": "Otter#0812",
+            "is_captain": false
+          }
+        ],
+        "team_link": "https://www.primeleague.gg/de/leagues/teams/211165",
+        "logo": "https://cdn0.gamesports.net/league_team_logos/211000/211165.jpg?1765449081"
+      }
+    },
     "UIC_ABYSS": {
       "id": "UIC_ABYSS",
       "name": "UIC Abyss",
@@ -225,79 +298,6 @@
         ],
         "team_link": "https://www.primeleague.gg/de/leagues/teams/204924",
         "logo": "https://cdn0.gamesports.net/league_team_logos/204000/204924.jpg?1765838352"
-      }
-    },
-    "UIC_EMBER": {
-      "id": "UIC_EMBER",
-      "name": "UIC Ember",
-      "acronym": "UICE",
-      "logo": "https://cdn0.gamesports.net/league_team_logos/211000/211165.jpg?1765449081",
-      "stream_link": "https://twitch.tv/",
-      "is_live": true,
-      "prime_intel": {
-        "id": "211165",
-        "key": "UIC_EMBER",
-        "meta": {
-          "name": "Ultra Instinct Crew Ember",
-          "div": "Division 6"
-        },
-        "stats": {
-          "wins": 7,
-          "losses": 5,
-          "points": 7,
-          "games": 12,
-          "win_rate": 58,
-          "form": [
-            "L",
-            "W",
-            "D",
-            "L",
-            "W"
-          ]
-        },
-        "next_match": {
-          "date": "2026-03-15T19:00:00+01:00",
-          "tag": "WGG",
-          "link": "https://www.primeleague.gg/de/leagues/matches/1155085"
-        },
-        "last_match": {
-          "result": "SIEG",
-          "score": "2 - 0",
-          "enemy": "INT",
-          "date": "2026-03-08T20:00:00+01:00"
-        },
-        "roster": [
-          {
-            "summoner": "UIC DontMethWith#AMB",
-            "is_captain": true
-          },
-          {
-            "summoner": "UIC Envy#UIC",
-            "is_captain": true
-          },
-          {
-            "summoner": "UIC Shederen#Ger",
-            "is_captain": false
-          },
-          {
-            "summoner": "SilasX#EUWde",
-            "is_captain": false
-          },
-          {
-            "summoner": "ResetHoe#Kata",
-            "is_captain": false
-          },
-          {
-            "summoner": "UIC Rubix Qube#MÖP",
-            "is_captain": true
-          },
-          {
-            "summoner": "Otter#0812",
-            "is_captain": false
-          }
-        ],
-        "team_link": "https://www.primeleague.gg/de/leagues/teams/211165",
-        "logo": "https://cdn0.gamesports.net/league_team_logos/211000/211165.jpg?1765449081"
       }
     },
     "UIC_FREEZER": {
@@ -714,8 +714,8 @@
     {
       "score_1": 0,
       "score_2": 0,
-      "winner_id": "UIC_ABYSS",
-      "status": "FINISHED",
+      "winner_id": null,
+      "status": "LIVE",
       "id": "wb_r1_m5",
       "round": 1,
       "type": "WINNER",
@@ -724,7 +724,7 @@
       "loser_match_id": "lb_r1_m3",
       "loser_slot": 1,
       "team_1": "UIC_ABYSS",
-      "team_2": "[BYE]"
+      "team_2": "RISING_DAWN"
     },
     {
       "score_1": 0,
@@ -813,7 +813,7 @@
       "next_slot": 1,
       "loser_match_id": "lb_r2_m3",
       "loser_slot": 1,
-      "team_1": "UIC_ABYSS",
+      "team_1": null,
       "team_2": null
     },
     {
@@ -909,7 +909,7 @@
       "round": 1,
       "type": "LOSER",
       "next_match_id": "lb_r2_m3",
-      "team_1": "[BYE]",
+      "team_1": null,
       "team_2": null
     },
     {
