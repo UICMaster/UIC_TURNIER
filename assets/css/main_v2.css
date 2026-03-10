@@ -1,14 +1,14 @@
-/* ==========================================================================
-   UIC MASTER STYLESHEET (MERGED FINAL)
-   ========================================================================== */
-
-/* --- 0. FONTS --- */
+/* =========================================
+//  0. FONTS
+//  ========================================= */
 @font-face { font-family: 'Orbitron'; font-style: normal; font-weight: 400; src: url('../fonts/orbitron/orbitron-v35-latin-regular.woff2') format('woff2'); font-display: swap; }
 @font-face { font-family: 'Orbitron'; font-style: normal; font-weight: 700; src: url('../fonts/orbitron/orbitron-v35-latin-700.woff2') format('woff2'); font-display: swap; }
 @font-face { font-family: 'Rajdhani'; font-style: normal; font-weight: 400; src: url('../fonts/rajdhani/rajdhani-v17-latin-regular.woff2') format('woff2'); font-display: swap; }
 @font-face { font-family: 'Rajdhani'; font-style: normal; font-weight: 700; src: url('../fonts/rajdhani/rajdhani-v17-latin-700.woff2') format('woff2'); font-display: swap; }
 
-/* --- 1. SYSTEM CONFIGURATION & VARIABLES --- */
+/* =========================================
+//  1. SYSTEM CONFIGURATION & VARIABLES
+//  ========================================= */
 :root {
     /* Brand Identity */
     --primary: #00F0FF;   /* Cyan (HUD Active) */
@@ -242,35 +242,126 @@ img { max-width: 100%; height: auto; display: block; }
 .live-dot { width: 8px; height: 8px; background: #ff003c; border-radius: 50%; box-shadow: 0 0 8px #ff003c; animation: pulse 2s infinite; }
 @keyframes pulse { 0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 0, 60, 0.7); } 70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(255, 0, 60, 0); } 100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 0, 60, 0); } }
 
-/* --- 7. OVERLAYS (Champion & Modal) --- */
-.champion-overlay { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: radial-gradient(circle at center, #1a1a1a 0%, #000 100%); z-index: 9999; display: flex; justify-content: center; align-items: center; overflow: hidden; opacity: 0; visibility: hidden; pointer-events: none; transition: opacity 0.8s ease, visibility 0.8s; }
+/* ==========================================================================
+   7. EPIC CHAMPION OVERLAY (TACTICAL)
+   ========================================================================== */
+
+.champion-overlay { 
+    position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; 
+    background-color: #050508; /* Deep void base */
+    z-index: 9999; display: flex; justify-content: center; align-items: center; 
+    overflow: hidden; opacity: 0; visibility: hidden; pointer-events: none; 
+    transition: opacity 0.4s ease, visibility 0.4s; 
+}
+
+/* Tactical Background Grid */
+.champion-overlay::before {
+    content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    z-index: 0;
+}
+
 .champion-overlay.show-champion { opacity: 1; visibility: visible; pointer-events: all; }
-.champion-content { position: relative; z-index: 5; text-align: center; transform: scale(0.8) translateY(50px); transition: transform 1s cubic-bezier(0.34, 1.56, 0.64, 1); }
-.champion-overlay.show-champion .champion-content { transform: scale(1) translateY(0); }
-.champ-subtitle { color: #FFD700; letter-spacing: 8px; font-size: 1rem; margin-bottom: 2rem; text-shadow: 0 0 10px rgba(255, 215, 0, 0.5); opacity: 0; animation: fadeInUp 1s ease 0.5s forwards; }
-.logo-wrapper { position: relative; display: inline-block; margin: 0 auto; }
-.champion-content img { width: 280px; height: 280px; object-fit: contain; margin-bottom: 2rem; position: relative; z-index: 2; filter: drop-shadow(0 0 50px rgba(255, 215, 0, 0.3)); animation: floatLogo 6s ease-in-out infinite; }
-.logo-halo { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 350px; height: 350px; background: radial-gradient(circle, rgba(255,215,0,0.2) 0%, rgba(0,0,0,0) 70%); z-index: 1; animation: pulseHalo 3s infinite; }
-.champion-content h1 { font-size: clamp(3rem, 9vw, 7rem); color: #fff; text-transform: uppercase; text-shadow: 0 0 30px var(--primary); margin: 0; background: linear-gradient(to bottom, #fff, #888); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
+/* Sharp Scale-in Animation (Fast out, slow in) */
+.champion-content { 
+    position: relative; z-index: 5; text-align: center; 
+    transform: scale(1.2) translateY(-20px); 
+    opacity: 0;
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease; 
+}
+.champion-overlay.show-champion .champion-content { 
+    transform: scale(1) translateY(0); 
+    opacity: 1; 
+}
+
+/* HUD Subtitle */
+.champ-subtitle { 
+    color: var(--primary); 
+    letter-spacing: 12px; font-size: 0.85rem; margin-bottom: 2.5rem; 
+    text-transform: uppercase; font-family: var(--font-head);
+    display: inline-block;
+    border-bottom: 1px solid rgba(0, 240, 255, 0.3);
+    padding-bottom: 8px;
+    opacity: 0; 
+    transform: translateY(20px);
+}
+.champion-overlay.show-champion .champ-subtitle {
+    animation: tacSlideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
+}
+
+/* Sharp Target Frame instead of a Halo */
+.logo-wrapper { 
+    position: relative; display: inline-block; margin: 0 auto; padding: 2rem;
+}
+.tactical-frame {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    border: 1px solid rgba(255, 215, 0, 0.1); /* Gold accent */
+    z-index: 1;
+    transform: rotate(45deg);
+    transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.champion-overlay.show-champion .tactical-frame {
+    transform: rotate(0deg); /* Snaps into a square */
+}
+
+/* Corner Brackets */
+.tactical-frame::before, .tactical-frame::after {
+    content: ''; position: absolute; width: 30px; height: 30px;
+    border-color: #FFD700; border-style: solid;
+}
+.tactical-frame::before { top: -2px; left: -2px; border-width: 3px 0 0 3px; }
+.tactical-frame::after { bottom: -2px; right: -2px; border-width: 0 3px 3px 0; }
+
+.champion-content img { 
+    width: 250px; height: 250px; object-fit: contain; margin-bottom: 1rem; 
+    position: relative; z-index: 2; 
+    filter: drop-shadow(0 0 30px rgba(255, 215, 0, 0.4)); 
+}
+
+/* Glitch Typography for the Main Title */
+.champion-content h1 { 
+    font-size: clamp(3rem, 10vw, 8rem); color: #fff; text-transform: uppercase; margin: 0; 
+    font-family: var(--font-head); line-height: 1;
+    text-shadow: 4px 0px 0px rgba(255, 0, 60, 0.8), -4px 0px 0px rgba(0, 240, 255, 0.8); /* Red/Cyan RGB Split */
+    opacity: 0; transform: translateY(30px);
+}
+.champion-overlay.show-champion h1 {
+    animation: tacSlideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.5s forwards;
+}
+
+/* --- TACTICAL BACKGROUND STRIPES --- */
 .champ-bg-layer { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none; }
-.abstract-shape { position: absolute; border: 2px solid rgba(255, 255, 255, 0.05); border-radius: 50%; }
-.shape-1 { width: 60vw; height: 60vw; top: -10vw; left: -10vw; border-color: rgba(0, 240, 255, 0.1); animation: rotateLeft 40s linear infinite; }
-.shape-2 { width: 50vw; height: 50vw; bottom: -15vw; right: -15vw; border: 1px dashed rgba(255, 215, 0, 0.1); animation: rotateRight 50s linear infinite; }
-.abstract-glow { position: absolute; width: 100%; height: 100%; background: radial-gradient(circle at center, rgba(0, 240, 255, 0.05) 0%, transparent 70%); animation: pulseGlow 5s ease-in-out infinite alternate; }
-.champ-fg-layer { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 10; pointer-events: none; }
-.particle { position: absolute; background: #fff; border-radius: 50%; opacity: 0; }
-.p1 { width: 4px; height: 4px; top: 80%; left: 20%; animation: flyUp 4s ease-out infinite; background: #FFD700; }
-.p2 { width: 6px; height: 6px; top: 90%; left: 80%; animation: flyUp 6s ease-out 1s infinite; background: var(--primary); }
-.p3 { width: 3px; height: 3px; top: 70%; left: 50%; animation: flyUp 5s ease-out 2s infinite; }
-.p4 { width: 5px; height: 5px; top: 85%; left: 30%; animation: flyUp 7s ease-out 0.5s infinite; background: #FFD700; }
+.tactical-stripe { position: absolute; background: rgba(255, 255, 255, 0.02); transform: skewX(-35deg); }
+.stripe-1 { width: 30vw; height: 150vh; top: -25vh; left: 15vw; border-left: 2px solid rgba(0, 240, 255, 0.1); }
+.stripe-2 { width: 10vw; height: 150vh; top: -25vh; right: 25vw; background: rgba(255, 215, 0, 0.03); border-right: 1px solid rgba(255, 215, 0, 0.15); }
 
-@keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-@keyframes floatLogo { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
-@keyframes rotateLeft { from { transform: rotate(0deg); } to { transform: rotate(-360deg); } }
-@keyframes rotateRight { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-@keyframes flyUp { 0% { transform: translateY(0) scale(1); opacity: 0; } 20% { opacity: 1; } 100% { transform: translateY(-60vh) scale(0); opacity: 0; } }
-@keyframes pulseHalo { 0%, 100% { opacity: 0.3; transform: translate(-50%, -50%) scale(1); } 50% { opacity: 0.6; transform: translate(-50%, -50%) scale(1.1); } }
+/* --- FAST DATA LINES (Replaces floating dots) --- */
+.champ-fg-layer { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 10; pointer-events: none; }
+.data-line { position: absolute; opacity: 0; }
+.dl-1 { width: 2px; height: 150px; left: 20%; top: -150px; background: var(--primary); animation: dataDrop 2.5s infinite ease-in; }
+.dl-2 { width: 200px; height: 2px; right: -200px; top: 30%; background: #FFD700; animation: dataSlide 3s infinite ease-out 1s; }
+.dl-3 { width: 2px; height: 80px; left: 75%; bottom: -80px; background: #ff003c; animation: dataRise 2s infinite ease-in 0.5s; }
+
+/* --- TACTICAL KEYFRAMES --- */
+@keyframes tacSlideUp { 
+    to { opacity: 1; transform: translateY(0); } 
+}
+@keyframes dataDrop { 
+    0% { transform: translateY(0); opacity: 1; } 
+    100% { transform: translateY(120vh); opacity: 0; } 
+}
+@keyframes dataSlide { 
+    0% { transform: translateX(0); opacity: 1; } 
+    100% { transform: translateX(-120vw); opacity: 0; } 
+}
+@keyframes dataRise {
+    0% { transform: translateY(0); opacity: 1; } 
+    100% { transform: translateY(-120vh); opacity: 0; } 
+}
 
 /* Tactical 16:9 Modal */
 .modal-overlay { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(6px); z-index: 9000; display: flex; justify-content: center; align-items: center; opacity: 0; visibility: hidden; transition: opacity 0.2s ease, visibility 0.2s; }
