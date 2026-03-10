@@ -26,6 +26,10 @@
     { 
       "name": "Open Spot", 
       "role": "Toplane" 
+    },
+    { 
+      "name": "RD proStarII", 
+      "role": "Coach" 
     }
   ]
 }
