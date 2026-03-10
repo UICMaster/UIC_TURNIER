@@ -802,7 +802,7 @@
       "team_2": "UIC_NOVA"
     },
     {
-      "score_1": 0,
+      "score_1": 2,
       "score_2": 0,
       "winner_id": null,
       "status": "LIVE",
@@ -817,7 +817,7 @@
       "team_2": "UIC_NIGHT"
     },
     {
-      "score_1": 0,
+      "score_1": 2,
       "score_2": 0,
       "winner_id": null,
       "status": "LIVE",
@@ -832,7 +832,7 @@
       "team_2": "EXT_TEST1"
     },
     {
-      "score_1": 0,
+      "score_1": 2,
       "score_2": 0,
       "winner_id": null,
       "status": "LIVE",
@@ -913,7 +913,7 @@
       "team_2": "EXT_TEST4"
     },
     {
-      "score_1": 0,
+      "score_1": 2,
       "score_2": 0,
       "winner_id": null,
       "status": "LIVE",
@@ -973,7 +973,7 @@
       "team_2": null
     },
     {
-      "score_1": 0,
+      "score_1": 2,
       "score_2": 0,
       "winner_id": null,
       "status": "LIVE",
