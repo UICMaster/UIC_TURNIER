@@ -1023,8 +1023,8 @@
     {
       "score_1": 2,
       "score_2": 0,
-      "winner_id": null,
-      "status": "LIVE",
+      "winner_id": "UIC_EMBER",
+      "status": "FINISHED",
       "id": "lb_r5_m1",
       "round": 5,
       "type": "LOSER",
@@ -1036,13 +1036,13 @@
       "score_1": 0,
       "score_2": 0,
       "winner_id": null,
-      "status": "WAITING",
+      "status": "LIVE",
       "id": "lb_r6_m1",
       "round": 6,
       "type": "LOSER",
       "next_match_id": "gf_m1",
       "team_1": "UIC_ABYSS",
-      "team_2": null
+      "team_2": "UIC_EMBER"
     },
     {
       "score_1": 0,
