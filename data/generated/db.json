@@ -137,7 +137,30 @@
       "acronym": "RD",
       "logo": "https://cdn0.heartbase.gg/league_team_logos/212000/212208.jpg?1771360240",
       "stream_link": "https://twitch.tv/slevinhunter",
-      "is_live": true
+      "is_live": true,
+      "roster": [
+        {
+          "name": "Slevin Hunter",
+          "role": "Midlane",
+          "is_captain": true
+        },
+        {
+          "name": "Nuokii",
+          "role": "Jungle"
+        },
+        {
+          "name": "Racknarök",
+          "role": "Bot"
+        },
+        {
+          "name": "UIC Dragonfly",
+          "role": "Support"
+        },
+        {
+          "name": "Open Spot",
+          "role": "Toplane"
+        }
+      ]
     },
     "UIC_ABYSS": {
       "id": "UIC_ABYSS",
