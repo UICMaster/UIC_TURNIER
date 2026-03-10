@@ -192,7 +192,10 @@
 
         } catch (e) {
             console.error(e);
-            document.getElementById('login-error').classList.remove('hidden');
+            const errorDiv = document.getElementById('login-error');
+            // NEU: Wir lassen uns den exakten Fehler auf dem Bildschirm anzeigen!
+            errorDiv.innerText = "❌ FEHLER: " + e.message; 
+            errorDiv.classList.remove('hidden');
         }
     }
 
