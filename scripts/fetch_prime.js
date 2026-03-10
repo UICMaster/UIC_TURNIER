@@ -16,7 +16,8 @@ const TEAMS = {
     "UIC_NOVA":    { id: "203447", manual_div: "Division 6" },
     "UIC_ABYSS":   { id: "204924", manual_div: "Division 5" },
     "UIC_NIGHT":   { id: "212047", manual_div: "Division 6" },
-    "UIC_FREEZER": { id: "203146", manual_div: "Division 5" }
+    "UIC_FREEZER": { id: "203146", manual_div: "Division 5" },
+    "RISING_DAWN": { id: "212208", manual_div: "Division 5" }
 };
 
 const HEADERS = { 'User-Agent': 'UIC-Dashboard-Bot/2.2' };
