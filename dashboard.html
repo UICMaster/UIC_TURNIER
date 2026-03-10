@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UIC Dashboard | Tactical Admin Hub</title>
+    
+    <link rel="stylesheet" href="assets/css/main_v2.css">
+
+    <style>
+        .tactical-input {
+            width: 100%; background: rgba(0, 0, 0, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #fff; padding: 12px 16px; margin-bottom: 20px;
+            font-family: var(--font-head); font-size: 1rem;
+            outline: none; transition: 0.3s; letter-spacing: 1px;
+        }
+        .tactical-input:focus {
+            border-color: var(--primary); box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
+        }
+        .score-input {
+            width: 70px; text-align: center; font-size: 1.5rem; 
+            color: var(--primary); padding: 8px; margin: 0;
+            background: rgba(0, 0, 0, 0.8);
+        }
+        /* Custom Match Row integrating seamlessly with Master CSS */
+        .admin-match-row {
+            display: flex; justify-content: space-between; align-items: center;
+            background: rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.05);
+            border-left: 3px solid var(--primary); padding: 1.2rem; margin-bottom: 1rem;
+            transition: 0.3s ease;
+        }
+        .admin-match-row:hover { background: rgba(0, 240, 255, 0.05); border-color: rgba(0, 240, 255, 0.3); }
+        
+        /* Mobile adjustment for match rows */
+        @media (max-width: 768px) {
+            .admin-match-row { flex-direction: column; gap: 1rem; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="sync-overlay" class="modal-overlay">
+        <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+            <div class="status-ring upcoming"></div>
+            <h2 class="title-epic" style="font-size: 2.5rem; margin-bottom: 0.5rem;">UPLINK ACTIVE</h2>
+            <p id="sync-text" style="color: var(--primary); font-family: var(--font-head); letter-spacing: 2px;">Synchronisiere mit System...</p>
+        </div>
+    </div>
+
+    <main class="section-pad view-section" style="margin-top: 0; min-height: 100vh;">
+        <div class="container">
+            
+            <div id="login-screen" class="tactical-panel text-center" style="max-width: 500px;">
+                <h1 class="title-epic" style="font-size: 2.2rem; color: var(--primary);">Login</h1>
+                <p class="text-muted" style="margin-bottom: 2rem;">Bitte Benutzerkennung und Zugangsschlüssel eingeben.</p>
+                
+                <div style="text-align: left;">
+                    <label style="color: var(--text-muted); font-family: var(--font-head); font-size: 0.8rem; letter-spacing: 1px;">BENUTZERNAME</label>
+                    <input type="text" id="user-id" class="tactical-input" placeholder="ID EINGEBEN">
+                    
+                    <label style="color: var(--text-muted); font-family: var(--font-head); font-size: 0.8rem; letter-spacing: 1px;">PASSWORT</label>
+                    <input type="password" id="gh-token" class="tactical-input" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx" style="text-transform: none;">
+                </div>
+                
+                <button class="btn btn-obsidian" onclick="login()" style="width: 100%; margin-top: 1rem;">Bestätigen</button>
+                <div id="login-error" class="hidden" style="color: #ff003c; margin-top: 15px; font-family: var(--font-head); letter-spacing: 1px;">❌ ZUGRIFF VERWEIGERT. DATEN PRÜFEN.</div>
+            </div>
+
+            <div id="dashboard-screen" class="tactical-panel hidden" style="max-width: 1000px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 1rem;">
+                    <h1 class="title-epic" style="font-size: 2rem; margin: 0;">LIVE SCORE CONTROL</h1>
+                    <button onclick="logout()" class="btn-obsidian-ghost" style="border-color: #ff003c; color: #ff003c;">LOGOUT</button>
+                </div>
+                
+                <p class="text-muted" style="margin-bottom: 2rem;">Trage hier die neuen Scores ein. Bei "SPEICHERN & PUBLISH" wird das Live-Bracket auf den Servern aktualisiert.</p>
+                
+                <div style="display: flex; gap: 10px; margin-bottom: 2rem;">
+                    <button id="tab-pending" class="btn-obsidian" onclick="switchTab('PENDING')" style="padding: 8px 16px; flex: 1;">OFFENE MATCHES</button>
+                    <button id="tab-history" class="btn-obsidian-ghost" onclick="switchTab('HISTORY')" style="padding: 8px 16px; flex: 1; border-color: rgba(255,255,255,0.1);">HISTORIE (READ-ONLY)</button>
+                </div>
+                
+                <div id="matches-container">
+                    </div>
+
+                <button id="save-btn" class="btn btn-obsidian" style="width: 100%; margin-top: 2rem;" onclick="saveToGitHub()">🚀 SPEICHERN & PUBLISH (COMMIT)</button>
+                <div id="status-msg" class="text-center" style="margin-top: 15px; color: var(--primary); font-family: var(--font-head); font-size: 1.1rem; letter-spacing: 1px;"></div>
+            </div>
+
+        </div>
+    </main>
+
+<script>
+    // ==========================================
+    // ⚠️ HIER DEINE GITHUB DATEN EINTRAGEN ⚠️
+    // ==========================================
+    const REPO_OWNER = "UICMaster";
+    const REPO_NAME = "UIC_TURNIER";
+    const BRANCH = "main";
+    
+    const DB_PATH = "data/generated/db.json"; 
+    const TOURNAMENT_PATH = "data/tournament.json";
+    // ==========================================
+
+    let currentToken = localStorage.getItem('uic_token') || "";
+    let currentUser = localStorage.getItem('uic_user') || ""; 
+    let isAdmin = false;
+    
+    let fileSha = ""; 
+    let dbData = null; 
+    let tournamentData = null; 
+    let currentTab = 'PENDING';
+
+    if(currentToken && currentUser) {
+        document.getElementById('gh-token').value = currentToken;
+        document.getElementById('user-id').value = currentUser;
+        login();
+    }
+
+    // ==========================================
+    // ENTSCHLACKTE FUNKTION: 100% auf deine Tournament.json optimiert
+    // ==========================================
+    function getTeamNameFromTournament(id) {
+        if (!tournamentData || !tournamentData.participants) return "TBD";
+        const list = tournamentData.participants;
+
+        // Falls es ein Array ist: [{id: "UIC_EMBER", name: "UIC Ember"}]
+        if (Array.isArray(list)) {
+            const team = list.find(t => t.id === id);
+            return team ? team.name : "TBD";
+        } 
+        // Falls es ein Objekt ist: {"UIC_EMBER": {name: "UIC Ember"}}
+        else if (list[id]) {
+            return list[id].name;
+        }
+
+        return "TBD";
+    }
+
+    async function login() {
+        const tokenInput = document.getElementById('gh-token').value.trim();
+        const userInput = document.getElementById('user-id').value.trim().toUpperCase(); 
+        
+        if(!tokenInput || !userInput) return;
+        
+        document.getElementById('login-error').classList.add('hidden');
+        
+        try {
+            // SCHRITT 1: TOURNAMENT.JSON LADEN
+            const tourUrl = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${TOURNAMENT_PATH}?ref=${BRANCH}`;
+            const tourRes = await fetch(tourUrl, {
+                headers: { 'Authorization': `token ${tokenInput}`, 'Accept': 'application/vnd.github.v3+json' }
+            });
+            if(!tourRes.ok) throw new Error("Auth Error oder Tournament.json fehlt");
+            const tourDataRaw = await tourRes.json();
+            tournamentData = JSON.parse(decodeURIComponent(escape(atob(tourDataRaw.content))));
+
+            // SCHRITT 2: ROLLENPRÜFUNG
+            const foundTeamName = getTeamNameFromTournament(userInput);
+
+            if (userInput === 'ADMIN') {
+                isAdmin = true;
+                document.getElementById('display-user-name').innerText = "GLOBAL ADMIN";
+                document.getElementById('display-user-name').style.color = "#ff003c";
+            } else if (foundTeamName !== "TBD") {
+                isAdmin = false;
+                document.getElementById('display-user-name').innerText = foundTeamName;
+            } else {
+                throw new Error("Benutzerkennung nicht in Tournament.json gefunden");
+            }
+
+            // SCHRITT 3: DB.JSON LADEN
+            const dbUrl = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${DB_PATH}?ref=${BRANCH}`;
+            const dbRes = await fetch(dbUrl, {
+                headers: { 'Authorization': `token ${tokenInput}`, 'Accept': 'application/vnd.github.v3+json' }
+            });
+            if(!dbRes.ok) throw new Error("db.json fehlt");
+            const dbDataRaw = await dbRes.json();
+            fileSha = dbDataRaw.sha; 
+            dbData = JSON.parse(decodeURIComponent(escape(atob(dbDataRaw.content))));
+
+            // SCHRITT 4: LOGIN ERFOLGREICH
+            currentToken = tokenInput;
+            currentUser = userInput;
+            localStorage.setItem('uic_token', currentToken);
+            localStorage.setItem('uic_user', currentUser);
+            
+            document.getElementById('login-screen').classList.add('hidden');
+            document.getElementById('dashboard-screen').classList.remove('hidden');
+            
+            renderMatches();
+
+        } catch (e) {
+            console.error(e);
+            document.getElementById('login-error').classList.remove('hidden');
+        }
+    }
+
+    function switchTab(tab) {
+        currentTab = tab;
+        const btnPending = document.getElementById('tab-pending');
+        const btnHistory = document.getElementById('tab-history');
+        const saveBtn = document.getElementById('save-btn');
+
+        if(tab === 'PENDING') {
+            btnPending.className = 'btn-obsidian';
+            btnPending.style.borderColor = 'transparent';
+            btnHistory.className = 'btn-obsidian-ghost';
+            btnHistory.style.borderColor = 'rgba(255,255,255,0.1)';
+            saveBtn.classList.remove('hidden');
+        } else {
+            btnHistory.className = 'btn-obsidian';
+            btnHistory.style.borderColor = 'transparent';
+            btnPending.className = 'btn-obsidian-ghost';
+            btnPending.style.borderColor = 'rgba(255,255,255,0.1)';
+            saveBtn.classList.add('hidden');
+        }
+        renderMatches();
+    }
+
+    function renderMatches() {
+        const container = document.getElementById('matches-container');
+        container.innerHTML = '';
+
+        const matchesToDisplay = dbData.bracket.filter(m => {
+            const hasTeams = m.team_1 && m.team_1 !== '[BYE]' && m.team_2 && m.team_2 !== '[BYE]';
+            if (!hasTeams) return false;
+
+            const isMyMatch = isAdmin || m.team_1 === currentUser || m.team_2 === currentUser;
+            if (!isMyMatch) return false;
+            
+            if (currentTab === 'PENDING') return m.status !== 'FINISHED';
+            if (currentTab === 'HISTORY') return m.status === 'FINISHED';
+        });
+
+        if(matchesToDisplay.length === 0) {
+            const msg = currentTab === 'PENDING' ? "Aktuell keine offenen Matches verfügbar." : "Die Historie ist leer.";
+            container.innerHTML = `<p class="text-center text-muted" style="margin-top: 2rem;">// ${msg}</p>`;
+            return;
+        }
+
+        matchesToDisplay.forEach((m) => {
+            const t1Name = getTeamNameFromTournament(m.team_1);
+            const t2Name = getTeamNameFromTournament(m.team_2);
+            
+            const isHistory = currentTab === 'HISTORY';
+
+            const row = document.createElement('div');
+            row.className = 'admin-match-row';
+            if (isHistory) {
+                row.style.borderLeftColor = 'var(--text-muted)';
+                row.style.opacity = '0.7';
+            }
+            
+            const t1Color = (!isAdmin && m.team_1 === currentUser) ? 'var(--primary)' : '#fff';
+            const t2Color = (!isAdmin && m.team_2 === currentUser) ? 'var(--primary)' : '#fff';
+
+            row.innerHTML = `
+                <div style="display: flex; flex-direction: column;">
+                    <span style="color:var(--text-muted); font-size:0.7rem; font-family: var(--font-head); letter-spacing: 2px;">MATCH ID: ${m.id} | STATUS: ${m.status}</span>
+                    <div style="font-family: var(--font-head); font-size: 1.3rem; margin-top: 5px;">
+                        <span style="color: ${t1Color};">${t1Name}</span>
+                        <span style="color: var(--text-muted); font-size: 0.8rem; margin: 0 15px;">VS</span>
+                        <span style="color: ${t2Color};">${t2Name}</span>
+                    </div>
+                </div>
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <input type="number" id="s1_match_${m.id}" class="tactical-input score-input" value="${m.score_1}" min="0" ${isHistory ? 'disabled' : ''}>
+                    <span style="color: ${isHistory ? 'var(--text-muted)' : 'var(--primary)'}; font-family: var(--font-head); font-size: 1.5rem;">:</span>
+                    <input type="number" id="s2_match_${m.id}" class="tactical-input score-input" value="${m.score_2}" min="0" ${isHistory ? 'disabled' : ''}>
+                </div>
+            `;
+            container.appendChild(row);
+        });
+    }
+
+    async function saveToGitHub() {
+        const overlay = document.getElementById('sync-overlay');
+        const syncText = document.getElementById('sync-text');
+        
+        overlay.classList.add('active');
+        syncText.innerText = "Sende Daten an Mainframe...";
+
+        const pendingMatches = dbData.bracket.filter(m => {
+            const hasTeams = m.team_1 && m.team_1 !== '[BYE]' && m.team_2 && m.team_2 !== '[BYE]';
+            const isMyMatch = isAdmin || m.team_1 === currentUser || m.team_2 === currentUser;
+            return hasTeams && isMyMatch && m.status !== 'FINISHED';
+        });
+
+        pendingMatches.forEach((m) => {
+            const input1 = document.getElementById(`s1_match_${m.id}`);
+            const input2 = document.getElementById(`s2_match_${m.id}`);
+            
+            if(input1 && input2) {
+                m.score_1 = parseInt(input1.value) || 0;
+                m.score_2 = parseInt(input2.value) || 0;
+            }
+        });
+
+        try {
+            const updatedContent = btoa(unescape(encodeURIComponent(JSON.stringify(dbData, null, 2))));
+            const url = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${DB_PATH}`;
+            
+            const commitMessage = isAdmin 
+                ? "🎛️ Admin Override: Scores aktualisiert" 
+                : `🎯 Team ${currentUser} hat Ergebnisse eingetragen`;
+
+            const body = {
+                message: commitMessage,
+                content: updatedContent,
+                sha: fileSha, 
+                branch: BRANCH
+            };
+
+            const res = await fetch(url, {
+                method: 'PUT',
+                headers: { 
+                    'Authorization': `token ${currentToken}`, 
+                    'Accept': 'application/vnd.github.v3+json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(body)
+            });
+
+            if(!res.ok) throw new Error("Fehler beim Upload");
+
+            syncText.innerText = "Upload erfolgreich! Synchronisiere...";
+            setTimeout(async () => { await reloadDataFromGitHub(); }, 1500);
+
+        } catch (e) {
+            console.error(e);
+            syncText.innerText = "❌ ERROR: VERBINDUNG ABGEBROCHEN.";
+            setTimeout(() => { overlay.classList.remove('active'); }, 3000);
+        }
+    }
+
+    async function reloadDataFromGitHub() {
+        try {
+            const url = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${DB_PATH}?ref=${BRANCH}&t=${Date.now()}`;
+            const res = await fetch(url, {
+                headers: { 'Authorization': `token ${currentToken}`, 'Accept': 'application/vnd.github.v3+json' }
+            });
+
+            if(!res.ok) throw new Error("Reload Error");
+
+            const data = await res.json();
+            fileSha = data.sha; 
+            const content = decodeURIComponent(escape(atob(data.content)));
+            dbData = JSON.parse(content);
+
+            renderMatches(); 
+            document.getElementById('sync-overlay').classList.remove('active');
+            
+            const msg = document.getElementById('status-msg');
+            msg.innerText = "✅ SYSTEM SYNCHRONISIERT UND BEREIT!";
+            setTimeout(() => { msg.innerText = ""; }, 4000);
+
+        } catch (e) {
+            console.error("Fehler beim Reload:", e);
+            document.getElementById('sync-text').innerText = "❌ Fehler beim Laden der neuen Daten.";
+            setTimeout(() => { document.getElementById('sync-overlay').classList.remove('active'); }, 3000);
+        }
+    }
+
+    function logout() {
+        localStorage.removeItem('uic_token');
+        localStorage.removeItem('uic_user');
+        location.reload();
+    }
+</script>
+</body>
+</html>
