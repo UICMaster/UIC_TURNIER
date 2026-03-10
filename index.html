@@ -104,21 +104,27 @@
     <main class="section-pad">
         
         <div id="view-none" class="view-section container text-center hidden">
-            <h1 style="font-size: 3rem; margin-bottom: 1rem;">SYSTEM STANDBY</h1>
-            <p class="text-muted" style="max-width: 600px; margin: 0 auto;">
-                Aktuell sind keine aktiven Turniere im System registriert. 
-                Die Teams bereiten sich auf den nächsten Split vor.
-            </p>
+            <div class="tactical-panel">
+                <div class="status-ring standby"></div>
+                <h1 class="title-epic" style="color: var(--text-muted);">SYSTEM STANDBY</h1>
+                <p class="text-muted" style="max-width: 500px; margin: 0 auto; font-size: 1.1rem;">
+                    Aktuell sind keine aktiven Turniere im System registriert.<br> 
+                    Die Teams bereiten sich auf den nächsten Split vor.
+                </p>
+            </div>
         </div>
 
         <div id="view-upcoming" class="view-section container text-center hidden">
-            <h4 style="letter-spacing: 4px; color: var(--text-muted)">NÄCHSTES EVENT</h4>
-            <h1 id="event-title" style="font-size: clamp(2rem, 5vw, 4rem); margin-bottom: 2rem; line-height: 1.1;">-</h1>
-            
-            <div id="countdown" class="countdown-box">Lade Sequenz...</div>
-            
-            <div style="margin-top: 3rem;">
-                <a id="reg-link" href="#" target="_blank" class="btn btn-obsidian">JETZT ANMELDEN</a>
+            <div class="tactical-panel">
+                <div class="status-ring upcoming"></div>
+                <h4 class="pre-title">NÄCHSTES EVENT</h4>
+                <h1 id="event-title" class="title-epic">-</h1>
+                
+                <div id="countdown" class="countdown-box glow">Lade Sequenz...</div>
+                
+                <div style="margin-top: 3.5rem;">
+                    <a id="reg-link" href="#" target="_blank" class="btn btn-obsidian">JETZT ANMELDEN</a>
+                </div>
             </div>
         </div>
 
