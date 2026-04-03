@@ -6,7 +6,6 @@ on:
       - 'data/teams/**'
       - 'data/tournament.json'
       - 'data/generated/db.json'
-  # Allows manual triggers if you need to force a refresh
   workflow_dispatch:
 
 jobs:
@@ -16,33 +15,20 @@ jobs:
       contents: write
 
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v3
         with:
           token: ${{ secrets.GH_PAT }}
-          fetch-depth: 0 # Important for rebase stability
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - name: Setup Node
+        uses: actions/setup-node@v3
         with:
-          node-version: '20'
+          node-version: '18'
 
-      - name: Sync Workspace
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          # Grabs human changes (CSS/HTML) that happened while the bot was starting
-          git pull --rebase origin main
+      - name: Build Database
+        run: node scripts/build.js
 
-      - name: Execute Engine
-        # If you still want Prime League stats, keep fetch_prime.js here
-        run: |
-          node scripts/fetch_prime.js
-          node scripts/build.js
-
-      - name: Commit Generated Data
-        uses: stefanzweifel/git-auto-commit-action@v5
+      - name: Commit & Push
+        uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: "[skip ci] 🤖 System Update: Engine hat Bracket berechnet"
-          file_pattern: "data/generated/db.json data/prime_stats.json"
-          branch: main
+          commit_message: "🤖 System Update: Engine hat Bracket berechnet"
+          file_pattern: data/generated/db.json
