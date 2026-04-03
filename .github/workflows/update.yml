@@ -6,6 +6,7 @@ on:
       - 'data/teams/**'
       - 'data/tournament.json'
       - 'data/generated/db.json'
+
   workflow_dispatch:
 
 jobs:
@@ -13,22 +14,17 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-
     steps:
       - uses: actions/checkout@v3
         with:
           token: ${{ secrets.GH_PAT }}
-
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
           node-version: '18'
 
-      - name: Build Database
-        run: node scripts/build.js
-
-      - name: Commit & Push
-        uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          commit_message: "🤖 System Update: Engine hat Bracket berechnet"
-          file_pattern: data/generated/db.json
+    # NEU: Hier laufen jetzt beide Skripte nacheinander ab!
+      - name: Fetch Prime Intel & Build Database
+        run: |
+          node scripts/fetch_prime.js
+          node scripts/build.js
