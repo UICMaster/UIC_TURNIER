@@ -18,8 +18,8 @@ const TEAMS = {
     "UIC_NIGHT":   { id: "212047", manual_div: "Division 6" },
     "UIC_FREEZER": { id: "203146", manual_div: "Division 5" },
     "RISING_DAWN": { id: "212208", manual_div: "Division 5" },
-    "UIC_VAKUUM": { id: "198490", manual_div: "Division 6" },
-    "UIC_CYBER": { id: "207696", manual_div: "Division 6" }
+    "UIC_CYBER": { id: "198490", manual_div: "Division 6" },
+    "UIC_VAKUUM": { id: "207696", manual_div: "Division 6" }
 };
 
 const HEADERS = { 'User-Agent': 'UIC-Dashboard-Bot/2.2' };
