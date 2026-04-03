@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Das Turnier der Kraft Season 2026",
-    "status": "LIVE",
+    "status": "UPCOMING",
     "start_date_iso": "2026-04-24T00:00:00Z",
     "registration_link": "https://forms.google.com",
     "stream_link": "https://twitch.tv/ultrainstinctcrew"
@@ -540,29 +540,29 @@
           "div": "Division 5"
         },
         "stats": {
-          "wins": 15,
+          "wins": 21,
           "losses": 4,
-          "points": 15,
-          "games": 19,
-          "win_rate": 79,
+          "points": 21,
+          "games": 25,
+          "win_rate": 84,
           "form": [
             "W",
-            "D",
+            "L",
             "W",
             "W",
-            "L"
+            "W"
           ]
         },
         "next_match": {
-          "date": "2026-03-28T18:00:00+01:00",
-          "tag": "TBD",
-          "link": "https://www.primeleague.gg/de/leagues/matches/1157919"
+          "date": "2026-04-09T19:00:00+02:00",
+          "tag": "BICE",
+          "link": "https://www.primeleague.gg/de/leagues/matches/1157967"
         },
         "last_match": {
-          "result": "NIEDERLAGE",
-          "score": "0 - 2",
-          "enemy": "NAS",
-          "date": "2026-03-24T21:00:00+01:00"
+          "result": "SIEG",
+          "score": "2 - 0",
+          "enemy": "420",
+          "date": "2026-03-29T18:00:00+02:00"
         },
         "roster": [
           {
@@ -651,7 +651,7 @@
             "is_captain": false
           },
           {
-            "summoner": "UIC Dragonfly#1299",
+            "summoner": "RD Dragonfly#UIC",
             "is_captain": false
           },
           {
