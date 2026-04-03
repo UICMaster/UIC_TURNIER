@@ -170,7 +170,7 @@
       "id": "UIC_ABYSS",
       "name": "UIC Abyss",
       "acronym": "UICA",
-      "logo": "https://cdn0.gamesports.net/league_team_logos/204000/204924.jpg?1765838352",
+      "logo": "https://cdn0.heartbase.gg/league_team_logos/204000/204924.jpg?1765838352",
       "stream_link": "https://twitch.tv/",
       "is_live": true,
       "roster": [
@@ -258,11 +258,19 @@
         "logo": "https://cdn0.heartbase.gg/league_team_logos/204000/204924.jpg?1765838352"
       }
     },
+    "UIC_CYBER": {
+      "id": "UIC_CYBER",
+      "name": "UIC Cyber",
+      "acronym": "UICC",
+      "logo": "https://cdn0.heartbase.gg/league_team_logos/198000/198490.jpg?1774785721",
+      "stream_link": "https://twitch.tv/",
+      "is_live": true
+    },
     "UIC_EMBER": {
       "id": "UIC_EMBER",
       "name": "UIC Ember",
       "acronym": "UICE",
-      "logo": "https://cdn0.gamesports.net/league_team_logos/211000/211165.jpg?1765449081",
+      "logo": "https://cdn0.heartbase.gg/league_team_logos/211000/211165.jpg?1765449081",
       "stream_link": "https://twitch.tv/",
       "is_live": true,
       "prime_intel": {
@@ -331,7 +339,7 @@
       "id": "UIC_FREEZER",
       "name": "UIC Freezer",
       "acronym": "UICF",
-      "logo": "https://cdn0.gamesports.net/league_team_logos/203000/203146.jpg?1768840480",
+      "logo": "https://cdn0.heartbase.gg/league_team_logos/203000/203146.jpg?1768840480",
       "stream_link": "https://twitch.tv/",
       "is_live": true,
       "prime_intel": {
@@ -392,7 +400,7 @@
       "id": "UIC_NIGHT",
       "name": "UIC Night",
       "acronym": "UICNT",
-      "logo": "https://cdn0.gamesports.net/league_team_logos/212000/212047.jpg?1768386989",
+      "logo": "https://cdn0.heartbase.gg/league_team_logos/212000/212047.jpg?1768386989",
       "stream_link": "https://twitch.tv/",
       "is_live": true,
       "prime_intel": {
@@ -460,7 +468,7 @@
       "id": "UIC_NOVA",
       "name": "UIC Nova",
       "acronym": "UICN",
-      "logo": "https://cdn0.gamesports.net/league_team_logos/203000/203447.jpg?1768386652",
+      "logo": "https://cdn0.heartbase.gg/league_team_logos/203000/203447.jpg?1768386652",
       "stream_link": "https://twitch.tv/",
       "is_live": true,
       "prime_intel": {
@@ -529,7 +537,7 @@
       "id": "UIC_PRIME",
       "name": "UIC Prime",
       "acronym": "UICP",
-      "logo": "https://cdn0.gamesports.net/league_team_logos/116000/116908.jpg?1768526642",
+      "logo": "https://cdn0.heartbase.gg/league_team_logos/116000/116908.jpg?1768526642",
       "stream_link": "https://twitch.tv/",
       "is_live": true,
       "prime_intel": {
@@ -598,7 +606,7 @@
       "id": "UIC_SPARK",
       "name": "UIC Spark",
       "acronym": "UICS",
-      "logo": "https://cdn0.gamesports.net/league_team_logos/208000/208694.jpg?1765150033",
+      "logo": "https://cdn0.heartbase.gg/league_team_logos/208000/208694.jpg?1765150033",
       "stream_link": "https://twitch.tv/",
       "is_live": true,
       "prime_intel": {
@@ -662,6 +670,14 @@
         "team_link": "https://www.primeleague.gg/de/leagues/teams/208694",
         "logo": "https://cdn0.heartbase.gg/league_team_logos/208000/208694.jpg?1765150033"
       }
+    },
+    "UIC_VAKUUM": {
+      "id": "UIC_VAKUUM",
+      "name": "UIC Vakuum",
+      "acronym": "UICV",
+      "logo": "https://cdn0.heartbase.gg/league_team_logos/208000/208694.jpg?1765150033",
+      "stream_link": "https://twitch.tv/",
+      "is_live": true
     }
   },
   "bracket": [
