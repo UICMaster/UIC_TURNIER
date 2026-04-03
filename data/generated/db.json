@@ -866,8 +866,8 @@
     {
       "score_1": 2,
       "score_2": 0,
-      "winner_id": null,
-      "status": "LIVE",
+      "winner_id": "UIC_ABYSS",
+      "status": "FINISHED",
       "id": "wb_r1_m5",
       "round": 1,
       "type": "WINNER",
@@ -965,7 +965,7 @@
       "next_slot": 1,
       "loser_match_id": "lb_r2_m3",
       "loser_slot": 1,
-      "team_1": null,
+      "team_1": "UIC_ABYSS",
       "team_2": null
     },
     {
@@ -1061,7 +1061,7 @@
       "round": 1,
       "type": "LOSER",
       "next_match_id": "lb_r2_m3",
-      "team_1": null,
+      "team_1": "RISING_DAWN",
       "team_2": null
     },
     {
