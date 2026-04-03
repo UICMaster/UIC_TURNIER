@@ -85,7 +85,7 @@
 
                 <div class="nav-cta">
                     <div class="nav-separator desktop-only"></div>
-                    <a class="btn-obsidian" href="#discord">JOIN DISCORD</a>
+                    <a class="btn-obsidian" href="https://discord.gg/VjggbjA6Q4">JOIN DISCORD</a>
                 </div>
             </div>
             
@@ -94,36 +94,31 @@
 
     <main class="section-pad">
         
-        <div id="view-none" class="view-section container text-center hidden">
-            <div class="tactical-panel">
-                <div class="status-ring standby"></div>
-                <h1 class="title-epic" style="color: var(--text-muted);">SYSTEM STANDBY</h1>
-                <p class="text-muted" style="max-width: 500px; margin: 0 auto; font-size: 1.1rem;">
-                    Aktuell sind keine aktiven Turniere im System registriert.<br> 
-                    Die Teams bereiten sich auf den nächsten Split vor.
-                </p>
+        <div id="view-none" class="view-section fade-transition hidden">
+            <div class="container text-center">
+                <div class="tactical-panel">
+                    <div class="status-ring standby"></div>
+                    <h1 class="title-epic" style="color: var(--text-muted);">SYSTEM STANDBY</h1>
+                    <p class="text-muted" style="max-width: 500px; margin: 0 auto; font-size: 1.1rem;">
+                        Aktuell sind keine aktiven Turniere im System registriert.<br> 
+                        Die Teams bereiten sich auf den nächsten Split vor.
+                    </p>
+                </div>
             </div>
         </div>
 
-        <div id="view-upcoming" class="view-section hidden">
+        <div id="view-upcoming" class="view-section fade-transition hidden">
             <div class="dashboard-grid">
-                
                 <div class="intel-column">
-                    <div class="status-indicator">
-                        <!-- <div class="live-dot pulse"></div>
-                        <span class="hud-label">SYSTEM: READY // EVENT: UPCOMING</span> -->
-                    </div>
-
+                    <div class="status-indicator"></div>
                     <div class="intel-content">
                         <h4 class="pre-title">ULTRA INSTINCT CREW</h4>
                         <h1 id="event-title" class="hero-title">-</h1>
-                        
                         <div class="countdown-wrapper">
                             <span class="hud-label" style="margin-bottom: 10px;">T-MINUS UNTIL DEPLOYMENT</span>
                             <div id="countdown" class="countdown-minimal">00:00:00:00</div>
                         </div>
-
-                        <div class="action-area">
+                        <div class="action-area" style="margin-top: 2rem;">
                             <a id="reg-link" href="#" target="_blank" class="btn-terminal">
                                 <span class="btn-text">REGISTRIEREN</span>
                                 <span class="btn-glitch"></span>
@@ -131,76 +126,77 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="rules-column">
                     <div class="rules-window">
                         <div class="window-header">
                             <span class="hud-label">TURNIER REGELN</span>
                         </div>
                         <div class="rules-scroll-area">
-                            <div class="rule-item">
-                                <span class="rule-num">1.1</span>
-                                <p><strong>ACCOUNTS:</strong> Alle Spieler müssen über einen aktiven Account auf EUW verfügen (Min. Level 30). Fake- oder Smurf-Accounts führen zum Ausschluss.</p>
-                            </div>
-                            <div class="rule-item">
-                                <span class="rule-num">1.2</span>
-                                <p><strong>IDENTITÄT:</strong> Der Ingame-Name (IGN) muss exakt mit der Anmeldung übereinstimmen. Änderungen sind sofort meldepflichtig.</p>
-                            </div>
-                            <div class="rule-item">
-                                <span class="rule-num">2.1</span>
-                                <p><strong>MODUS:</strong> Double Elimination Format. Alle Bracket-Spiele sind Bo1. Finale und Grand Finale Bo5.</p>
-                            </div>
-                            <div class="rule-item">
-                                <span class="rule-num">2.2</span>
-                                <p><strong>LOBBY:</strong> Tournament Draft auf Summoner’s Rift. Das obere Team im Bracket hat im ersten Spiel Seitenwahl (Blue Side).</p>
-                            </div>
-
-                            <div class="rule-item">
-                                <span class="rule-num">3.1</span>
-                                <p><strong>REPORTING:</strong> Ergebnisse via Dashboard. Ein Match gilt erst als offiziell, wenn der GitHub-Action-Build erfolgreich abgeschlossen wurde.</p>
-                            </div>
-                            <div class="rule-item">
-                                <span class="rule-num">3.2</span>
-                                <p><strong>MANIPULATION:</strong> Das mutwillige Auslösen fehlerhafter Commits oder Manipulation der Daten führt zum sofortigen Bann.</p>
-                            </div>
-
-                            <div class="rule-item">
-                                <span class="rule-num">4.1</span>
-                                <p><strong>VERHALTEN:</strong> Toxicity, Griefing oder Diskriminierung führt zur Disqualifikation des gesamten Teams.</p>
-                            </div>
-                            <div class="rule-item">
-                                <span class="rule-num">4.2</span>
-                                <p><strong>PAUSEN:</strong> Max. 15 Min. taktische Pause pro Spiel bei technischen Problemen.</p>
-                            </div>
+                            <div class="rule-item"><span class="rule-num">1.1</span><p><strong>ACCOUNTS:</strong> Alle Spieler müssen über einen aktiven Account auf EUW verfügen (Min. Level 30). Fake- oder Smurf-Accounts führen zum Ausschluss.</p></div>
+                            <div class="rule-item"><span class="rule-num">1.2</span><p><strong>IDENTITÄT:</strong> Der Ingame-Name (IGN) muss exakt mit der Anmeldung übereinstimmen. Änderungen sind sofort meldepflichtig.</p></div>
+                            <div class="rule-item"><span class="rule-num">2.1</span><p><strong>MODUS:</strong> Double Elimination Format. Alle Bracket-Spiele sind Bo1. Finale und Grand Finale Bo5.</p></div>
+                            <div class="rule-item"><span class="rule-num">2.2</span><p><strong>LOBBY:</strong> Tournament Draft auf Summoner’s Rift. Das obere Team im Bracket hat im ersten Spiel Seitenwahl (Blue Side).</p></div>
+                            <div class="rule-item"><span class="rule-num">3.1</span><p><strong>REPORTING:</strong> Ergebnisse via Dashboard. Ein Match gilt erst als offiziell, wenn der GitHub-Action-Build erfolgreich abgeschlossen wurde.</p></div>
+                            <div class="rule-item"><span class="rule-num">3.2</span><p><strong>MANIPULATION:</strong> Das mutwillige Auslösen fehlerhafter Commits oder Manipulation der Daten führt zum sofortigen Bann.</p></div>
+                            <div class="rule-item"><span class="rule-num">4.1</span><p><strong>VERHALTEN:</strong> Toxicity, Griefing oder Diskriminierung führt zur Disqualifikation des gesamten Teams.</p></div>
+                            <div class="rule-item"><span class="rule-num">4.2</span><p><strong>PAUSEN:</strong> Max. 15 Min. taktische Pause pro Spiel bei technischen Problemen.</p></div>
                         </div>
                         <div class="window-footer">
                             <span>DURCH DAS REGISTRIEREN, AKZEPTIER IHR ALLE REGELN.</span>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
 
-        <div id="view-live" class="view-section hidden">
-            <div class="container">
-                
-                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 1rem;">
-                    <div class="live-dot"></div>
-                    <h2 id="live-title" style="margin:0; font-size: 1.5rem;">LIVE FEED</h2>
-                </div>
-
-                <div id="team-streams-container" class="team-streams-grid hidden"></div>
+        <div id="view-live" class="view-section fade-transition hidden">
             
-                <h3 style="color: var(--primary); margin-bottom: 1rem;">WINNERS BRACKET</h3>
-                <div id="bracket-winners" class="bracket-scroll-wrapper"></div>
+            <div class="live-hero-container">
+                <div class="live-hero-grid">
+                    
+                    <div class="main-feed-panel">
+                        <div class="live-header">
+                            <div class="status-ring upcoming live-ring"></div>
+                            <h2 class="hero-title">LIVE FEED</h2>
+                        </div>
+                        <div class="tactical-screen">
+                            <div class="screen-content" style="text-align: center;">
+                                <span class="hud-label" style="color: var(--live-red); letter-spacing: 4px; display: block; margin-bottom: 10px;">PRIMARY BROADCAST</span>
+                                <span class="offline-text">// AWAITING SIGNAL</span>
+                            </div>
+                        </div>
+                    </div>
 
-                <h3 id="lbl-losers" style="color: var(--text-muted); margin-top: 4rem; margin-bottom: 1rem;">LOSERS BRACKET</h3>
-                <div id="bracket-losers" class="bracket-scroll-wrapper"></div>
-                
+                    <div class="stream-sidebar">
+                        <div class="rules-window stream-window">
+                            <div class="window-header stream-header">
+                                <span class="hud-label" style="color: var(--live-red);">ACTIVE FREQUENCIES</span>
+                            </div>
+                            
+                            <div id="team-streams-container" class="stream-scroll-area hidden">
+                                </div>
+                            
+                            <div class="window-footer stream-footer">
+                                <span>LIVE DIRECTORY: AUTO-UPDATING...</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
             </div>
-        </div>
+            
+            <div class="container" style="max-width: 1500px;">
+                <div class="tactical-panel bracket-panel">
+                    <h3 class="pre-title bracket-title">[ WINNERS BRACKET ]</h3>
+                    <div id="bracket-winners" class="bracket-scroll-wrapper"></div>
+                </div>
+                <div class="tactical-panel bracket-panel losers-panel">
+                    <h3 id="lbl-losers" class="pre-title bracket-title" style="color: var(--text-muted);">[ LOSERS BRACKET ]</h3>
+                    <div id="bracket-losers" class="bracket-scroll-wrapper"></div>
+                </div>
+            </div>
 
+        </div>
     </main>
 
     <div id="champion-screen" class="champion-overlay hidden">
