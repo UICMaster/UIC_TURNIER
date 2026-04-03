@@ -2,7 +2,7 @@
   "meta": {
     "title": "Das Turnier der Kraft Season 2026",
     "status": "LIVE",
-    "start_date_iso": "2026-04-24T00:00:00Z",
+    "start_date_iso": "2026-04-01T18:00:00Z",
     "registration_link": "mailto:support@ultrainstinctcrew.com?subject=Turnieranmeldung%20UIC%20Tournament:%20[Teamname]&body=Hallo%20UIC%20Team,%0D%0A%0D%0Ahiermit%20möchte%20ich%20unser%20Team%20für%20das%20kommende%20UIC%20Turnier%20anmelden.%0D%0A%0D%0A---%20OPTION%20A:%20PRIME%20LEAGUE%20TEAM%20---%0D%0APrime%20League%20Team%20URL/ID:%20%0D%0ADiscord%20ID%20(Kapitän):%20%0D%0A%0D%0A---%20OPTION%20B:%20NON-PL%20/%20FUN%20TEAM%20---%0D%0ATeamname:%20%0D%0ALink%20zum%20Team-Logo%20(dem%20Anhang%20anhängen):%20%0D%0ADiscord%20ID%20(Kapitän):%20%0D%0A%0D%0A---%20ROSTER%20(RIOT%20IDs%20inkl.%20%23Tag)%20---%0D%0A1.%20(KAPITÄN):%20%0D%0A2.%20Spieler:%20%0D%0A3.%20Spieler:%20%0D%0A4.%20Spieler:%20%0D%0A5.%20Spieler:%20%0D%0A%0D%0A---%20ERSATZ%20/%20NACHRICHT%20---%0D%0A",
     "stream_link": "https://twitch.tv/ultrainstinctcrew"
   },
@@ -714,8 +714,8 @@
     {
       "score_1": 0,
       "score_2": 0,
-      "winner_id": "UIC_EMBER",
-      "status": "FINISHED",
+      "winner_id": null,
+      "status": "LIVE",
       "id": "wb_r1_m3",
       "round": 1,
       "type": "WINNER",
@@ -724,13 +724,13 @@
       "loser_match_id": "lb_r1_m2",
       "loser_slot": 1,
       "team_1": "UIC_EMBER",
-      "team_2": "[BYE]"
+      "team_2": "UIC_CYBER"
     },
     {
       "score_1": 0,
       "score_2": 0,
-      "winner_id": "UIC_NOVA",
-      "status": "FINISHED",
+      "winner_id": null,
+      "status": "LIVE",
       "id": "wb_r1_m4",
       "round": 1,
       "type": "WINNER",
@@ -739,7 +739,7 @@
       "loser_match_id": "lb_r1_m2",
       "loser_slot": 2,
       "team_1": "UIC_NOVA",
-      "team_2": "[BYE]"
+      "team_2": "UIC_VAKUUM"
     },
     {
       "score_1": 2,
@@ -820,7 +820,7 @@
       "score_1": 0,
       "score_2": 0,
       "winner_id": null,
-      "status": "LIVE",
+      "status": "WAITING",
       "id": "wb_r2_m2",
       "round": 2,
       "type": "WINNER",
@@ -828,8 +828,8 @@
       "next_slot": 2,
       "loser_match_id": "lb_r2_m2",
       "loser_slot": 2,
-      "team_1": "UIC_EMBER",
-      "team_2": "UIC_NOVA"
+      "team_1": null,
+      "team_2": null
     },
     {
       "score_1": 0,
@@ -921,14 +921,14 @@
     {
       "score_1": 0,
       "score_2": 0,
-      "winner_id": "[BYE]",
-      "status": "FINISHED",
+      "winner_id": null,
+      "status": "WAITING",
       "id": "lb_r1_m2",
       "round": 1,
       "type": "LOSER",
       "next_match_id": "lb_r2_m2",
-      "team_1": "[BYE]",
-      "team_2": "[BYE]"
+      "team_1": null,
+      "team_2": null
     },
     {
       "score_1": 0,
@@ -975,7 +975,7 @@
       "round": 2,
       "type": "LOSER",
       "next_match_id": "lb_r3_m1",
-      "team_1": "[BYE]",
+      "team_1": null,
       "team_2": null
     },
     {
