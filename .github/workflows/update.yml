@@ -20,25 +20,27 @@ jobs:
       - uses: actions/checkout@v3
         with:
           token: ${{ secrets.GH_PAT }}
-          ref: main  # Ensures we are on the correct branch
+          ref: main
+
+      # --- STEP 1: SYNC FIRST ---
+      - name: Pull latest human changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git pull --rebase origin main
 
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
           node-version: '18'
 
+      # --- STEP 2: RUN SCRIPTS ---
       - name: Fetch Prime Intel & Build Database
         run: |
           node scripts/fetch_prime.js
           node scripts/build.js
 
-      # --- NEW STEP: SYNC WITH HUMAN CHANGES ---
-      - name: Pull latest changes
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git pull --rebase origin main
-
+      # --- STEP 3: COMMIT THE RESULTS ---
       - name: Commit & Push
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
