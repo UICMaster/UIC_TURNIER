@@ -6,7 +6,31 @@ let globalTeams = {};
 let globalBracket = [];
 
 document.addEventListener('DOMContentLoaded', init);
-window.addEventListener('resize', drawBracketLines);
+window.addEventListener('resize', debounce(drawBracketLines, 150));
+
+// Utility: Prevents heavy functions from firing too often
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
+
+// Utility: Sanitize strings to prevent Cross-Site Scripting (XSS)
+function escapeHTML(str) {
+    if (typeof str !== 'string') return str || '';
+    return str
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+}
 
 async function init() {
     await fetchAndRender();
@@ -32,7 +56,9 @@ async function fetchAndRender() {
 }
 
 function updateUI(db) {
-    const s = db.meta.status;
+    // Normalizes the status string to uppercase and protects against null values
+    const s = (db.meta.status || '').toUpperCase(); 
+    
     document.querySelectorAll('.view-section').forEach(el => el.classList.add('hidden'));
 
     if (s === 'UPCOMING') {
@@ -58,32 +84,77 @@ function updateUI(db) {
     }
 }
 
-function renderTeamStreams(teams) {
+// --- NEW STREAM TRACKER LOGIC ---
+let cachedStreamData = null;
+let lastStreamCheckTime = 0;
+const STREAM_CHECK_COOLDOWN = 3 * 60 * 1000; // 3 Minutes Cooldown
+
+async function renderTeamStreams(teams) {
     const container = document.getElementById('team-streams-container');
-    container.innerHTML = '';
     
-    const teamsArray = Object.values(teams).filter(t => t.id !== '[BYE]');
-    if(teamsArray.length === 0) return;
+    // Filter teams that actually have a Twitch link (and aren't BYE)
+    const teamsArray = Object.values(teams).filter(t => t.id !== '[BYE]' && t.stream_link && t.stream_link.includes('twitch.tv'));
+    if (teamsArray.length === 0) return;
     
     container.classList.remove('hidden');
 
-    teamsArray.forEach(t => {
-        const hasStream = !!t.stream_link;
-        const isLive = t.is_live === true; 
+    const now = Date.now();
+    // Only ping DecAPI if we have no cache, or if 3 minutes have passed
+    if (!cachedStreamData || (now - lastStreamCheckTime > STREAM_CHECK_COOLDOWN)) {
         
-        if (!hasStream) return;
+        // Show a loading state only on the very first load
+        if (!cachedStreamData) {
+            container.innerHTML = '<p class="text-muted" style="width:100%; text-align:center; font-family:var(--font-head); letter-spacing:2px;">SCANNING FREQUENCIES...</p>';
+        }
 
+        // Process all streams simultaneously
+        cachedStreamData = await Promise.all(teamsArray.map(async (t) => {
+            let isLiveDynamic = false;
+            try {
+                // Extract username from URL (e.g., https://twitch.tv/uic_gaming -> uic_gaming)
+                const match = t.stream_link.match(/twitch\.tv\/([^/?]+)/);
+                if (match && match[1]) {
+                    const username = match[1];
+                    const res = await fetch(`https://decapi.me/twitch/uptime/${username}`);
+                    const text = await res.text();
+                    
+                    // DecAPI returns "[username] is offline" if offline.
+                    isLiveDynamic = !text.includes('is offline') && !text.includes('Channel not found');
+                }
+            } catch (e) {
+                console.warn(`Comms array failure for ${t.name}`);
+            }
+            return { ...t, is_live_dynamic: isLiveDynamic };
+        }));
+        
+        lastStreamCheckTime = now;
+    }
+
+    // SORTING: Live streams first
+    const liveTeams = cachedStreamData.filter(t => t.is_live_dynamic);
+    const offlineTeams = cachedStreamData.filter(t => !t.is_live_dynamic);
+    const sortedTeams = [...liveTeams, ...offlineTeams];
+
+    // RENDER
+    container.innerHTML = '';
+    sortedTeams.forEach(t => {
         const a = document.createElement('a');
         a.className = 'stream-card';
+        
+        if (!t.is_live_dynamic) {
+            a.style.opacity = '0.5';
+            a.style.filter = 'grayscale(80%)';
+        }
+        
         a.href = t.stream_link;
         a.target = '_blank';
         
         a.innerHTML = `
             ${t.logo ? `<img src="${t.logo}" class="stream-avatar">` : `<div class="stream-avatar"></div>`}
             <div class="stream-info">
-                <span class="stream-name">${t.name}</span>
-                <span class="stream-status ${isLive ? 'is-live' : ''}">
-                    ${isLive ? '<div class="live-dot"></div> LIVE AUF TWITCH' : 'OFFLINE'}
+                <span class="stream-name">${escapeHTML(t.name)}</span>
+                <span class="stream-status ${t.is_live_dynamic ? 'is-live' : ''}">
+                    ${t.is_live_dynamic ? '<div class="live-dot"></div> LIVE AUF TWITCH' : 'OFFLINE'}
                 </span>
             </div>
         `;
@@ -149,14 +220,14 @@ function createCard(m, teams) {
         <div class="team-row ${t1Winner ? 'winner' : ''} ${t1Loser ? 'loser' : ''}" data-team-id="${m.team_1 || ''}">
             <div class="flex-center">
                 ${t1.logo ? `<img src="${t1.logo}" class="t-logo">` : ''}
-                <span class="t-name">${t1.name}</span>
+                <span class="t-name">${escapeHTML(t1.name)}</span>
             </div>
             <span class="t-score">${m.score_1}</span>
         </div>
         <div class="team-row ${t2Winner ? 'winner' : ''} ${t2Loser ? 'loser' : ''}" data-team-id="${m.team_2 || ''}">
              <div class="flex-center">
                 ${t2.logo ? `<img src="${t2.logo}" class="t-logo">` : ''}
-                <span class="t-name">${t2.name}</span>
+                <span class="t-name">${escapeHTML(t2.name)}</span>
             </div>
             <span class="t-score">${m.score_2}</span>
         </div>
@@ -363,8 +434,8 @@ function openTeamModal(teamId) {
     let rosterHTML = '<p class="text-muted" style="font-size: 0.75rem;">// NO DATA</p>';
     if (rosterData.length > 0) {
         rosterHTML = '<div class="roster-list">' + rosterData.map(p => {
-            const name = p.summoner || p.name; 
-            const role = p.is_captain ? 'CAPTAIN' : (p.role || 'PLAYER');
+            const name = escapeHTML(p.summoner || p.name); 
+            const role = escapeHTML(p.is_captain ? 'CAPTAIN' : (p.role || 'PLAYER'));
             const roleColor = p.is_captain ? 'var(--primary)' : 'var(--text-muted)';
             return `
             <div class="roster-row">
@@ -376,11 +447,11 @@ function openTeamModal(teamId) {
 
     // 2. PRIME LEAGUE STATS
     let statsHTML = '';
-    let division = team.acronym || 'UNKNOWN';
+    let division = escapeHTML(team.acronym || 'UNKNOWN');
     
     if (team.prime_intel) {
         const intel = team.prime_intel;
-        division = intel.meta.div;
+        division = escapeHTML(intel.meta.div);
         
         const formBoxes = intel.stats.form.map(f => {
             let color = 'rgba(255,255,255,0.05)';
@@ -416,7 +487,7 @@ function openTeamModal(teamId) {
         <div class="modal-split">
             <div class="modal-left">
                 <span class="hud-label" style="color: var(--primary);">${division}</span>
-                <h2 class="modal-title">${team.name}</h2>
+                <h2 class="modal-title">${escapeHTML(team.name)}</h2>
                 ${team.logo ? `<img src="${team.logo}" style="width:100px; height:100px; object-fit:contain; opacity: 0.8; margin: 1rem 0; filter: drop-shadow(0 0 10px rgba(0,240,255,0.2));">` : ''}
                 
                 ${team.prime_intel && team.prime_intel.team_link ? `<a href="${team.prime_intel.team_link}" target="_blank" class="tactical-btn">DATABASE LINK</a>` : ''}
@@ -429,55 +500,6 @@ function openTeamModal(teamId) {
                     <span class="hud-label">ACTIVE ROSTER</span>
                     ${rosterHTML}
                 </div>
-            </div>
-        </div>
-    `;
-    
-    showModal();
-}
-
-function openMatchModal(matchId) {
-    const match = globalBracket.find(m => m.id === matchId);
-    if(!match) return;
-
-    const t1 = resolve(match.team_1, globalTeams);
-    const t2 = resolve(match.team_2, globalTeams);
-    const content = document.getElementById('modal-content');
-    
-    let detailsHTML = '<div class="stat-box" style="margin-top: 10px;"><span class="hud-label" style="margin:0;">// NO MAP DATA FOUND</span></div>';
-
-    if (match.details && match.details.maps && match.details.maps.length > 0) {
-        detailsHTML = '<div class="roster-list">' + match.details.maps.map(m => `
-            <div class="roster-row">
-                <span class="hud-label" style="margin:0; color:#fff;">${m.map_name}</span>
-                <span style="font-family: var(--font-head); font-size: 1.1rem; color: var(--text-muted);">
-                    <span style="${m.score_1 > m.score_2 ? 'color: var(--primary);' : ''}">${m.score_1}</span> 
-                    <span style="margin: 0 4px; font-size: 0.9rem;">:</span> 
-                    <span style="${m.score_2 > m.score_1 ? 'color: var(--primary);' : ''}">${m.score_2}</span>
-                </span>
-            </div>
-        `).join('') + '</div>';
-    }
-
-    content.innerHTML = `
-        <div class="modal-split">
-            <div class="modal-left" style="align-items: flex-start;">
-                <span class="hud-label">STATUS: ${match.status}</span>
-                <h2 class="modal-title" style="font-size: 1.6rem; margin: 1rem 0;">${t1.name} <br><span style="color:var(--text-muted); font-size: 0.9rem;">VS</span><br> ${t2.name}</h2>
-                
-                <div class="stat-box highlight" style="width: 100%; margin: 1rem 0;">
-                    <span class="hud-label">SERIES SCORE</span>
-                    <div style="font-size: 2.5rem; font-family: var(--font-head); color: #fff; line-height: 1; margin-top: 5px;">
-                        ${match.score_1} <span style="color: var(--primary); font-size: 2rem;">-</span> ${match.score_2}
-                    </div>
-                </div>
-
-                ${match.details && match.details.vod_link ? `<a href="${match.details.vod_link}" target="_blank" class="tactical-btn">WATCH REPLAY</a>` : ''}
-            </div>
-            
-            <div class="modal-right">
-                <span class="hud-label">MAP BREAKDOWN</span>
-                ${detailsHTML}
             </div>
         </div>
     `;
