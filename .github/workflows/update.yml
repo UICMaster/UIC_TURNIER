@@ -24,15 +24,11 @@ jobs:
         with:
           node-version: '18'
 
-      - name: Fetch & Build
-        run: |
-          node scripts/fetch_prime.js
-          node scripts/build.js
+      - name: Build Database
+        run: node scripts/build.js
 
       - name: Commit & Push
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          # [skip ci] verhindert, dass der Bot sich selbst triggert
-          commit_message: "[skip ci] 🤖 System Update: Intel & Bracket synchronisiert"
-          # Wir speichern db.json UND die Prime-Stats
-          file_pattern: "data/generated/db.json data/prime_stats.json"
+          commit_message: "🤖 System Update: Engine hat Bracket berechnet"
+          file_pattern: data/generated/db.json
