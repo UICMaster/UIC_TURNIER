@@ -926,8 +926,8 @@
     {
       "score_1": 395,
       "score_2": 0,
-      "winner_id": null,
-      "status": "LIVE",
+      "winner_id": "UIC_PRIME",
+      "status": "FINISHED",
       "id": "wb_r2_m1",
       "round": 2,
       "type": "WINNER",
@@ -995,7 +995,7 @@
       "next_slot": 1,
       "loser_match_id": "lb_r4_m1",
       "loser_slot": 1,
-      "team_1": null,
+      "team_1": "UIC_PRIME",
       "team_2": null
     },
     {
@@ -1079,14 +1079,14 @@
     {
       "score_1": 0,
       "score_2": 0,
-      "winner_id": null,
-      "status": "WAITING",
+      "winner_id": "UIC_FREEZER",
+      "status": "FINISHED",
       "id": "lb_r2_m1",
       "round": 2,
       "type": "LOSER",
       "next_match_id": "lb_r3_m1",
-      "team_1": "[BYE]",
-      "team_2": null
+      "team_1": "UIC_FREEZER",
+      "team_2": "[BYE]"
     },
     {
       "score_1": 0,
@@ -1133,7 +1133,7 @@
       "round": 3,
       "type": "LOSER",
       "next_match_id": "lb_r4_m1",
-      "team_1": null,
+      "team_1": "UIC_FREEZER",
       "team_2": null
     },
     {
