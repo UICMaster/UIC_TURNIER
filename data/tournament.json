@@ -2,8 +2,8 @@
   "meta": {
     "title": "Das Turnier der Kraft Season 2026",
     "status": "UPCOMING",
-    "start_date_iso": "2026-04-19T18:00:00Z",
-    "registration_link": "mailto:support@ultrainstinctcrew.com?subject=Turnieranmeldung%20UIC%20Tournament:%20[Teamname]&body=Hallo%20UIC%20Team,%0D%0A%0D%0Ahiermit%20möchte%20ich%20unser%20Team%20für%20das%20kommende%20UIC%20Turnier%20anmelden.%0D%0A%0D%0A---%20OPTION%20A:%20PRIME%20LEAGUE%20TEAM%20---%0D%0APrime%20League%20Team%20URL/ID:%20%0D%0ADiscord%20ID%20(Kapitän):%20%0D%0A%0D%0A---%20OPTION%20B:%20NON-PL%20/%20FUN%20TEAM%20---%0D%0ATeamname:%20%0D%0ALink%20zum%20Team-Logo%20(als%20Anhang%20beifügen):%20%0D%0ADiscord%20ID%20(Kapitän):%20%0D%0A%0D%0A---%20ROSTER%20(RIOT%20IDs%20inkl.%20%23Tag)%20---%0D%0A1.%20(KAPITÄN):%20%0D%0A2.%20Spieler:%20%0D%0A3.%20Spieler:%20%0D%0A4.%20Spieler:%20%0D%0A5.%20Spieler:%20%0D%0A%0D%0A---%20STREAMING%20/%20CASTING%20---%0D%0ATwitch-Link%20(Euer%20Team-Caster):%20%0D%0A%0D%0A---%20ERSATZ%20/%20NACHRICHT%20---%0D%0A",    
+    "start_date_iso": "2026-04-19T23:59:59Z",
+    "registration_link": "https://forms.gle/8fLbbkYviGjQDyit8",    
     "stream_link": "https://twitch.tv/ultrainstinctcrew"
   },
   "participants": [
