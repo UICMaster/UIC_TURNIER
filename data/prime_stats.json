@@ -7,14 +7,14 @@
       "div": "Division 5"
     },
     "stats": {
-      "wins": 21,
-      "losses": 4,
-      "points": 21,
-      "games": 25,
-      "win_rate": 84,
+      "wins": 24,
+      "losses": 5,
+      "points": 24,
+      "games": 29,
+      "win_rate": 83,
       "form": [
-        "W",
         "L",
+        "W",
         "W",
         "W",
         "W"
@@ -23,9 +23,9 @@
     "next_match": null,
     "last_match": {
       "result": "SIEG",
-      "score": "2 - 0",
-      "enemy": "420",
-      "date": "2026-03-29T18:00:00+02:00"
+      "score": "3 - 1",
+      "enemy": "BICE",
+      "date": "2026-04-09T19:00:00+02:00"
     },
     "roster": [
       {
