@@ -20,11 +20,7 @@
         "W"
       ]
     },
-    "next_match": {
-      "date": "2026-04-09T19:00:00+02:00",
-      "tag": "BICE",
-      "link": "https://www.primeleague.gg/de/leagues/matches/1157967"
-    },
+    "next_match": null,
     "last_match": {
       "result": "SIEG",
       "score": "2 - 0",
