@@ -4,12 +4,10 @@
      <!--- basic page needs
     ================================================== -->
     <meta charset="utf-8">
-    <title>Ultra Instinct Crew | League of Legends  eSports Organisation & Community - Turnier der Kraft</title>
-    <meta name="description" content="  UIC LEAGUE OF LEGENDS TURNIER: Erlebe E-Sports auf Prime League Niveau. 
-                                        Tritt an im LoL Tournament, dominiere das Double Elimination Bracket 
-                                        und beweise deinen Skill auf EUW. Absolute Integrität trifft High-Level Gameplay.">
+    <title>Ultra Instinct Crew | League of Legends eSport Organisation & Community</title>
+    <meta name="description" content="Die Ultra Instinct Crew (UIC) ist deine League of Legends eSport Organisation und Gaming Community aus Deutschland. Erlebe Prime League Action, professionelles LoL Coaching und spaßige Aktivitäten. Werde Teil der Community!">
     <meta name="author" content="proStarII">
-    <link rel="canonical" href="https://turnier.ultrainstinctcrew.com/">
+    <link rel="canonical" href="https://ultrainstinctcrew.com/">
 
     <!-- mobile specific metas
     ================================================== -->
@@ -18,14 +16,16 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="UIC">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 
     <!-- Manifest
     ================================================== -->
+    <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#0b0b0c">
 
     <!-- CSS
     ================================================== -->
-    <link rel="stylesheet" href="assets/css/main_v2.css">
+    <link rel="stylesheet" href="css/style.css">
 
     <!-- favicons
     ================================================== -->
@@ -35,32 +35,53 @@
 
     <!-- Open Graph
     ================================================== -->
-    <meta property="og:title" content="Ultra Instinct Crew | League of Legends  eSports Organisation & Community - Turnier der Kraft">
-    <meta property="og:description" content="   UIC LEAGUE OF LEGENDS TURNIER: Erlebe E-Sports auf Prime League Niveau. 
-                                                Tritt an im LoL Tournament, dominiere das Double Elimination Bracket 
-                                                und beweise deinen Skill auf EUW. Absolute Integrität trifft High-Level Gameplay.">
-    <meta property="og:image" content="https://turnier.ultrainstinctcrew.com/icon512_maskable.png">
-    <meta property="og:url" content="https://turnier.ultrainstinctcrew.com/">
+    <meta property="og:title" content="Ultra Instinct Crew | League of Legends eSport Organisation & Community">
+    <meta property="og:description" content="Die Ultra Instinct Crew (UIC) ist deine League of Legends eSport Organisation und Gaming Community aus Deutschland. Erlebe Prime League Action, professionelles LoL Coaching und spaßige Aktivitäten. Werde Teil der Community!">
+    <meta property="og:image" content="https://ultrainstinctcrew.com/icon512_maskable.png">
+    <meta property="og:url" content="https://ultrainstinctcrew.com/">
     <meta property="og:type" content="website">
 
     <!-- Twitter
     ================================================== -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Ultra Instinct Crew | League of Legends  eSports Organisation & Community - Turnier der Kraft">
-    <meta name="twitter:description" content="  UIC LEAGUE OF LEGENDS TURNIER: Erlebe E-Sports auf Prime League Niveau. 
-                                                Tritt an im LoL Tournament, dominiere das Double Elimination Bracket 
-                                                und beweise deinen Skill auf EUW. Absolute Integrität trifft High-Level Gameplay.">
-    <meta name="twitter:image" content="https://turnier.ultrainstinctcrew.com/icon512_maskable.png">
+    <meta name="twitter:title" content="Ultra Instinct Crew | League of Legends eSport Organisation & Community">
+    <meta name="twitter:description" content="Die Ultra Instinct Crew (UIC) ist deine League of Legends eSport Organisation und Gaming Community aus Deutschland. Erlebe Prime League Action, professionelles LoL Coaching und spaßige Aktivitäten. Werde Teil der Community!">
+    <meta name="twitter:image" content="https://ultrainstinctcrew.com/icon512_maskable.png">
     <meta name="twitter:site" content="@uic_gaming">
+
+    <!-- Scripts
+    ================================================== -->
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "SportsOrganization",
+    "name": "Ultra Instinct Crew",
+    "alternateName": "UIC",
+    "url": "https://ultrainstinctcrew.com/",
+    "logo": "https://ultrainstinctcrew.com/assets/logo/logo.png",
+    "description": "Deutsche League of Legends eSports Organisation in der Prime League.",
+    "sameAs": [
+        "https://www.twitch.tv/ultrainstinctcrew",
+        "https://www.instagram.com/ultrainstinctcrew",
+        "https://x.com/uic_gaming",
+        "https://www.youtube.com/@UltraInstinctCrew",
+        "https://discord.gg/ultrainstinctcrew"
+    ],
+    "memberOf": {
+        "@type": "SportsOrganization",
+        "name": "Prime League"
+    }
+    }
+    </script>
 </head>
 <body>
 
-    <input type="checkbox" id="nav-toggle" class="hidden">
+    <input type="checkbox" id="nav-toggle" class="nav-toggle-state" style="display: none;">
 
     <nav class="navbar">
         <div class="container nav-inner">
             
-            <a href="https://ultrainstinctcrew.com/" class="logo-module" target="_blank">
+            <a href="#hero" class="logo-module">
                 <img src="assets/logo/logo.svg" alt="UIC" class="logo-icon">
                 <div class="logo-text">
                     <span class="brand-name">UIC</span>
@@ -78,232 +99,1195 @@
 
             <div class="nav-deck">
                 <ul class="nav-list">
-                    <li><a href="#view-live" class="nav-link">Start</a></li>
-                    <li><a href="#bracket-winners" class="nav-link">Winners Bracket</a></li>
-                    <li><a href="#bracket-losers" class="nav-link">Losers Bracket</a></li>
-                    <li><a href="dashboard.html" target="_blank" class="nav-link">Dashboard ↗</a></li>
+                    <li><a href="#hero" class="nav-link">Start</a></li>
+                    <li><a href="#about" class="nav-link">Projekt</a></li>
+                    <li><a href="#teams" class="nav-link">Teams</a></li>
+                    <li><a href="#stats" class="nav-link">Statistiken</a></li>
+                    <li><a href="#events" class="nav-link">Events</a></li>
+                    <li><a href="#stream" class="nav-link">Stream</a></li>
+                    <li><a href="#partners" class="nav-link">Partner</a></li>
+                    <li><a href="#media-vault" class="nav-link">Marke</a></li>
+                    <li><a href="https://turnier.ultrainstinctcrew.com/" target="_blank" class="nav-link">Turnier ↗</a></li>
                 </ul>
 
                 <div class="nav-cta">
                     <div class="nav-separator desktop-only"></div>
-                    <a class="btn-obsidian" target="_blank" href="https://discord.gg/ultrainstinctcrew">DISCORD</a>
+                    <a class="btn-obsidian" href="mailto:support@ultrainstinctcrew.com?subject=Bewerbung%20UIC%20Roster&body=Hallo%20UIC%20Team,%0D%0A%0D%0AHiermit%20möchte%20ich%20mich%20für%20eines%20eurer%20Teams%20bewerben.%0D%0A%0D%0A---%20MEINE%20DATEN%20---%0D%0ASummoner%20Name:%20%0D%0AOp.gg%20Link:%20%0D%0AAktueller%20Rang:%20%0D%0APrimäre%20Rolle:%20%0D%0ADiscord%20ID:%20%0D%0A%0D%0A---%20NACHRICHT%20---%0D%0A">                    
+                        BEWIRB DICH
+                    </a>
                 </div>
             </div>
             
         </div>
     </nav>
 
-    <main class="section-pad">
-        
-        <div id="view-none" class="view-section container text-center hidden">
-            <div class="tactical-panel">
-                <div class="status-ring standby"></div>
-                <h1 class="title-epic" style="color: var(--text-muted);">SYSTEM STANDBY</h1>
-                <p class="text-muted" style="max-width: 500px; margin: 0 auto; font-size: 1.1rem;">
-                    Aktuell sind keine aktiven Turniere im System registriert.<br> 
-                    Die Teams bereiten sich auf den nächsten Split vor.
+    <section id="hero" class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-grid-pattern"></div>
+
+        <div class="container hero-container">
+            <div class="hero-content">
+                
+                <div class="hero-label fade-in delay-1">
+                    # INSTINCT TAKES OVER
+                </div>
+                
+                <h1 class="hero-title">
+                    <span class="holo-text delay-2">ULTRA</span> 
+                    <span class="holo-text text-stroke delay-3">INSTINCT</span> <br>
+                    <span class="holo-text text-primary delay-4">CREW</span>
+                </h1>
+
+                <p class="hero-lead fade-in delay-5">
+                    Deine League of Legends eSport Organisation & Gaming Community in Deutschland<br>
+                    <span style="color: var(--primary); font-weight:700;">Mit Leidenschaft in der Prime League!</span>
                 </p>
-            </div>
-        </div>
 
-        <div id="view-upcoming" class="view-section hidden">
-            <div class="dashboard-grid">
-                
-                <div class="intel-column">
-                    <div class="status-indicator">
-                        <!-- <div class="live-dot pulse"></div>
-                        <span class="hud-label">SYSTEM: READY // EVENT: UPCOMING</span> -->
-                    </div>
-
-                    <div class="intel-content">
-                        <h4 class="pre-title">ULTRA INSTINCT CREW</h4>
-                        <h1 id="event-title" class="hero-title">-</h1>
-                        
-                        <div class="countdown-wrapper">
-                            <span class="hud-label" style="margin-bottom: 10px;">START: SAMSTAG & SONNTAG 12:00 UHR // TREFFEN: 30 MINUTEN VOR DEM START</span>
-                            <span class="hud-label" style="margin-bottom: 10px;"># SHARE THE INSTINCT</span>
-                            <div id="countdown" class="countdown-minimal">00:00:00:00</div>
-                        </div>
-
-                        <div class="action-area">
-                            <a id="reg-link" href="#" target="_blank" class="btn-terminal">
-                                <span class="btn-text">REGISTRIEREN</span>
-                                <span class="btn-glitch"></span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="rules-column">
-                    <div class="rules-window">
-                        <div class="window-header">
-                            <span class="hud-label">TURNIER REGELN</span>
-                        </div>
-                        <div class="rules-scroll-area">
-                            <div class="rule-item">
-                                <span class="rule-num">1.1</span>
-                                <p><strong>ANMELDUNG:</strong> Teams müssen sich zwingend über das Formular auf der Turnier-Website anmelden. Nur dort registrierte Teams sind spielberechtigt.</p>
-                            </div>
-                            <div class="rule-item">
-                                <span class="rule-num">1.2</span>
-                                <p><strong>ACCOUNTS:</strong> Alle Spieler müssen über einen aktiven Account auf EUW verfügen (Min. Level 30). Fake- oder Smurf-Accounts führen zum sofortigen Ausschluss.</p>
-                            </div>
-                            <div class="rule-item">
-                                <span class="rule-num">1.3</span>
-                                <p><strong>IDENTITÄT:</strong> Der Ingame-Name (IGN) muss exakt mit der Riot-ID der Anmeldung übereinstimmen. Änderungen sind der Turnierleitung sofort meldepflichtig.</p>
-                            </div>
-                            <div class="rule-item">
-                                <span class="rule-num">1.4</span>
-                                <p><strong>MATCH-KADER:</strong> Es sind 5 Stammspieler sowie 5 Auswechselspieler je Team erlaubt. Kapitäne tauschen spätestens 15 Minuten vor Start den Kader für das Match aus.</p>
-                            </div>
-                            <div class="rule-item">
-                                <span class="rule-num">2.1</span>
-                                <p><strong>SYSTEM:</strong> 16-Team Double Elimination Bracket. Wer zweimal verliert, scheidet aus dem "Turnier der Kraft" aus.</p>
-                            </div>
-                            <div class="rule-item">
-                                <span class="rule-num">2.2</span>
-                                <p><strong>MATCH-FORMAT:</strong> Alle Bracket-Matches sind Bo1. Das Finale des Losers Brackets ist ein Bo3. Das Grand Final wird als Fearless Bo5 ausgespielt.</p>
-                            </div>
-                            <div class="rule-item">
-                                <span class="rule-num">2.3</span>
-                                <p><strong>LOBBY & SEITE:</strong> Tournament Draft auf Summoners Rift. Das obere Team im Bracket hat das Recht, die Seite (Blue/Red) für das erste Spiel zu wählen.</p>
-                            </div>
-                            <div class="rule-item">
-                                <span class="rule-num">2.4</span>
-                                <p><strong>TWITCH</strong> Das Deaktivieren des Stream-Delays ist erwünscht, aber kein Muss. Stream Sniping ist absolut verboten und wird mit der sofortigen Disqualifikation aus dem Turnier bestraft.</p>
-                            </div>
-
-                            <div class="rule-item">
-                                <span class="rule-num">3.1</span>
-                                <p><strong>DISCORD:</strong> Während der Austragung ihrer Matches müssen die Teams in den Sprachkanälen auf dem Discord anwesend sein.</p>
-                            </div>
-                            <div class="rule-item">
-                                <span class="rule-num">3.2</span>
-                                <p><strong>REPORTING:</strong> Ergebnisse werden via Dashboard gemeldet. Ein Match gilt erst als offiziell, wenn das Ergebnis erfolgreich übermittelt wurde.</p>
-                            </div>
-                            <div class="rule-item">
-                                <span class="rule-num">3.3</span>
-                                <p><strong>MANIPULATION:</strong> Das mutwillige Auslösen fehlerhafter Commits oder Manipulation der Dashboard-Daten führt zum sofortigen Bann des Teams.</p>
-                            </div>
-
-                            <div class="rule-item">
-                                <span class="rule-num">4.1</span>
-                                <p><strong>PÜNKTLICHKEIT:</strong> Teams müssen 15 Min. vor Matchbeginn bereitstehen. 10 Min. Verspätung nach offiziellem Start führen zum Def-Win für den Gegner.</p>
-                            </div>
-                            <div class="rule-item">
-                                <span class="rule-num">4.2</span>
-                                <p><strong>VERHALTEN:</strong> Toxicity, Griefing, Beleidigungen oder Diskriminierung führen zur Disqualifikation des gesamten Teams durch die Ultra Instinct Crew.</p>
-                            </div>
-                            <div class="rule-item">
-                                <span class="rule-num">4.3</span>
-                                <p><strong>PAUSEN:</strong> Max. 10 Minuten technische Pause pro Spiel. Bei Überschreitung muss die Turnierleitung entscheiden.</p>
-                            </div>
-
-                            <div class="rule-item">
-                                <span class="rule-num">5.1</span>
-                                <p><strong>ENTSCHEIDUNGEN:</strong> Die Entscheidungen der Turnierleitung sind endgültig und nicht anfechtbar.</p>
-                            </div>
-                        </div>
-                        <div class="window-footer">
-                            <span>DURCH DAS REGISTRIEREN, AKZEPTIERT IHR ALLE REGELN.</span>
-                        </div>
-                    </div>
+                <div class="hero-actions fade-in delay-6">
+                    <a href="#teams" class="btn btn-primary">
+                        Unser Kader <span class="btn-icon">→</span>
+                    </a>
+                    <a href="#join" class="btn btn-outline">
+                        Tritt der Community bei!
+                    </a>
                 </div>
 
             </div>
         </div>
-
-        <div id="view-live" class="view-section hidden">
-            <div class="container">
-                
-                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 1rem;">
-                    <div class="live-dot"></div>
-                    <h2 id="live-title" style="margin:0; font-size: 1.5rem;">LIVE FEED</h2>
-                </div>
-
-                <div id="team-streams-container" class="team-streams-grid hidden"></div>
-            
-                <h3 style="color: var(--primary); margin-bottom: 1rem;">WINNERS BRACKET</h3>
-                <div id="bracket-winners" class="bracket-scroll-wrapper"></div>
-
-                <h3 id="lbl-losers" style="color: var(--text-muted); margin-top: 4rem; margin-bottom: 1rem;">LOSERS BRACKET</h3>
-                <div id="bracket-losers" class="bracket-scroll-wrapper"></div>
-                
-            </div>
-        </div>
-
-    </main>
-
-    <div id="champion-screen" class="champion-overlay hidden">
         
-        <div class="champ-bg-layer">
-            <div class="tactical-stripe stripe-1"></div>
-            <div class="tactical-stripe stripe-2"></div>
-        </div>
+        <a href="#about" class="scroll-indicator fade-in delay-6">
+            <span class="scroll-arrow"></span>
+        </a>
+    </section>
 
-        <div class="champion-content">
-            <h2 class="champ-subtitle">Sieger des Turniers Q1 2026</h2>
+    <section id="about" class="section-pad">
+        <div class="container">
+            <div class="grid-12">
+                
+                <div class="col-6">
+                    <div class="section-header">
+                        <span class="section-subtitle"># FUEL THE INSTINCT <span style="float:right; opacity:0.5;">UIC.GDRDW</span></span>
+                        <h2 class="section-title">PROJEKT <span class="text-highlight">UIC</span></h2>
+                    </div>
+                    
+                    <div class="lead-text">
+                        <p>
+                            <strong>Mission:</strong> Entwicklung der stärksten League of Legends Community und Talentförderung in DACH.
+                        </p>
+                    </div>
+                    
+                    <p style="color: var(--text-muted); margin-bottom: var(--space-md); line-height: 1.8;">
+                        Die Ultra Instinct Crew (UIC) ist mehr als nur ein klassischer eSport Verein. Wir sind das Zuhause für ambitionierte Athleten und leidenschaftliche Gamer in DACH (Deutschland, Österreich und Schweiz). Unser Ökosystem verbindet den Tryhard der Prime League mit echter Kameradschaft. Wir vereinen eine hochprofessionelle 
+                        <span style="color: #fff; font-weight: 700;">Organisation</span>, eine aktive 
+                        <span style="color: #fff; font-weight: 700;">Gaming Community</span> und eine visionäre 
+                        <span style="color: #fff; font-weight: 700;">Talentschmiede</span> für deinen Aufstieg in der Kluft.
+                    </p>
+
+                    <div class="data-tags-grid">
+                        <div class="data-tag">
+                            <span class="dt-label">REGION</span>
+                            <span class="dt-value">DACH</span>
+                        </div>
+                        <div class="data-tag">
+                            <span class="dt-label">VERBAND</span>
+                            <span class="dt-value">PRIME LEAGUE</span>
+                        </div>
+                        <div class="data-tag">
+                            <span class="dt-label">SPIEL</span>
+                            <span class="dt-value">LEAGUE OF LEGENDS</span>
+                        </div>
+                    </div>
+
+                    <!-- <a href="" class="btn-obsidian-ghost" style="margin-top: 20px;">
+                        [WORK IN PROGRESS]
+                    </a> -->
+                </div>
+
+                <div class="col-6">
+                    <div class="card card--hud card--scan">
+                        
+                        <div class="hud-header">
+                            <!-- <h3 class="card-title">// Das macht uns aus!</h3> -->
+                            <span class="card-meta"></span>
+                        </div>
+
+                        <div class="hud-bars">
+                            
+                            <div class="hud-bar-group">
+                                <div class="hud-bar-label">
+                                    <span>ORGANISATION</span>
+                                    <span style="color: var(--primary);">#1</span>
+                                </div>
+                                <div class="hud-progress-bg">
+                                    <div class="hud-progress-fill" style="width: 95%;"></div>
+                                </div>
+                            </div>
+                                <p style="color: var(--text-muted); font-size: 0.9rem;">
+                                    Erfolg braucht ein starkes Fundament. Wir bieten unseren League of Legends Teams die Verlässlichkeit, Transparenz und Struktur, die sie für Scrims und Liga benötigen. Für Sponsoren und Partner in Deutschland agieren wir als seriöses eSport Aushängeschild mit strategischer Weitsicht.
+                                </p>
+
+                            <div class="hud-bar-group">
+                                <div class="hud-bar-label">
+                                    <span>COMMUNITY</span>
+                                    <span style="color: var(--primary);">GEMEINSCHAFT</span>
+                                </div>
+                                <div class="hud-progress-bg">
+                                    <div class="hud-progress-fill" style="width: 85%;"></div>
+                                </div>
+                            </div>
+                                <p style="color: var(--text-muted); font-size: 0.9rem;">
+                                    Der Mensch hinter dem Bildschirm zählt. Unsere LoL Gaming Community ist der emotionale Anker der Crew. Wir pushen uns nicht nur in der Solo Queue, sondern zelebrieren auch spaßige Aktivitäten und Events abseits des eSports. Mental Health, Respekt und ein familiäres Umfeld sind unser stärkster Buff.
+                                </p>
+
+                            <div class="hud-bar-group">
+                                <div class="hud-bar-label">
+                                    <span>TALENTSCHMIEDE</span>
+                                    <span style="color: var(--primary);">UNSCHLAGBAR</span>
+                                </div>
+                                <div class="hud-progress-bg">
+                                    <div class="hud-progress-fill" style="width: 90%;"></div>
+                                </div>
+                            </div>
+                                <p style="color: var(--text-muted); font-size: 0.9rem;">
+                                    Du willst deine Peak Elo brechen? Wir finden Rohdiamanten und schleifen sie. Durch professionelles LoL Coaching und gezieltes Mentoring erfahrener Spieler bereiten wir dich auf kompetitives Play vor. Wir wecken deinen <span style="color: #fff;">Ultra Instinct</span> für maximale Performance in der Prime League und als starke Persönlichkeit.
+                                </p>
+
+                        </div>
+                        <!-- <div style="margin-top: auto; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.05); font-size: 0.7rem; color: var(--text-muted); display: flex; justify-content: space-between;">
+                            <span>7 ACTIVE TEAMS</span>
+                            <span>SYS.VER. 4.0</span>
+                        </div> -->
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="teams" class="section-pad" style="background: linear-gradient(180deg, var(--bg-dark) 0%, #080808 100%);">
+        <div class="container">
             
-            <div class="logo-wrapper">
-                <div class="tactical-frame"></div>
-                <img id="champ-logo" src="" alt="Sieger Logo">
+            <div class="section-header">
+                <span class="section-subtitle"># UNLEASH THE INSTINCT</span>
+                <h2 class="section-title">UNSERE <span class="text-highlight">TEAMS</span></h2>
+            </div>
+
+            <div class="team-tabs">
+                <button class="tab-btn active" onclick="openTeam(event, 'Prime')">UIC PRIME</button>
+                <button class="tab-btn" onclick="openTeam(event, 'Spark')">UIC SPARK</button>
+                <button class="tab-btn" onclick="openTeam(event, 'Ember')">UIC EMBER</button>
+                <button class="tab-btn" onclick="openTeam(event, 'Nova')">UIC NOVA</button>
+                <button class="tab-btn" onclick="openTeam(event, 'Abyss')">UIC ABYSS</button>
+                <button class="tab-btn" onclick="openTeam(event, 'Night')">UIC Night</button>
+                <button class="tab-btn" onclick="openTeam(event, 'Freezer')">UIC Freezer</button>
+            </div>
+
+            <div id="Prime" class="grid-auto team-grid active">
+                <div class="card card--interactive card--profile">
+                    <div class="role-badge">TOP</div>
+                    <img src="assets/profile/prime/prime_top.png" alt="Top" class="card-img">
+                    <div class="card-body">
+                        <div class="player-identity">
+                            <img id="prime_top_icon" src="assets/profile/placeholder.png" class="mini-riot-icon">
+                            <div class="name-box">
+                                <h3 id="prime_top_name" class="card-title">Loading...</h3>
+                                <span class="player-level">LVL <span id="prime_top_level">--</span></span>
+                            </div>
+                        </div>
+                        <div class="player-status">
+                            <div id="prime_top_rank" class="card-meta">Fetching Rank...</div>
+                            <div id="prime_top_wl" class="card-stats"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card--interactive card--profile">
+                    <div class="role-badge">JGL</div>
+                    <img src="assets/profile/prime/prime_jungle.png" alt="JGL" class="card-img">
+                    <div class="card-body">
+                        <div class="player-identity">
+                            <img id="prime_jgl_icon" src="assets/profile/placeholder.png" class="mini-riot-icon">
+                            <div class="name-box">
+                                <h3 id="prime_jgl_name" class="card-title">Loading...</h3>
+                                <span class="player-level">LVL <span id="prime_jgl_level">--</span></span>
+                            </div>
+                        </div>
+                        <div class="player-status">
+                            <div id="prime_jgl_rank" class="card-meta">Fetching Rank...</div>
+                            <div id="prime_jgl_wl" class="card-stats"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card--interactive card--profile">
+                    <div class="role-badge">MID</div>
+                    <img src="assets/profile/prime/prime_mid.png" alt="MID" class="card-img">
+                    <div class="card-body">
+                        <div class="player-identity">
+                            <img id="prime_mid_icon" src="assets/profile/placeholder.png" class="mini-riot-icon">
+                            <div class="name-box">
+                                <h3 id="prime_mid_name" class="card-title">Loading...</h3>
+                                <span class="player-level">LVL <span id="prime_mid_level">--</span></span>
+                            </div>
+                        </div>
+                        <div class="player-status">
+                            <div id="prime_mid_rank" class="card-meta">Fetching Rank...</div>
+                            <div id="prime_mid_wl" class="card-stats"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card--interactive card--profile">
+                    <div class="role-badge">BOT</div>
+                    <img src="assets/profile/prime/prime_adc.png" alt="BOT" class="card-img">
+                    <div class="card-body">
+                        <div class="player-identity">
+                            <img id="prime_bot_icon" src="assets/profile/placeholder.png" class="mini-riot-icon">
+                            <div class="name-box">
+                                <h3 id="prime_bot_name" class="card-title">Loading...</h3>
+                                <span class="player-level">LVL <span id="prime_bot_level">--</span></span>
+                            </div>
+                        </div>
+                        <div class="player-status">
+                            <div id="prime_bot_rank" class="card-meta">Fetching Rank...</div>
+                            <div id="prime_bot_wl" class="card-stats"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card--interactive card--profile">
+                    <div class="role-badge">SUP</div>
+                    <img src="assets/profile/prime/prime_support.png" alt="SUP" class="card-img">
+                    <div class="card-body">
+                        <div class="player-identity">
+                            <img id="prime_sup_icon" src="assets/profile/placeholder.png" class="mini-riot-icon">
+                            <div class="name-box">
+                                <h3 id="prime_sup_name" class="card-title">Loading...</h3>
+                                <span class="player-level">LVL <span id="prime_sup_level">--</span></span>
+                            </div>
+                        </div>
+                        <div class="player-status">
+                            <div id="prime_sup_rank" class="card-meta">Fetching Rank...</div>
+                            <div id="prime_sup_wl" class="card-stats"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card--interactive card--profile">
+                    <div class="role-badge">COACH</div>
+                    <img src="assets/profile/profile_placeholder.png" alt="COACH" class="card-img">
+                    <div class="card-body">
+                        <div class="player-identity">
+                            <img id="prime_coach_icon" src="assets/profile/placeholder.png" class="mini-riot-icon">
+                            <div class="name-box">
+                                <h3 id="prime_coach_name" class="card-title">Loading...</h3>
+                                <span class="player-level">LVL <span id="prime_coach_level">--</span></span>
+                            </div>
+                        </div>
+                        <div class="player-status">
+                            <div id="prime_coach_rank" class="card-meta">Fetching Rank...</div>
+                            <div id="prime_coach_wl" class="card-stats"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="Spark" class="grid-auto team-grid">
+                <div class="card card--interactive card--profile">
+                    <div class="role-badge">TOP</div>
+                    <img src="assets/profile/spark/spark_top.png" alt="Top" class="card-img">
+                    <div class="card-body">
+                        <div class="player-identity">
+                            <img id="spark_top_icon" src="assets/profile/placeholder.png" class="mini-riot-icon">
+                            <div class="name-box">
+                                <h3 id="spark_top_name" class="card-title">Loading...</h3>
+                                <span class="player-level">LVL <span id="spark_top_level">--</span></span>
+                            </div>
+                        </div>
+                        <div class="player-status">
+                            <div id="spark_top_rank" class="card-meta">Fetching Rank...</div>
+                            <div id="spark_top_wl" class="card-stats"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card--interactive card--profile">
+                    <div class="role-badge">JGL</div>
+                    <img src="assets/profile/spark/spark_jungle.png" alt="JGL" class="card-img">
+                    <div class="card-body">
+                        <div class="player-identity">
+                            <img id="spark_jgl_icon" src="assets/profile/placeholder.png" class="mini-riot-icon">
+                            <div class="name-box">
+                                <h3 id="spark_jgl_name" class="card-title">Loading...</h3>
+                                <span class="player-level">LVL <span id="spark_jgl_level">--</span></span>
+                            </div>
+                        </div>
+                        <div class="player-status">
+                            <div id="spark_jgl_rank" class="card-meta">Fetching Rank...</div>
+                            <div id="spark_jgl_wl" class="card-stats"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card--interactive card--profile">
+                    <div class="role-badge">MID</div>
+                    <img src="assets/profile/spark/spark_mid.png" alt="MID" class="card-img">
+                    <div class="card-body">
+                        <div class="player-identity">
+                            <img id="spark_mid_icon" src="assets/profile/placeholder.png" class="mini-riot-icon">
+                            <div class="name-box">
+                                <h3 id="spark_mid_name" class="card-title">Loading...</h3>
+                                <span class="player-level">LVL <span id="spark_mid_level">--</span></span>
+                            </div>
+                        </div>
+                        <div class="player-status">
+                            <div id="spark_mid_rank" class="card-meta">Fetching Rank...</div>
+                            <div id="spark_mid_wl" class="card-stats"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card--interactive card--profile">
+                    <div class="role-badge">BOT</div>
+                    <img src="assets/profile/spark/spark_adc.png" alt="BOT" class="card-img">
+                    <div class="card-body">
+                        <div class="player-identity">
+                            <img id="spark_bot_icon" src="assets/profile/placeholder.png" class="mini-riot-icon">
+                            <div class="name-box">
+                                <h3 id="spark_bot_name" class="card-title">Loading...</h3>
+                                <span class="player-level">LVL <span id="spark_bot_level">--</span></span>
+                            </div>
+                        </div>
+                        <div class="player-status">
+                            <div id="spark_bot_rank" class="card-meta">Fetching Rank...</div>
+                            <div id="spark_bot_wl" class="card-stats"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card--interactive card--profile">
+                    <div class="role-badge">SUP</div>
+                    <img src="assets/profile/spark/spark_sup.png" alt="SUP" class="card-img">
+                    <div class="card-body">
+                        <div class="player-identity">
+                            <img id="spark_sup_icon" src="assets/profile/placeholder.png" class="mini-riot-icon">
+                            <div class="name-box">
+                                <h3 id="spark_sup_name" class="card-title">Loading...</h3>
+                                <span class="player-level">LVL <span id="spark_sup_level">--</span></span>
+                            </div>
+                        </div>
+                        <div class="player-status">
+                            <div id="spark_sup_rank" class="card-meta">Fetching Rank...</div>
+                            <div id="spark_sup_wl" class="card-stats"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card--interactive card--profile">
+                    <div class="role-badge">COACH</div>
+                    <img src="assets/profile/spark/spark_coach.png" alt="COACH" class="card-img">
+                    <div class="card-body">
+                        <div class="player-identity">
+                            <img id="spark_coach_icon" src="assets/profile/placeholder.png" class="mini-riot-icon">
+                            <div class="name-box">
+                                <h3 id="spark_coach_name" class="card-title">Loading...</h3>
+                                <span class="player-level">LVL <span id="spark_coach_level">--</span></span>
+                            </div>
+                        </div>
+                        <div class="player-status">
+                            <div id="spark_coach_rank" class="card-meta">Fetching Rank...</div>
+                            <div id="spark_coach_wl" class="card-stats"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="Ember" class="grid-auto team-grid">
+                <div class="card card--interactive card--profile">
+                    <div class="role-badge">TOP</div>
+                    <img src="assets/profile/ember/ember_Top.png" alt="Top" class="card-img">
+                    <div class="card-body">
+                        <div class="player-identity">
+                            <img id="ember_top_icon" src="assets/profile/placeholder.png" class="mini-riot-icon">
+                            <div class="name-box">
+                                <h3 id="ember_top_name" class="card-title">Loading...</h3>
+                                <span class="player-level">LVL <span id="ember_top_level">--</span></span>
+                            </div>
+                        </div>
+                        <div class="player-status">
+                            <div id="ember_top_rank" class="card-meta">Fetching Rank...</div>
+                            <div id="ember_top_wl" class="card-stats"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card--interactive card--profile">
+                    <div class="role-badge">JGL</div>
+                    <img src="assets/profile/ember/ember_jungle.png" alt="JGL" class="card-img">
+                    <div class="card-body">
+                        <div class="player-identity">
+                            <img id="ember_jgl_icon" src="assets/profile/placeholder.png" class="mini-riot-icon">
+                            <div class="name-box">
+                                <h3 id="ember_jgl_name" class="card-title">Loading...</h3>
+                                <span class="player-level">LVL <span id="ember_jgl_level">--</span></span>
+                            </div>
+                        </div>
+                        <div class="player-status">
+                            <div id="ember_jgl_rank" class="card-meta">Fetching Rank...</div>
+                            <div id="ember_jgl_wl" class="card-stats"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card--interactive card--profile">
+                    <div class="role-badge">MID</div>
+                    <img src="assets/profile/ember/ember_mid.png" alt="MID" class="card-img">
+                    <div class="card-body">
+                        <div class="player-identity">
+                            <img id="ember_mid_icon" src="assets/profile/placeholder.png" class="mini-riot-icon">
+                            <div class="name-box">
+                                <h3 id="ember_mid_name" class="card-title">Loading...</h3>
+                                <span class="player-level">LVL <span id="ember_mid_level">--</span></span>
+                            </div>
+                        </div>
+                        <div class="player-status">
+                            <div id="ember_mid_rank" class="card-meta">Fetching Rank...</div>
+                            <div id="ember_mid_wl" class="card-stats"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card--interactive card--profile">
+                    <div class="role-badge">BOT</div>
+                    <img src="assets/profile/ember/ember_adc.png" alt="ADC" class="card-img">
+                    <div class="card-body">
+                        <div class="player-identity">
+                            <img id="ember_bot_icon" src="assets/profile/placeholder.png" class="mini-riot-icon">
+                            <div class="name-box">
+                                <h3 id="ember_bot_name" class="card-title">Loading...</h3>
+                                <span class="player-level">LVL <span id="ember_bot_level">--</span></span>
+                            </div>
+                        </div>
+                        <div class="player-status">
+                            <div id="ember_bot_rank" class="card-meta">Fetching Rank...</div>
+                            <div id="ember_bot_wl" class="card-stats"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card--interactive card--profile">
+                    <div class="role-badge">SUP</div>
+                    <img src="assets/profile/ember/ember_support.png" alt="SUP" class="card-img">
+                    <div class="card-body">
+                        <div class="player-identity">
+                            <img id="ember_sup_icon" src="assets/profile/placeholder.png" class="mini-riot-icon">
+                            <div class="name-box">
+                                <h3 id="ember_sup_name" class="card-title">Loading...</h3>
+                                <span class="player-level">LVL <span id="ember_sup_level">--</span></span>
+                            </div>
+                        </div>
+                        <div class="player-status">
+                            <div id="ember_sup_rank" class="card-meta">Fetching Rank...</div>
+                            <div id="ember_sup_wl" class="card-stats"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card--interactive card--profile">
+                    <div class="role-badge">COACH</div>
+                    <img src="assets/profile/ember/ember_coach.png" alt="COACH" class="card-img">
+                    <div class="card-body">
+                        <div class="player-identity">
+                            <img id="ember_coach_icon" src="assets/profile/placeholder.png" class="mini-riot-icon">
+                            <div class="name-box">
+                                <h3 id="ember_coach_name" class="card-title">Loading...</h3>
+                                <span class="player-level">LVL <span id="ember_coach_level">--</span></span>
+                            </div>
+                        </div>
+                        <div class="player-status">
+                            <div id="ember_coach_rank" class="card-meta">Fetching Rank...</div>
+                            <div id="ember_coach_wl" class="card-stats"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="Nova" class="grid-auto team-grid">
+                <div class="card card--interactive card--profile">
+                    <div class="role-badge">TOP</div>
+                    <img src="assets/profile/nova/nova_top.png" alt="Top" class="card-img">
+                    <div class="card-body">
+                        <div class="player-identity">
+                            <img id="nova_top_icon" src="assets/profile/placeholder.png" class="mini-riot-icon">
+                            <div class="name-box">
+                                <h3 id="nova_top_name" class="card-title">Loading...</h3>
+                                <span class="player-level">LVL <span id="nova_top_level">--</span></span>
+                            </div>
+                        </div>
+                        <div class="player-status">
+                            <div id="nova_top_rank" class="card-meta">Fetching Rank...</div>
+                            <div id="nova_top_wl" class="card-stats"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card--interactive card--profile">
+                    <div class="role-badge">JGL</div>
+                    <img src="assets/profile/nova/nova_jungle.png" alt="JGL" class="card-img">
+                    <div class="card-body">
+                        <div class="player-identity">
+                            <img id="nova_jgl_icon" src="assets/profile/placeholder.png" class="mini-riot-icon">
+                            <div class="name-box">
+                                <h3 id="nova_jgl_name" class="card-title">Loading...</h3>
+                                <span class="player-level">LVL <span id="nova_jgl_level">--</span></span>
+                            </div>
+                        </div>
+                        <div class="player-status">
+                            <div id="nova_jgl_rank" class="card-meta">Fetching Rank...</div>
+                            <div id="nova_jgl_wl" class="card-stats"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card--interactive card--profile">
+                    <div class="role-badge">MID</div>
+                    <img src="assets/profile/nova/nova_mid.png" alt="MID" class="card-img">
+                    <div class="card-body">
+                        <div class="player-identity">
+                            <img id="nova_mid_icon" src="assets/profile/placeholder.png" class="mini-riot-icon">
+                            <div class="name-box">
+                                <h3 id="nova_mid_name" class="card-title">Loading...</h3>
+                                <span class="player-level">LVL <span id="nova_mid_level">--</span></span>
+                            </div>
+                        </div>
+                        <div class="player-status">
+                            <div id="nova_mid_rank" class="card-meta">Fetching Rank...</div>
+                            <div id="nova_mid_wl" class="card-stats"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card--interactive card--profile">
+                    <div class="role-badge">BOT</div>
+                    <img src="assets/profile/nova/nova_adc.png" alt="ADC" class="card-img">
+                    <div class="card-body">
+                        <div class="player-identity">
+                            <img id="nova_bot_icon" src="assets/profile/placeholder.png" class="mini-riot-icon">
+                            <div class="name-box">
+                                <h3 id="nova_bot_name" class="card-title">Loading...</h3>
+                                <span class="player-level">LVL <span id="nova_bot_level">--</span></span>
+                            </div>
+                        </div>
+                        <div class="player-status">
+                            <div id="nova_bot_rank" class="card-meta">Fetching Rank...</div>
+                            <div id="nova_bot_wl" class="card-stats"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card--interactive card--profile">
+                    <div class="role-badge">SUP</div>
+                    <img src="assets/profile/nova/nova_support.png" alt="SUP" class="card-img">
+                    <div class="card-body">
+                        <div class="player-identity">
+                            <img id="nova_sup_icon" src="assets/profile/placeholder.png" class="mini-riot-icon">
+                            <div class="name-box">
+                                <h3 id="nova_sup_name" class="card-title">Loading...</h3>
+                                <span class="player-level">LVL <span id="nova_sup_level">--</span></span>
+                            </div>
+                        </div>
+                        <div class="player-status">
+                            <div id="nova_sup_rank" class="card-meta">Fetching Rank...</div>
+                            <div id="nova_sup_wl" class="card-stats"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card--interactive card--profile">
+                    <div class="role-badge">COACH</div>
+                    <img src="assets/profile/profile_placeholder.png" alt="COACH" class="card-img">
+                    <div class="card-body">
+                        <div class="player-identity">
+                            <img id="nova_coach_icon" src="assets/profile/placeholder.png" class="mini-riot-icon">
+                            <div class="name-box">
+                                <h3 id="nova_coach_name" class="card-title">Loading...</h3>
+                                <span class="player-level">LVL <span id="nova_coach_level">--</span></span>
+                            </div>
+                        </div>
+                        <div class="player-status">
+                            <div id="nova_coach_rank" class="card-meta">Fetching Rank...</div>
+                            <div id="nova_coach_wl" class="card-stats"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="Abyss" class="grid-auto team-grid">
+                <div class="card card--interactive card--profile">
+                    <div class="role-badge">TOP</div>
+                    <img src="assets/profile/abyss/abyss_top.png" alt="Top" class="card-img">
+                    <div class="card-body">
+                        <div class="player-identity">
+                            <img id="abyss_top_icon" src="assets/profile/placeholder.png" class="mini-riot-icon">
+                            <div class="name-box">
+                                <h3 id="abyss_top_name" class="card-title">Loading...</h3>
+                                <span class="player-level">LVL <span id="abyss_top_level">--</span></span>
+                            </div>
+                        </div>
+                        <div class="player-status">
+                            <div id="abyss_top_rank" class="card-meta">Fetching Rank...</div>
+                            <div id="abyss_top_wl" class="card-stats"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card--interactive card--profile">
+                    <div class="role-badge">JGL</div>
+                    <img src="assets/profile/abyss/abyss_jungle.png" alt="JGL" class="card-img">
+                    <div class="card-body">
+                        <div class="player-identity">
+                            <img id="abyss_jgl_icon" src="assets/profile/placeholder.png" class="mini-riot-icon">
+                            <div class="name-box">
+                                <h3 id="abyss_jgl_name" class="card-title">Loading...</h3>
+                                <span class="player-level">LVL <span id="abyss_jgl_level">--</span></span>
+                            </div>
+                        </div>
+                        <div class="player-status">
+                            <div id="abyss_jgl_rank" class="card-meta">Fetching Rank...</div>
+                            <div id="abyss_jgl_wl" class="card-stats"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card--interactive card--profile">
+                    <div class="role-badge">MID</div>
+                    <img src="assets/profile/abyss/abyss_mid.png" alt="MID" class="card-img">
+                    <div class="card-body">
+                        <div class="player-identity">
+                            <img id="abyss_mid_icon" src="assets/profile/placeholder.png" class="mini-riot-icon">
+                            <div class="name-box">
+                                <h3 id="abyss_mid_name" class="card-title">Loading...</h3>
+                                <span class="player-level">LVL <span id="abyss_mid_level">--</span></span>
+                            </div>
+                        </div>
+                        <div class="player-status">
+                            <div id="abyss_mid_rank" class="card-meta">Fetching Rank...</div>
+                            <div id="abyss_mid_wl" class="card-stats"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card--interactive card--profile">
+                    <div class="role-badge">BOT</div>
+                    <img src="assets/profile/abyss/abyss_adc.png" alt="ADC" class="card-img">
+                    <div class="card-body">
+                        <div class="player-identity">
+                            <img id="abyss_bot_icon" src="assets/profile/placeholder.png" class="mini-riot-icon">
+                            <div class="name-box">
+                                <h3 id="abyss_bot_name" class="card-title">Loading...</h3>
+                                <span class="player-level">LVL <span id="abyss_bot_level">--</span></span>
+                            </div>
+                        </div>
+                        <div class="player-status">
+                            <div id="abyss_bot_rank" class="card-meta">Fetching Rank...</div>
+                            <div id="abyss_bot_wl" class="card-stats"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card--interactive card--profile">
+                    <div class="role-badge">SUP</div>
+                    <img src="assets/profile/abyss/abyss_support.png" alt="SUP" class="card-img">
+                    <div class="card-body">
+                        <div class="player-identity">
+                            <img id="abyss_sup_icon" src="assets/profile/placeholder.png" class="mini-riot-icon">
+                            <div class="name-box">
+                                <h3 id="abyss_sup_name" class="card-title">Loading...</h3>
+                                <span class="player-level">LVL <span id="abyss_sup_level">--</span></span>
+                            </div>
+                        </div>
+                        <div class="player-status">
+                            <div id="abyss_sup_rank" class="card-meta">Fetching Rank...</div>
+                            <div id="abyss_sup_wl" class="card-stats"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card--interactive card--profile">
+                    <div class="role-badge">COACH</div>
+                    <img src="assets/profile/profile_placeholder.png" alt="COACH" class="card-img">
+                    <div class="card-body">
+                        <div class="player-identity">
+                            <img id="abyss_coach_icon" src="assets/profile/placeholder.png" class="mini-riot-icon">
+                            <div class="name-box">
+                                <h3 id="abyss_coach_name" class="card-title">Loading...</h3>
+                                <span class="player-level">LVL <span id="abyss_coach_level">--</span></span>
+                            </div>
+                        </div>
+                        <div class="player-status">
+                            <div id="abyss_coach_rank" class="card-meta">Fetching Rank...</div>
+                            <div id="abyss_coach_wl" class="card-stats"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="Night" class="grid-auto team-grid">
+                <div class="card card--interactive card--profile">
+                    <div class="role-badge">TOP</div>
+                    <img src="assets/profile/night/night_top.png" alt="Top" class="card-img">
+                    <div class="card-body">
+                        <div class="player-identity">
+                            <img id="night_top_icon" src="assets/profile/placeholder.png" class="mini-riot-icon" style="display:none;">
+                            <div class="name-box">
+                                <h3 id="night_top_name" class="card-title">OPEN SPOT</h3>
+                                <span class="player-level">LVL <span id="night_top_level">0</span></span>
+                            </div>
+                        </div>
+                        <div class="player-status">
+                            <div id="night_top_rank" class="card-meta">RECRUITING</div>
+                            <div id="night_top_wl" class="card-stats"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card--interactive card--profile">
+                    <div class="role-badge">JGL</div>
+                    <img src="assets/profile/night/night_jungle.png" alt="JGL" class="card-img">
+                    <div class="card-body">
+                        <div class="player-identity">
+                            <img id="night_jgl_icon" src="assets/profile/placeholder.png" class="mini-riot-icon">
+                            <div class="name-box">
+                                <h3 id="night_jgl_name" class="card-title">Loading...</h3>
+                                <span class="player-level">LVL <span id="night_jgl_level">--</span></span>
+                            </div>
+                        </div>
+                        <div class="player-status">
+                            <div id="night_jgl_rank" class="card-meta">Fetching Rank...</div>
+                            <div id="night_jgl_wl" class="card-stats"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card--interactive card--profile">
+                    <div class="role-badge">MID</div>
+                    <img src="assets/profile/night/night_mid.png" alt="MID" class="card-img">
+                    <div class="card-body">
+                        <div class="player-identity">
+                            <img id="night_mid_icon" src="assets/profile/placeholder.png" class="mini-riot-icon">
+                            <div class="name-box">
+                                <h3 id="night_mid_name" class="card-title">Loading...</h3>
+                                <span class="player-level">LVL <span id="night_mid_level">--</span></span>
+                            </div>
+                        </div>
+                        <div class="player-status">
+                            <div id="night_mid_rank" class="card-meta">Fetching Rank...</div>
+                            <div id="night_mid_wl" class="card-stats"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card--interactive card--profile">
+                    <div class="role-badge">BOT</div>
+                    <img src="assets/profile/night/night_adc.png" alt="ADC" class="card-img">
+                    <div class="card-body">
+                        <div class="player-identity">
+                            <img id="night_bot_icon" src="assets/profile/placeholder.png" class="mini-riot-icon">
+                            <div class="name-box">
+                                <h3 id="night_bot_name" class="card-title">Loading...</h3>
+                                <span class="player-level">LVL <span id="night_bot_level">--</span></span>
+                            </div>
+                        </div>
+                        <div class="player-status">
+                            <div id="night_bot_rank" class="card-meta">Fetching Rank...</div>
+                            <div id="night_bot_wl" class="card-stats"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card--interactive card--profile">
+                    <div class="role-badge">SUP</div>
+                    <img src="assets/profile/night/night_support.png" alt="SUP" class="card-img">
+                    <div class="card-body">
+                        <div class="player-identity">
+                            <img id="night_sup_icon" src="assets/profile/placeholder.png" class="mini-riot-icon">
+                            <div class="name-box">
+                                <h3 id="night_sup_name" class="card-title">Loading...</h3>
+                                <span class="player-level">LVL <span id="night_sup_level">--</span></span>
+                            </div>
+                        </div>
+                        <div class="player-status">
+                            <div id="night_sup_rank" class="card-meta">Fetching Rank...</div>
+                            <div id="night_sup_wl" class="card-stats"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card--interactive card--profile">
+                    <div class="role-badge">COACH</div>
+                    <img src="assets/profile/profile_placeholder.png" alt="COACH" class="card-img">
+                    <div class="card-body">
+                        <div class="player-identity">
+                            <img id="night_coach_icon" src="assets/profile/placeholder.png" class="mini-riot-icon" style="display:none;">
+                            <div class="name-box">
+                                <h3 id="night_coach_name" class="card-title">Loading...</h3>
+                                <span class="player-level">LVL <span id="night_coach_level">--</span></span>
+                            </div>
+                        </div>
+                        <div class="player-status">
+                            <div id="night_coach_rank" class="card-meta">Fetching Rank...</div>
+                            <div id="night_coach_wl" class="card-stats"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="Freezer" class="grid-auto team-grid">
+                <div class="card card--interactive card--profile">
+                    <div class="role-badge">TOP</div>
+                    <img src="assets/profile/freezer/freezer_top.png" alt="Top" class="card-img">
+                    <div class="card-body">
+                        <div class="player-identity">
+                            <img id="freezer_top_icon" src="assets/profile/placeholder.png" class="mini-riot-icon">
+                            <div class="name-box">
+                                <h3 id="freezer_top_name" class="card-title">Loading...</h3>
+                                <span class="player-level">LVL <span id="freezer_top_level">--</span></span>
+                            </div>
+                        </div>
+                        <div class="player-status">
+                            <div id="freezer_top_rank" class="card-meta">Fetching Rank...</div>
+                            <div id="freezer_top_wl" class="card-stats"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card card--interactive card--profile">
+                    <div class="role-badge">JGL</div>
+                    <img src="assets/profile/freezer/freezer_jungle.png" alt="JGL" class="card-img">
+                    <div class="card-body">
+                        <div class="player-identity">
+                            <img id="freezer_jgl_icon" src="assets/profile/placeholder.png" class="mini-riot-icon">
+                            <div class="name-box">
+                                <h3 id="freezer_jgl_name" class="card-title">Loading...</h3>
+                                <span class="player-level">LVL <span id="freezer_jgl_level">--</span></span>
+                            </div>
+                        </div>
+                        <div class="player-status">
+                            <div id="freezer_jgl_rank" class="card-meta">Fetching Rank...</div>
+                            <div id="freezer_jgl_wl" class="card-stats"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card card--interactive card--profile">
+                    <div class="role-badge">MID</div>
+                    <img src="assets/profile/freezer/freezer_mid.png" alt="MID" class="card-img">
+                    <div class="card-body">
+                        <div class="player-identity">
+                            <img id="freezer_mid_icon" src="assets/profile/placeholder.png" class="mini-riot-icon">
+                            <div class="name-box">
+                                <h3 id="freezer_mid_name" class="card-title">Loading...</h3>
+                                <span class="player-level">LVL <span id="freezer_mid_level">--</span></span>
+                            </div>
+                        </div>
+                        <div class="player-status">
+                            <div id="freezer_mid_rank" class="card-meta">Fetching Rank...</div>
+                            <div id="freezer_mid_wl" class="card-stats"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card card--interactive card--profile">
+                    <div class="role-badge">BOT</div>
+                    <img src="assets/profile/freezer/freezer_adc.png" alt="ADC" class="card-img">
+                    <div class="card-body">
+                        <div class="player-identity">
+                            <img id="freezer_bot_icon" src="assets/profile/placeholder.png" class="mini-riot-icon">
+                            <div class="name-box">
+                                <h3 id="freezer_bot_name" class="card-title">Loading...</h3>
+                                <span class="player-level">LVL <span id="freezer_bot_level">--</span></span>
+                            </div>
+                        </div>
+                        <div class="player-status">
+                            <div id="freezer_bot_rank" class="card-meta">Fetching Rank...</div>
+                            <div id="freezer_bot_wl" class="card-stats"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card card--interactive card--profile">
+                    <div class="role-badge">SUP</div>
+                    <img src="assets/profile/freezer/freezer_support.png" alt="SUP" class="card-img">
+                    <div class="card-body">
+                        <div class="player-identity">
+                            <img id="freezer_sup_icon" src="assets/profile/placeholder.png" class="mini-riot-icon">
+                            <div class="name-box">
+                                <h3 id="freezer_sup_name" class="card-title">Loading...</h3>
+                                <span class="player-level">LVL <span id="freezer_sup_level">--</span></span>
+                            </div>
+                        </div>
+                        <div class="player-status">
+                            <div id="freezer_sup_rank" class="card-meta">Fetching Rank...</div>
+                            <div id="freezer_sup_wl" class="card-stats"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card card--interactive card--profile">
+                    <div class="role-badge">COACH</div>
+                    <img src="assets/profile/freezer/freezer_coach.png" alt="COACH" class="card-img">
+                    <div class="card-body">
+                        <div class="player-identity">
+                            <img id="freezer_coach_icon" src="assets/profile/placeholder.png" class="mini-riot-icon" style="display:none;">
+                            <div class="name-box">
+                                <h3 id="freezer_coach_name" class="card-title">Loading...</h3>
+                                <span class="player-level">LVL <span id="freezer_coach_level">--</span></span>
+                            </div>
+                        </div>
+                        <div class="player-status">
+                            <div id="freezer_coach_rank" class="card-meta">Fetching Rank...</div>
+                            <div id="freezer_coach_wl" class="card-stats"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="stats" class="section-pad">
+        <div class="container">
+            
+            <div class="section-header">
+                <span class="section-subtitle"># ONE CREW</span>
+                <h2 class="section-title">TEAM <span class="text-highlight">STATISTIKEN</span></h2>
+            </div>
+
+            <div id="stats-telemetry-list" class="stats-list">
+                
+                <div class="terminal-loader" style="color: var(--text-muted); font-family: monospace; text-align: center; padding: 20px; border: 1px dashed rgba(255,255,255,0.1);">
+                    > INITIALIZING_SYNC...
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="events" class="section-pad">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle"># INSTINCT ON</span>
+                <h2 class="section-title">GEPLANTE <span class="text-highlight">EVENTS</span></h2>
+            </div>
+
+            <div id="dynamic-events-list" class="events-list">
+                <div class="terminal-loader" style="color: var(--text-muted); font-family: monospace; text-align: center; padding: 20px; border: 1px dashed rgba(255,255,255,0.1);">
+                    > FETCHING_EVENTS...
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="stream" class="section-pad">
+        <div class="container">
+            <div class="grid-12" style="align-items: center;">
+                
+                <div class="col-4">
+                    <span class="section-subtitle"># FOLLOW THE INSTINCT</span>
+                    <h2 class="section-title" style="margin-top: 10px;">UIC <span class="text-highlight">STREAM</span></h2>
+                    <p style="color: var(--text-muted); margin-bottom: var(--space-md);">
+                        Verfolge unsere Prime League Roster live auf Twitch. Erlebe packendes Play, Analysen und spannendes League of Legends Gameplay aus der ersten Reihe.
+                    </p>
+                    <a href="https://www.twitch.tv/ultrainstinctcrew" target="_blank" class="btn btn-outline">
+                        ZU DEN KOMMENTAREN <span class="btn-icon">→</span>
+                    </a>
+                </div>
+
+                <div class="col-8">
+                    <div class="stream-frame">
+                        <div id="twitch-embed" class="twitch-placeholder">
+                            
+                            <div class="twitch-overlay">
+                                <h3 style="color: #fff; margin-bottom: 10px;">Twitch Stream laden?</h3>
+                                <p style="font-size: 0.9rem; color: #ccc; margin-bottom: 20px; max-width: 400px; margin-left: auto; margin-right: auto;">
+                                    Zum Schutz deiner Daten wird der Stream erst geladen, wenn du klickst. Dabei werden Daten an Twitch übermittelt.
+                                </p>
+                                <button id="load-twitch-btn" class="btn btn-primary" style="cursor: pointer;">
+                                    STREAM STARTEN
+                                </button>
+                                <br>
+                                <small style="margin-top: 15px; display: block; font-size: 0.7rem; color: #777;">
+                                    <a href="datenschutzbestimmungen.html" target="_blank" style="color: #888; text-decoration: underline;">Datenschutzbestimmungen</a>
+                                </small>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="partners" class="section-pad" style="background: var(--bg-panel);">
+        <div class="container">
+            <div class="section-header" style="text-align: center; margin: 0 auto var(--space-lg) auto;">
+                <span class="section-subtitle"># HUNT BY INSTINCT</span>
+                <h2 class="section-title">UNSERE <span class="text-highlight">PARTNER</span></h2>
+            </div>
+
+            <div class="partner-grid">
+                <img src="assets/logo/partner1.svg" alt="LogoIpsum" class="partner-logo">
+                <img src="assets/logo/partner2.svg" alt="LogoIpsum" class="partner-logo">
+                <img src="assets/logo/partner3.svg" alt="LogoIpsum" class="partner-logo">
+                <img src="assets/logo/partner4.svg" alt="LogoIpsum" class="partner-logo">
+                </div>
+        </div>
+    </section>
+
+    <section id="media-vault" class="section-pad">
+        <div class="container">
+            
+            <div class="section-header">
+                <span class="section-subtitle"># BE THE INSTINCT <span class="pulse-dot"></span></span>
+                <h2 class="section-title">MARKEN <span class="text-highlight">VERZEICHNIS</span></h2>
+                <p class="lead-text">Offizielle Assets der Ultra Instinct Crew für Streamer, Content Creator und eSport Partner.</p>
+            </div>
+
+            <div class="grid-auto">
+                <div class="card card--interactive card--hud card--scan">
+                    <div class="hud-header">
+                        <span class="card-meta">[WEBM]</span>
+                        <h3 class="card-title">LEAGUE OF LEGENDS OBS OVERLAY</h3>
+                    </div>
+                    <div class="media-preview">
+                        <div class="media-card-scanline"></div>
+                        <svg class="preview-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="2" y="3" width="20" height="14" rx="2" stroke-dasharray="2 2"/>
+                            <path d="M7 17v4M17 17v4M10 21h4"/>
+                            <rect x="15" y="6" width="4" height="4" fill="rgba(0,240,255,0.1)"/>
+                        </svg>
+                    </div>
+                    <div class="hud-footer">
+                        <a href="#" class="btn-media-download">BALD VERFÜGBAR</a>
+                    </div>
+                </div>
+
+                <div class="card card--interactive card--hud card--scan">
+                    <div class="hud-header">
+                        <span class="card-meta">[PNG | SVG]</span>
+                        <h3 class="card-title">ULTRA INSTINCT CREW LOGO SET [VERTICAL]</h3>
+                    </div>
+                    <div class="media-preview">
+                        <div class="media-card-scanline"></div>
+                        <svg class="preview-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="3" y="8" width="18" height="8"/>
+                            <circle cx="7" cy="12" r="2" fill="var(--primary)"/>
+                            <line x1="11" y1="11" x2="19" y2="11" />
+                            <line x1="11" y1="13" x2="16" y2="13" />
+                        </svg>
+                    </div>
+                    <div class="hud-footer">
+                        <a href="#" class="btn-media-download">BALD VERFÜGBAR</a>
+                    </div>
+                </div>
+
+                <div class="card card--interactive card--hud card--scan">
+                    <div class="hud-header">
+                        <span class="card-meta">[PNG | SVG]</span>
+                        <h3 class="card-title">ULTRA INSTINCT CREW LOGO SET [HORIZONTAL]</h3>
+                    </div>
+                    <div class="media-preview">
+                        <div class="media-card-scanline"></div>
+                        <svg class="preview-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="7" y="3" width="10" height="18"/>
+                            <circle cx="12" cy="8" r="3" fill="var(--primary)"/>
+                            <line x1="10" y1="14" x2="14" y2="14" />
+                        </svg>
+                    </div>
+                    <div class="hud-footer">
+                        <a href="#" class="btn-media-download">BALD VERFÜGBAR</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="brand-specs-row card--hud">
+                <div class="spec-group">
+                    <div class="spec-header">
+                        <span class="spec-label">FARBPALETTE</span>
+                        <span class="spec-value">HEXADEZIMAL</span>
+                    </div>
+                    <div class="color-specs">
+                        <div class="color-item">
+                            <div class="color-swatch" style="background: var(--primary); box-shadow: 0 0 15px var(--primary);"></div>
+                            <div class="color-meta">
+                                <span class="color-name">CYAN [PRIMÄR]</span>
+                                <span class="color-hex">#00F0FF</span>
+                            </div>
+                        </div>
+                        <div class="color-item">
+                            <div class="color-swatch" style="background: var(--secondary); box-shadow: 0 0 15px var(--secondary);"></div>
+                            <div class="color-meta">
+                                <span class="color-name">PURPLE [SEKUNDÄR]</span>
+                                <span class="color-hex">#B026FF</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="spec-divider"></div>
+
+                <div class="spec-group">
+                    <div class="spec-header">
+                        <span class="spec-label">SCHRIFTARTEN</span>
+                        <span class="spec-value">GOOGLE FONTS</span>
+                    </div>
+                    <div class="font-specs">
+                        <div class="font-item">
+                            <span class="font-preview" style="font-family: var(--font-head);">ORBITRON</span>
+                            <span class="font-usage">TITEL</span>
+                        </div>
+                        <div class="font-item">
+                            <span class="font-preview" style="font-family: var(--font-body);">RAJDHANI</span>
+                            <span class="font-usage">BESCHREIBUNGEN</span>
+                        </div>
+                    </div>
+                </div>
             </div>
             
-            <h1 id="champ-name">TEAM NAME</h1>
-            
-            <button id="close-champ" class="btn btn-obsidian" style="margin-top: 3rem; position: relative; z-index: 10;">
-                <span style="color: var(--primary);">Zurück</span> zum Bracket
-            </button>
         </div>
+    </section>
 
-        <div class="champ-fg-layer">
-            <div class="data-line dl-1"></div>
-            <div class="data-line dl-2"></div>
-            <div class="data-line dl-3"></div>
+    <section id="join" class="section-pad">
+        <div class="container">
+            <div class="cta-box">
+                <h2 class="section-title">FINDE JETZT DEINEN <span class="text-highlight">INSTINCT!</span></h2>
+                <p class="lead-text" style="max-width: 600px; margin: 0 auto var(--space-md) auto; border: none;">
+                    Wir sind immer auf der Suche nach einzelnen Talenten oder Teams. Ganz gleich, ob eSport Athlet, Manager, Content Creator oder Coach.
+                </p>
+                
+                <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                    <a target="_blank" class="btn btn-primary" href="mailto:support@ultrainstinctcrew.com?subject=Bewerbung%20UIC%20Roster&body=Hallo%20UIC%20Team,%0D%0A%0D%0AHiermit%20möchte%20ich%20mich%20für%20eines%20eurer%20Teams%20bewerben.%0D%0A%0D%0A---%20MEINE%20DATEN%20---%0D%0ASummoner%20Name:%20%0D%0AOp.gg%20Link:%20%0D%0AAktueller%20Rang:%20%0D%0APrimäre%20Rolle:%20%0D%0ADiscord%20ID:%20%0D%0A%0D%0A---%20NACHRICHT%20---%0D%0A">
+                        Bewirb dich
+                    </a>
+                    <a target="_blank" href="https://discord.gg/VjggbjA6Q4" class="btn btn-outline">Unser Discord</a>
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
 
-    <div id="modal-overlay" class="modal-overlay hidden">
-        <div id="info-modal" class="custom-modal">
-            <button id="close-modal" class="btn-close">&times;</button>
-            <div id="modal-content"></div>
-        </div>
-    </div>
 
     <footer class="site-footer section-pad">
         <div class="container">
             
             <div class="grid-auto" style="--grid-gap: var(--space-lg);">
                 
-                <div>
+                <div class="footer-col">
                     <h4 class="footer-title">Haftungsausschluss</h4>
-                    <h3 style="color: var(--text-white); font-size: 1.1rem;">Riot Games</h3>
-                    <p style="color: var(--text-muted); line-height: 1.6; font-size: 0.9rem; margin-top: 0.5rem; margin-bottom: 1.5rem;">
+                        <h3 style="color: var(--text-white);">
+                            Riot Games
+                        </h3>
+                        <p style="color: var(--text-muted); line-height: 1.6; font-size: 0.9rem; margin-top: 1rem;">
                         Ultra Instinct Crew wird nicht von Riot Games unterstützt und spiegelt nicht die Ansichten oder 
                         Meinungen von Riot Games oder anderen Personen wider, die offiziell an der 
                         Herstellung oder Verwaltung von League of Legends beteiligt sind. League of 
                         Legends und Riot Games sind Marken oder eingetragene Marken von Riot Games, 
                         Inc. League of Legends © Riot Games, Inc.
-                    </p>
-                    
-                    <h3 style="color: var(--text-white); font-size: 1.1rem;">PrimeBot</h3>
-                    <p style="color: var(--text-muted); line-height: 1.6; font-size: 0.9rem; margin-top: 0.5rem;">
+                        </p>
+                        <h3 style="color: var(--text-white); margin-top: 1rem;">
+                            PrimeBot
+                        </h3>
+                        <p style="color: var(--text-muted); line-height: 1.6; font-size: 0.9rem; margin-top: 1rem;">
                         Zur Darstellung unserer sportlichen Erfolge nutzen wir Daten der <strong>Unofficial Prime League API (primebot.me)</strong>. 
                         Der Abruf dieser Daten erfolgt automatisiert über einen serverseitigen Prozess.
-                    </p>
+                        </p>
                 </div>
 
-                <div>
+                <div class="footer-col">
                     <h4 class="footer-title">NAVIGATION</h4>
                     <ul class="footer-links">
-                        <li><a href="#view-live">Start</a></li>
-                        <li><a href="#bracket-winners">Winners Bracket</a></li>
-                        <li><a href="#bracket-losers">Losers Bracket</a></li>
-                        <li><a href="dashboard.html" target="_blank">Dashboard  ↗</a></li>
+                        <li><a href="#hero">Start</a></li>
+                        <li><a href="#teams">Teams</a></li>
+                        <li><a href="#stats">Statistiken</a></li>
+                        <li><a href="#events">Events</a></li>
+                        <li><a href="#stream">Stream</a></li>
+                        <li><a href="#partners">Partner</a></li>
+                        <li><a href="#media-vault">Marke</a></li>
+                        <li><a href="https://turnier.ultrainstinctcrew.com/" target="_blank">Turnier  ↗</a></li>
                     </ul>
                 </div>
 
-                <div>
+                <div class="footer-col">
                     <h4 class="footer-title">Kontakt & Rechtliches</h4>
                     <ul class="footer-links">
                         <li><a target="_blank" href="impressum.html">Impressum</a></li>
@@ -311,23 +1295,102 @@
                     </ul>
                 </div>
 
-                <div>
+                <div class="footer-col">
                     <h4 class="footer-title">SOZIAL</h4>
                     <div class="social-links">
-                        <a target="_blank" href="https://discord.gg/ultrainstinctcrew" class="btn-obsidian-ghost">DISCORD</a>
+                        <a target="_blank" href="https://discord.gg/VjggbjA6Q4" class="btn-obsidian-ghost">DISCORD</a>
                         <a target="_blank" href="https://x.com/uic_gaming" class="btn-obsidian-ghost">TWITTER</a>
                     </div>
                 </div>
 
             </div>
-            
             <div class="footer-bottom">
                 <p>&copy; 2018 - 2026 Ultra Instinct Crew.</p>
             </div>
         </div>
     </footer>
 
-    <script src="scripts/app.js"></script>
-    <script src="scripts/script.js"></script>
+    <div id="media-component" class="media-component collapsed">
+
+        <div class="mini-ui" id="mini-ui">
+            <div class="mobile-circle-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+            </div>
+            <div class="desktop-bar-info">
+                <div class="mini-visual"><div class="mini-beat-circle"></div></div>
+                <span class="mini-title" id="mini-track-title">SYSTEM READY</span>
+                <button class="btn-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"/></svg></button>
+            </div>
+        </div>
+
+        <div class="main-deck">
+            <div class="deck-header">
+                <span class="deck-brand">UIC GILL</span>
+                <div class="header-actions">
+                    <button id="btn-cinema-mode" class="btn-icon-small" title="Cinema Mode">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/></svg>
+                    </button>
+                    <button id="btn-collapse" class="btn-icon-small" title="Minimize">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 13H5v-2h14v2z"/></svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="deck-visual-stage" id="visual-stage">
+                <video id="media-engine" class="media-engine" playsinline muted autoplay></video>
+                <img id="track-art" class="track-art" src="" alt="">
+                
+                <div id="fallback-visualizer" class="fallback-visualizer hidden">
+                    <div class="cyber-ring"></div><div class="cyber-ring ring-2"></div><div class="cyber-core"></div>
+                </div>
+                
+                <div id="overlay-unmute" class="visual-overlay">
+                    <div class="overlay-icon-box">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73 4.27 3zM12 4L9.91 6.09 12 8.18V4z"/></svg>
+                        <span>TAP TO UNMUTE</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="deck-controls">
+                <div class="progress-wrap" id="progress-container">
+                    <div class="progress-bg"><div id="progress-fill" class="progress-fill"></div></div>
+                </div>
+                <div class="meta-row">
+                    <div class="marquee-wrapper"><span id="track-title-full" class="track-title">INITIALIZING...</span></div>
+                    <span id="track-time" class="track-time">0:00</span>
+                </div>
+                <div class="actions-row">
+                    <div class="playback-group">
+                        <button id="cmd-prev" class="btn-ctrl"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg></button>
+                        <button id="cmd-play" class="btn-ctrl btn-play">
+                            <svg id="icon-play" width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                            <svg id="icon-pause" class="hidden" width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+                        </button>
+                        <button id="cmd-next" class="btn-ctrl"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/></svg></button>
+                    </div>
+                    <div class="secondary-group">
+                        <div class="volume-box">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg>
+                            <input type="range" id="volume-slider" min="0" max="1" step="0.05" value="0.5">
+                        </div>
+                        <button id="cmd-playlist-toggle" class="btn-icon-small"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"/></svg></button>
+                    </div>
+                </div>
+                <div id="playlist-drawer" class="playlist-internal"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Scripts
+    ================================================== -->
+    <script src="js/script.js"></script>
+    <script src="js/sync-events.js"></script>
+    <script src="js/insert_fetch_stats.js"></script>
+    <script src="js/insert_fetch_prime_stats.js"></script>
+    <script src="js/mediaplayer.js"></script>
+    <script src="js/twitch_embed.js"></script>
+
 </body>
 </html>
