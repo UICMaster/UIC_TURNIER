@@ -285,8 +285,39 @@
       "name": "UIC Freezer",
       "acronym": "UICF",
       "logo": "https://cdn0.heartbase.gg/league_team_logos/203000/203146.jpg?1768840480",
-      "stream_link": "",
-      "is_live": true
+      "stream_link": "https://www.twitch.tv/uicloonz",
+      "is_live": true,
+      "roster": [
+        {
+          "name": "UIC AutumnLeaf#Moo",
+          "role": "Spieler",
+          "is_captain": true
+        },
+        {
+          "name": "UIC Rayando07#Help",
+          "role": "Spieler"
+        },
+        {
+          "name": "exi#quak",
+          "role": "Spieler"
+        },
+        {
+          "name": "UIC Kamo#tpt",
+          "role": "Spieler"
+        },
+        {
+          "name": "UIC Ryu Copeland#117",
+          "role": "Spieler"
+        },
+        {
+          "name": "UIC Loonz#Coach",
+          "role": "Coach"
+        },
+        {
+          "name": "RG Cerberus#GOATZ",
+          "role": "Manager"
+        }
+      ]
     },
     "UIC_NIGHT": {
       "id": "UIC_NIGHT",
