@@ -1,0 +1,299 @@
+{
+  "UIC_NOVA": {
+    "id": "203447",
+    "key": "UIC_NOVA",
+    "meta": {
+      "name": "Ultra Instinct Crew Nova",
+      "div": "Division 6"
+    },
+    "stats": {
+      "wins": 0,
+      "losses": 12,
+      "points": 0,
+      "games": 12,
+      "win_rate": 0,
+      "form": [
+        "L",
+        "L",
+        "L",
+        "L",
+        "L"
+      ]
+    },
+    "next_match": null,
+    "last_match": {
+      "result": "NIEDERLAGE",
+      "score": "0 - 2",
+      "enemy": "SG",
+      "date": "2026-03-15T19:00:00+01:00"
+    },
+    "roster": [
+      {
+        "summoner": "Rhamuthra#4444",
+        "is_captain": false
+      },
+      {
+        "summoner": "UIC Excellent C#1997",
+        "is_captain": true
+      },
+      {
+        "summoner": "UIC Simply#666",
+        "is_captain": true
+      },
+      {
+        "summoner": "UIC Rubix Qube#MÖP",
+        "is_captain": true
+      },
+      {
+        "summoner": "UIC Muh#KATZE",
+        "is_captain": false
+      },
+      {
+        "summoner": "UIC adedier#EUWE",
+        "is_captain": false
+      },
+      {
+        "summoner": "UIC Kaanto#Nova",
+        "is_captain": false
+      }
+    ],
+    "team_link": "https://www.primeleague.gg/de/leagues/teams/203447",
+    "logo": "https://cdn0.heartbase.gg/league_team_logos/203000/203447.jpg?1768386652"
+  },
+  "W2B_CULT_EGO": {
+    "id": "211922",
+    "key": "W2B_CULT_EGO",
+    "meta": {
+      "name": "Wannabe Cult Ego Edition",
+      "div": "Division 6"
+    },
+    "stats": {
+      "wins": 3,
+      "losses": 9,
+      "points": 3,
+      "games": 12,
+      "win_rate": 25,
+      "form": [
+        "L",
+        "L",
+        "D",
+        "W",
+        "L"
+      ]
+    },
+    "next_match": null,
+    "last_match": {
+      "result": "NIEDERLAGE",
+      "score": "0 - 2",
+      "enemy": "CLS",
+      "date": "2026-03-09T19:30:00+01:00"
+    },
+    "roster": [
+      {
+        "summoner": "bubblefush#YEET",
+        "is_captain": true
+      },
+      {
+        "summoner": "TheWhiteWolf#ADC",
+        "is_captain": true
+      },
+      {
+        "summoner": "RealRagnarök#BhF",
+        "is_captain": true
+      },
+      {
+        "summoner": "OUTFARTED#EUW",
+        "is_captain": true
+      },
+      {
+        "summoner": "Slevin#1612",
+        "is_captain": true
+      },
+      {
+        "summoner": "Estarossa#U7G",
+        "is_captain": true
+      },
+      {
+        "summoner": "fairy#mori",
+        "is_captain": false
+      }
+    ],
+    "team_link": "https://www.primeleague.gg/de/leagues/teams/211922",
+    "logo": "https://cdn0.heartbase.gg/league_team_logos/211000/211922.jpg?1768575164"
+  },
+  "ODE_ABSOLUT_ZERO": {
+    "id": "209281",
+    "key": "ODE_ABSOLUT_ZERO",
+    "meta": {
+      "name": "Overdue Absolute Zero",
+      "div": "Division 5"
+    },
+    "stats": {
+      "wins": 7,
+      "losses": 5,
+      "points": 7,
+      "games": 12,
+      "win_rate": 58,
+      "form": [
+        "W",
+        "D",
+        "W",
+        "L",
+        "L"
+      ]
+    },
+    "next_match": null,
+    "last_match": {
+      "result": "NIEDERLAGE",
+      "score": "0 - 2",
+      "enemy": "LES PBD",
+      "date": "2026-03-15T17:00:00+01:00"
+    },
+    "roster": [
+      {
+        "summoner": "Lolevel#ODE",
+        "is_captain": true
+      },
+      {
+        "summoner": "Npunkt#ODE",
+        "is_captain": true
+      },
+      {
+        "summoner": "KiwitoMate#ODE",
+        "is_captain": true
+      },
+      {
+        "summoner": "gurke#ODE",
+        "is_captain": false
+      },
+      {
+        "summoner": "Knokkelmann#ODE",
+        "is_captain": true
+      },
+      {
+        "summoner": "Nerf Yuno Pls#Riven",
+        "is_captain": false
+      }
+    ],
+    "team_link": "https://www.primeleague.gg/de/leagues/teams/209281",
+    "logo": "https://cdn0.heartbase.gg/league_team_logos/209000/209281.jpg?1751621235"
+  },
+  "UIC_EMBER": {
+    "id": "211165",
+    "key": "UIC_EMBER",
+    "meta": {
+      "name": "Ultra Instinct Crew Ember",
+      "div": "Division 6"
+    },
+    "stats": {
+      "wins": 9,
+      "losses": 7,
+      "points": 9,
+      "games": 16,
+      "win_rate": 56,
+      "form": [
+        "D",
+        "L",
+        "W",
+        "W",
+        "L"
+      ]
+    },
+    "next_match": null,
+    "last_match": {
+      "result": "NIEDERLAGE",
+      "score": "0 - 2",
+      "enemy": "LBB",
+      "date": "2026-03-22T17:00:00+01:00"
+    },
+    "roster": [
+      {
+        "summoner": "UIC DontMethWith#AMB",
+        "is_captain": true
+      },
+      {
+        "summoner": "UIC Envy#UIC",
+        "is_captain": true
+      },
+      {
+        "summoner": "UIC Shederen#Ger",
+        "is_captain": false
+      },
+      {
+        "summoner": "SilasX#EUWde",
+        "is_captain": false
+      },
+      {
+        "summoner": "ResetHoe#Kata",
+        "is_captain": false
+      },
+      {
+        "summoner": "UIC Rubix Qube#MÖP",
+        "is_captain": true
+      },
+      {
+        "summoner": "Otter#0812",
+        "is_captain": false
+      }
+    ],
+    "team_link": "https://www.primeleague.gg/de/leagues/teams/211165",
+    "logo": "https://cdn0.heartbase.gg/league_team_logos/211000/211165.jpg?1765449081"
+  },
+  "UIC_SAKURA": {
+    "id": "208851",
+    "key": "UIC_SAKURA",
+    "meta": {
+      "name": "Ultra Instinct Crew Sakura",
+      "div": "Division 5"
+    },
+    "stats": {
+      "wins": 3,
+      "losses": 10,
+      "points": 3,
+      "games": 13,
+      "win_rate": 23,
+      "form": [
+        "L",
+        "L",
+        "D",
+        "W",
+        "L"
+      ]
+    },
+    "next_match": null,
+    "last_match": {
+      "result": "NIEDERLAGE",
+      "score": "0 - 2",
+      "enemy": "DKN",
+      "date": "2026-03-15T19:00:00+01:00"
+    },
+    "roster": [
+      {
+        "summoner": "UIC lightfire#4667",
+        "is_captain": false
+      },
+      {
+        "summoner": "아유무#Love",
+        "is_captain": true
+      },
+      {
+        "summoner": "라이쥬코#Love",
+        "is_captain": true
+      },
+      {
+        "summoner": "zab77#EUW",
+        "is_captain": false
+      },
+      {
+        "summoner": "竈門炭治郎#Love",
+        "is_captain": false
+      },
+      {
+        "summoner": "W2B Ratatouille#TBATE",
+        "is_captain": true
+      }
+    ],
+    "team_link": "https://www.primeleague.gg/de/leagues/teams/208851",
+    "logo": "https://cdn0.heartbase.gg/league_team_logos/208000/208851.jpg?1775950554"
+  }
+}
