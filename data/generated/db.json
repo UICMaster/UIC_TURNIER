@@ -658,7 +658,7 @@
     {
       "score_1": 0,
       "score_2": 0,
-      "winner_id": "UIC_OG",
+      "winner_id": "ODE_ABSOLUT_ZERO",
       "status": "FINISHED",
       "id": "wb_r1_m1",
       "round": 1,
@@ -667,7 +667,7 @@
       "next_slot": 1,
       "loser_match_id": "lb_r1_m1",
       "loser_slot": 1,
-      "team_1": "UIC_OG",
+      "team_1": "ODE_ABSOLUT_ZERO",
       "team_2": "[BYE]"
     },
     {
@@ -703,8 +703,8 @@
     {
       "score_1": 0,
       "score_2": 0,
-      "winner_id": "UIC_PRIME_+_ALEX",
-      "status": "FINISHED",
+      "winner_id": null,
+      "status": "LIVE",
       "id": "wb_r1_m4",
       "round": 1,
       "type": "WINNER",
@@ -713,7 +713,7 @@
       "loser_match_id": "lb_r1_m2",
       "loser_slot": 2,
       "team_1": "UIC_PRIME_+_ALEX",
-      "team_2": "[BYE]"
+      "team_2": "UIC_NIGHT"
     },
     {
       "score_1": 0,
@@ -758,7 +758,7 @@
       "loser_match_id": "lb_r1_m4",
       "loser_slot": 1,
       "team_1": "UIC_EMBER",
-      "team_2": "ODE_ABSOLUT_ZERO"
+      "team_2": "UIC_OG"
     },
     {
       "score_1": 0,
@@ -787,14 +787,14 @@
       "next_slot": 1,
       "loser_match_id": "lb_r2_m1",
       "loser_slot": 1,
-      "team_1": "UIC_OG",
+      "team_1": "ODE_ABSOLUT_ZERO",
       "team_2": "RISING_DAWN"
     },
     {
       "score_1": 0,
       "score_2": 0,
       "winner_id": null,
-      "status": "LIVE",
+      "status": "WAITING",
       "id": "wb_r2_m2",
       "round": 2,
       "type": "WINNER",
@@ -803,7 +803,7 @@
       "loser_match_id": "lb_r2_m2",
       "loser_slot": 2,
       "team_1": "RASSELBANDEN_GMBH",
-      "team_2": "UIC_PRIME_+_ALEX"
+      "team_2": null
     },
     {
       "score_1": 0,
@@ -895,14 +895,14 @@
     {
       "score_1": 0,
       "score_2": 0,
-      "winner_id": "[BYE]",
-      "status": "FINISHED",
+      "winner_id": null,
+      "status": "WAITING",
       "id": "lb_r1_m2",
       "round": 1,
       "type": "LOSER",
       "next_match_id": "lb_r2_m2",
       "team_1": "[BYE]",
-      "team_2": "[BYE]"
+      "team_2": null
     },
     {
       "score_1": 0,
@@ -949,7 +949,7 @@
       "round": 2,
       "type": "LOSER",
       "next_match_id": "lb_r3_m1",
-      "team_1": "[BYE]",
+      "team_1": null,
       "team_2": null
     },
     {
