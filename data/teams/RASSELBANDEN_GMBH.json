@@ -1,0 +1,31 @@
+{
+  "id": "RASSELBANDEN_GMBH",
+  "name": "RASSELBANDEN GMBH",
+  "acronym": "RBG",
+  "logo": "/team_logo/RASSELBANDEN_GMBH.PNG",
+  "stream_link": "", 
+  "is_live": true, 
+  "roster": [
+    { 
+      "name": "UIC Shenycrane #Vugel", 
+      "role": "Spieler", 
+      "is_captain": true 
+    },
+    { 
+      "name": "Otter #0812", 
+      "role": "Spieler" 
+    },
+    { 
+      "name": "Entchen #QUACK", 
+      "role": "Spieler" 
+    },
+    { 
+      "name": "COZwei #NoLoL", 
+      "role": "Spieler" 
+    },
+    { 
+      "name": "Krait #Snek", 
+      "role": "Spieler" 
+    }
+  ]
+}

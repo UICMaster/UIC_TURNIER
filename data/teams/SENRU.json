@@ -1,0 +1,39 @@
+{
+  "id": "SENRU",
+  "name": "SENRU",
+  "acronym": "SENRU",
+  "logo": "/team_logo/SENRU.jpg",
+  "stream_link": "https://www.twitch.tv/invicta_esport", 
+  "is_live": true,
+  "roster": [
+    { 
+      "name": "BloodBlizzard#Taste", 
+      "role": "Spieler", 
+      "is_captain": true 
+    },
+    { 
+      "name": "EPS SuperSeducer#TEIN", 
+      "role": "Spieler" 
+    },
+    { 
+      "name": "EPS Sundaymilf#TEIN", 
+      "role": "Spieler" 
+    },
+    { 
+      "name": "Fynnazer#EUW", 
+      "role": "Spieler" 
+    },
+        { 
+      "name": "Arise#BIRD", 
+      "role": "Spieler" 
+    },
+        { 
+      "name": "Tevoro#IVA", 
+      "role": "Spieler" 
+    },
+    { 
+      "name": "Range Life#EUW", 
+      "role": "Spieler" 
+    }
+  ]
+}

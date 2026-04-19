@@ -1,0 +1,31 @@
+{
+  "id": "UIC_OG",
+  "name": "UIC OG",
+  "acronym": "UICO",
+  "logo": "/team_logo/UIC_OG.png",
+  "stream_link": "https://twitch.tv/DiamondGoku", 
+  "is_live": true,
+  "roster": [
+    { 
+      "name": "UIC Goku#UIC", 
+      "role": "Spieler", 
+      "is_captain": true 
+    },
+    { 
+      "name": "UIC RoyBl4cK#EUW", 
+      "role": "Spieler" 
+    },
+    { 
+      "name": "UIC Gallagros#187", 
+      "role": "Spieler" 
+    },
+    { 
+      "name": "UIC ArdaGüler#Türke", 
+      "role": "Spieler" 
+    },
+    { 
+      "name": "UIC Flare#JND", 
+      "role": "Spieler" 
+    }
+  ]
+}

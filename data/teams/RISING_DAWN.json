@@ -3,33 +3,29 @@
   "name": "Rising Dawn",
   "acronym": "RD",
   "logo": "https://cdn0.heartbase.gg/league_team_logos/212000/212208.jpg?1771360240",
-  "stream_link": "https://twitch.tv/slevinhunter", 
+  "stream_link": "https://www.twitch.tv/slevinhunter", 
   "is_live": true, 
   "roster": [
     { 
       "name": "Slevin Hunter", 
-      "role": "Midlane", 
+      "role": "Spieler", 
       "is_captain": true 
     },
     { 
       "name": "Nuokii", 
-      "role": "Jungle" 
+      "role": "Spieler" 
     },
     { 
       "name": "Racknarök", 
-      "role": "Bot" 
+      "role": "Spieler" 
     },
     { 
       "name": "UIC Dragonfly", 
-      "role": "Support" 
+      "role": "Spieler" 
     },
     { 
-      "name": "Open Spot", 
-      "role": "Toplane" 
-    },
-    { 
-      "name": "RD proStarII", 
-      "role": "Coach" 
+      "name": "BrokeCLVB", 
+      "role": "Spieler" 
     }
   ]
 }

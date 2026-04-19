@@ -1,0 +1,39 @@
+{
+  "id": "UIC_PRIME_+_ALEX",
+  "name": "UIC PRIME + ALEX",
+  "acronym": "UICP+A",
+  "logo": "/team_logo/UIC_PRIME_+_ALEX.png",
+  "stream_link": "https://www.twitch.tv/uicspeedy", 
+  "is_live": true,
+  "roster": [
+    { 
+      "name": "UIC Speedy#EUW", 
+      "role": "Spieler", 
+      "is_captain": true 
+    },
+    { 
+      "name": "UIC Niki#AMB", 
+      "role": "Spieler" 
+    },
+    { 
+      "name": "UIC Keygasza#1337", 
+      "role": "Spieler" 
+    },
+    { 
+      "name": "UIC Baguetto#R3kt", 
+      "role": "Spieler" 
+    },
+        { 
+      "name": "UIC Giani#999", 
+      "role": "Spieler" 
+    },
+        { 
+      "name": "UIC Simply#666", 
+      "role": "Ersatz" 
+    },
+    { 
+      "name": "never leaving#stay", 
+      "role": "Manager" 
+    }
+  ]
+}

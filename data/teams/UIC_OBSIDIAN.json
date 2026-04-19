@@ -1,0 +1,31 @@
+{
+  "id": "UIC_OBSIDIAN",
+  "name": "UIC OBSIDIAN",
+  "acronym": "UICOB",
+  "logo": "/team_logo/UIC_OBSIDIAN.png",
+  "stream_link": "", 
+  "is_live": true,
+  "roster": [
+    { 
+      "name": "Papi Δce#3072", 
+      "role": "Spieler", 
+      "is_captain": true 
+    },
+    { 
+      "name": "BlondiXE1#EUW", 
+      "role": "Spieler" 
+    },
+    { 
+      "name": "DasNichtsImLicht#FF15", 
+      "role": "Spieler" 
+    },
+    { 
+      "name": "Leberkasleatschn#1990", 
+      "role": "Spieler" 
+    },
+    { 
+      "name": "LordZash#1220", 
+      "role": "Spieler" 
+    }
+  ]
+}
