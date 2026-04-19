@@ -33,7 +33,15 @@ async function getTeamIntel(teamKey, config) {
         let formHistory = []; 
         let nextMatch = null;
         let lastMatch = null;
-        const rosterMap = new Map();
+
+        // NEW FIX: Extract the current roster directly from the top-level 'players' array
+        let currentRoster = [];
+        if (data.players && Array.isArray(data.players)) {
+            currentRoster = data.players.map(p => ({
+                summoner: p.summoner_name,
+                is_captain: p.is_leader || false
+            })).slice(0, 7); // Keeps your original 7-player limit
+        }
 
         if (data.matches && Array.isArray(data.matches)) {
             // Sort Oldest -> Newest
@@ -44,19 +52,6 @@ async function getTeamIntel(teamKey, config) {
 
                 // FILTER: Skip games before Season Start
                 if (matchDate < SEASON_START) return;
-
-                // A. ROSTER (Look back 180 days for active players)
-                const isRecent = (now - matchDate) < (1000 * 60 * 60 * 24 * 180); 
-                if (m.team_lineup && Array.isArray(m.team_lineup) && isRecent) {
-                    m.team_lineup.forEach(p => {
-                        if (!rosterMap.has(p.summoner_name) || p.is_leader) {
-                            rosterMap.set(p.summoner_name, {
-                                summoner: p.summoner_name,
-                                is_captain: p.is_leader || false
-                            });
-                        }
-                    });
-                }
 
                 // B. SCORING (Best of 2)
                 if (m.result && matchDate < now) {
@@ -109,7 +104,7 @@ async function getTeamIntel(teamKey, config) {
             },
             next_match: nextMatch,
             last_match: lastMatch,
-            roster: Array.from(rosterMap.values()).slice(0, 7),
+            roster: currentRoster, // Updated to use the live roster extracted above
             team_link: data.prime_league_link,
             logo: data.logo_url
         };
