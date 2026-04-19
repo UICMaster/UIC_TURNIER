@@ -2,7 +2,7 @@
   "id": "SENRU",
   "name": "SENRU",
   "acronym": "SENRU",
-  "logo": "/team_logo/SENRU.jpg",
+  "logo": "./team_logo/SENRU.jpg",
   "stream_link": "https://www.twitch.tv/invicta_esport", 
   "is_live": true,
   "roster": [

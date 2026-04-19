@@ -2,7 +2,7 @@
   "id": "UIC_OBSIDIAN",
   "name": "UIC OBSIDIAN",
   "acronym": "UICOB",
-  "logo": "/team_logo/UIC_OBSIDIAN.png",
+  "logo": "./team_logo/UIC_OBSIDIAN.png",
   "stream_link": "", 
   "is_live": true,
   "roster": [
