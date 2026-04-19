@@ -832,7 +832,7 @@
     {
       "score_1": 0,
       "score_2": 0,
-      "winner_id": "RASSELBANDE_GMBH",
+      "winner_id": "RASSELBANDEN_GMBH",
       "status": "FINISHED",
       "id": "wb_r1_m3",
       "round": 1,
@@ -841,7 +841,7 @@
       "next_slot": 1,
       "loser_match_id": "lb_r1_m2",
       "loser_slot": 1,
-      "team_1": "RASSELBANDE_GMBH",
+      "team_1": "RASSELBANDEN_GMBH",
       "team_2": "[BYE]"
     },
     {
@@ -946,7 +946,7 @@
       "next_slot": 2,
       "loser_match_id": "lb_r2_m2",
       "loser_slot": 2,
-      "team_1": "RASSELBANDE_GMBH",
+      "team_1": "RASSELBANDEN_GMBH",
       "team_2": "UIC_NOVA"
     },
     {
