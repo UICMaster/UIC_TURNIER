@@ -3,6 +3,30 @@
   "name": "UIC Night",
   "acronym": "UICNT",
   "logo": "https://cdn0.heartbase.gg/league_team_logos/212000/212047.jpg?1768386989",
-  "stream_link": "", 
-  "is_live": true 
+  "stream_link": "https://www.twitch.tv/baumhaus_club", 
+  "is_live": true, 
+  "roster": [
+    { 
+      "name": "UIC Kuroko#Pass", 
+      "role": "Spieler", 
+      "is_captain": true 
+    },
+    { 
+      "name": "xtracox#EUW", 
+      "role": "Spieler" 
+    },
+    { 
+      "name": "Rham#4444", 
+      "role": "Spieler" 
+    },
+    { 
+      "name": "6GPA Eyez#5757", 
+      "role": "Spieler" 
+    },
+    { 
+      "name": "LookAtMe#Sup", 
+      "role": "Spieler" 
+    }
+  ]
 }
+
