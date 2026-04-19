@@ -18,7 +18,7 @@
       "id": "RASSELBANDEN_GMBH",
       "name": "RASSELBANDEN GMBH",
       "acronym": "RBG",
-      "logo": "/team_logo/RASSELBANDEN_GMBH.PNG",
+      "logo": "./team_logo/RASSELBANDEN_GMBH.PNG",
       "stream_link": "",
       "is_live": true,
       "roster": [
@@ -80,7 +80,7 @@
       "id": "SENRU",
       "name": "SENRU",
       "acronym": "SENRU",
-      "logo": "/team_logo/SENRU.jpg",
+      "logo": "./team_logo/SENRU.jpg",
       "stream_link": "https://www.twitch.tv/invicta_esport",
       "is_live": true,
       "roster": [
@@ -189,7 +189,7 @@
       "id": "UIC_OBSIDIAN",
       "name": "UIC OBSIDIAN",
       "acronym": "UICOB",
-      "logo": "/team_logo/UIC_OBSIDIAN.png",
+      "logo": "./team_logo/UIC_OBSIDIAN.png",
       "stream_link": "",
       "is_live": true,
       "roster": [
@@ -220,7 +220,7 @@
       "id": "UIC_OG",
       "name": "UIC OG",
       "acronym": "UICO",
-      "logo": "/team_logo/UIC_OG.png",
+      "logo": "./team_logo/UIC_OG.png",
       "stream_link": "https://twitch.tv/DiamondGoku",
       "is_live": true,
       "roster": [
@@ -259,7 +259,7 @@
       "id": "UIC_PRIME_+_ALEX",
       "name": "UIC PRIME + ALEX",
       "acronym": "UICP+A",
-      "logo": "/team_logo/UIC_PRIME_+_ALEX.png",
+      "logo": "./team_logo/UIC_PRIME_+_ALEX.png",
       "stream_link": "https://www.twitch.tv/uicspeedy",
       "is_live": true,
       "roster": [
