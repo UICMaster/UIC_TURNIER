@@ -2,7 +2,7 @@
   "id": "UIC_PRIME_+_ALEX",
   "name": "UIC PRIME + ALEX",
   "acronym": "UICP+A",
-  "logo": "./team_logo/UIC_PRIME_+_ALEX.png",
+  "logo": "/data/teams/team_logo/UIC_PRIME_+_ALEX.png",
   "stream_link": "https://www.twitch.tv/uicspeedy", 
   "is_live": true,
   "roster": [

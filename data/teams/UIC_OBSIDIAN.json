@@ -2,8 +2,8 @@
   "id": "UIC_OBSIDIAN",
   "name": "UIC OBSIDIAN",
   "acronym": "UICOB",
-  "logo": "./team_logo/UIC_OBSIDIAN.png",
-  "stream_link": "", 
+  "logo": "/data/teams/team_logo/UIC_OBSIDIAN.png",
+  "stream_link": "https://www.twitch.tv/ultrainstinctcrew", 
   "is_live": true,
   "roster": [
     { 

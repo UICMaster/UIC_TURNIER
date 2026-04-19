@@ -2,7 +2,7 @@
   "id": "UIC_OG",
   "name": "UIC OG",
   "acronym": "UICO",
-  "logo": "./team_logo/UIC_OG.png",
+  "logo": "/data/teams/team_logo/UIC_OG.png",
   "stream_link": "https://twitch.tv/DiamondGoku", 
   "is_live": true,
   "roster": [
