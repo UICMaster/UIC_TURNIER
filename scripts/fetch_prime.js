@@ -14,8 +14,7 @@ const TEAMS = {
     "UIC_NOVA":    { id: "203447", manual_div: "Division 6" },
     "W2B_CULT_EGO":   { id: "211922", manual_div: "Division 6" }, 
     "ODE_ABSOLUT_ZERO":   { id: "209281", manual_div: "Division 5" },
-    "UIC_EMBER":   { id: "211165", manual_div: "Division 6" },
-    "UIC_SAKURA":   { id: "208851", manual_div: "Division 5" }
+    "UIC_EMBER":   { id: "211165", manual_div: "Division 6" }
 };
 
 const HEADERS = { 'User-Agent': 'UIC-Dashboard-Bot/2.2' };
