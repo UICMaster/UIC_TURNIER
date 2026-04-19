@@ -4,5 +4,36 @@
   "acronym": "UICS",
   "logo": "https://cdn0.heartbase.gg/league_team_logos/208000/208851.jpg?1775950554",
   "stream_link": "https://www.twitch.tv/qraxell", 
-  "is_live": true 
+  "is_live": true, 
+  "roster": [
+    { 
+      "name": "아유무#Love", 
+      "role": "Spieler", 
+      "is_captain": true 
+    },
+    { 
+      "name": "라이쥬코#Love", 
+      "role": "Spieler" 
+    },
+    { 
+      "name": "UIC lightfire#4667", 
+      "role": "Spieler" 
+    },
+    { 
+      "name": "EkkoOnSupport#hehe", 
+      "role": "Spieler" 
+    },
+    { 
+      "name": "竈門炭治郎#Love", 
+      "role": "Spieler" 
+    },
+    { 
+      "name": "Nerf Yuno Pls#Riven", 
+      "role": "Ersatz" 
+    },
+    { 
+      "name": "Blauerlupos#EUW", 
+      "role": "Ersatz" 
+    }
+  ]
 }
