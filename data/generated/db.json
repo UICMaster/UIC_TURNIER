@@ -718,8 +718,8 @@
     {
       "score_1": 0,
       "score_2": 0,
-      "winner_id": "SENRU",
-      "status": "FINISHED",
+      "winner_id": null,
+      "status": "LIVE",
       "id": "wb_r1_m5",
       "round": 1,
       "type": "WINNER",
@@ -728,7 +728,7 @@
       "loser_match_id": "lb_r1_m3",
       "loser_slot": 1,
       "team_1": "SENRU",
-      "team_2": "[BYE]"
+      "team_2": "UIC_FREEZER"
     },
     {
       "score_1": 0,
@@ -817,7 +817,7 @@
       "next_slot": 1,
       "loser_match_id": "lb_r2_m3",
       "loser_slot": 1,
-      "team_1": "SENRU",
+      "team_1": null,
       "team_2": null
     },
     {
@@ -913,7 +913,7 @@
       "round": 1,
       "type": "LOSER",
       "next_match_id": "lb_r2_m3",
-      "team_1": "[BYE]",
+      "team_1": null,
       "team_2": null
     },
     {
