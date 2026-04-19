@@ -7,7 +7,7 @@ const DATA_FILE = 'prime_stats.json';
 const OUTPUT_PATH = path.resolve(__dirname, '../data', DATA_FILE);
 
 // Set this to the start of the current split
-const SEASON_START = new Date('2026-01-26T00:00:00'); 
+const SEASON_START = new Date('2026-04-01T00:00:00'); 
 
 const TEAMS = {
     "RISING_DAWN": { id: "212208", manual_div: "Kalibrierung" },
