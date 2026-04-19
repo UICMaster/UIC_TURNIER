@@ -1,0 +1,86 @@
+{
+  "UIC_NOVA": {
+    "id": "203447",
+    "key": "UIC_NOVA",
+    "meta": {
+      "name": "Ultra Instinct Crew Nova",
+      "div": "Division 6"
+    },
+    "stats": {
+      "wins": 0,
+      "losses": 0,
+      "points": 0,
+      "games": 0,
+      "win_rate": 0,
+      "form": []
+    },
+    "next_match": null,
+    "last_match": null,
+    "roster": [],
+    "team_link": "https://www.primeleague.gg/de/leagues/teams/203447",
+    "logo": "https://cdn0.heartbase.gg/league_team_logos/203000/203447.jpg?1768386652"
+  },
+  "W2B_CULT_EGO": {
+    "id": "211922",
+    "key": "W2B_CULT_EGO",
+    "meta": {
+      "name": "Wannabe Cult Ego Edition",
+      "div": "Division 6"
+    },
+    "stats": {
+      "wins": 0,
+      "losses": 0,
+      "points": 0,
+      "games": 0,
+      "win_rate": 0,
+      "form": []
+    },
+    "next_match": null,
+    "last_match": null,
+    "roster": [],
+    "team_link": "https://www.primeleague.gg/de/leagues/teams/211922",
+    "logo": "https://cdn0.heartbase.gg/league_team_logos/211000/211922.jpg?1768575164"
+  },
+  "ODE_ABSOLUT_ZERO": {
+    "id": "209281",
+    "key": "ODE_ABSOLUT_ZERO",
+    "meta": {
+      "name": "Overdue Absolute Zero",
+      "div": "Division 5"
+    },
+    "stats": {
+      "wins": 0,
+      "losses": 0,
+      "points": 0,
+      "games": 0,
+      "win_rate": 0,
+      "form": []
+    },
+    "next_match": null,
+    "last_match": null,
+    "roster": [],
+    "team_link": "https://www.primeleague.gg/de/leagues/teams/209281",
+    "logo": "https://cdn0.heartbase.gg/league_team_logos/209000/209281.jpg?1751621235"
+  },
+  "UIC_EMBER": {
+    "id": "211165",
+    "key": "UIC_EMBER",
+    "meta": {
+      "name": "Ultra Instinct Crew Ember",
+      "div": "Division 6"
+    },
+    "stats": {
+      "wins": 0,
+      "losses": 0,
+      "points": 0,
+      "games": 0,
+      "win_rate": 0,
+      "form": []
+    },
+    "next_match": null,
+    "last_match": null,
+    "roster": [],
+    "team_link": "https://www.primeleague.gg/de/leagues/teams/211165",
+    "logo": "https://cdn0.heartbase.gg/league_team_logos/211000/211165.jpg?1765449081"
+  }
+}
