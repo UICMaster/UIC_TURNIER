@@ -672,7 +672,7 @@
     {
       "score_1": 0,
       "score_2": 0,
-      "winner_id": "UIC_NOVA",
+      "winner_id": "UIC_PRIME_+_ALEX",
       "status": "FINISHED",
       "id": "wb_r1_m4",
       "round": 1,
@@ -681,13 +681,13 @@
       "next_slot": 2,
       "loser_match_id": "lb_r1_m2",
       "loser_slot": 2,
-      "team_1": "UIC_NOVA",
+      "team_1": "UIC_PRIME_+_ALEX",
       "team_2": "[BYE]"
     },
     {
       "score_1": 0,
       "score_2": 0,
-      "winner_id": "UIC_OBSIDIAN",
+      "winner_id": "SENRU",
       "status": "FINISHED",
       "id": "wb_r1_m5",
       "round": 1,
@@ -696,7 +696,7 @@
       "next_slot": 1,
       "loser_match_id": "lb_r1_m3",
       "loser_slot": 1,
-      "team_1": "UIC_OBSIDIAN",
+      "team_1": "SENRU",
       "team_2": "[BYE]"
     },
     {
@@ -711,8 +711,8 @@
       "next_slot": 2,
       "loser_match_id": "lb_r1_m3",
       "loser_slot": 2,
-      "team_1": "UIC_PRIME_+_ALEX",
-      "team_2": "SENRU"
+      "team_1": "UIC_NOVA",
+      "team_2": "UIC_OBSIDIAN"
     },
     {
       "score_1": 0,
@@ -726,8 +726,8 @@
       "next_slot": 1,
       "loser_match_id": "lb_r1_m4",
       "loser_slot": 1,
-      "team_1": "W2B_CULT_EGO",
-      "team_2": "UIC_SAKURA"
+      "team_1": "UIC_EMBER",
+      "team_2": "ODE_ABSOLUT_ZERO"
     },
     {
       "score_1": 0,
@@ -741,8 +741,8 @@
       "next_slot": 2,
       "loser_match_id": "lb_r1_m4",
       "loser_slot": 2,
-      "team_1": "ODE_ABSOLUT_ZERO",
-      "team_2": "UIC_EMBER"
+      "team_1": "W2B_CULT_EGO",
+      "team_2": "UIC_SAKURA"
     },
     {
       "score_1": 0,
@@ -772,7 +772,7 @@
       "loser_match_id": "lb_r2_m2",
       "loser_slot": 2,
       "team_1": "RASSELBANDEN_GMBH",
-      "team_2": "UIC_NOVA"
+      "team_2": "UIC_PRIME_+_ALEX"
     },
     {
       "score_1": 0,
@@ -786,7 +786,7 @@
       "next_slot": 1,
       "loser_match_id": "lb_r2_m3",
       "loser_slot": 1,
-      "team_1": "UIC_OBSIDIAN",
+      "team_1": "SENRU",
       "team_2": null
     },
     {
