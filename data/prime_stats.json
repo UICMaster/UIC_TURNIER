@@ -84,6 +84,10 @@
         "is_captain": true
       },
       {
+        "summoner": "Wannabe Senpai#W2B",
+        "is_captain": true
+      },
+      {
         "summoner": "TheXcore#DANTE",
         "is_captain": false
       },
@@ -131,10 +135,6 @@
       },
       {
         "summoner": "Knokkelmann#ODE",
-        "is_captain": true
-      },
-      {
-        "summoner": "아유무#Love",
         "is_captain": true
       },
       {
@@ -186,6 +186,10 @@
       {
         "summoner": "UIC FreeLP#UIC",
         "is_captain": false
+      },
+      {
+        "summoner": "UIC Cerberus#GOATZ",
+        "is_captain": true
       }
     ],
     "team_link": "https://www.primeleague.gg/de/leagues/teams/211165",
