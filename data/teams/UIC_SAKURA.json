@@ -1,6 +1,6 @@
 {
   "id": "UIC_SAKURA",
-  "name": "UIC SAKURA",
+  "name": "UIC Sakura",
   "acronym": "UICS",
   "logo": "https://cdn0.heartbase.gg/league_team_logos/208000/208851.jpg?1775950554",
   "stream_link": "https://www.twitch.tv/qraxell", 
@@ -12,7 +12,7 @@
       "is_captain": true 
     },
     { 
-      "name": "라이쥬코#Love", 
+      "name": "Blauerlupos#EUW", 
       "role": "Spieler" 
     },
     { 
@@ -32,7 +32,7 @@
       "role": "Ersatz" 
     },
     { 
-      "name": "Blauerlupos#EUW", 
+      "name": "라이쥬코#Love", 
       "role": "Ersatz" 
     }
   ]

@@ -3,5 +3,33 @@
   "name": "Wannabe Cult Ego Edition",
   "acronym": "W2B EG",
   "logo": "https://cdn0.heartbase.gg/league_team_logos/211000/211922.jpg?1768575164",
-  "stream_link": "https://www.twitch.tv/ultrainstinctcrew"
+  "stream_link": "https://www.twitch.tv/ultrainstinctcrew", 
+  "is_live": true,
+  "roster": [
+    { 
+      "name": "Facking Luigi#EUW", 
+      "role": "Spieler", 
+      "is_captain": true 
+    },
+    { 
+      "name": "Yagizza#Dexi", 
+      "role": "Spieler" 
+    },
+    { 
+      "name": "bubblefush#YEET", 
+      "role": "Spieler" 
+    },
+    { 
+      "name": "TheWhiteWolf#ADC", 
+      "role": "Spieler" 
+    },
+    { 
+      "name": "Estarossa#U7G", 
+      "role": "Spieler" 
+    },
+    { 
+      "name": "Igel#W2BCK", 
+      "role": "Spieler" 
+    }
+  ]
 }
