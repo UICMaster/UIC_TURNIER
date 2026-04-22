@@ -52,7 +52,7 @@
             "is_captain": true
           },
           {
-            "summoner": "아유무#Love",
+            "summoner": "UIC Ayumu#LoveK",
             "is_captain": true
           },
           {
@@ -66,7 +66,7 @@
     },
     "RASSELBANDEN_GMBH": {
       "id": "RASSELBANDEN_GMBH",
-      "name": "RASSELBANDEN GMBH",
+      "name": "Rasselbanden GmbH",
       "acronym": "RBG",
       "logo": "/data/teams/team_logo/RASSELBANDEN_GMBH.PNG",
       "stream_link": "https://www.twitch.tv/ultrainstinctcrew",
@@ -128,7 +128,7 @@
     },
     "SENRU": {
       "id": "SENRU",
-      "name": "SENRU",
+      "name": "Senru",
       "acronym": "SENRU",
       "logo": "/data/teams/team_logo/SENRU.jpg",
       "stream_link": "https://www.twitch.tv/invicta_esport",
@@ -230,10 +230,6 @@
         "last_match": null,
         "roster": [
           {
-            "summoner": "ResetHoe#Kata",
-            "is_captain": false
-          },
-          {
             "summoner": "UIC ソニック#0815",
             "is_captain": false
           },
@@ -319,7 +315,7 @@
           "role": "Spieler"
         },
         {
-          "name": "Rham#4444",
+          "name": "GetUrBoody#EUW",
           "role": "Spieler"
         },
         {
@@ -369,7 +365,7 @@
             "is_captain": false
           },
           {
-            "summoner": "ThisIsMeTrying#1919",
+            "summoner": "UIC Deavan#UIC",
             "is_captain": false
           },
           {
@@ -391,7 +387,7 @@
     },
     "UIC_OBSIDIAN": {
       "id": "UIC_OBSIDIAN",
-      "name": "UIC OBSIDIAN",
+      "name": "UIC Obsidian",
       "acronym": "UICOB",
       "logo": "/data/teams/team_logo/UIC_OBSIDIAN.png",
       "stream_link": "https://www.twitch.tv/ultrainstinctcrew",
@@ -422,7 +418,7 @@
     },
     "UIC_OG": {
       "id": "UIC_OG",
-      "name": "UIC OG",
+      "name": "UIC Og",
       "acronym": "UICO",
       "logo": "/data/teams/team_logo/UIC_OG.png",
       "stream_link": "https://twitch.tv/DiamondGoku",
@@ -461,7 +457,7 @@
     },
     "UIC_PRIME_+_ALEX": {
       "id": "UIC_PRIME_+_ALEX",
-      "name": "UIC PRIME + ALEX",
+      "name": "UIC Prime + Alex",
       "acronym": "UICP+A",
       "logo": "/data/teams/team_logo/UIC_PRIME_+_ALEX.png",
       "stream_link": "https://www.twitch.tv/uicspeedy",
@@ -500,7 +496,7 @@
     },
     "UIC_SAKURA": {
       "id": "UIC_SAKURA",
-      "name": "UIC SAKURA",
+      "name": "UIC Sakura",
       "acronym": "UICS",
       "logo": "https://cdn0.heartbase.gg/league_team_logos/208000/208851.jpg?1775950554",
       "stream_link": "https://www.twitch.tv/qraxell",
@@ -512,7 +508,7 @@
           "is_captain": true
         },
         {
-          "name": "라이쥬코#Love",
+          "name": "Blauerlupos#EUW",
           "role": "Spieler"
         },
         {
@@ -532,7 +528,7 @@
           "role": "Ersatz"
         },
         {
-          "name": "Blauerlupos#EUW",
+          "name": "라이쥬코#Love",
           "role": "Ersatz"
         }
       ]
@@ -559,6 +555,34 @@
       "acronym": "W2B EG",
       "logo": "https://cdn0.heartbase.gg/league_team_logos/211000/211922.jpg?1768575164",
       "stream_link": "https://www.twitch.tv/ultrainstinctcrew",
+      "is_live": true,
+      "roster": [
+        {
+          "name": "Facking Luigi#EUW",
+          "role": "Spieler",
+          "is_captain": true
+        },
+        {
+          "name": "Yagizza#Dexi",
+          "role": "Spieler"
+        },
+        {
+          "name": "bubblefush#YEET",
+          "role": "Spieler"
+        },
+        {
+          "name": "TheWhiteWolf#ADC",
+          "role": "Spieler"
+        },
+        {
+          "name": "Estarossa#U7G",
+          "role": "Spieler"
+        },
+        {
+          "name": "Igel#W2BCK",
+          "role": "Spieler"
+        }
+      ],
       "prime_intel": {
         "id": "211922",
         "key": "W2B_CULT_EGO",
