@@ -88,10 +88,6 @@
         "is_captain": true
       },
       {
-        "summoner": "UIC Ayumu#LoveK",
-        "is_captain": true
-      },
-      {
         "summoner": "Npunkt#ODE",
         "is_captain": true
       }
@@ -140,6 +136,10 @@
       {
         "summoner": "UIC FreeLP#UIC",
         "is_captain": false
+      },
+      {
+        "summoner": "UIC Cerberus#GOATZ",
+        "is_captain": true
       }
     ],
     "team_link": "https://www.primeleague.gg/de/leagues/teams/211165",
