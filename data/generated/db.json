@@ -252,6 +252,10 @@
           {
             "summoner": "UIC FreeLP#UIC",
             "is_captain": false
+          },
+          {
+            "summoner": "UIC Cerberus#GOATZ",
+            "is_captain": true
           }
         ],
         "team_link": "https://www.primeleague.gg/de/leagues/teams/211165",
@@ -713,8 +717,8 @@
     {
       "score_1": 1,
       "score_2": 0,
-      "winner_id": null,
-      "status": "LIVE",
+      "winner_id": "ODE_ABSOLUT_ZERO",
+      "status": "FINISHED",
       "id": "wb_r2_m1",
       "round": 2,
       "type": "WINNER",
@@ -782,7 +786,7 @@
       "next_slot": 1,
       "loser_match_id": "lb_r4_m1",
       "loser_slot": 1,
-      "team_1": null,
+      "team_1": "ODE_ABSOLUT_ZERO",
       "team_2": null
     },
     {
@@ -866,14 +870,14 @@
     {
       "score_1": 0,
       "score_2": 0,
-      "winner_id": null,
-      "status": "WAITING",
+      "winner_id": "RISING_DAWN",
+      "status": "FINISHED",
       "id": "lb_r2_m1",
       "round": 2,
       "type": "LOSER",
       "next_match_id": "lb_r3_m1",
-      "team_1": "[BYE]",
-      "team_2": null
+      "team_1": "RISING_DAWN",
+      "team_2": "[BYE]"
     },
     {
       "score_1": 0,
@@ -920,7 +924,7 @@
       "round": 3,
       "type": "LOSER",
       "next_match_id": "lb_r4_m1",
-      "team_1": null,
+      "team_1": "RISING_DAWN",
       "team_2": null
     },
     {
