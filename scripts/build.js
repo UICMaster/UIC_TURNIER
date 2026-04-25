@@ -30,10 +30,17 @@ class TournamentEngine {
                 
                 const nextSlot = (i % 2 === 0) ? 1 : 2;
                 
+                // ALTERNATING CROSS-OVERS LOGIC
                 let loserId = null;
-                if (r === 1) loserId = `lb_r1_m${Math.ceil((i+1)/2)}`;
-                else if (!isFinal) loserId = `lb_r${(r-1)*2}_m${i+1}`; 
-                else loserId = `lb_r${(wbRounds-1)*2}_m1`;
+                if (r === 1) {
+                    loserId = `lb_r1_m${Math.ceil((i+1)/2)}`;
+                } else if (!isFinal) {
+                    const shouldCross = (r % 2 === 0);
+                    const targetMatch = shouldCross ? (count - i) : (i + 1);
+                    loserId = `lb_r${(r-1)*2}_m${targetMatch}`; 
+                } else {
+                    loserId = `lb_r${(wbRounds-1)*2}_m1`;
+                }
                 
                 const t1 = (r === 1) ? this.seeded[i] : null;
                 const t2 = (r === 1) ? this.seeded[this.totalSlots - 1 - i] : null;
@@ -78,9 +85,10 @@ class TournamentEngine {
 
     processUpdates() {
         let changed = true;
+        const map = new Map(this.matches.map(m => [m.id, m]));
+        
         while(changed) {
             changed = false;
-            const map = new Map(this.matches.map(m => [m.id, m]));
             
             this.matches.forEach(m => {
                 if (m.winner_id) return; 
@@ -160,7 +168,6 @@ if (fs.existsSync(PRIME_STATS_FILE)) {
     try {
         const primeData = JSON.parse(fs.readFileSync(PRIME_STATS_FILE));
         for (const [key, pTeam] of Object.entries(primeData)) {
-            // 'key' ist jetzt exakt die System-ID (z.B. "UIC_EMBER" oder "BERLIN_BEARS")!
             if (teams[key]) {
                 teams[key].prime_intel = pTeam;
             }
@@ -182,10 +189,13 @@ if (fs.existsSync(OUTPUT_FILE)) {
             if (o) { 
                 m.score_1 = Number(o.score_1) || 0; 
                 m.score_2 = Number(o.score_2) || 0; 
-                if (o.details) m.details = o.details; // Wichtig, falls du VODs eingetragen hast!
+                if (o.details) m.details = o.details; 
             }
         });
-    } catch(e) {}
+    } catch(e) {
+        console.error("CRITICAL ERROR: Failed to parse existing DB. Halting to prevent data loss.", e);
+        process.exit(1); 
+    }
 }
 
 engine.processUpdates();
