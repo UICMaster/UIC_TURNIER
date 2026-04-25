@@ -1,0 +1,52 @@
+{
+  "ODE_ABSOLUT_ZERO": {
+    "id": "209281",
+    "key": "ODE_ABSOLUT_ZERO",
+    "meta": {
+      "name": "Overdue Absolute Zero",
+      "div": "Division 5"
+    },
+    "stats": {
+      "wins": 0,
+      "losses": 0,
+      "points": 0,
+      "games": 0,
+      "win_rate": 0,
+      "form": []
+    },
+    "next_match": null,
+    "last_match": null,
+    "roster": [
+      {
+        "summoner": "LBfromCB#EUW",
+        "is_captain": false
+      },
+      {
+        "summoner": "gurke#ODE",
+        "is_captain": false
+      },
+      {
+        "summoner": "Lolevel#ODE",
+        "is_captain": true
+      },
+      {
+        "summoner": "KiwitoMate#ODE",
+        "is_captain": true
+      },
+      {
+        "summoner": "Knokkelmann#ODE",
+        "is_captain": true
+      },
+      {
+        "summoner": "UIC Ayumu#LoveK",
+        "is_captain": true
+      },
+      {
+        "summoner": "Npunkt#ODE",
+        "is_captain": true
+      }
+    ],
+    "team_link": "https://www.primeleague.gg/de/leagues/teams/209281",
+    "logo": "https://cdn0.heartbase.gg/league_team_logos/209000/209281.jpg?1751621235"
+  }
+}
