@@ -793,8 +793,8 @@
     {
       "score_1": 0,
       "score_2": 1,
-      "winner_id": null,
-      "status": "LIVE",
+      "winner_id": "UIC_OBSIDIAN",
+      "status": "FINISHED",
       "id": "lb_r1_m3",
       "round": 1,
       "type": "LOSER",
@@ -847,7 +847,7 @@
       "round": 2,
       "type": "LOSER",
       "next_match_id": "lb_r3_m2",
-      "team_1": null,
+      "team_1": "UIC_OBSIDIAN",
       "team_2": null
     },
     {
