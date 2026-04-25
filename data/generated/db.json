@@ -964,8 +964,8 @@
     {
       "score_1": 3,
       "score_2": 0,
-      "winner_id": null,
-      "status": "LIVE",
+      "winner_id": "RASSELBANDEN_GMBH",
+      "status": "FINISHED",
       "id": "gf_m1",
       "round": 5,
       "type": "WINNER",
