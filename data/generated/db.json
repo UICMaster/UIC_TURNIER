@@ -889,8 +889,8 @@
     {
       "score_1": 1,
       "score_2": 0,
-      "winner_id": null,
-      "status": "LIVE",
+      "winner_id": "ODE_ABSOLUT_ZERO",
+      "status": "FINISHED",
       "id": "lb_r4_m1",
       "round": 4,
       "type": "LOSER",
@@ -919,7 +919,7 @@
       "round": 5,
       "type": "LOSER",
       "next_match_id": "lb_r6_m1",
-      "team_1": null,
+      "team_1": "ODE_ABSOLUT_ZERO",
       "team_2": null
     },
     {
