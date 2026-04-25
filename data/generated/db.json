@@ -868,8 +868,8 @@
     {
       "score_1": 0,
       "score_2": 1,
-      "winner_id": null,
-      "status": "LIVE",
+      "winner_id": "UIC_NIGHT",
+      "status": "FINISHED",
       "id": "lb_r2_m3",
       "round": 2,
       "type": "LOSER",
@@ -910,7 +910,7 @@
       "round": 3,
       "type": "LOSER",
       "next_match_id": "lb_r4_m2",
-      "team_1": null,
+      "team_1": "UIC_NIGHT",
       "team_2": null
     },
     {
