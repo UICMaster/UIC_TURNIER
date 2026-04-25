@@ -34,7 +34,15 @@ function escapeHTML(str) {
 
 async function init() {
     await fetchAndRender();
-    setInterval(fetchAndRender, 30000); // 30-Sekunden Geister-Update
+    startGhostUpdate();
+}
+
+function startGhostUpdate() {
+    // SAFE POLLING: Only starts the 30s timer after the previous fetch is complete
+    setTimeout(async () => {
+        await fetchAndRender();
+        startGhostUpdate(); 
+    }, 30000);
 }
 
 async function fetchAndRender() {
@@ -56,7 +64,6 @@ async function fetchAndRender() {
 }
 
 function updateUI(db) {
-    // Normalizes the status string to uppercase and protects against null values
     const s = (db.meta.status || '').toUpperCase(); 
     
     document.querySelectorAll('.view-section').forEach(el => el.classList.add('hidden'));
@@ -76,7 +83,7 @@ function updateUI(db) {
         renderTeamStreams(db.teams);
         renderBracket(db.bracket, db.teams);
         setupHoverEffects();
-        setupPanelEvents(); // Klick-Events für Side Panel
+        setupPanelEvents(); 
         checkChampion(db.bracket, db.teams);
 
     } else {
@@ -84,7 +91,7 @@ function updateUI(db) {
     }
 }
 
-// --- NEW STREAM TRACKER LOGIC ---
+// --- STREAM TRACKER LOGIC ---
 let cachedStreamData = null;
 let lastStreamCheckTime = 0;
 const STREAM_CHECK_COOLDOWN = 3 * 60 * 1000; // 3 Minutes Cooldown
@@ -92,33 +99,27 @@ const STREAM_CHECK_COOLDOWN = 3 * 60 * 1000; // 3 Minutes Cooldown
 async function renderTeamStreams(teams) {
     const container = document.getElementById('team-streams-container');
     
-    // Filter teams that actually have a Twitch link (and aren't BYE)
     const teamsArray = Object.values(teams).filter(t => t.id !== '[BYE]' && t.stream_link && t.stream_link.includes('twitch.tv'));
     if (teamsArray.length === 0) return;
     
     container.classList.remove('hidden');
 
     const now = Date.now();
-    // Only ping DecAPI if we have no cache, or if 3 minutes have passed
     if (!cachedStreamData || (now - lastStreamCheckTime > STREAM_CHECK_COOLDOWN)) {
         
-        // Show a loading state only on the very first load
         if (!cachedStreamData) {
             container.innerHTML = '<p class="text-muted" style="width:100%; text-align:center; font-family:var(--font-head); letter-spacing:2px;">SCANNING FREQUENCIES...</p>';
         }
 
-        // Process all streams simultaneously
         cachedStreamData = await Promise.all(teamsArray.map(async (t) => {
             let isLiveDynamic = false;
             try {
-                // Extract username from URL (e.g., https://twitch.tv/uic_gaming -> uic_gaming)
                 const match = t.stream_link.match(/twitch\.tv\/([^/?]+)/);
                 if (match && match[1]) {
                     const username = match[1];
                     const res = await fetch(`https://decapi.me/twitch/uptime/${username}`);
                     const text = await res.text();
                     
-                    // DecAPI returns "[username] is offline" if offline.
                     isLiveDynamic = !text.includes('is offline') && !text.includes('Channel not found');
                 }
             } catch (e) {
@@ -130,12 +131,10 @@ async function renderTeamStreams(teams) {
         lastStreamCheckTime = now;
     }
 
-    // SORTING: Live streams first
     const liveTeams = cachedStreamData.filter(t => t.is_live_dynamic);
     const offlineTeams = cachedStreamData.filter(t => !t.is_live_dynamic);
     const sortedTeams = [...liveTeams, ...offlineTeams];
 
-    // RENDER
     container.innerHTML = '';
     sortedTeams.forEach(t => {
         const a = document.createElement('a');
@@ -389,7 +388,6 @@ function setupPanelEvents() {
     const overlay = document.getElementById('modal-overlay');
     const closeBtn = document.getElementById('close-modal');
     
-    // Modal schließen bei Klick auf Hintergrund oder X
     overlay.onclick = (e) => {
         if (e.target === overlay) closeModal();
     };
@@ -458,7 +456,6 @@ function openTeamModal(teamId) {
             let textColor = '#aaa';
             if (f === 'W') { color = 'rgba(0, 240, 255, 0.1)'; textColor = 'var(--primary)'; }
             if (f === 'L') { color = 'rgba(255, 0, 60, 0.1)'; textColor = '#ff003c'; }
-            // Kleinere, präzisere Boxen für W/L
             return `<span style="display:inline-block; width:18px; height:18px; line-height:16px; text-align:center; background:${color}; color:${textColor}; font-size: 0.7rem; font-weight:normal; border:1px solid rgba(255,255,255,0.05); margin-right:3px;">${f}</span>`;
         }).join('');
 
@@ -507,14 +504,59 @@ function openTeamModal(teamId) {
     showModal();
 }
 
+function openMatchModal(matchId) {
+    const match = globalBracket.find(m => m.id === matchId);
+    if (!match) return;
+
+    const t1 = resolve(match.team_1, globalTeams);
+    const t2 = resolve(match.team_2, globalTeams);
+
+    const content = document.getElementById('modal-content');
+    
+    let matchDetails = '';
+    if (match.details) {
+        matchDetails = `
+            <div style="margin-top: 1.5rem; padding: 1rem; background: rgba(255,255,255,0.05); border-left: 2px solid var(--primary); text-align: left;">
+                <span class="hud-label">MATCH DETAILS / VOD</span>
+                <p style="margin-top: 0.5rem; color: var(--text-muted); font-size: 0.9rem;">${escapeHTML(match.details)}</p>
+            </div>
+        `;
+    }
+
+    content.innerHTML = `
+        <div class="modal-split" style="flex-direction: column; text-align: center;">
+            <span class="hud-label" style="color: var(--primary);">MATCH ID: ${match.id} | STATUS: ${match.status}</span>
+            
+            <div style="display: flex; justify-content: space-around; align-items: center; width: 100%; margin: 2rem 0;">
+                
+                <div style="text-align: center; width: 40%;">
+                    ${t1.logo ? `<img src="${t1.logo}" style="width:80px; height:80px; object-fit:contain; margin-bottom: 1rem; filter: drop-shadow(0 0 5px rgba(255,255,255,0.1));">` : ''}
+                    <h3 style="color: #fff; font-size: 1.2rem; margin-bottom: 0.5rem;">${escapeHTML(t1.name)}</h3>
+                    <div style="font-size: 3rem; font-family: var(--font-head); color: ${match.winner_id === match.team_1 ? 'var(--primary)' : '#fff'};">${match.score_1}</div>
+                </div>
+
+                <div style="font-family: var(--font-head); color: var(--text-muted); font-size: 1.5rem;">VS</div>
+
+                <div style="text-align: center; width: 40%;">
+                    ${t2.logo ? `<img src="${t2.logo}" style="width:80px; height:80px; object-fit:contain; margin-bottom: 1rem; filter: drop-shadow(0 0 5px rgba(255,255,255,0.1));">` : ''}
+                    <h3 style="color: #fff; font-size: 1.2rem; margin-bottom: 0.5rem;">${escapeHTML(t2.name)}</h3>
+                    <div style="font-size: 3rem; font-family: var(--font-head); color: ${match.winner_id === match.team_2 ? 'var(--primary)' : '#fff'};">${match.score_2}</div>
+                </div>
+                
+            </div>
+            ${matchDetails}
+        </div>
+    `;
+
+    showModal();
+}
+
 function showModal() {
     const overlay = document.getElementById('modal-overlay');
     overlay.classList.remove('hidden'); 
     
-    // NEU: Scrollen der Hauptseite blockieren!
     document.body.style.overflow = 'hidden';
     
-    // Kleiner Delay, damit die CSS-Transition (Fade & Scale) feuert
     setTimeout(() => {
         overlay.classList.add('active');
     }, 10);
@@ -524,10 +566,8 @@ function closeModal() {
     const overlay = document.getElementById('modal-overlay');
     overlay.classList.remove('active');
     
-    // NEU: Scrollen der Hauptseite wieder freigeben!
     document.body.style.overflow = '';
     
-    // Warten, bis die CSS-Transition fertig ist, bevor es aus dem DOM verschwindet
     setTimeout(() => {
         overlay.classList.add('hidden');
     }, 300);
