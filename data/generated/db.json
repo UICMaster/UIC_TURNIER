@@ -901,8 +901,8 @@
     {
       "score_1": 1,
       "score_2": 0,
-      "winner_id": null,
-      "status": "LIVE",
+      "winner_id": "RASSELBANDEN_GMBH",
+      "status": "FINISHED",
       "id": "lb_r4_m2",
       "round": 4,
       "type": "LOSER",
@@ -914,13 +914,13 @@
       "score_1": 0,
       "score_2": 0,
       "winner_id": null,
-      "status": "WAITING",
+      "status": "LIVE",
       "id": "lb_r5_m1",
       "round": 5,
       "type": "LOSER",
       "next_match_id": "lb_r6_m1",
       "team_1": "ODE_ABSOLUT_ZERO",
-      "team_2": null
+      "team_2": "RASSELBANDEN_GMBH"
     },
     {
       "score_1": 0,
