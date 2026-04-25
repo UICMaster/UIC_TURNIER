@@ -342,6 +342,30 @@
       "acronym": "UICN",
       "logo": "https://cdn0.heartbase.gg/league_team_logos/203000/203447.jpg?1768386652",
       "stream_link": "https://www.twitch.tv/ultrainstinctcrew",
+      "is_live": true,
+      "roster": [
+        {
+          "name": "UIC Excellent C#1997",
+          "role": "Spieler",
+          "is_captain": true
+        },
+        {
+          "name": "UIC Kaetaya#XwX",
+          "role": "Spieler"
+        },
+        {
+          "name": "UIC Boohunter#Boo",
+          "role": "Spieler"
+        },
+        {
+          "name": "UIC adedier#EUWE",
+          "role": "Spieler"
+        },
+        {
+          "name": "Senseise#1998",
+          "role": "Ersatz"
+        }
+      ],
       "prime_intel": {
         "id": "203447",
         "key": "UIC_NOVA",
