@@ -634,8 +634,8 @@
     {
       "score_1": 0,
       "score_2": 1,
-      "winner_id": null,
-      "status": "LIVE",
+      "winner_id": "UIC_OG",
+      "status": "FINISHED",
       "id": "wb_r1_m7",
       "round": 1,
       "type": "WINNER",
@@ -710,7 +710,7 @@
       "score_1": 0,
       "score_2": 0,
       "winner_id": null,
-      "status": "WAITING",
+      "status": "LIVE",
       "id": "wb_r2_m4",
       "round": 2,
       "type": "WINNER",
@@ -718,7 +718,7 @@
       "next_slot": 2,
       "loser_match_id": "lb_r2_m1",
       "loser_slot": 2,
-      "team_1": null,
+      "team_1": "UIC_OG",
       "team_2": "UIC_SAKURA"
     },
     {
@@ -806,12 +806,12 @@
       "score_1": 0,
       "score_2": 0,
       "winner_id": null,
-      "status": "WAITING",
+      "status": "LIVE",
       "id": "lb_r1_m4",
       "round": 1,
       "type": "LOSER",
       "next_match_id": "lb_r2_m4",
-      "team_1": null,
+      "team_1": "UIC_EMBER",
       "team_2": "W2B_CULT_EGO"
     },
     {
