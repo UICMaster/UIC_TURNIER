@@ -619,8 +619,8 @@
     {
       "score_1": 1,
       "score_2": 0,
-      "winner_id": null,
-      "status": "LIVE",
+      "winner_id": "UIC_NOVA",
+      "status": "FINISHED",
       "id": "wb_r1_m6",
       "round": 1,
       "type": "WINNER",
@@ -695,7 +695,7 @@
       "score_1": 0,
       "score_2": 0,
       "winner_id": null,
-      "status": "WAITING",
+      "status": "LIVE",
       "id": "wb_r2_m3",
       "round": 2,
       "type": "WINNER",
@@ -704,7 +704,7 @@
       "loser_match_id": "lb_r2_m2",
       "loser_slot": 1,
       "team_1": "UIC_FREEZER",
-      "team_2": null
+      "team_2": "UIC_NOVA"
     },
     {
       "score_1": 0,
@@ -794,13 +794,13 @@
       "score_1": 0,
       "score_2": 0,
       "winner_id": null,
-      "status": "WAITING",
+      "status": "LIVE",
       "id": "lb_r1_m3",
       "round": 1,
       "type": "LOSER",
       "next_match_id": "lb_r2_m3",
       "team_1": "SENRU",
-      "team_2": null
+      "team_2": "UIC_OBSIDIAN"
     },
     {
       "score_1": 0,
