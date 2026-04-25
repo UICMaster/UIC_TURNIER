@@ -679,8 +679,8 @@
     {
       "score_1": 0,
       "score_2": 1,
-      "winner_id": null,
-      "status": "LIVE",
+      "winner_id": "UIC_PRIME_+_ALEX",
+      "status": "FINISHED",
       "id": "wb_r2_m2",
       "round": 2,
       "type": "WINNER",
@@ -709,8 +709,8 @@
     {
       "score_1": 0,
       "score_2": 1,
-      "winner_id": null,
-      "status": "LIVE",
+      "winner_id": "UIC_SAKURA",
+      "status": "FINISHED",
       "id": "wb_r2_m4",
       "round": 2,
       "type": "WINNER",
@@ -725,7 +725,7 @@
       "score_1": 0,
       "score_2": 0,
       "winner_id": null,
-      "status": "WAITING",
+      "status": "LIVE",
       "id": "wb_r3_m1",
       "round": 3,
       "type": "WINNER",
@@ -734,7 +734,7 @@
       "loser_match_id": "lb_r4_m1",
       "loser_slot": 1,
       "team_1": "ODE_ABSOLUT_ZERO",
-      "team_2": null
+      "team_2": "UIC_PRIME_+_ALEX"
     },
     {
       "score_1": 0,
@@ -749,7 +749,7 @@
       "loser_match_id": "lb_r4_m2",
       "loser_slot": 2,
       "team_1": null,
-      "team_2": null
+      "team_2": "UIC_SAKURA"
     },
     {
       "score_1": 0,
@@ -817,14 +817,14 @@
     {
       "score_1": 0,
       "score_2": 0,
-      "winner_id": null,
-      "status": "WAITING",
+      "winner_id": "UIC_OG",
+      "status": "FINISHED",
       "id": "lb_r2_m1",
       "round": 2,
       "type": "LOSER",
       "next_match_id": "lb_r3_m1",
       "team_1": "[BYE]",
-      "team_2": null
+      "team_2": "UIC_OG"
     },
     {
       "score_1": 0,
@@ -842,13 +842,13 @@
       "score_1": 0,
       "score_2": 0,
       "winner_id": null,
-      "status": "WAITING",
+      "status": "LIVE",
       "id": "lb_r2_m3",
       "round": 2,
       "type": "LOSER",
       "next_match_id": "lb_r3_m2",
       "team_1": "UIC_OBSIDIAN",
-      "team_2": null
+      "team_2": "RASSELBANDEN_GMBH"
     },
     {
       "score_1": 0,
@@ -871,7 +871,7 @@
       "round": 3,
       "type": "LOSER",
       "next_match_id": "lb_r4_m1",
-      "team_1": null,
+      "team_1": "UIC_OG",
       "team_2": null
     },
     {
