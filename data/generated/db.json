@@ -766,8 +766,8 @@
     {
       "score_1": 1,
       "score_2": 0,
-      "winner_id": null,
-      "status": "LIVE",
+      "winner_id": "SENRU",
+      "status": "FINISHED",
       "id": "wb_r3_m2",
       "round": 3,
       "type": "WINNER",
@@ -782,7 +782,7 @@
       "score_1": 0,
       "score_2": 0,
       "winner_id": null,
-      "status": "WAITING",
+      "status": "LIVE",
       "id": "wb_r4_m1",
       "round": 4,
       "type": "WINNER",
@@ -791,7 +791,7 @@
       "loser_match_id": "lb_r6_m1",
       "loser_slot": 1,
       "team_1": "RASSELBANDEN_GMBH",
-      "team_2": null
+      "team_2": "SENRU"
     },
     {
       "score_1": 0,
@@ -935,7 +935,7 @@
       "type": "LOSER",
       "next_match_id": "lb_r5_m1",
       "team_1": null,
-      "team_2": null
+      "team_2": "UIC_SAKURA"
     },
     {
       "score_1": 0,
