@@ -646,8 +646,8 @@
     {
       "score_1": 1,
       "score_2": 0,
-      "winner_id": null,
-      "status": "LIVE",
+      "winner_id": "UIC_NOVA",
+      "status": "FINISHED",
       "id": "wb_r1_m6",
       "round": 1,
       "type": "WINNER",
@@ -731,7 +731,7 @@
       "loser_match_id": "lb_r2_m2",
       "loser_slot": 1,
       "team_1": null,
-      "team_2": null
+      "team_2": "UIC_NOVA"
     },
     {
       "score_1": 0,
@@ -827,7 +827,7 @@
       "type": "LOSER",
       "next_match_id": "lb_r2_m3",
       "team_1": null,
-      "team_2": null
+      "team_2": "UIC_OBSIDIAN"
     },
     {
       "score_1": 0,
