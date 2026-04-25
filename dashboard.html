@@ -1,64 +1,27 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <!--- basic page needs
-    ================================================== -->
     <meta charset="utf-8">
     <title>Ultra Instinct Crew | Dashboard</title>
-    <meta name="description" content="  UIC LEAGUE OF LEGENDS TURNIER: Erlebe E-Sports auf Prime League Niveau. 
+    <meta name="description" content="UIC LEAGUE OF LEGENDS TURNIER: Erlebe E-Sports auf Prime League Niveau. 
                                         Tritt an im LoL Tournament, dominiere das Double Elimination Bracket 
                                         und beweise deinen Skill auf EUW. Absolute Integrität trifft High-Level Gameplay.">
     <meta name="author" content="proStarII">
     <link rel="canonical" href="https://turnier.ultrainstinctcrew.com/">
 
-    <!-- mobile specific metas
-    ================================================== -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-    <!-- Manifest
-    ================================================== -->
     <meta name="theme-color" content="#0b0b0c">
 
-    <!-- Script
-    ================================================== -->
-    <meta http-equiv="refresh" content="30">
-
-    <!-- CSS
-    ================================================== -->
     <link rel="stylesheet" href="assets/css/main_v2.css">
 
-    <!-- favicons
-    ================================================== -->
     <link rel="icon" href="favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-
-    <!-- Open Graph
-    ================================================== -->
-    <meta property="og:title" content="Ultra Instinct Crew | Dashboard">
-    <meta property="og:description" content="   UIC LEAGUE OF LEGENDS TURNIER: Erlebe E-Sports auf Prime League Niveau. 
-                                                Tritt an im LoL Tournament, dominiere das Double Elimination Bracket 
-                                                und beweise deinen Skill auf EUW. Absolute Integrität trifft High-Level Gameplay.">
-    <meta property="og:image" content="https://turnier.ultrainstinctcrew.com/icon512_maskable.png">
-    <meta property="og:url" content="https://turnier.ultrainstinctcrew.com/">
-    <meta property="og:type" content="website">
-
-    <!-- Twitter
-    ================================================== -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Ultra Instinct Crew | Dashboard">
-    <meta name="twitter:description" content="  UIC LEAGUE OF LEGENDS TURNIER: Erlebe E-Sports auf Prime League Niveau. 
-                                                Tritt an im LoL Tournament, dominiere das Double Elimination Bracket 
-                                                und beweise deinen Skill auf EUW. Absolute Integrität trifft High-Level Gameplay.">
-    <meta name="twitter:image" content="https://turnier.ultrainstinctcrew.com/icon512_maskable.png">
-    <meta name="twitter:site" content="@uic_gaming">
-</head>
     
-    <link rel="stylesheet" href="assets/css/main_v2.css">
-
     <style>
         .tactical-input {
             width: 100%; background: rgba(0, 0, 0, 0.6);
@@ -172,24 +135,12 @@
         login();
     }
 
-    // ==========================================
-    // SIMPLIFIED & BULLETPROOF NAME RESOLVER
-    // Looks exclusively at db.json -> teams
-    // ==========================================
     function getTeamDisplayName(id) {
-        // Handle Empty/Null/BYE cases immediately
         if (!id || id === '[BYE]') return "FREILOS";
-        
-        // Ensure id is a clean string
         const searchId = String(id).trim();
-
-        // Check if the team exists in the db.json teams object
         if (dbData && dbData.teams && dbData.teams[searchId]) {
-            // Return the 'name' property (e.g., "UIC Ember")
             return dbData.teams[searchId].name || searchId;
         }
-        
-        // If all else fails, just show the ID
         return searchId;
     }
 
@@ -202,7 +153,6 @@
         document.getElementById('login-error').classList.add('hidden');
         
         try {
-            // BEIDE DATEIEN GLEICHZEITIG LADEN
             const tourUrl = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${TOURNAMENT_PATH}?ref=${BRANCH}`;
             const dbUrl = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${DB_PATH}?ref=${BRANCH}`;
             
@@ -214,7 +164,6 @@
             if(!tourRes.ok) throw new Error("Tournament.json konnte nicht geladen werden.");
             if(!dbRes.ok) throw new Error("db.json konnte nicht geladen werden.");
 
-            // DATEN ENTSCHLÜSSELN
             const tourDataRaw = await tourRes.json();
             const dbDataRaw = await dbRes.json();
             
@@ -222,8 +171,6 @@
             dbData = JSON.parse(decodeURIComponent(escape(atob(dbDataRaw.content))));
             fileSha = dbDataRaw.sha; 
 
-            // ROLLENPRÜFUNG
-            // Check if the userInput exists in the participants array of Tournament.json
             const isParticipant = tournamentData.participants && tournamentData.participants.includes(userInput);
 
             if (userInput === 'ADMIN') {
@@ -237,7 +184,6 @@
                 throw new Error("Zugriff verweigert: ID steht nicht in der Tournament.json");
             }
 
-            // LOGIN ERFOLGREICH
             currentToken = tokenInput;
             currentUser = userInput;
             localStorage.setItem('uic_token', currentToken);
@@ -283,15 +229,12 @@
         container.innerHTML = '';
 
         const matchesToDisplay = dbData.bracket.filter(m => {
-            // Ensure BOTH team slots are filled with actual teams
             const hasTeams = m.team_1 && m.team_1 !== '[BYE]' && m.team_2 && m.team_2 !== '[BYE]';
             if (!hasTeams) return false;
 
-            // Admin sees all, Teams see only their matches
             const isMyMatch = isAdmin || m.team_1 === currentUser || m.team_2 === currentUser;
             if (!isMyMatch) return false;
             
-            // Tab filtering logic
             if (currentTab === 'PENDING') return m.status !== 'FINISHED';
             if (currentTab === 'HISTORY') return m.status === 'FINISHED';
         });
@@ -303,7 +246,6 @@
         }
 
         matchesToDisplay.forEach((m) => {
-            // Retrieve actual names for the UI
             const t1Name = getTeamDisplayName(m.team_1);
             const t2Name = getTeamDisplayName(m.team_2);
             
@@ -312,13 +254,11 @@
             const row = document.createElement('div');
             row.className = 'admin-match-row';
             
-            // Apply history styling if necessary
             if (isHistory) {
                 row.style.borderLeftColor = 'var(--text-muted)';
                 row.style.opacity = '0.7';
             }
             
-            // Highlight the logged-in team's name
             const t1Color = (!isAdmin && m.team_1 === currentUser) ? 'var(--primary)' : '#fff';
             const t2Color = (!isAdmin && m.team_2 === currentUser) ? 'var(--primary)' : '#fff';
 
@@ -341,6 +281,45 @@
         });
     }
 
+    async function waitForActionToFinish(userCommitSha) {
+        const syncText = document.getElementById('sync-text');
+        syncText.innerText = "Berechne Bracket... (Dies dauert ca. 30-60 Sekunden)";
+
+        let isFinished = false;
+        let attempts = 0;
+        const maxAttempts = 30; // Maximum wait time: 30 attempts * 4 seconds = 2 minutes
+
+        while (!isFinished && attempts < maxAttempts) {
+            await new Promise(resolve => setTimeout(resolve, 4000)); 
+            attempts++;
+
+            try {
+                const checkUrl = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${DB_PATH}?ref=${BRANCH}&t=${Date.now()}`;
+                const checkRes = await fetch(checkUrl, {
+                    headers: { 'Authorization': `token ${currentToken}`, 'Accept': 'application/vnd.github.v3+json' }
+                });
+                
+                if (checkRes.ok) {
+                    const checkData = await checkRes.json();
+                    
+                    if (checkData.sha !== userCommitSha) {
+                        isFinished = true;
+                        syncText.innerText = "✅ Berechnung abgeschlossen! Lade Live-Daten...";
+                        await reloadDataFromGitHub();
+                        return;
+                    }
+                }
+            } catch (e) {
+                console.warn("Polling ping failed, retrying...", e);
+            }
+        }
+
+        if (!isFinished) {
+            syncText.innerText = "⚠️ Timeout: Server-Antwort dauert zu lange. Bitte Seite manuell aktualisieren.";
+            setTimeout(() => { document.getElementById('sync-overlay').classList.remove('active'); }, 5000);
+        }
+    }
+
     async function saveToGitHub() {
         const overlay = document.getElementById('sync-overlay');
         const syncText = document.getElementById('sync-text');
@@ -354,18 +333,34 @@
             return hasTeams && isMyMatch && m.status !== 'FINISHED';
         });
 
-        pendingMatches.forEach((m) => {
-            const input1 = document.getElementById(`s1_match_${m.id}`);
-            const input2 = document.getElementById(`s2_match_${m.id}`);
-            
-            if(input1 && input2) {
-                m.score_1 = parseInt(input1.value) || 0;
-                m.score_2 = parseInt(input2.value) || 0;
-            }
-        });
-
         try {
-            const updatedContent = btoa(unescape(encodeURIComponent(JSON.stringify(dbData, null, 2))));
+            syncText.innerText = "Hole aktuellen Systemstatus...";
+            const freshDbUrl = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${DB_PATH}?ref=${BRANCH}&t=${Date.now()}`;
+            const freshRes = await fetch(freshDbUrl, { 
+                headers: { 'Authorization': `token ${currentToken}`, 'Accept': 'application/vnd.github.v3+json' } 
+            });
+            
+            if (!freshRes.ok) throw new Error("Konnte aktuellen Status nicht abrufen.");
+            
+            const freshData = await freshRes.json();
+            const currentDb = JSON.parse(decodeURIComponent(escape(atob(freshData.content))));
+            const freshSha = freshData.sha;
+
+            pendingMatches.forEach((m) => {
+                const input1 = document.getElementById(`s1_match_${m.id}`);
+                const input2 = document.getElementById(`s2_match_${m.id}`);
+                
+                if(input1 && input2) {
+                    const matchToUpdate = currentDb.bracket.find(x => x.id === m.id);
+                    if (matchToUpdate) {
+                        matchToUpdate.score_1 = parseInt(input1.value) || 0;
+                        matchToUpdate.score_2 = parseInt(input2.value) || 0;
+                    }
+                }
+            });
+
+            syncText.innerText = "Schreibe Daten in die Matrix...";
+            const updatedContent = btoa(unescape(encodeURIComponent(JSON.stringify(currentDb, null, 2))));
             const url = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${DB_PATH}`;
             
             const commitMessage = isAdmin 
@@ -375,7 +370,7 @@
             const body = {
                 message: commitMessage,
                 content: updatedContent,
-                sha: fileSha, 
+                sha: freshSha, 
                 branch: BRANCH
             };
 
@@ -389,10 +384,18 @@
                 body: JSON.stringify(body)
             });
 
-            if(!res.ok) throw new Error("Fehler beim Upload");
+            if(!res.ok) throw new Error("Fehler beim Upload (Möglicher Konflikt)");
 
-            syncText.innerText = "Upload erfolgreich! Synchronisiere...";
-            setTimeout(async () => { await reloadDataFromGitHub(); }, 1500);
+            // Get the SHA of the push we just made
+            const resData = await res.json();
+            const userCommitSha = resData.content.sha;
+
+            // Sync local state immediately
+            dbData = currentDb; 
+            fileSha = userCommitSha; 
+            
+            // Wait for GitHub Actions to process the bracket
+            await waitForActionToFinish(userCommitSha);
 
         } catch (e) {
             console.error(e);
