@@ -52,10 +52,6 @@
             "is_captain": true
           },
           {
-            "summoner": "UIC Ayumu#LoveK",
-            "is_captain": true
-          },
-          {
             "summoner": "Npunkt#ODE",
             "is_captain": true
           }
@@ -913,8 +909,8 @@
     {
       "score_1": 1,
       "score_2": 0,
-      "winner_id": null,
-      "status": "LIVE",
+      "winner_id": "ODE_ABSOLUT_ZERO",
+      "status": "FINISHED",
       "id": "lb_r5_m1",
       "round": 5,
       "type": "LOSER",
@@ -926,13 +922,13 @@
       "score_1": 0,
       "score_2": 0,
       "winner_id": null,
-      "status": "WAITING",
+      "status": "LIVE",
       "id": "lb_r6_m1",
       "round": 6,
       "type": "LOSER",
       "next_match_id": "gf_m1",
       "team_1": "UIC_PRIME_+_ALEX",
-      "team_2": null
+      "team_2": "ODE_ABSOLUT_ZERO"
     },
     {
       "score_1": 0,
