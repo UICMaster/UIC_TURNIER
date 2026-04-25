@@ -4,5 +4,28 @@
   "acronym": "UICE",
   "logo": "https://cdn0.heartbase.gg/league_team_logos/211000/211165.jpg?1765449081",
   "stream_link": "https://www.twitch.tv/uicdanny", 
-  "is_live": true 
+  "is_live": true, 
+  "roster": [
+    { 
+      "name": "UIC Envy#UIC", 
+      "role": "Spieler", 
+      "is_captain": true 
+    },
+    { 
+      "name": "Deathtricks#EUW", 
+      "role": "Spieler" 
+    },
+    { 
+      "name": "P Z Y C L O N E#PZY", 
+      "role": "Spieler" 
+    },
+    { 
+      "name": "heartless#KOR", 
+      "role": "Spieler" 
+    },
+    { 
+      "name": "UIC Muh#KATZE", 
+      "role": "Spieler" 
+    }
+  ]
 }
