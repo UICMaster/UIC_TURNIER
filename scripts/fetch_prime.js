@@ -11,8 +11,7 @@ const SEASON_START = new Date('2026-04-01T00:00:00');
 
 const TEAMS = {
     "RISING_DAWN": { id: "212208", manual_div: "Kalibrierung" },
-    "ODE_ABSOLUT_ZERO":   { id: "209281", manual_div: "Division 5" },
-    "UIC_EMBER":   { id: "211165", manual_div: "Division 6" }
+    "ODE_ABSOLUT_ZERO":   { id: "209281", manual_div: "Division 5" }
 };
 
 const HEADERS = { 'User-Agent': 'UIC-Dashboard-Bot/2.2' };
