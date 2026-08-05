@@ -1,8 +1,8 @@
 {
   "meta": {
     "title": "Das Turnier der Kraft Season 2026",
-    "status": "NONE",
-    "start_date_iso": "2026-04-19T23:59:59Z",
+    "status": "LIVE",
+    "start_date_iso": "2026-09-03T23:59:59Z",
     "registration_link": "https://forms.gle/8fLbbkYviGjQDyit8",
     "stream_link": "https://twitch.tv/ultrainstinctcrew"
   },
@@ -32,6 +32,10 @@
         "last_match": null,
         "roster": [
           {
+            "summoner": "UIC Ayumu#LoveK",
+            "is_captain": true
+          },
+          {
             "summoner": "LBfromCB#EUW",
             "is_captain": false
           },
@@ -49,10 +53,6 @@
           },
           {
             "summoner": "Knokkelmann#ODE",
-            "is_captain": true
-          },
-          {
-            "summoner": "UIC Ayumu#LoveK",
             "is_captain": true
           },
           {
