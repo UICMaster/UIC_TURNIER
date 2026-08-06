@@ -1,10 +1,10 @@
 {
-  "ODE_ABSOLUT_ZERO": {
-    "id": "209281",
-    "key": "ODE_ABSOLUT_ZERO",
+  "RISING_DAWN": {
+    "id": "212208",
+    "key": "RISING_DAWN",
     "meta": {
-      "name": "Overdue Absolute Zero",
-      "div": "Division 5"
+      "name": "Rising Dawn",
+      "div": "Kalibrierung"
     },
     "stats": {
       "wins": 0,
@@ -18,17 +18,62 @@
     "last_match": null,
     "roster": [
       {
-        "summoner": "UIC Ayumu#LoveK",
+        "summoner": "RD Slevin#1612",
         "is_captain": true
       },
       {
-        "summoner": "LBfromCB#EUW",
+        "summoner": "RD RealRagnarök#BhF",
+        "is_captain": true
+      },
+      {
+        "summoner": "UIC ReCord#Cedo",
         "is_captain": false
       },
       {
-        "summoner": "gurke#ODE",
+        "summoner": "RD Grauenhaft#zyzz",
         "is_captain": false
       },
+      {
+        "summoner": "RD Nuokii#072",
+        "is_captain": false
+      },
+      {
+        "summoner": "RD Dragonfly#UIC",
+        "is_captain": true
+      }
+    ],
+    "team_link": "https://www.primeleague.gg/de/leagues/teams/212208",
+    "logo": "https://cdn0.heartbase.gg/league_team_logos/212000/212208.jpg?1771360240"
+  },
+  "ODE_ABSOLUT_ZERO": {
+    "id": "209281",
+    "key": "ODE_ABSOLUT_ZERO",
+    "meta": {
+      "name": "Overdue Absolute Zero",
+      "div": "Division 5"
+    },
+    "stats": {
+      "wins": 9,
+      "losses": 8,
+      "points": 9,
+      "games": 17,
+      "win_rate": 53,
+      "form": [
+        "W",
+        "W",
+        "W",
+        "L",
+        "L"
+      ]
+    },
+    "next_match": null,
+    "last_match": {
+      "result": "NIEDERLAGE",
+      "score": "0 - 2",
+      "enemy": "BS",
+      "date": "2026-07-18T17:15:00+02:00"
+    },
+    "roster": [
       {
         "summoner": "Lolevel#ODE",
         "is_captain": true
@@ -38,12 +83,20 @@
         "is_captain": true
       },
       {
-        "summoner": "Knokkelmann#ODE",
+        "summoner": "Npunkt#ODE",
         "is_captain": true
       },
       {
-        "summoner": "Npunkt#ODE",
-        "is_captain": true
+        "summoner": "Thego#BUTZ",
+        "is_captain": false
+      },
+      {
+        "summoner": "gurke#ODE",
+        "is_captain": false
+      },
+      {
+        "summoner": "LBfromCB#EUW",
+        "is_captain": false
       }
     ],
     "team_link": "https://www.primeleague.gg/de/leagues/teams/209281",
