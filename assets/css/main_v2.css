@@ -665,3 +665,20 @@ img { max-width: 100%; height: auto; display: block; }
         font-size: 1.5rem;
     }
 }
+
+/* =========================================
+   LIVE VIEW TITLE OVERRIDE
+   ========================================= */
+#live-title {
+    color: #ffffff !important;      /* Forces pure white */
+    font-weight: 700 !important;    /* Forces maximum font boldness */
+    text-shadow: none !important;   /* Removes the glowing shadow */
+    letter-spacing: 2px;            /* Gives it a slightly cleaner, proper look */
+}
+
+/* Kills any potential pseudo-element animations in front/behind it */
+#live-title::before, 
+#live-title::after {
+    display: none !important;
+    animation: none !important;
+}
