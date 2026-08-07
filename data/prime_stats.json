@@ -75,6 +75,10 @@
     },
     "roster": [
       {
+        "summoner": "UIC Ayumu#LoveK",
+        "is_captain": true
+      },
+      {
         "summoner": "Lolevel#ODE",
         "is_captain": true
       },
