@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Turnier der Kraft Summer Split 2026",
-    "status": "NONE",
+    "status": "UPCOMING",
     "start_date_iso": "2026-09-03T23:59:59Z",
     "registration_link": "https://forms.gle/8fLbbkYviGjQDyit8",
     "stream_link": "https://twitch.tv/ultrainstinctcrew"
@@ -21,31 +21,16 @@
           "div": "Division 5"
         },
         "stats": {
-          "wins": 9,
-          "losses": 8,
-          "points": 9,
-          "games": 17,
-          "win_rate": 53,
-          "form": [
-            "W",
-            "W",
-            "W",
-            "L",
-            "L"
-          ]
+          "wins": 0,
+          "losses": 0,
+          "points": 0,
+          "games": 0,
+          "win_rate": 0,
+          "form": []
         },
         "next_match": null,
-        "last_match": {
-          "result": "NIEDERLAGE",
-          "score": "0 - 2",
-          "enemy": "BS",
-          "date": "2026-07-18T17:15:00+02:00"
-        },
+        "last_match": null,
         "roster": [
-          {
-            "summoner": "UIC Ayumu#LoveK",
-            "is_captain": true
-          },
           {
             "summoner": "Lolevel#ODE",
             "is_captain": true
@@ -135,53 +120,7 @@
           "name": "RD Nuokii#072",
           "role": "Spieler"
         }
-      ],
-      "prime_intel": {
-        "id": "212208",
-        "key": "RISING_DAWN",
-        "meta": {
-          "name": "Rising Dawn",
-          "div": "Kalibrierung"
-        },
-        "stats": {
-          "wins": 0,
-          "losses": 0,
-          "points": 0,
-          "games": 0,
-          "win_rate": 0,
-          "form": []
-        },
-        "next_match": null,
-        "last_match": null,
-        "roster": [
-          {
-            "summoner": "RD Slevin#1612",
-            "is_captain": true
-          },
-          {
-            "summoner": "RD RealRagnarök#BhF",
-            "is_captain": true
-          },
-          {
-            "summoner": "UIC ReCord#Cedo",
-            "is_captain": false
-          },
-          {
-            "summoner": "RD Grauenhaft#zyzz",
-            "is_captain": false
-          },
-          {
-            "summoner": "RD Nuokii#072",
-            "is_captain": false
-          },
-          {
-            "summoner": "RD Dragonfly#UIC",
-            "is_captain": true
-          }
-        ],
-        "team_link": "https://www.primeleague.gg/de/leagues/teams/212208",
-        "logo": "https://cdn0.heartbase.gg/league_team_logos/212000/212208.jpg?1771360240"
-      }
+      ]
     },
     "SENRU": {
       "id": "SENRU",
