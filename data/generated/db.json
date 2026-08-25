@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Turnier der Kraft Summer Split 2026",
-    "status": "UPCOMING",
+    "status": "Live",
     "start_date_iso": "2026-09-03T23:59:59Z",
     "registration_link": "https://forms.gle/8fLbbkYviGjQDyit8",
     "stream_link": "https://twitch.tv/ultrainstinctcrew"
@@ -32,6 +32,10 @@
         "last_match": null,
         "roster": [
           {
+            "summoner": "UIC Ayumu#LoveK",
+            "is_captain": true
+          },
+          {
             "summoner": "Lolevel#ODE",
             "is_captain": true
           },
@@ -53,10 +57,6 @@
           },
           {
             "summoner": "LBfromCB#EUW",
-            "is_captain": false
-          },
-          {
-            "summoner": "Raygon#EUW",
             "is_captain": false
           }
         ],
