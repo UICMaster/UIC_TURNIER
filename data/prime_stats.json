@@ -18,6 +18,10 @@
     "last_match": null,
     "roster": [
       {
+        "summoner": "OhneNein#INT",
+        "is_captain": false
+      },
+      {
         "summoner": "Lolevel#ODE",
         "is_captain": true
       },
