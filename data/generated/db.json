@@ -2,7 +2,7 @@
   "meta": {
     "title": "Turnier der Kraft Summer Split 2026",
     "status": "UPCOMING",
-    "start_date_iso": "2026-09-03T23:59:59Z",
+    "start_date_iso": "2026-09-10T23:59:59Z",
     "registration_link": "https://forms.gle/8fLbbkYviGjQDyit8",
     "stream_link": "https://twitch.tv/ultrainstinctcrew"
   },
@@ -12,7 +12,57 @@
       "name": "Overdue Absolute Zero",
       "acronym": "ODE",
       "logo": "https://cdn0.heartbase.gg/league_team_logos/209000/209281.jpg?1751621235",
-      "stream_link": "https://www.twitch.tv/ultrainstinctcrew"
+      "stream_link": "https://www.twitch.tv/ultrainstinctcrew",
+      "prime_intel": {
+        "id": "209281",
+        "key": "ODE_ABSOLUT_ZERO",
+        "meta": {
+          "name": "Overdue Absolute Zero",
+          "div": "Division 5"
+        },
+        "stats": {
+          "wins": 0,
+          "losses": 0,
+          "points": 0,
+          "games": 0,
+          "win_rate": 0,
+          "form": []
+        },
+        "next_match": null,
+        "last_match": null,
+        "roster": [
+          {
+            "summoner": "OhneNein#INT",
+            "is_captain": false
+          },
+          {
+            "summoner": "UIC Ayumu#LoveK",
+            "is_captain": true
+          },
+          {
+            "summoner": "Lolevel#ODE",
+            "is_captain": true
+          },
+          {
+            "summoner": "KiwitoMate#ODE",
+            "is_captain": true
+          },
+          {
+            "summoner": "Npunkt#ODE",
+            "is_captain": true
+          },
+          {
+            "summoner": "Thego#BUTZ",
+            "is_captain": false
+          },
+          {
+            "summoner": "gurke#ODE",
+            "is_captain": false
+          }
+        ],
+        "team_link": "https://www.primeleague.gg/de/leagues/teams/209281",
+        "logo": "https://cdn0.heartbase.gg/league_team_logos/209000/209281.jpg?1751621235"
+      }
     },
     "RASSELBANDEN_GMBH": {
       "id": "RASSELBANDEN_GMBH",
