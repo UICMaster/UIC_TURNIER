@@ -22,10 +22,6 @@
         "is_captain": false
       },
       {
-        "summoner": "UIC Ayumu#LoveK",
-        "is_captain": true
-      },
-      {
         "summoner": "Lolevel#ODE",
         "is_captain": true
       },
@@ -43,6 +39,10 @@
       },
       {
         "summoner": "gurke#ODE",
+        "is_captain": false
+      },
+      {
+        "summoner": "LBfromCB#EUW",
         "is_captain": false
       }
     ],
