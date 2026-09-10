@@ -27,7 +27,11 @@
       "role": "Spieler", 
       "is_captain": true 
     },
-        { 
+    { 
+      "name": "UIC Nutty#Biggu", 
+      "role": "Ersatz" 
+    },
+    { 
       "name": "UIC Qvy#rusty", 
       "role": "Coach" 
     },
