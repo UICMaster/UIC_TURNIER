@@ -26,6 +26,10 @@
     { 
       "name": "UIC Symphonie#ZywOo", 
       "role": "Spieler" 
+    },
+    { 
+      "name": "UIC proStarII#UIC", 
+      "role": "Ersatz" 
     }
   ]
 }
