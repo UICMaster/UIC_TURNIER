@@ -10,8 +10,19 @@ const OUTPUT_PATH = path.resolve(__dirname, '../data', DATA_FILE);
 const SEASON_START = new Date('2026-04-01T00:00:00'); 
 
 const TEAMS = {
-    "RISING_DAWN": { id: "212208", manual_div: "Kalibrierung" },
-    "ODE_ABSOLUT_ZERO":   { id: "209281", manual_div: "Division 5" }
+    "BLUBBBARSCHBUBEN": { id: "212838", manual_div: "Kalibrierung" },
+    "TIAMATS_LEGACY_BORN":   { id: "207612", manual_div: "Division 5" },
+    "RISING_DAWN": { id: "212208", manual_div: "Division 6" },
+    "UIC_CYBER":   { id: "198490", manual_div: "Division 6" },
+    "NTH_BLUE": { id: "212621", manual_div: "Kalibrierung" },
+    "NTH_PINK":   { id: "212628", manual_div: "Kalibrierung" },
+    "UIC_SAKURA": { id: "208851", manual_div: "Division 5" },
+    "UIC_ECLIPSE":   { id: "208131", manual_div: "Division 6" },
+    "UIC_TEMPEST": { id: "208606", manual_div: "Division 5" },
+    "ODE_PARANOIA":   { id: "209282", manual_div: "Division 5" },
+    "GIG_LIZARDS": { id: "209324", manual_div: "Division 7" },
+    "ODE_ABSOLUT_ZERO":   { id: "209281", manual_div: "Division 5" },
+    "IRON_BULLS": { id: "211048", manual_div: "Division 5" }
 };
 
 const HEADERS = { 'User-Agent': 'UIC-Dashboard-Bot/2.2' };
