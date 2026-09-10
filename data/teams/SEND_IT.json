@@ -23,11 +23,15 @@
       "name": "AOM Noyou#AOM", 
       "role": "Spieler" 
     },
-        { 
+    { 
       "name": "Elijah#Bard", 
       "role": "Spieler"
     },
-        { 
+    { 
+      "name": "Th0rdal#EUW", 
+      "role": "Spieler"
+    },
+    { 
       "name": "UIC Keygasza#1337", 
       "role": "Spieler" 
     }
