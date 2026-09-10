@@ -4,28 +4,6 @@
   "acronym": "RD",
   "logo": "https://cdn0.heartbase.gg/league_team_logos/212000/212208.jpg?1771360240",
   "stream_link": "https://www.twitch.tv/slevinhunter", 
-  "is_live": true, 
-  "roster": [
-    { 
-      "name": "RD Slevin#1612", 
-      "role": "Spieler", 
-      "is_captain": true 
-    },
-    { 
-      "name": "RD RealRagnarök#BhF", 
-      "role": "Spieler" 
-    },
-    { 
-      "name": "RD Dragonfly#UIC", 
-      "role": "Spieler" 
-    },
-    { 
-      "name": "RD Grauenhaft#zyzz", 
-      "role": "Spieler" 
-    },
-    { 
-      "name": "RD Nuokii#072", 
-      "role": "Spieler" 
-    }
-  ]
+  "is_live": true 
 }
+

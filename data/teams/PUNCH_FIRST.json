@@ -1,0 +1,51 @@
+{
+  "id": "PUNCH_FIRST",
+  "name": "PUNCH FIRST",
+  "acronym": "PF",
+  "logo": "/data/teams/team_logo/PUNCH_FIRST.png",
+  "stream_link": "", 
+  "is_live": true, 
+  "roster": [
+    { 
+      "name": "Leandro#31415", 
+      "role": "Spieler"
+    },
+    { 
+      "name": "Ghulfrost#1997", 
+      "role": "Spieler" 
+    },
+    { 
+      "name": "Krystall#Keria", 
+      "role": "Spieler" 
+    },
+    { 
+      "name": "The DarkLGamer#EUW", 
+      "role": "Spieler" 
+    },
+    { 
+      "name": "HOMERINO#homer", 
+      "role": "Spieler"
+    },
+    { 
+      "name": "Slight#Adc ", 
+      "role": "Spieler" 
+    },
+    { 
+      "name": "CozyIceTea#1337", 
+      "role": "Spieler" 
+    },
+    { 
+      "name": "UIC NokkedOut#JGGAP", 
+      "role": "Spieler" 
+    },
+    { 
+      "name": "Fløhausen#Curse", 
+      "role": "Spieler" 
+    },
+    { 
+      "name": "Jinya#1337", 
+      "role": "Spieler", 
+      "is_captain": true 
+    }
+  ]
+}

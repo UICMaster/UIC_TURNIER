@@ -1,0 +1,31 @@
+{
+  "id": "UNKNOWN_EXE",
+  "name": "UNKNOWN.EXE",
+  "acronym": "UEXE",
+  "logo": "/data/teams/team_logo/UNKNOWN_EXE.png",
+  "stream_link": "", 
+  "is_live": true,
+  "roster": [
+    { 
+      "name": "LISQ#H73", 
+      "role": "Spieler"
+    },
+    { 
+      "name": "nth letzter tanz#nth", 
+      "role": "Spieler",
+      "is_captain": true  
+    },
+    { 
+      "name": "AOM SPiritblade#AOM", 
+      "role": "Spieler" 
+    },
+    { 
+      "name": "Judas#bomba", 
+      "role": "Spieler" 
+    },
+        { 
+      "name": "Kuroko Seirin#Pass", 
+      "role": "Spieler" 
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "id": "SEND_IT",
+  "name": "SEND IT",
+  "acronym": "SIT",
+  "logo": "/data/teams/team_logo/SEND_IT.png",
+  "stream_link": "", 
+  "is_live": true, 
+  "roster": [
+    { 
+      "name": "Nova Frickin#Crono", 
+      "role": "Spieler"
+    },
+    { 
+      "name": "Inition#EUW", 
+      "role": "Spieler" 
+    },
+    { 
+      "name": "Yami no tsumi#Yamii", 
+      "role": "Spieler",
+      "is_captain": true 
+    },
+    { 
+      "name": "AOM Noyou#AOM", 
+      "role": "Spieler" 
+    },
+        { 
+      "name": "Elijah#Bard", 
+      "role": "Spieler"
+    },
+        { 
+      "name": "UIC Keygasza#1337", 
+      "role": "Spieler" 
+    }
+  ]
+}

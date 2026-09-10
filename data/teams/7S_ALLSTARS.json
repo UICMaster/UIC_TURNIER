@@ -1,0 +1,39 @@
+{
+  "id": "7S_ALLSTARS",
+  "name": "7S ALLSTARS",
+  "acronym": "7SA",
+  "logo": "/data/teams/team_logo/7S_ALLSTARS.png",
+  "stream_link": "https://www.twitch.tv/7serpentsesports", 
+  "is_live": true,
+  "roster": [
+    { 
+      "name": "Egoist Darki#ADC", 
+      "role": "Spieler", 
+      "is_captain": true 
+    },
+    { 
+      "name": "Jowni Dasper#9466", 
+      "role": "Spieler" 
+    },
+    { 
+      "name": "Pr3ss#EUW", 
+      "role": "Spieler" 
+    },
+    { 
+      "name": "7S  CursedRuler#T1T1", 
+      "role": "Spieler" 
+    },
+        { 
+      "name": "Coach Mastian#FRAUD", 
+      "role": "Spieler" 
+    },
+        { 
+      "name": "delulu#0069", 
+      "role": "Spieler" 
+    },
+    { 
+      "name": "Carlo3011#Inter", 
+      "role": "Spieler" 
+    }
+  ]
+}

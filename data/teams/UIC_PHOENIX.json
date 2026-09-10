@@ -1,0 +1,42 @@
+{
+  "id": "UIC_PHOENIX",
+  "name": "UIC PHOENIX",
+  "acronym": "UICP",
+  "logo": "https://cdn0.heartbase.gg/league_team_logos/212000/212473.jpg?1777401024",
+  "stream_link": "https://www.twitch.tv/uicloonz", 
+  "is_live": true,
+  "roster": [
+    { 
+      "name": "UIC Kamo#tpt", 
+      "role": "Spieler", 
+      "is_captain": true 
+    },
+    { 
+      "name": "UIC Exi#QUAK", 
+      "role": "Spieler" 
+    },
+    { 
+      "name": "UIC Ace#ACE", 
+      "role": "Spieler" 
+    },
+    { 
+      "name": "UIC Frozenhands#Mid", 
+      "role": "Spieler" 
+    },
+        { 
+      "name": "UIC Ryu Copeland#117", 
+      "role": "Spieler" 
+    },
+        { 
+      "name": "UIC Loonz#Coach", 
+      "role": "Coach" 
+    },
+    { 
+      "name": "UIC Cerberus#GOATZ", 
+      "role": "Manager" 
+    }
+  ]
+}
+
+
+

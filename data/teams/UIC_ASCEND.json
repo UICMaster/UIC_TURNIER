@@ -1,0 +1,45 @@
+{
+  "id": "UIC_ASCEND",
+  "name": "UIC ASCEND",
+  "acronym": "UICA",
+  "logo": "https://cdn0.heartbase.gg/league_team_logos/212000/212852.jpg?1787674689",
+  "stream_link": "", 
+  "is_live": true, 
+  "roster": [
+    { 
+      "name": "UIC Rayando07#Help", 
+      "role": "Spieler"
+    },
+    { 
+      "name": "TTVXavertseltsam#Mr X", 
+      "role": "Spieler" 
+    },
+    { 
+      "name": "Gwynbleidd#TRISS", 
+      "role": "Spieler" 
+    },
+    { 
+      "name": "UIC stevie#LISA", 
+      "role": "Spieler" 
+    },
+        { 
+      "name": "UIC Bardie3#0711", 
+      "role": "Spieler", 
+      "is_captain": true 
+    },
+        { 
+      "name": "UIC Qvy#rusty", 
+      "role": "Coach" 
+    },
+    { 
+      "name": "UIC Cerberus#GOATZ", 
+      "role": "Manager" 
+    },
+    { 
+      "name": "UIC proStarII#UIC", 
+      "role": "Cheerleader" 
+    }
+  ]
+}
+
+

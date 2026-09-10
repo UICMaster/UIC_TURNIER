@@ -7,12 +7,12 @@
   "is_live": true,
   "roster": [
     { 
-      "name": "UIC Goku#UIC", 
+      "name": "UIC Simply#666", 
       "role": "Spieler", 
       "is_captain": true 
     },
     { 
-      "name": "UIC RoyBl4cK#EUW", 
+      "name": "UIC Otter#fkafd", 
       "role": "Spieler" 
     },
     { 
@@ -20,12 +20,14 @@
       "role": "Spieler" 
     },
     { 
-      "name": "UIC ArdaGüler#Türke", 
+      "name": "UIC Goku#UIC", 
       "role": "Spieler" 
     },
     { 
-      "name": "UIC Flare#JND", 
+      "name": "UIC Symphonie#ZywOo", 
       "role": "Spieler" 
     }
   ]
 }
+
+

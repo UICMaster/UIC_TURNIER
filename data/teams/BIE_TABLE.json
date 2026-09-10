@@ -1,0 +1,34 @@
+{
+  "id": "BIE_TABLE",
+  "name": "BIE TABLE",
+  "acronym": "BIET",
+  "logo": "/data/teams/team_logo/BIE_TABLE.png",
+  "stream_link": "", 
+  "is_live": true, 
+  "roster": [
+    { 
+      "name": "Ke1neahnung#1303", 
+      "role": "Spieler"
+    },
+    { 
+      "name": "washed#z Z Ｚ", 
+      "role": "Spieler" 
+    },
+    { 
+      "name": "Minz#tea", 
+      "role": "Spieler" 
+    },
+    { 
+      "name": "ζεζ τ ζεζ#EUW", 
+      "role": "Spieler" 
+    },
+        { 
+      "name": "Skyhan#TS61", 
+      "role": "Spieler", 
+      "is_captain": true 
+    }
+  ]
+}
+
+
+

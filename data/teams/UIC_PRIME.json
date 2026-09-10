@@ -4,5 +4,36 @@
   "acronym": "UICP",
   "logo": "https://cdn0.heartbase.gg/league_team_logos/116000/116908.jpg?1768526642",
   "stream_link": "", 
-  "is_live": true 
+  "is_live": true,
+  "roster": [
+    { 
+      "name": "piapiob#187", 
+      "role": "Spieler", 
+      "is_captain": true 
+    },
+    { 
+      "name": "UIC Niki#AMB", 
+      "role": "Spieler" 
+    },
+    { 
+      "name": "UIC Baumi#123", 
+      "role": "Spieler" 
+    },
+    { 
+      "name": "UIC Baguetto#R3kt", 
+      "role": "Spieler" 
+    },
+        { 
+      "name": "UIC Giani#999", 
+      "role": "Spieler" 
+    },
+        { 
+      "name": "Thors Snorresson#910", 
+      "role": "Ersatz" 
+    },
+    { 
+      "name": "UIC Speedy#EUW", 
+      "role": "Ersatz" 
+    }
+  ]
 }

@@ -1,0 +1,35 @@
+{
+  "id": "AOM_ORION",
+  "name": "AOM_ORION",
+  "acronym": "AOMO",
+  "logo": "/data/teams/team_logo/AOM_ORION.jpg",
+  "stream_link": "", 
+  "is_live": true, 
+  "roster": [
+    { 
+      "name": "Rage#G2ッ", 
+      "role": "Spieler"
+    },
+    { 
+      "name": "Oshumaru#FF20", 
+      "role": "Spieler" 
+    },
+    { 
+      "name": "小飞象#ADC", 
+      "role": "Spieler" 
+    },
+    { 
+      "name": "AlwaysJunglêDiff#EUW", 
+      "role": "Spieler" 
+    },
+        { 
+      "name": "Sirnight#282", 
+      "role": "Spieler", 
+      "is_captain": true 
+    },
+        { 
+      "name": "BommelKrieger#SNIP", 
+      "role": "Spieler" 
+    }
+  ]
+}

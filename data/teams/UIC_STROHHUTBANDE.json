@@ -1,0 +1,33 @@
+{
+  "id": "UIC_STROHHUTBANDE",
+  "name": "UIC STROHHUTBANDE",
+  "acronym": "UICS",
+  "logo": "/data/teams/team_logo/UIC_STROHHUTBANDE.PNG",
+  "stream_link": "", 
+  "is_live": true, 
+  "roster": [
+    { 
+      "name": "TwTv PERYZ#000", 
+      "role": "Spieler",
+      "is_captain": true 
+    },
+    { 
+      "name": "BTZ DELTA#JGL", 
+      "role": "Spieler" 
+    },
+    { 
+      "name": "Kommander#7676", 
+      "role": "Spieler" 
+    },
+    { 
+      "name": "TGP TRAZAN#APHEL", 
+      "role": "Spieler" 
+    },
+        { 
+      "name": "ZTA Natsu#Bootz", 
+      "role": "Spieler"
+    }
+  ]
+}
+
+
