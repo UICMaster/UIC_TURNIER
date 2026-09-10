@@ -20,8 +20,7 @@ const TEAMS = {
     "UIC_ECLIPSE":   { id: "208131", manual_div: "Division 6" },
     "UIC_TEMPEST": { id: "208606", manual_div: "Division 5" },
     "ODE_PARANOIA":   { id: "209282", manual_div: "Division 5" },
-    "GIG_LIZARDS": { id: "209324", manual_div: "Division 7" },
-    "ODE_ABSOLUT_ZERO":   { id: "209281", manual_div: "Division 5" }
+    "GIG_LIZARDS": { id: "209324", manual_div: "Division 7" }
 };
 
 const HEADERS = { 'User-Agent': 'UIC-Dashboard-Bot/2.2' };
