@@ -22,10 +22,14 @@
       "name": "ζεζ τ ζεζ#EUW", 
       "role": "Spieler" 
     },
-        { 
+    { 
       "name": "Skyhan#TS61", 
       "role": "Spieler", 
       "is_captain": true 
+    },
+    { 
+      "name": "Pupale#RAT", 
+      "role": "Ersatz" 
     }
   ]
 }
