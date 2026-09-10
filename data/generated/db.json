@@ -472,7 +472,7 @@
       "name": "Senru",
       "acronym": "SENRU",
       "logo": "/data/teams/team_logo/SENRU.jpg",
-      "stream_link": "https://www.twitch.tv/invicta_esport",
+      "stream_link": "",
       "is_live": true,
       "roster": [
         {
@@ -573,6 +573,10 @@
           "name": "UIC Bardie3#0711",
           "role": "Spieler",
           "is_captain": true
+        },
+        {
+          "name": "UIC Nutty#Biggu",
+          "role": "Ersatz"
         },
         {
           "name": "UIC Qvy#rusty",
@@ -705,7 +709,7 @@
       "name": "UIC Ember",
       "acronym": "UICE",
       "logo": "https://cdn0.heartbase.gg/league_team_logos/211000/211165.jpg?1765449081",
-      "stream_link": "https://www.twitch.tv/uicdanny",
+      "stream_link": "",
       "is_live": true,
       "roster": [
         {
@@ -736,7 +740,7 @@
       "name": "UIC Freezer",
       "acronym": "UICF",
       "logo": "https://cdn0.heartbase.gg/league_team_logos/203000/203146.jpg?1768840480",
-      "stream_link": "https://www.twitch.tv/uicloonz",
+      "stream_link": "",
       "is_live": true,
       "roster": [
         {
@@ -779,7 +783,7 @@
       "name": "UIC Night",
       "acronym": "UICNT",
       "logo": "https://cdn0.heartbase.gg/league_team_logos/212000/212047.jpg?1768386989",
-      "stream_link": "https://www.twitch.tv/baumhaus_club",
+      "stream_link": "",
       "is_live": true,
       "roster": [
         {
@@ -841,7 +845,7 @@
       "name": "UIC Obsidian",
       "acronym": "UICOB",
       "logo": "/data/teams/team_logo/UIC_OBSIDIAN.png",
-      "stream_link": "https://www.twitch.tv/ultrainstinctcrew",
+      "stream_link": "",
       "is_live": true,
       "roster": [
         {
@@ -869,7 +873,7 @@
     },
     "UIC_OG": {
       "id": "UIC_OG",
-      "name": "UIC Og",
+      "name": "UIC OG",
       "acronym": "UICO",
       "logo": "/data/teams/team_logo/UIC_OG.png",
       "stream_link": "https://twitch.tv/DiamondGoku",
@@ -985,7 +989,7 @@
       "name": "UIC Prime + Alex",
       "acronym": "UICP+A",
       "logo": "/data/teams/team_logo/UIC_PRIME_+_ALEX.png",
-      "stream_link": "https://www.twitch.tv/uicspeedy",
+      "stream_link": "",
       "is_live": true,
       "roster": [
         {
@@ -1089,7 +1093,7 @@
       "id": "UIC_STROHHUTBANDE",
       "name": "UIC STROHHUTBANDE",
       "acronym": "UICS",
-      "logo": "/data/teams/team_logo/UIC_STROHHUTBANDE.PNG",
+      "logo": "/data/teams/team_logo/UIC_STROHHUTBANDE.png",
       "stream_link": "",
       "is_live": true,
       "roster": [
@@ -1238,7 +1242,7 @@
       "name": "Wannabe Cult Ego Edition",
       "acronym": "W2B EG",
       "logo": "https://cdn0.heartbase.gg/league_team_logos/211000/211922.jpg?1768575164",
-      "stream_link": "https://www.twitch.tv/ultrainstinctcrew",
+      "stream_link": "",
       "is_live": true,
       "roster": [
         {
