@@ -1,0 +1,1824 @@
+{
+  "meta": {
+    "title": "Turnier der Kraft Summer Split 2026",
+    "status": "UPCOMING",
+    "start_date_iso": "2026-09-10T21:59:59Z",
+    "registration_link": "https://forms.gle/8fLbbkYviGjQDyit8",
+    "stream_link": "https://twitch.tv/ultrainstinctcrew"
+  },
+  "teams": {
+    "7S_ALLSTARS": {
+      "id": "7S_ALLSTARS",
+      "name": "7S ALLSTARS",
+      "acronym": "7SA",
+      "logo": "/data/teams/team_logo/7S_ALLSTARS.png",
+      "stream_link": "https://www.twitch.tv/7serpentsesports",
+      "is_live": true,
+      "roster": [
+        {
+          "name": "Egoist Darki#ADC",
+          "role": "Spieler",
+          "is_captain": true
+        },
+        {
+          "name": "Jowni Dasper#9466",
+          "role": "Spieler"
+        },
+        {
+          "name": "Pr3ss#EUW",
+          "role": "Spieler"
+        },
+        {
+          "name": "7S  CursedRuler#T1T1",
+          "role": "Spieler"
+        },
+        {
+          "name": "Coach Mastian#FRAUD",
+          "role": "Spieler"
+        },
+        {
+          "name": "delulu#0069",
+          "role": "Spieler"
+        },
+        {
+          "name": "Carlo3011#Inter",
+          "role": "Spieler"
+        }
+      ]
+    },
+    "AOM_ORION": {
+      "id": "AOM_ORION",
+      "name": "AOM_ORION",
+      "acronym": "AOMO",
+      "logo": "/data/teams/team_logo/AOM_ORION.jpg",
+      "stream_link": "",
+      "is_live": true,
+      "roster": [
+        {
+          "name": "Rage#G2ッ",
+          "role": "Spieler"
+        },
+        {
+          "name": "Oshumaru#FF20",
+          "role": "Spieler"
+        },
+        {
+          "name": "小飞象#ADC",
+          "role": "Spieler"
+        },
+        {
+          "name": "AlwaysJunglêDiff#EUW",
+          "role": "Spieler"
+        },
+        {
+          "name": "Sirnight#282",
+          "role": "Spieler",
+          "is_captain": true
+        },
+        {
+          "name": "BommelKrieger#SNIP",
+          "role": "Spieler"
+        }
+      ]
+    },
+    "BIE_TABLE": {
+      "id": "BIE_TABLE",
+      "name": "BIE TABLE",
+      "acronym": "BIET",
+      "logo": "/data/teams/team_logo/BIE_TABLE.png",
+      "stream_link": "",
+      "is_live": true,
+      "roster": [
+        {
+          "name": "Ke1neahnung#1303",
+          "role": "Spieler"
+        },
+        {
+          "name": "washed#z Z Ｚ",
+          "role": "Spieler"
+        },
+        {
+          "name": "Minz#tea",
+          "role": "Spieler"
+        },
+        {
+          "name": "ζεζ τ ζεζ#EUW",
+          "role": "Spieler"
+        },
+        {
+          "name": "Skyhan#TS61",
+          "role": "Spieler",
+          "is_captain": true
+        },
+        {
+          "name": "Pupale#RAT",
+          "role": "Ersatz"
+        }
+      ]
+    },
+    "BLUBBBARSCHBUBEN": {
+      "id": "BLUBBBARSCHBUBEN",
+      "name": "BLUBBBARSCHBUBEN",
+      "acronym": "BBB",
+      "logo": "https://cdn0.heartbase.gg/league_team_logos/212000/212838.jpg?1785607440",
+      "stream_link": "",
+      "is_live": true
+    },
+    "GIG_LIZARDS": {
+      "id": "GIG_LIZARDS",
+      "name": "GIG LIZARDS",
+      "acronym": "GIGL",
+      "logo": "https://cdn0.heartbase.gg/league_team_logos/209000/209324.jpg?1785788000",
+      "stream_link": "",
+      "is_live": true
+    },
+    "IRON_BULLS": {
+      "id": "IRON_BULLS",
+      "name": "IRON BULLS",
+      "acronym": "IB",
+      "logo": "https://cdn0.heartbase.gg/league_team_logos/211000/211048.jpg?1755858467",
+      "stream_link": "",
+      "is_live": true,
+      "roster": [
+        {
+          "name": "UIC Regentropfen#H2O",
+          "role": "Spieler",
+          "is_captain": true
+        },
+        {
+          "name": "DeViiNeZz#EUW",
+          "role": "Spieler"
+        },
+        {
+          "name": "IHavePizza#DUNK",
+          "role": "Spieler"
+        },
+        {
+          "name": "FF Šmøky#FF15",
+          "role": "Spieler"
+        },
+        {
+          "name": "Chastror#9774",
+          "role": "Spieler"
+        },
+        {
+          "name": "Ferneum#Crab",
+          "role": "Spieler"
+        },
+        {
+          "name": "Zanta#Dune",
+          "role": "Spieler"
+        },
+        {
+          "name": "Tobey#Crab",
+          "role": "Spieler"
+        }
+      ]
+    },
+    "NTH_BLUE": {
+      "id": "NTH_BLUE",
+      "name": "Nythera eSports Blue",
+      "acronym": "NTHB",
+      "logo": "https://cdn0.heartbase.gg/league_team_logos/212000/212621.jpg?1779318703",
+      "stream_link": "",
+      "is_live": true
+    },
+    "NTH_PINK": {
+      "id": "NTH_PINK",
+      "name": "Nythera eSports Pink",
+      "acronym": "NTHP",
+      "logo": "https://cdn0.heartbase.gg/league_team_logos/212000/212628.jpg?1783004578",
+      "stream_link": "",
+      "is_live": true
+    },
+    "ODE_ABSOLUTE_ZERO": {
+      "id": "ODE_ABSOLUTE_ZERO",
+      "name": "ODE ABSOLUTE ZERO",
+      "acronym": "ODEAZ",
+      "logo": "https://cdn0.heartbase.gg/league_team_logos/209000/209281.jpg?1751621235",
+      "stream_link": "",
+      "is_live": true,
+      "roster": [
+        {
+          "name": "KiwitoMate#ODE",
+          "role": "Spieler"
+        },
+        {
+          "name": "Npunkt#ODE",
+          "role": "Spieler"
+        },
+        {
+          "name": "Lolevel#ODE",
+          "role": "Spieler",
+          "is_captain": true
+        },
+        {
+          "name": "OhneNein#INT",
+          "role": "Spieler"
+        },
+        {
+          "name": "gurke#ODE",
+          "role": "Spieler"
+        },
+        {
+          "name": "LBfromCB#EUW",
+          "role": "Spieler"
+        },
+        {
+          "name": "Menming#BUTZ",
+          "role": "Spieler"
+        },
+        {
+          "name": "Roihclem#TOP",
+          "role": "Spieler"
+        },
+        {
+          "name": "Raygon#EUW",
+          "role": "Spieler"
+        }
+      ]
+    },
+    "ODE_PARANOIA": {
+      "id": "ODE_PARANOIA",
+      "name": "ODE PARANOIA",
+      "acronym": "ODEP",
+      "logo": "https://cdn0.heartbase.gg/league_team_logos/209000/209282.jpg?1751621264",
+      "stream_link": "",
+      "is_live": true
+    },
+    "PUNCH_FIRST": {
+      "id": "PUNCH_FIRST",
+      "name": "PUNCH FIRST",
+      "acronym": "PF",
+      "logo": "/data/teams/team_logo/PUNCH_FIRST.png",
+      "stream_link": "",
+      "is_live": true,
+      "roster": [
+        {
+          "name": "Leandro#31415",
+          "role": "Spieler"
+        },
+        {
+          "name": "Ghulfrost#1997",
+          "role": "Spieler"
+        },
+        {
+          "name": "Krystall#Keria",
+          "role": "Spieler"
+        },
+        {
+          "name": "The DarkLGamer#EUW",
+          "role": "Spieler"
+        },
+        {
+          "name": "HOMERINO#homer",
+          "role": "Spieler"
+        },
+        {
+          "name": "Slight#Adc ",
+          "role": "Spieler"
+        },
+        {
+          "name": "CozyIceTea#1337",
+          "role": "Spieler"
+        },
+        {
+          "name": "UIC NokkedOut#JGGAP",
+          "role": "Spieler"
+        },
+        {
+          "name": "Fløhausen#Curse",
+          "role": "Spieler"
+        },
+        {
+          "name": "Jinya#1337",
+          "role": "Spieler",
+          "is_captain": true
+        }
+      ]
+    },
+    "RASSELBANDEN_GMBH": {
+      "id": "RASSELBANDEN_GMBH",
+      "name": "Rasselbanden GmbH",
+      "acronym": "RBG",
+      "logo": "/data/teams/team_logo/RASSELBANDEN_GMBH.PNG",
+      "stream_link": "https://www.twitch.tv/ultrainstinctcrew",
+      "is_live": true,
+      "roster": [
+        {
+          "name": "UIC Shenycrane #Vugel",
+          "role": "Spieler",
+          "is_captain": true
+        },
+        {
+          "name": "Otter #0812",
+          "role": "Spieler"
+        },
+        {
+          "name": "Entchen #QUACK",
+          "role": "Spieler"
+        },
+        {
+          "name": "COZwei #NoLoL",
+          "role": "Spieler"
+        },
+        {
+          "name": "Krait #Snek",
+          "role": "Spieler"
+        }
+      ]
+    },
+    "RISING_DAWN": {
+      "id": "RISING_DAWN",
+      "name": "Rising Dawn",
+      "acronym": "RD",
+      "logo": "https://cdn0.heartbase.gg/league_team_logos/212000/212208.jpg?1771360240",
+      "stream_link": "https://www.twitch.tv/slevinhunter",
+      "is_live": true
+    },
+    "SEND_IT": {
+      "id": "SEND_IT",
+      "name": "SEND IT",
+      "acronym": "SIT",
+      "logo": "/data/teams/team_logo/SEND_IT.png",
+      "stream_link": "",
+      "is_live": true,
+      "roster": [
+        {
+          "name": "Nova Frickin#Crono",
+          "role": "Spieler"
+        },
+        {
+          "name": "Inition#EUW",
+          "role": "Spieler"
+        },
+        {
+          "name": "Yami no tsumi#Yamii",
+          "role": "Spieler",
+          "is_captain": true
+        },
+        {
+          "name": "AOM Noyou#AOM",
+          "role": "Spieler"
+        },
+        {
+          "name": "Elijah#Bard",
+          "role": "Spieler"
+        },
+        {
+          "name": "Th0rdal#EUW",
+          "role": "Spieler"
+        },
+        {
+          "name": "UIC Keygasza#1337",
+          "role": "Spieler"
+        }
+      ]
+    },
+    "SENRU": {
+      "id": "SENRU",
+      "name": "Senru",
+      "acronym": "SENRU",
+      "logo": "/data/teams/team_logo/SENRU.jpg",
+      "stream_link": "https://www.twitch.tv/invicta_esport",
+      "is_live": true,
+      "roster": [
+        {
+          "name": "Tevoro#IVA",
+          "role": "Spieler",
+          "is_captain": true
+        },
+        {
+          "name": "EPS SuperSeducer#TEIN",
+          "role": "Spieler"
+        },
+        {
+          "name": "EPS Sundaymilf#TEIN",
+          "role": "Spieler"
+        },
+        {
+          "name": "Fynnazer#EUW",
+          "role": "Spieler"
+        },
+        {
+          "name": "Arise#BIRD",
+          "role": "Spieler"
+        },
+        {
+          "name": "BloodBlizzard#Taste",
+          "role": "Spieler"
+        },
+        {
+          "name": "Range Life#EUW",
+          "role": "Spieler"
+        }
+      ]
+    },
+    "TIAMATS_LEGACY_BORN": {
+      "id": "TIAMATS_LEGACY_BORN",
+      "name": "TIAMATS LEGACY BORN",
+      "acronym": "TLB",
+      "logo": "https://cdn0.heartbase.gg/league_team_logos/207000/207612.jpg?1732831509",
+      "stream_link": "https://www.twitch.tv/tiamatspl",
+      "is_live": true
+    },
+    "UIC_ABYSS": {
+      "id": "UIC_ABYSS",
+      "name": "UIC Abyss",
+      "acronym": "UICA",
+      "logo": "https://cdn0.heartbase.gg/league_team_logos/204000/204924.jpg?1765838352",
+      "stream_link": "",
+      "is_live": true,
+      "roster": [
+        {
+          "name": "Test",
+          "role": "Midlane",
+          "is_captain": true
+        },
+        {
+          "name": "Test",
+          "role": "Jungle"
+        },
+        {
+          "name": "Test",
+          "role": "ADC"
+        },
+        {
+          "name": "HealBot9000",
+          "role": "Support"
+        },
+        {
+          "name": "Test",
+          "role": "Toplane"
+        }
+      ]
+    },
+    "UIC_ASCEND": {
+      "id": "UIC_ASCEND",
+      "name": "UIC ASCEND",
+      "acronym": "UICA",
+      "logo": "https://cdn0.heartbase.gg/league_team_logos/212000/212852.jpg?1787674689",
+      "stream_link": "",
+      "is_live": true,
+      "roster": [
+        {
+          "name": "UIC Rayando07#Help",
+          "role": "Spieler"
+        },
+        {
+          "name": "TTVXavertseltsam#Mr X",
+          "role": "Spieler"
+        },
+        {
+          "name": "Gwynbleidd#TRISS",
+          "role": "Spieler"
+        },
+        {
+          "name": "UIC stevie#LISA",
+          "role": "Spieler"
+        },
+        {
+          "name": "UIC Bardie3#0711",
+          "role": "Spieler",
+          "is_captain": true
+        },
+        {
+          "name": "UIC Qvy#rusty",
+          "role": "Coach"
+        },
+        {
+          "name": "UIC Cerberus#GOATZ",
+          "role": "Manager"
+        },
+        {
+          "name": "UIC proStarII#UIC",
+          "role": "Cheerleader"
+        }
+      ]
+    },
+    "UIC_CYBER": {
+      "id": "UIC_CYBER",
+      "name": "UIC Cyber",
+      "acronym": "UICC",
+      "logo": "https://cdn0.heartbase.gg/league_team_logos/198000/198490.jpg?1774785721",
+      "stream_link": "",
+      "is_live": true
+    },
+    "UIC_ECLIPSE": {
+      "id": "UIC_ECLIPSE",
+      "name": "UIC ECLIPSE",
+      "acronym": "UICE",
+      "logo": "https://cdn0.heartbase.gg/league_team_logos/208000/208131.jpg?1778157742",
+      "stream_link": "",
+      "is_live": true
+    },
+    "UIC_EMBER": {
+      "id": "UIC_EMBER",
+      "name": "UIC Ember",
+      "acronym": "UICE",
+      "logo": "https://cdn0.heartbase.gg/league_team_logos/211000/211165.jpg?1765449081",
+      "stream_link": "https://www.twitch.tv/uicdanny",
+      "is_live": true,
+      "roster": [
+        {
+          "name": "UIC Envy#UIC",
+          "role": "Spieler",
+          "is_captain": true
+        },
+        {
+          "name": "Deathtricks#EUW",
+          "role": "Spieler"
+        },
+        {
+          "name": "P Z Y C L O N E#PZY",
+          "role": "Spieler"
+        },
+        {
+          "name": "Main: heartless#KOR (Ban) | Smurf: naomi#jesus",
+          "role": "Spieler"
+        },
+        {
+          "name": "UIC Muh#KATZE",
+          "role": "Spieler"
+        }
+      ]
+    },
+    "UIC_FREEZER": {
+      "id": "UIC_FREEZER",
+      "name": "UIC Freezer",
+      "acronym": "UICF",
+      "logo": "https://cdn0.heartbase.gg/league_team_logos/203000/203146.jpg?1768840480",
+      "stream_link": "https://www.twitch.tv/uicloonz",
+      "is_live": true,
+      "roster": [
+        {
+          "name": "UIC AutumnLeaf#Moo",
+          "role": "Spieler",
+          "is_captain": true
+        },
+        {
+          "name": "GT Maevix#1900",
+          "role": "Spieler"
+        },
+        {
+          "name": "UIC Frozenhands#MID",
+          "role": "Spieler"
+        },
+        {
+          "name": "exi#quak",
+          "role": "Spieler"
+        },
+        {
+          "name": "UIC Kamo#tpt",
+          "role": "Spieler"
+        },
+        {
+          "name": "UIC Ryu Copeland#117",
+          "role": "Spieler"
+        },
+        {
+          "name": "UIC Loonz#Coach",
+          "role": "Coach"
+        },
+        {
+          "name": "RG Cerberus#GOATZ",
+          "role": "Manager"
+        }
+      ]
+    },
+    "UIC_NIGHT": {
+      "id": "UIC_NIGHT",
+      "name": "UIC Night",
+      "acronym": "UICNT",
+      "logo": "https://cdn0.heartbase.gg/league_team_logos/212000/212047.jpg?1768386989",
+      "stream_link": "https://www.twitch.tv/baumhaus_club",
+      "is_live": true,
+      "roster": [
+        {
+          "name": "UIC Kuroko#Pass",
+          "role": "Spieler",
+          "is_captain": true
+        },
+        {
+          "name": "xtracox#EUW",
+          "role": "Spieler"
+        },
+        {
+          "name": "GetUrBoody#EUW",
+          "role": "Spieler"
+        },
+        {
+          "name": "6GPA Eyez#5757",
+          "role": "Spieler"
+        },
+        {
+          "name": "LookAtMe#Sup",
+          "role": "Spieler"
+        }
+      ]
+    },
+    "UIC_NOVA": {
+      "id": "UIC_NOVA",
+      "name": "UIC Nova",
+      "acronym": "UICN",
+      "logo": "https://cdn0.heartbase.gg/league_team_logos/203000/203447.jpg?1768386652",
+      "stream_link": "",
+      "is_live": true,
+      "roster": [
+        {
+          "name": "UIC adedier#EUWE",
+          "role": "Spieler",
+          "is_captain": true
+        },
+        {
+          "name": "UIC Muh#KATZE",
+          "role": "Spieler"
+        },
+        {
+          "name": "kubizza#3631",
+          "role": "Spieler"
+        },
+        {
+          "name": "UIC Sadrik#UIC",
+          "role": "Spieler"
+        },
+        {
+          "name": "UIC Envy#UIC",
+          "role": "Spieler"
+        }
+      ]
+    },
+    "UIC_OBSIDIAN": {
+      "id": "UIC_OBSIDIAN",
+      "name": "UIC Obsidian",
+      "acronym": "UICOB",
+      "logo": "/data/teams/team_logo/UIC_OBSIDIAN.png",
+      "stream_link": "https://www.twitch.tv/ultrainstinctcrew",
+      "is_live": true,
+      "roster": [
+        {
+          "name": "Papi Δce#3072",
+          "role": "Spieler",
+          "is_captain": true
+        },
+        {
+          "name": "BlondiXE1#EUW",
+          "role": "Spieler"
+        },
+        {
+          "name": "DasNichtsImLicht#FF15",
+          "role": "Spieler"
+        },
+        {
+          "name": "Leberkasleatschn#1990",
+          "role": "Spieler"
+        },
+        {
+          "name": "LordZash#1220",
+          "role": "Spieler"
+        }
+      ]
+    },
+    "UIC_OG": {
+      "id": "UIC_OG",
+      "name": "UIC Og",
+      "acronym": "UICO",
+      "logo": "/data/teams/team_logo/UIC_OG.png",
+      "stream_link": "https://twitch.tv/DiamondGoku",
+      "is_live": true,
+      "roster": [
+        {
+          "name": "UIC Simply#666",
+          "role": "Spieler",
+          "is_captain": true
+        },
+        {
+          "name": "UIC Otter#fkafd",
+          "role": "Spieler"
+        },
+        {
+          "name": "UIC Gallagros#187",
+          "role": "Spieler"
+        },
+        {
+          "name": "UIC Goku#UIC",
+          "role": "Spieler"
+        },
+        {
+          "name": "UIC Symphonie#ZywOo",
+          "role": "Spieler"
+        },
+        {
+          "name": "UIC proStarII#UIC",
+          "role": "Ersatz"
+        }
+      ]
+    },
+    "UIC_PHOENIX": {
+      "id": "UIC_PHOENIX",
+      "name": "UIC PHOENIX",
+      "acronym": "UICP",
+      "logo": "https://cdn0.heartbase.gg/league_team_logos/212000/212473.jpg?1777401024",
+      "stream_link": "https://www.twitch.tv/uicloonz",
+      "is_live": true,
+      "roster": [
+        {
+          "name": "UIC Kamo#tpt",
+          "role": "Spieler",
+          "is_captain": true
+        },
+        {
+          "name": "UIC Exi#QUAK",
+          "role": "Spieler"
+        },
+        {
+          "name": "UIC Ace#ACE",
+          "role": "Spieler"
+        },
+        {
+          "name": "UIC Frozenhands#Mid",
+          "role": "Spieler"
+        },
+        {
+          "name": "UIC Ryu Copeland#117",
+          "role": "Spieler"
+        },
+        {
+          "name": "UIC Loonz#Coach",
+          "role": "Coach"
+        },
+        {
+          "name": "UIC Cerberus#GOATZ",
+          "role": "Manager"
+        }
+      ]
+    },
+    "UIC_PRIME": {
+      "id": "UIC_PRIME",
+      "name": "UIC Prime",
+      "acronym": "UICP",
+      "logo": "https://cdn0.heartbase.gg/league_team_logos/116000/116908.jpg?1768526642",
+      "stream_link": "",
+      "is_live": true,
+      "roster": [
+        {
+          "name": "piapiob#187",
+          "role": "Spieler",
+          "is_captain": true
+        },
+        {
+          "name": "UIC Niki#AMB",
+          "role": "Spieler"
+        },
+        {
+          "name": "UIC Baumi#123",
+          "role": "Spieler"
+        },
+        {
+          "name": "UIC Baguetto#R3kt",
+          "role": "Spieler"
+        },
+        {
+          "name": "UIC Giani#999",
+          "role": "Spieler"
+        },
+        {
+          "name": "Thors Snorresson#910",
+          "role": "Ersatz"
+        },
+        {
+          "name": "UIC Speedy#EUW",
+          "role": "Ersatz"
+        }
+      ]
+    },
+    "UIC_PRIME_+_ALEX": {
+      "id": "UIC_PRIME_+_ALEX",
+      "name": "UIC Prime + Alex",
+      "acronym": "UICP+A",
+      "logo": "/data/teams/team_logo/UIC_PRIME_+_ALEX.png",
+      "stream_link": "https://www.twitch.tv/uicspeedy",
+      "is_live": true,
+      "roster": [
+        {
+          "name": "UIC Speedy#EUW",
+          "role": "Spieler",
+          "is_captain": true
+        },
+        {
+          "name": "UIC Niki#AMB",
+          "role": "Spieler"
+        },
+        {
+          "name": "UIC Keygasza#1337",
+          "role": "Spieler"
+        },
+        {
+          "name": "UIC Baguetto#R3kt",
+          "role": "Spieler"
+        },
+        {
+          "name": "UIC Giani#999",
+          "role": "Spieler"
+        },
+        {
+          "name": "UIC Simply#666",
+          "role": "Ersatz"
+        },
+        {
+          "name": "never leaving#stay",
+          "role": "Manager"
+        }
+      ]
+    },
+    "UIC_SAKURA": {
+      "id": "UIC_SAKURA",
+      "name": "UIC SAKURA",
+      "acronym": "UICS",
+      "logo": "https://cdn0.heartbase.gg/league_team_logos/208000/208851.jpg?1775950554",
+      "stream_link": "",
+      "is_live": true
+    },
+    "UIC_SPARK": {
+      "id": "UIC_SPARK",
+      "name": "UIC Spark",
+      "acronym": "UICS",
+      "logo": "https://cdn0.heartbase.gg/league_team_logos/208000/208694.jpg?1765150033",
+      "stream_link": "",
+      "is_live": true
+    },
+    "UIC_STROHHUTBANDE": {
+      "id": "UIC_STROHHUTBANDE",
+      "name": "UIC STROHHUTBANDE",
+      "acronym": "UICS",
+      "logo": "/data/teams/team_logo/UIC_STROHHUTBANDE.PNG",
+      "stream_link": "",
+      "is_live": true,
+      "roster": [
+        {
+          "name": "TwTv PERYZ#000",
+          "role": "Spieler",
+          "is_captain": true
+        },
+        {
+          "name": "BTZ DELTA#JGL",
+          "role": "Spieler"
+        },
+        {
+          "name": "Kommander#7676",
+          "role": "Spieler"
+        },
+        {
+          "name": "TGP TRAZAN#APHEL",
+          "role": "Spieler"
+        },
+        {
+          "name": "smelly#feet",
+          "role": "Spieler"
+        },
+        {
+          "name": "ZTA Natsu#Bootz",
+          "role": "Spieler"
+        }
+      ]
+    },
+    "UIC_TEMPEST": {
+      "id": "UIC_TEMPEST",
+      "name": "UIC TEMPEST",
+      "acronym": "UICT",
+      "logo": "https://cdn0.heartbase.gg/league_team_logos/208000/208606.jpg?1786906544",
+      "stream_link": "",
+      "is_live": true
+    },
+    "UIC_VAKUUM": {
+      "id": "UIC_VAKUUM",
+      "name": "UIC Vakuum",
+      "acronym": "UICV",
+      "logo": "https://cdn0.heartbase.gg/league_team_logos/207000/207696.jpg?1774892477",
+      "stream_link": "",
+      "is_live": true
+    },
+    "UNKNOWN_EXE": {
+      "id": "UNKNOWN_EXE",
+      "name": "UNKNOWN.EXE",
+      "acronym": "UEXE",
+      "logo": "/data/teams/team_logo/UNKNOWN_EXE.png",
+      "stream_link": "",
+      "is_live": true,
+      "roster": [
+        {
+          "name": "LISQ#H73",
+          "role": "Spieler"
+        },
+        {
+          "name": "nth letzter tanz#nth",
+          "role": "Spieler",
+          "is_captain": true
+        },
+        {
+          "name": "AOM SPiritblade#AOM",
+          "role": "Spieler"
+        },
+        {
+          "name": "Judas#bomba",
+          "role": "Spieler"
+        },
+        {
+          "name": "D3athStar#EUW",
+          "role": "Spieler"
+        },
+        {
+          "name": "SPCNG#97531",
+          "role": "Spieler"
+        },
+        {
+          "name": "Ragnax#Top",
+          "role": "Spieler"
+        },
+        {
+          "name": "LETMESTACK10MIN#DOG",
+          "role": "Spieler"
+        },
+        {
+          "name": "Kuroko Seirin#Pass",
+          "role": "Spieler"
+        }
+      ]
+    },
+    "W2B_CULT_EGO": {
+      "id": "W2B_CULT_EGO",
+      "name": "Wannabe Cult Ego Edition",
+      "acronym": "W2B EG",
+      "logo": "https://cdn0.heartbase.gg/league_team_logos/211000/211922.jpg?1768575164",
+      "stream_link": "https://www.twitch.tv/ultrainstinctcrew",
+      "is_live": true,
+      "roster": [
+        {
+          "name": "Facking Luigi#EUW",
+          "role": "Spieler",
+          "is_captain": true
+        },
+        {
+          "name": "Yagizza#Dexi",
+          "role": "Spieler"
+        },
+        {
+          "name": "bubblefush#YEET",
+          "role": "Spieler"
+        },
+        {
+          "name": "TheWhiteWolf#ADC",
+          "role": "Spieler"
+        },
+        {
+          "name": "Estarossa#U7G",
+          "role": "Spieler"
+        },
+        {
+          "name": "Igel#W2BCK",
+          "role": "Spieler"
+        }
+      ]
+    }
+  },
+  "bracket": [
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": "BLUBBBARSCHBUBEN",
+      "status": "FINISHED",
+      "id": "wb_r1_m1",
+      "round": 1,
+      "type": "WINNER",
+      "next_match_id": "wb_r2_m1",
+      "next_slot": 1,
+      "loser_match_id": "lb_r1_m1",
+      "loser_slot": 1,
+      "team_1": "BLUBBBARSCHBUBEN",
+      "team_2": "[BYE]"
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": "UIC_PHOENIX",
+      "status": "FINISHED",
+      "id": "wb_r1_m2",
+      "round": 1,
+      "type": "WINNER",
+      "next_match_id": "wb_r2_m1",
+      "next_slot": 2,
+      "loser_match_id": "lb_r1_m1",
+      "loser_slot": 2,
+      "team_1": "UIC_PHOENIX",
+      "team_2": "[BYE]"
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": "TIAMATS_LEGACY_BORN",
+      "status": "FINISHED",
+      "id": "wb_r1_m3",
+      "round": 1,
+      "type": "WINNER",
+      "next_match_id": "wb_r2_m2",
+      "next_slot": 1,
+      "loser_match_id": "lb_r1_m2",
+      "loser_slot": 1,
+      "team_1": "TIAMATS_LEGACY_BORN",
+      "team_2": "[BYE]"
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": "RISING_DAWN",
+      "status": "FINISHED",
+      "id": "wb_r1_m4",
+      "round": 1,
+      "type": "WINNER",
+      "next_match_id": "wb_r2_m2",
+      "next_slot": 2,
+      "loser_match_id": "lb_r1_m2",
+      "loser_slot": 2,
+      "team_1": "RISING_DAWN",
+      "team_2": "[BYE]"
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": "UIC_CYBER",
+      "status": "FINISHED",
+      "id": "wb_r1_m5",
+      "round": 1,
+      "type": "WINNER",
+      "next_match_id": "wb_r2_m3",
+      "next_slot": 1,
+      "loser_match_id": "lb_r1_m3",
+      "loser_slot": 1,
+      "team_1": "UIC_CYBER",
+      "team_2": "[BYE]"
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": "UIC_NOVA",
+      "status": "FINISHED",
+      "id": "wb_r1_m6",
+      "round": 1,
+      "type": "WINNER",
+      "next_match_id": "wb_r2_m3",
+      "next_slot": 2,
+      "loser_match_id": "lb_r1_m3",
+      "loser_slot": 2,
+      "team_1": "UIC_NOVA",
+      "team_2": "[BYE]"
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": "NTH_BLUE",
+      "status": "FINISHED",
+      "id": "wb_r1_m7",
+      "round": 1,
+      "type": "WINNER",
+      "next_match_id": "wb_r2_m4",
+      "next_slot": 1,
+      "loser_match_id": "lb_r1_m4",
+      "loser_slot": 1,
+      "team_1": "NTH_BLUE",
+      "team_2": "[BYE]"
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "LIVE",
+      "id": "wb_r1_m8",
+      "round": 1,
+      "type": "WINNER",
+      "next_match_id": "wb_r2_m4",
+      "next_slot": 2,
+      "loser_match_id": "lb_r1_m4",
+      "loser_slot": 2,
+      "team_1": "NTH_PINK",
+      "team_2": "UIC_STROHHUTBANDE"
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "LIVE",
+      "id": "wb_r1_m9",
+      "round": 1,
+      "type": "WINNER",
+      "next_match_id": "wb_r2_m5",
+      "next_slot": 1,
+      "loser_match_id": "lb_r1_m5",
+      "loser_slot": 1,
+      "team_1": "UIC_SAKURA",
+      "team_2": "PUNCH_FIRST"
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "LIVE",
+      "id": "wb_r1_m10",
+      "round": 1,
+      "type": "WINNER",
+      "next_match_id": "wb_r2_m5",
+      "next_slot": 2,
+      "loser_match_id": "lb_r1_m5",
+      "loser_slot": 2,
+      "team_1": "UIC_OG",
+      "team_2": "7S_ALLSTARS"
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "LIVE",
+      "id": "wb_r1_m11",
+      "round": 1,
+      "type": "WINNER",
+      "next_match_id": "wb_r2_m6",
+      "next_slot": 1,
+      "loser_match_id": "lb_r1_m6",
+      "loser_slot": 1,
+      "team_1": "UIC_ASCEND",
+      "team_2": "BIE_TABLE"
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "LIVE",
+      "id": "wb_r1_m12",
+      "round": 1,
+      "type": "WINNER",
+      "next_match_id": "wb_r2_m6",
+      "next_slot": 2,
+      "loser_match_id": "lb_r1_m6",
+      "loser_slot": 2,
+      "team_1": "UNKNOWN_EXE",
+      "team_2": "IRON_BULLS"
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "LIVE",
+      "id": "wb_r1_m13",
+      "round": 1,
+      "type": "WINNER",
+      "next_match_id": "wb_r2_m7",
+      "next_slot": 1,
+      "loser_match_id": "lb_r1_m7",
+      "loser_slot": 1,
+      "team_1": "UIC_PRIME",
+      "team_2": "AOM_ORION"
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "LIVE",
+      "id": "wb_r1_m14",
+      "round": 1,
+      "type": "WINNER",
+      "next_match_id": "wb_r2_m7",
+      "next_slot": 2,
+      "loser_match_id": "lb_r1_m7",
+      "loser_slot": 2,
+      "team_1": "UIC_ECLIPSE",
+      "team_2": "ODE_ABSOLUTE_ZERO"
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "LIVE",
+      "id": "wb_r1_m15",
+      "round": 1,
+      "type": "WINNER",
+      "next_match_id": "wb_r2_m8",
+      "next_slot": 1,
+      "loser_match_id": "lb_r1_m8",
+      "loser_slot": 1,
+      "team_1": "UIC_TEMPEST",
+      "team_2": "SEND_IT"
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "LIVE",
+      "id": "wb_r1_m16",
+      "round": 1,
+      "type": "WINNER",
+      "next_match_id": "wb_r2_m8",
+      "next_slot": 2,
+      "loser_match_id": "lb_r1_m8",
+      "loser_slot": 2,
+      "team_1": "ODE_PARANOIA",
+      "team_2": "GIG_LIZARDS"
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "LIVE",
+      "id": "wb_r2_m1",
+      "round": 2,
+      "type": "WINNER",
+      "next_match_id": "wb_r3_m1",
+      "next_slot": 1,
+      "loser_match_id": "lb_r2_m8",
+      "loser_slot": 1,
+      "team_1": "BLUBBBARSCHBUBEN",
+      "team_2": "UIC_PHOENIX"
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "LIVE",
+      "id": "wb_r2_m2",
+      "round": 2,
+      "type": "WINNER",
+      "next_match_id": "wb_r3_m1",
+      "next_slot": 2,
+      "loser_match_id": "lb_r2_m7",
+      "loser_slot": 2,
+      "team_1": "TIAMATS_LEGACY_BORN",
+      "team_2": "RISING_DAWN"
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "LIVE",
+      "id": "wb_r2_m3",
+      "round": 2,
+      "type": "WINNER",
+      "next_match_id": "wb_r3_m2",
+      "next_slot": 1,
+      "loser_match_id": "lb_r2_m6",
+      "loser_slot": 1,
+      "team_1": "UIC_CYBER",
+      "team_2": "UIC_NOVA"
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "WAITING",
+      "id": "wb_r2_m4",
+      "round": 2,
+      "type": "WINNER",
+      "next_match_id": "wb_r3_m2",
+      "next_slot": 2,
+      "loser_match_id": "lb_r2_m5",
+      "loser_slot": 2,
+      "team_1": "NTH_BLUE",
+      "team_2": null
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "WAITING",
+      "id": "wb_r2_m5",
+      "round": 2,
+      "type": "WINNER",
+      "next_match_id": "wb_r3_m3",
+      "next_slot": 1,
+      "loser_match_id": "lb_r2_m4",
+      "loser_slot": 1,
+      "team_1": null,
+      "team_2": null
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "WAITING",
+      "id": "wb_r2_m6",
+      "round": 2,
+      "type": "WINNER",
+      "next_match_id": "wb_r3_m3",
+      "next_slot": 2,
+      "loser_match_id": "lb_r2_m3",
+      "loser_slot": 2,
+      "team_1": null,
+      "team_2": null
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "WAITING",
+      "id": "wb_r2_m7",
+      "round": 2,
+      "type": "WINNER",
+      "next_match_id": "wb_r3_m4",
+      "next_slot": 1,
+      "loser_match_id": "lb_r2_m2",
+      "loser_slot": 1,
+      "team_1": null,
+      "team_2": null
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "WAITING",
+      "id": "wb_r2_m8",
+      "round": 2,
+      "type": "WINNER",
+      "next_match_id": "wb_r3_m4",
+      "next_slot": 2,
+      "loser_match_id": "lb_r2_m1",
+      "loser_slot": 2,
+      "team_1": null,
+      "team_2": null
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "WAITING",
+      "id": "wb_r3_m1",
+      "round": 3,
+      "type": "WINNER",
+      "next_match_id": "wb_r4_m1",
+      "next_slot": 1,
+      "loser_match_id": "lb_r4_m1",
+      "loser_slot": 1,
+      "team_1": null,
+      "team_2": null
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "WAITING",
+      "id": "wb_r3_m2",
+      "round": 3,
+      "type": "WINNER",
+      "next_match_id": "wb_r4_m1",
+      "next_slot": 2,
+      "loser_match_id": "lb_r4_m2",
+      "loser_slot": 2,
+      "team_1": null,
+      "team_2": null
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "WAITING",
+      "id": "wb_r3_m3",
+      "round": 3,
+      "type": "WINNER",
+      "next_match_id": "wb_r4_m2",
+      "next_slot": 1,
+      "loser_match_id": "lb_r4_m3",
+      "loser_slot": 1,
+      "team_1": null,
+      "team_2": null
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "WAITING",
+      "id": "wb_r3_m4",
+      "round": 3,
+      "type": "WINNER",
+      "next_match_id": "wb_r4_m2",
+      "next_slot": 2,
+      "loser_match_id": "lb_r4_m4",
+      "loser_slot": 2,
+      "team_1": null,
+      "team_2": null
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "WAITING",
+      "id": "wb_r4_m1",
+      "round": 4,
+      "type": "WINNER",
+      "next_match_id": "wb_r5_m1",
+      "next_slot": 1,
+      "loser_match_id": "lb_r6_m2",
+      "loser_slot": 1,
+      "team_1": null,
+      "team_2": null
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "WAITING",
+      "id": "wb_r4_m2",
+      "round": 4,
+      "type": "WINNER",
+      "next_match_id": "wb_r5_m1",
+      "next_slot": 2,
+      "loser_match_id": "lb_r6_m1",
+      "loser_slot": 2,
+      "team_1": null,
+      "team_2": null
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "WAITING",
+      "id": "wb_r5_m1",
+      "round": 5,
+      "type": "WINNER",
+      "next_match_id": "gf_m1",
+      "next_slot": 1,
+      "loser_match_id": "lb_r8_m1",
+      "loser_slot": 1,
+      "team_1": null,
+      "team_2": null
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": "[BYE]",
+      "status": "FINISHED",
+      "id": "lb_r1_m1",
+      "round": 1,
+      "type": "LOSER",
+      "next_match_id": "lb_r2_m1",
+      "team_1": "[BYE]",
+      "team_2": "[BYE]"
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": "[BYE]",
+      "status": "FINISHED",
+      "id": "lb_r1_m2",
+      "round": 1,
+      "type": "LOSER",
+      "next_match_id": "lb_r2_m2",
+      "team_1": "[BYE]",
+      "team_2": "[BYE]"
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": "[BYE]",
+      "status": "FINISHED",
+      "id": "lb_r1_m3",
+      "round": 1,
+      "type": "LOSER",
+      "next_match_id": "lb_r2_m3",
+      "team_1": "[BYE]",
+      "team_2": "[BYE]"
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "WAITING",
+      "id": "lb_r1_m4",
+      "round": 1,
+      "type": "LOSER",
+      "next_match_id": "lb_r2_m4",
+      "team_1": "[BYE]",
+      "team_2": null
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "WAITING",
+      "id": "lb_r1_m5",
+      "round": 1,
+      "type": "LOSER",
+      "next_match_id": "lb_r2_m5",
+      "team_1": null,
+      "team_2": null
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "WAITING",
+      "id": "lb_r1_m6",
+      "round": 1,
+      "type": "LOSER",
+      "next_match_id": "lb_r2_m6",
+      "team_1": null,
+      "team_2": null
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "WAITING",
+      "id": "lb_r1_m7",
+      "round": 1,
+      "type": "LOSER",
+      "next_match_id": "lb_r2_m7",
+      "team_1": null,
+      "team_2": null
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "WAITING",
+      "id": "lb_r1_m8",
+      "round": 1,
+      "type": "LOSER",
+      "next_match_id": "lb_r2_m8",
+      "team_1": null,
+      "team_2": null
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "WAITING",
+      "id": "lb_r2_m1",
+      "round": 2,
+      "type": "LOSER",
+      "next_match_id": "lb_r3_m1",
+      "team_1": "[BYE]",
+      "team_2": null
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "WAITING",
+      "id": "lb_r2_m2",
+      "round": 2,
+      "type": "LOSER",
+      "next_match_id": "lb_r3_m1",
+      "team_1": "[BYE]",
+      "team_2": null
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "WAITING",
+      "id": "lb_r2_m3",
+      "round": 2,
+      "type": "LOSER",
+      "next_match_id": "lb_r3_m2",
+      "team_1": "[BYE]",
+      "team_2": null
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "WAITING",
+      "id": "lb_r2_m4",
+      "round": 2,
+      "type": "LOSER",
+      "next_match_id": "lb_r3_m2",
+      "team_1": null,
+      "team_2": null
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "WAITING",
+      "id": "lb_r2_m5",
+      "round": 2,
+      "type": "LOSER",
+      "next_match_id": "lb_r3_m3",
+      "team_1": null,
+      "team_2": null
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "WAITING",
+      "id": "lb_r2_m6",
+      "round": 2,
+      "type": "LOSER",
+      "next_match_id": "lb_r3_m3",
+      "team_1": null,
+      "team_2": null
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "WAITING",
+      "id": "lb_r2_m7",
+      "round": 2,
+      "type": "LOSER",
+      "next_match_id": "lb_r3_m4",
+      "team_1": null,
+      "team_2": null
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "WAITING",
+      "id": "lb_r2_m8",
+      "round": 2,
+      "type": "LOSER",
+      "next_match_id": "lb_r3_m4",
+      "team_1": null,
+      "team_2": null
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "WAITING",
+      "id": "lb_r3_m1",
+      "round": 3,
+      "type": "LOSER",
+      "next_match_id": "lb_r4_m1",
+      "team_1": null,
+      "team_2": null
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "WAITING",
+      "id": "lb_r3_m2",
+      "round": 3,
+      "type": "LOSER",
+      "next_match_id": "lb_r4_m2",
+      "team_1": null,
+      "team_2": null
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "WAITING",
+      "id": "lb_r3_m3",
+      "round": 3,
+      "type": "LOSER",
+      "next_match_id": "lb_r4_m3",
+      "team_1": null,
+      "team_2": null
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "WAITING",
+      "id": "lb_r3_m4",
+      "round": 3,
+      "type": "LOSER",
+      "next_match_id": "lb_r4_m4",
+      "team_1": null,
+      "team_2": null
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "WAITING",
+      "id": "lb_r4_m1",
+      "round": 4,
+      "type": "LOSER",
+      "next_match_id": "lb_r5_m1",
+      "team_1": null,
+      "team_2": null
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "WAITING",
+      "id": "lb_r4_m2",
+      "round": 4,
+      "type": "LOSER",
+      "next_match_id": "lb_r5_m1",
+      "team_1": null,
+      "team_2": null
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "WAITING",
+      "id": "lb_r4_m3",
+      "round": 4,
+      "type": "LOSER",
+      "next_match_id": "lb_r5_m2",
+      "team_1": null,
+      "team_2": null
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "WAITING",
+      "id": "lb_r4_m4",
+      "round": 4,
+      "type": "LOSER",
+      "next_match_id": "lb_r5_m2",
+      "team_1": null,
+      "team_2": null
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "WAITING",
+      "id": "lb_r5_m1",
+      "round": 5,
+      "type": "LOSER",
+      "next_match_id": "lb_r6_m1",
+      "team_1": null,
+      "team_2": null
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "WAITING",
+      "id": "lb_r5_m2",
+      "round": 5,
+      "type": "LOSER",
+      "next_match_id": "lb_r6_m2",
+      "team_1": null,
+      "team_2": null
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "WAITING",
+      "id": "lb_r6_m1",
+      "round": 6,
+      "type": "LOSER",
+      "next_match_id": "lb_r7_m1",
+      "team_1": null,
+      "team_2": null
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "WAITING",
+      "id": "lb_r6_m2",
+      "round": 6,
+      "type": "LOSER",
+      "next_match_id": "lb_r7_m1",
+      "team_1": null,
+      "team_2": null
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "WAITING",
+      "id": "lb_r7_m1",
+      "round": 7,
+      "type": "LOSER",
+      "next_match_id": "lb_r8_m1",
+      "team_1": null,
+      "team_2": null
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "WAITING",
+      "id": "lb_r8_m1",
+      "round": 8,
+      "type": "LOSER",
+      "next_match_id": "gf_m1",
+      "team_1": null,
+      "team_2": null
+    },
+    {
+      "score_1": 0,
+      "score_2": 0,
+      "winner_id": null,
+      "status": "WAITING",
+      "id": "gf_m1",
+      "round": 6,
+      "type": "WINNER",
+      "next_match_id": null,
+      "team_1": null,
+      "team_2": null,
+      "is_grand_final": true
+    }
+  ]
+}
