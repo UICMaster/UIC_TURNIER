@@ -109,6 +109,10 @@
           "name": "Skyhan#TS61",
           "role": "Spieler",
           "is_captain": true
+        },
+        {
+          "name": "Pupale#RAT",
+          "role": "Ersatz"
         }
       ]
     },
@@ -759,24 +763,24 @@
       "is_live": true,
       "roster": [
         {
-          "name": "UIC Excellent C#1997",
+          "name": "UIC adedier#EUWE",
           "role": "Spieler",
           "is_captain": true
         },
         {
-          "name": "UIC Kaetaya#XwX",
+          "name": "UIC Muh#KATZE",
           "role": "Spieler"
         },
         {
-          "name": "UIC Boohunter#Boo",
+          "name": "kubizza#3631",
           "role": "Spieler"
         },
         {
-          "name": "UIC adedier#EUWE",
+          "name": "UIC Sadrik#UIC",
           "role": "Spieler"
         },
         {
-          "name": "Senseise#1998",
+          "name": "UIC Envy#UIC",
           "role": "Spieler"
         }
       ]
@@ -1052,6 +1056,10 @@
           "role": "Spieler"
         },
         {
+          "name": "smelly#feet",
+          "role": "Spieler"
+        },
+        {
           "name": "ZTA Natsu#Bootz",
           "role": "Spieler"
         }
@@ -1134,6 +1142,22 @@
         },
         {
           "name": "Judas#bomba",
+          "role": "Spieler"
+        },
+        {
+          "name": "D3athStar#EUW",
+          "role": "Spieler"
+        },
+        {
+          "name": "SPCNG#97531",
+          "role": "Spieler"
+        },
+        {
+          "name": "Ragnax#Top",
+          "role": "Spieler"
+        },
+        {
+          "name": "LETMESTACK10MIN#DOG",
           "role": "Spieler"
         },
         {
