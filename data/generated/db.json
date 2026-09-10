@@ -227,11 +227,50 @@
     },
     "ODE_ABSOLUTE_ZERO": {
       "id": "ODE_ABSOLUTE_ZERO",
-      "name": "ODE_ABSOLUTE_ZERO",
+      "name": "ODE ABSOLUTE ZERO",
       "acronym": "ODEAZ",
       "logo": "https://cdn0.heartbase.gg/league_team_logos/209000/209281.jpg?1751621235",
       "stream_link": "",
-      "is_live": true
+      "is_live": true,
+      "roster": [
+        {
+          "name": "KiwitoMate#ODE",
+          "role": "Spieler"
+        },
+        {
+          "name": "Npunkt#ODE",
+          "role": "Spieler"
+        },
+        {
+          "name": "Lolevel#ODE",
+          "role": "Spieler",
+          "is_captain": true
+        },
+        {
+          "name": "OhneNein#INT",
+          "role": "Spieler"
+        },
+        {
+          "name": "gurke#ODE",
+          "role": "Spieler"
+        },
+        {
+          "name": "LBfromCB#EUW",
+          "role": "Spieler"
+        },
+        {
+          "name": "Menming#BUTZ",
+          "role": "Spieler"
+        },
+        {
+          "name": "Roihclem#TOP",
+          "role": "Spieler"
+        },
+        {
+          "name": "Raygon#EUW",
+          "role": "Spieler"
+        }
+      ]
     },
     "ODE_PARANOIA": {
       "id": "ODE_PARANOIA",
