@@ -269,7 +269,7 @@
       },
       {
         "summoner": "Finni#PORO",
-        "is_captain": false
+        "is_captain": true
       },
       {
         "summoner": "SimonDerFuchs#361",
@@ -281,7 +281,7 @@
       },
       {
         "summoner": "GIG Tic Tac Gum#Elise",
-        "is_captain": true
+        "is_captain": false
       }
     ],
     "team_link": "https://www.primeleague.gg/de/leagues/teams/209324",
