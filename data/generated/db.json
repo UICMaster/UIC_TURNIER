@@ -634,8 +634,8 @@
     {
       "score_1": 0,
       "score_2": 0,
-      "winner_id": "NTH_BLUE",
-      "status": "FINISHED",
+      "winner_id": null,
+      "status": "LIVE",
       "id": "wb_r1_m7",
       "round": 1,
       "type": "WINNER",
@@ -644,7 +644,7 @@
       "loser_match_id": "lb_r1_m4",
       "loser_slot": 1,
       "team_1": "NTH_BLUE",
-      "team_2": "[BYE]"
+      "team_2": "UIC_WUERFEL"
     },
     {
       "score_1": 0,
@@ -659,7 +659,7 @@
       "loser_match_id": "lb_r1_m4",
       "loser_slot": 2,
       "team_1": "NTH_PINK",
-      "team_2": "UIC_WUERFEL"
+      "team_2": "UIC_STROHHUTBANDE"
     },
     {
       "score_1": 0,
@@ -838,7 +838,7 @@
       "next_slot": 2,
       "loser_match_id": "lb_r2_m5",
       "loser_slot": 2,
-      "team_1": "NTH_BLUE",
+      "team_1": null,
       "team_2": null
     },
     {
@@ -1051,7 +1051,7 @@
       "round": 1,
       "type": "LOSER",
       "next_match_id": "lb_r2_m4",
-      "team_1": "[BYE]",
+      "team_1": null,
       "team_2": null
     },
     {
