@@ -4,5 +4,28 @@
   "acronym": "UICE",
   "logo": "https://cdn0.heartbase.gg/league_team_logos/208000/208131.jpg?1778157742",
   "stream_link": "", 
-  "is_live": true 
+  "is_live": true,
+  "roster": [
+    { 
+      "name": "UIC Stafferl#FNC", 
+      "role": "Spieler", 
+      "is_captain": true 
+    },
+    { 
+      "name": "UIC Pferdemilch#Milch", 
+      "role": "Spieler" 
+    },
+    { 
+      "name": "UIC Nairadawsm#UIC", 
+      "role": "Spieler" 
+    },
+    { 
+      "name": "UIC Rellik#CYS", 
+      "role": "Spieler" 
+    },
+    { 
+      "name": "UIC Undergrinder#Top", 
+      "role": "Spieler" 
+    }
+  ] 
 }
