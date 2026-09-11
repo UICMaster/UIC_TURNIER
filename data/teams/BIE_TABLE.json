@@ -12,7 +12,8 @@
     },
     { 
       "name": "washed#z Z Ｚ", 
-      "role": "Spieler" 
+      "role": "Spieler",
+      "is_captain": true 
     },
     { 
       "name": "Minz#tea", 
@@ -24,8 +25,7 @@
     },
     { 
       "name": "Skyhan#TS61", 
-      "role": "Spieler", 
-      "is_captain": true 
+      "role": "Spieler"
     },
     { 
       "name": "Pupale#RAT", 
