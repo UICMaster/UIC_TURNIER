@@ -48,7 +48,7 @@
     },
     "AOM_ORION": {
       "id": "AOM_ORION",
-      "name": "AOM_ORION",
+      "name": "AOM ORION",
       "acronym": "AOMO",
       "logo": "/data/teams/team_logo/AOM_ORION.jpg",
       "stream_link": "",
@@ -426,7 +426,30 @@
       "acronym": "RD",
       "logo": "https://cdn0.heartbase.gg/league_team_logos/212000/212208.jpg?1771360240",
       "stream_link": "https://www.twitch.tv/slevinhunter",
-      "is_live": true
+      "is_live": true,
+      "roster": [
+        {
+          "name": "Kjolord#EUW",
+          "role": "Spieler"
+        },
+        {
+          "name": "rd natsu#elfie",
+          "role": "Spieler"
+        },
+        {
+          "name": "RD Slevin#1612",
+          "role": "Spieler",
+          "is_captain": true
+        },
+        {
+          "name": "rd boohunter#boo",
+          "role": "Spieler"
+        },
+        {
+          "name": "rd nuokii#072",
+          "role": "Spieler"
+        }
+      ]
     },
     "SEND_IT": {
       "id": "SEND_IT",
@@ -955,8 +978,7 @@
       "roster": [
         {
           "name": "piapiob#187",
-          "role": "Spieler",
-          "is_captain": true
+          "role": "Spieler"
         },
         {
           "name": "UIC Niki#AMB",
@@ -968,7 +990,8 @@
         },
         {
           "name": "UIC Baguetto#R3kt",
-          "role": "Spieler"
+          "role": "Spieler",
+          "is_captain": true
         },
         {
           "name": "UIC Giani#999",
