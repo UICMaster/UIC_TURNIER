@@ -8,8 +8,7 @@
   "roster": [
     { 
       "name": "piapiob#187", 
-      "role": "Spieler", 
-      "is_captain": true 
+      "role": "Spieler"
     },
     { 
       "name": "UIC Niki#AMB", 
@@ -21,9 +20,10 @@
     },
     { 
       "name": "UIC Baguetto#R3kt", 
-      "role": "Spieler" 
+      "role": "Spieler",
+      "is_captain": true  
     },
-        { 
+    { 
       "name": "UIC Giani#999", 
       "role": "Spieler" 
     },
