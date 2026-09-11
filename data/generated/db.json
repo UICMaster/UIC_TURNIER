@@ -195,6 +195,10 @@
           {
             "summoner": "GIG Tic Tac Gum#Elise",
             "is_captain": false
+          },
+          {
+            "summoner": "Καιn#DAYSI",
+            "is_captain": false
           }
         ],
         "team_link": "https://www.primeleague.gg/de/leagues/teams/209324",
@@ -1173,10 +1177,6 @@
             "is_captain": false
           },
           {
-            "summoner": "UIC Ayumu#LoveK",
-            "is_captain": true
-          },
-          {
             "summoner": "Shoto#Hero4",
             "is_captain": false
           },
@@ -1243,6 +1243,41 @@
       "logo": "https://cdn0.heartbase.gg/league_team_logos/208000/208606.jpg?1786906544",
       "stream_link": "",
       "is_live": true,
+      "roster": [
+        {
+          "name": "UIC Kurt Schluss#1337",
+          "role": "Spieler",
+          "is_captain": true
+        },
+        {
+          "name": "Drb best AD#drb",
+          "role": "Spieler"
+        },
+        {
+          "name": "UIC Ballas#Wisp",
+          "role": "Spieler"
+        },
+        {
+          "name": "ATN MukaMukaEyyy#EUW",
+          "role": "Spieler"
+        },
+        {
+          "name": "UIC Phântox#ATN",
+          "role": "Spieler"
+        },
+        {
+          "name": "UIC Lightning#Uzi",
+          "role": "Spieler"
+        },
+        {
+          "name": "UIC Levin2Go#ATN",
+          "role": "Spieler"
+        },
+        {
+          "name": "イザナミ#MUCGG",
+          "role": "Spieler"
+        }
+      ],
       "prime_intel": {
         "id": "208606",
         "key": "UIC_TEMPEST",
