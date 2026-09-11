@@ -535,7 +535,38 @@
       "acronym": "TLB",
       "logo": "https://cdn0.heartbase.gg/league_team_logos/207000/207612.jpg?1732831509",
       "stream_link": "https://www.twitch.tv/tiamatspl",
-      "is_live": true
+      "is_live": true,
+      "roster": [
+        {
+          "name": "KikaTanzalarm#TLR",
+          "role": "Spieler",
+          "is_captain": true
+        },
+        {
+          "name": "tobidorn#xdd",
+          "role": "Spieler"
+        },
+        {
+          "name": "SayokoKrysztof#0000",
+          "role": "Spieler"
+        },
+        {
+          "name": "TC Haazy#TCH",
+          "role": "Spieler"
+        },
+        {
+          "name": "REMP4GE#UwU",
+          "role": "Spieler"
+        },
+        {
+          "name": "ZeeM0N#Team",
+          "role": "Spieler"
+        },
+        {
+          "name": "Inscribed#ART",
+          "role": "Spieler"
+        }
+      ]
     },
     "UIC_ABYSS": {
       "id": "UIC_ABYSS",
