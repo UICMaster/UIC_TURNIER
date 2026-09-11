@@ -12,7 +12,6 @@ const SEASON_START = new Date('2026-04-01T00:00:00');
 const TEAMS = {
     "UIC_CYBER":   { id: "198490", manual_div: "Division 6" },
     "UIC_SAKURA": { id: "208851", manual_div: "Division 5" },
-    "UIC_TEMPEST": { id: "208606", manual_div: "Division 5" },
     "GIG_LIZARDS": { id: "209324", manual_div: "Division 7" }
 };
 
