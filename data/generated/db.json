@@ -195,10 +195,6 @@
           {
             "summoner": "GIG Tic Tac Gum#Elise",
             "is_captain": false
-          },
-          {
-            "summoner": "Καιn#DAYSI",
-            "is_captain": false
           }
         ],
         "team_link": "https://www.primeleague.gg/de/leagues/teams/209324",
@@ -772,6 +768,10 @@
         "last_match": null,
         "roster": [
           {
+            "summoner": "Askir#Jhin",
+            "is_captain": false
+          },
+          {
             "summoner": "xauberdave#dlmd",
             "is_captain": false
           },
@@ -1188,6 +1188,10 @@
             "is_captain": false
           },
           {
+            "summoner": "UIC Ayumu#LoveK",
+            "is_captain": true
+          },
+          {
             "summoner": "Shoto#Hero4",
             "is_captain": false
           },
@@ -1388,7 +1392,7 @@
     {
       "score_1": 0,
       "score_2": 0,
-      "winner_id": "BLUBBBARSCHBUBEN",
+      "winner_id": "NTH_PINK",
       "status": "FINISHED",
       "id": "wb_r1_m1",
       "round": 1,
@@ -1397,13 +1401,13 @@
       "next_slot": 1,
       "loser_match_id": "lb_r1_m1",
       "loser_slot": 1,
-      "team_1": "BLUBBBARSCHBUBEN",
+      "team_1": "NTH_PINK",
       "team_2": "[BYE]"
     },
     {
       "score_1": 0,
       "score_2": 0,
-      "winner_id": "UIC_PHOENIX",
+      "winner_id": "BIE_TABLE",
       "status": "FINISHED",
       "id": "wb_r1_m2",
       "round": 1,
@@ -1412,13 +1416,13 @@
       "next_slot": 2,
       "loser_match_id": "lb_r1_m1",
       "loser_slot": 2,
-      "team_1": "UIC_PHOENIX",
+      "team_1": "BIE_TABLE",
       "team_2": "[BYE]"
     },
     {
       "score_1": 0,
       "score_2": 0,
-      "winner_id": "TIAMATS_LEGACY_BORN",
+      "winner_id": "UIC_NOVA",
       "status": "FINISHED",
       "id": "wb_r1_m3",
       "round": 1,
@@ -1427,13 +1431,13 @@
       "next_slot": 1,
       "loser_match_id": "lb_r1_m2",
       "loser_slot": 1,
-      "team_1": "TIAMATS_LEGACY_BORN",
+      "team_1": "UIC_NOVA",
       "team_2": "[BYE]"
     },
     {
       "score_1": 0,
       "score_2": 0,
-      "winner_id": "RISING_DAWN",
+      "winner_id": "NTH_BLUE",
       "status": "FINISHED",
       "id": "wb_r1_m4",
       "round": 1,
@@ -1442,7 +1446,7 @@
       "next_slot": 2,
       "loser_match_id": "lb_r1_m2",
       "loser_slot": 2,
-      "team_1": "RISING_DAWN",
+      "team_1": "NTH_BLUE",
       "team_2": "[BYE]"
     },
     {
@@ -1463,7 +1467,7 @@
     {
       "score_1": 0,
       "score_2": 0,
-      "winner_id": "UIC_NOVA",
+      "winner_id": "UIC_TEMPEST",
       "status": "FINISHED",
       "id": "wb_r1_m6",
       "round": 1,
@@ -1472,13 +1476,13 @@
       "next_slot": 2,
       "loser_match_id": "lb_r1_m3",
       "loser_slot": 2,
-      "team_1": "UIC_NOVA",
+      "team_1": "UIC_TEMPEST",
       "team_2": "[BYE]"
     },
     {
       "score_1": 0,
       "score_2": 0,
-      "winner_id": "NTH_BLUE",
+      "winner_id": "IRON_BULLS",
       "status": "FINISHED",
       "id": "wb_r1_m7",
       "round": 1,
@@ -1487,7 +1491,7 @@
       "next_slot": 1,
       "loser_match_id": "lb_r1_m4",
       "loser_slot": 1,
-      "team_1": "NTH_BLUE",
+      "team_1": "IRON_BULLS",
       "team_2": "[BYE]"
     },
     {
@@ -1502,8 +1506,8 @@
       "next_slot": 2,
       "loser_match_id": "lb_r1_m4",
       "loser_slot": 2,
-      "team_1": "NTH_PINK",
-      "team_2": "UIC_STROHHUTBANDE"
+      "team_1": "UIC_PRIME",
+      "team_2": "UIC_ASCEND"
     },
     {
       "score_1": 0,
@@ -1517,8 +1521,8 @@
       "next_slot": 1,
       "loser_match_id": "lb_r1_m5",
       "loser_slot": 1,
-      "team_1": "UIC_SAKURA",
-      "team_2": "PUNCH_FIRST"
+      "team_1": "GIG_LIZARDS",
+      "team_2": "ODE_PARANOIA"
     },
     {
       "score_1": 0,
@@ -1532,8 +1536,8 @@
       "next_slot": 2,
       "loser_match_id": "lb_r1_m5",
       "loser_slot": 2,
-      "team_1": "UIC_OG",
-      "team_2": "7S_ALLSTARS"
+      "team_1": "UIC_SAKURA",
+      "team_2": "BLUBBBARSCHBUBEN"
     },
     {
       "score_1": 0,
@@ -1547,8 +1551,8 @@
       "next_slot": 1,
       "loser_match_id": "lb_r1_m6",
       "loser_slot": 1,
-      "team_1": "UIC_ASCEND",
-      "team_2": "BIE_TABLE"
+      "team_1": "UIC_ECLIPSE",
+      "team_2": "UNKNOWN_EXE"
     },
     {
       "score_1": 0,
@@ -1562,8 +1566,8 @@
       "next_slot": 2,
       "loser_match_id": "lb_r1_m6",
       "loser_slot": 2,
-      "team_1": "UNKNOWN_EXE",
-      "team_2": "IRON_BULLS"
+      "team_1": "PUNCH_FIRST",
+      "team_2": "ODE_ABSOLUTE_ZERO"
     },
     {
       "score_1": 0,
@@ -1577,8 +1581,8 @@
       "next_slot": 1,
       "loser_match_id": "lb_r1_m7",
       "loser_slot": 1,
-      "team_1": "UIC_PRIME",
-      "team_2": "AOM_ORION"
+      "team_1": "AOM_ORION",
+      "team_2": "UIC_PHOENIX"
     },
     {
       "score_1": 0,
@@ -1592,8 +1596,8 @@
       "next_slot": 2,
       "loser_match_id": "lb_r1_m7",
       "loser_slot": 2,
-      "team_1": "UIC_ECLIPSE",
-      "team_2": "ODE_ABSOLUTE_ZERO"
+      "team_1": "TIAMATS_LEGACY_BORN",
+      "team_2": "RISING_DAWN"
     },
     {
       "score_1": 0,
@@ -1607,8 +1611,8 @@
       "next_slot": 1,
       "loser_match_id": "lb_r1_m8",
       "loser_slot": 1,
-      "team_1": "UIC_TEMPEST",
-      "team_2": "SEND_IT"
+      "team_1": "UIC_OG",
+      "team_2": "7S_ALLSTARS"
     },
     {
       "score_1": 0,
@@ -1622,8 +1626,8 @@
       "next_slot": 2,
       "loser_match_id": "lb_r1_m8",
       "loser_slot": 2,
-      "team_1": "ODE_PARANOIA",
-      "team_2": "GIG_LIZARDS"
+      "team_1": "UIC_STROHHUTBANDE",
+      "team_2": "SEND_IT"
     },
     {
       "score_1": 0,
@@ -1637,8 +1641,8 @@
       "next_slot": 1,
       "loser_match_id": "lb_r2_m8",
       "loser_slot": 1,
-      "team_1": "BLUBBBARSCHBUBEN",
-      "team_2": "UIC_PHOENIX"
+      "team_1": "NTH_PINK",
+      "team_2": "BIE_TABLE"
     },
     {
       "score_1": 0,
@@ -1652,8 +1656,8 @@
       "next_slot": 2,
       "loser_match_id": "lb_r2_m7",
       "loser_slot": 2,
-      "team_1": "TIAMATS_LEGACY_BORN",
-      "team_2": "RISING_DAWN"
+      "team_1": "UIC_NOVA",
+      "team_2": "NTH_BLUE"
     },
     {
       "score_1": 0,
@@ -1668,7 +1672,7 @@
       "loser_match_id": "lb_r2_m6",
       "loser_slot": 1,
       "team_1": "UIC_CYBER",
-      "team_2": "UIC_NOVA"
+      "team_2": "UIC_TEMPEST"
     },
     {
       "score_1": 0,
@@ -1682,7 +1686,7 @@
       "next_slot": 2,
       "loser_match_id": "lb_r2_m5",
       "loser_slot": 2,
-      "team_1": "NTH_BLUE",
+      "team_1": "IRON_BULLS",
       "team_2": null
     },
     {
