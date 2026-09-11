@@ -4,5 +4,36 @@
   "acronym": "NTHP",
   "logo": "https://cdn0.heartbase.gg/league_team_logos/212000/212628.jpg?1783004578",
   "stream_link": "", 
-  "is_live": true 
+  "is_live": true,
+  "roster": [
+    { 
+      "name": "SUPPΟRT#Supp", 
+      "role": "Spieler"
+    },
+    { 
+      "name": "SGY Hellby666#UwU", 
+      "role": "Spieler" 
+    },
+    { 
+      "name": "FreezingFoxFire#EUW", 
+      "role": "Spieler",
+      "is_captain": true 
+    },
+    { 
+      "name": "parallel dazu#EUW", 
+      "role": "Spieler" 
+    },
+    { 
+      "name": "Escaron#EUW", 
+      "role": "Spieler"
+    },
+    { 
+      "name": "Under Pressure#EUWPH", 
+      "role": "Spieler" 
+    },
+    { 
+      "name": "fae wisper#angel", 
+      "role": "Spieler"
+    }
+  ] 
 }

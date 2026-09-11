@@ -4,5 +4,47 @@
   "acronym": "NTHB",
   "logo": "https://cdn0.heartbase.gg/league_team_logos/212000/212621.jpg?1779318703",
   "stream_link": "", 
-  "is_live": true 
+  "is_live": true,
+  "roster": [
+    { 
+      "name": "Kein bock mehr#müde", 
+      "role": "Spieler" 
+    },
+    { 
+      "name": "Schnorrer Lando#MCL", 
+      "role": "Spieler"
+    },
+    { 
+      "name": "Gêneral Mongo#EUW", 
+      "role": "Spieler" 
+    },
+    { 
+      "name": "famousnightmar3#EUW", 
+      "role": "Spieler"
+    },
+    { 
+      "name": "get marved#999", 
+      "role": "Spieler" 
+    },
+    { 
+      "name": "Hallucinate69#EUW", 
+      "role": "Spieler"
+    },
+    { 
+      "name": "Lucy#Maybe", 
+      "role": "Spieler" 
+    },
+    { 
+      "name": "OUTFARTED#EUW", 
+      "role": "Spieler"
+    },
+    { 
+      "name": "NTH BlvckFlavOur#NTH", 
+      "role": "Spieler" 
+    },
+    { 
+      "name": "Leö#GEG", 
+      "role": "Spieler"
+    }
+  ] 
 }
