@@ -122,7 +122,30 @@
       "acronym": "BBB",
       "logo": "https://cdn0.heartbase.gg/league_team_logos/212000/212838.jpg?1785607440",
       "stream_link": "",
-      "is_live": true
+      "is_live": true,
+      "roster": [
+        {
+          "name": "UIC Flare#JND",
+          "role": "Spieler",
+          "is_captain": true
+        },
+        {
+          "name": "Kalidios#4842",
+          "role": "Spieler"
+        },
+        {
+          "name": "Megiddo#Fist",
+          "role": "Spieler"
+        },
+        {
+          "name": "tilli4#sup",
+          "role": "Spieler"
+        },
+        {
+          "name": "Emilia#UwU",
+          "role": "Spieler"
+        }
+      ]
     },
     "GIG_LIZARDS": {
       "id": "GIG_LIZARDS",
@@ -780,6 +803,29 @@
       "logo": "https://cdn0.heartbase.gg/league_team_logos/208000/208131.jpg?1778157742",
       "stream_link": "",
       "is_live": true,
+      "roster": [
+        {
+          "name": "UIC Stafferl#FNC",
+          "role": "Spieler",
+          "is_captain": true
+        },
+        {
+          "name": "UIC Pferdemilch#Milch",
+          "role": "Spieler"
+        },
+        {
+          "name": "UIC Nairadawsm#UIC",
+          "role": "Spieler"
+        },
+        {
+          "name": "UIC Rellik#CYS",
+          "role": "Spieler"
+        },
+        {
+          "name": "UIC Undergrinder#Top",
+          "role": "Spieler"
+        }
+      ],
       "prime_intel": {
         "id": "208131",
         "key": "UIC_ECLIPSE",
