@@ -95,7 +95,8 @@
         },
         {
           "name": "washed#z Z Ｚ",
-          "role": "Spieler"
+          "role": "Spieler",
+          "is_captain": true
         },
         {
           "name": "Minz#tea",
@@ -107,8 +108,7 @@
         },
         {
           "name": "Skyhan#TS61",
-          "role": "Spieler",
-          "is_captain": true
+          "role": "Spieler"
         },
         {
           "name": "Pupale#RAT",
@@ -129,7 +129,7 @@
       "name": "GIG LIZARDS",
       "acronym": "GIGL",
       "logo": "https://cdn0.heartbase.gg/league_team_logos/209000/209324.jpg?1785788000",
-      "stream_link": "",
+      "stream_link": "https://www.twitch.tv/ghost_impact_gaming",
       "is_live": true,
       "prime_intel": {
         "id": "209324",
@@ -159,7 +159,7 @@
           },
           {
             "summoner": "Finni#PORO",
-            "is_captain": false
+            "is_captain": true
           },
           {
             "summoner": "SimonDerFuchs#361",
@@ -171,7 +171,7 @@
           },
           {
             "summoner": "GIG Tic Tac Gum#Elise",
-            "is_captain": true
+            "is_captain": false
           }
         ],
         "team_link": "https://www.primeleague.gg/de/leagues/teams/209324",
@@ -242,7 +242,7 @@
       "name": "ODE ABSOLUTE ZERO",
       "acronym": "ODEAZ",
       "logo": "https://cdn0.heartbase.gg/league_team_logos/209000/209281.jpg?1751621235",
-      "stream_link": "",
+      "stream_link": "https://www.twitch.tv/lolevel",
       "is_live": true,
       "roster": [
         {
@@ -289,7 +289,7 @@
       "name": "ODE PARANOIA",
       "acronym": "ODEP",
       "logo": "https://cdn0.heartbase.gg/league_team_logos/209000/209282.jpg?1751621264",
-      "stream_link": "",
+      "stream_link": "https://www.twitch.tv/overdueesports",
       "is_live": true,
       "prime_intel": {
         "id": "209282",
@@ -343,7 +343,7 @@
       "name": "PUNCH FIRST",
       "acronym": "PF",
       "logo": "/data/teams/team_logo/PUNCH_FIRST.png",
-      "stream_link": "",
+      "stream_link": "https://www.twitch.tv/soulsynergy",
       "is_live": true,
       "roster": [
         {
@@ -508,7 +508,7 @@
     },
     "TIAMATS_LEGACY_BORN": {
       "id": "TIAMATS_LEGACY_BORN",
-      "name": "TIAMATS LEGACY BORN",
+      "name": "TIAMAT'S LEGACY REBORN",
       "acronym": "TLB",
       "logo": "https://cdn0.heartbase.gg/league_team_logos/207000/207612.jpg?1732831509",
       "stream_link": "https://www.twitch.tv/tiamatspl",
@@ -1094,7 +1094,7 @@
       "name": "UIC STROHHUTBANDE",
       "acronym": "UICS",
       "logo": "/data/teams/team_logo/UIC_STROHHUTBANDE.png",
-      "stream_link": "",
+      "stream_link": "https://www.twitch.tv/its_PERYZ",
       "is_live": true,
       "roster": [
         {
