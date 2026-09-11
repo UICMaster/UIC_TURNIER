@@ -76,10 +76,6 @@
         "is_captain": false
       },
       {
-        "summoner": "UIC Ayumu#LoveK",
-        "is_captain": true
-      },
-      {
         "summoner": "Shoto#Hero4",
         "is_captain": false
       },
@@ -168,10 +164,6 @@
         "is_captain": false
       },
       {
-        "summoner": "UIC Levin2Go#ATN",
-        "is_captain": false
-      },
-      {
         "summoner": "UIC Kurt Schluss#1337",
         "is_captain": true
       },
@@ -181,14 +173,6 @@
       },
       {
         "summoner": "イザナミ#MUCGG",
-        "is_captain": false
-      },
-      {
-        "summoner": "UIC Phântox#ATN",
-        "is_captain": false
-      },
-      {
-        "summoner": "Drb best AD#drb",
         "is_captain": false
       }
     ],
