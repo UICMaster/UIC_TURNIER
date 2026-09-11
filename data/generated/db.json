@@ -1557,8 +1557,8 @@
     {
       "score_1": 0,
       "score_2": 1,
-      "winner_id": null,
-      "status": "LIVE",
+      "winner_id": "UIC_PHOENIX",
+      "status": "FINISHED",
       "id": "wb_r1_m13",
       "round": 1,
       "type": "WINNER",
@@ -1716,7 +1716,7 @@
       "next_slot": 1,
       "loser_match_id": "lb_r2_m2",
       "loser_slot": 1,
-      "team_1": null,
+      "team_1": "UIC_PHOENIX",
       "team_2": null
     },
     {
@@ -1920,7 +1920,7 @@
       "round": 1,
       "type": "LOSER",
       "next_match_id": "lb_r2_m7",
-      "team_1": null,
+      "team_1": "AOM_ORION",
       "team_2": null
     },
     {
