@@ -4,5 +4,37 @@
   "acronym": "ODEP",
   "logo": "https://cdn0.heartbase.gg/league_team_logos/209000/209282.jpg?1751621264",
   "stream_link": "https://www.twitch.tv/overdueesports", 
-  "is_live": true 
+  "is_live": true,
+  "roster": [
+    { 
+      "name": "Lidl lohnt sich#OLEG", 
+      "role": "Spieler",
+      "is_captain": true 
+    },
+    { 
+      "name": "SlNova#EUW", 
+      "role": "Spieler" 
+    },
+    { 
+      "name": "Nyan Zeref#Ahri", 
+      "role": "Spieler"
+    },
+    { 
+      "name": "ocin#coni", 
+      "role": "Spieler" 
+    },
+    { 
+      "name": "Caty#hehe", 
+      "role": "Spieler" 
+    },
+    { 
+      "name": "Edge236#EUW", 
+      "role": "Spieler" 
+    },
+    { 
+      "name": "MIW Ripstop#EUW", 
+      "role": "Spieler"
+    }
+  ]
 }
+
