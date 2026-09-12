@@ -1595,8 +1595,8 @@
     {
       "score_1": 0,
       "score_2": 1,
-      "winner_id": null,
-      "status": "LIVE",
+      "winner_id": "SEND_IT",
+      "status": "FINISHED",
       "id": "wb_r1_m16",
       "round": 1,
       "type": "WINNER",
@@ -1716,7 +1716,7 @@
       "score_1": 0,
       "score_2": 0,
       "winner_id": null,
-      "status": "WAITING",
+      "status": "LIVE",
       "id": "wb_r2_m8",
       "round": 2,
       "type": "WINNER",
@@ -1725,7 +1725,7 @@
       "loser_match_id": "lb_r2_m1",
       "loser_slot": 2,
       "team_1": "7S_ALLSTARS",
-      "team_2": null
+      "team_2": "SEND_IT"
     },
     {
       "score_1": 0,
@@ -1920,13 +1920,13 @@
       "score_1": 0,
       "score_2": 0,
       "winner_id": null,
-      "status": "WAITING",
+      "status": "LIVE",
       "id": "lb_r1_m8",
       "round": 1,
       "type": "LOSER",
       "next_match_id": "lb_r2_m8",
       "team_1": "UIC_OG",
-      "team_2": null
+      "team_2": "UIC_STROHHUTBANDE"
     },
     {
       "score_1": 0,
