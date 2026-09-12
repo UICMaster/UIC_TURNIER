@@ -1655,8 +1655,8 @@
     {
       "score_1": 0,
       "score_2": 1,
-      "winner_id": null,
-      "status": "LIVE",
+      "winner_id": "UIC_ASCEND",
+      "status": "FINISHED",
       "id": "wb_r2_m4",
       "round": 2,
       "type": "WINNER",
@@ -1685,8 +1685,8 @@
     {
       "score_1": 0,
       "score_2": 1,
-      "winner_id": null,
-      "status": "LIVE",
+      "winner_id": "PUNCH_FIRST",
+      "status": "FINISHED",
       "id": "wb_r2_m6",
       "round": 2,
       "type": "WINNER",
@@ -1755,13 +1755,13 @@
       "loser_match_id": "lb_r4_m2",
       "loser_slot": 2,
       "team_1": null,
-      "team_2": null
+      "team_2": "UIC_ASCEND"
     },
     {
       "score_1": 0,
       "score_2": 0,
       "winner_id": null,
-      "status": "WAITING",
+      "status": "LIVE",
       "id": "wb_r3_m3",
       "round": 3,
       "type": "WINNER",
@@ -1770,7 +1770,7 @@
       "loser_match_id": "lb_r4_m3",
       "loser_slot": 1,
       "team_1": "UIC_SAKURA",
-      "team_2": null
+      "team_2": "PUNCH_FIRST"
     },
     {
       "score_1": 0,
@@ -1955,14 +1955,14 @@
     {
       "score_1": 0,
       "score_2": 0,
-      "winner_id": null,
-      "status": "WAITING",
+      "winner_id": "UNKNOWN_EXE",
+      "status": "FINISHED",
       "id": "lb_r2_m3",
       "round": 2,
       "type": "LOSER",
       "next_match_id": "lb_r3_m2",
       "team_1": "[BYE]",
-      "team_2": null
+      "team_2": "UNKNOWN_EXE"
     },
     {
       "score_1": 0,
@@ -1980,13 +1980,13 @@
       "score_1": 0,
       "score_2": 0,
       "winner_id": null,
-      "status": "WAITING",
+      "status": "LIVE",
       "id": "lb_r2_m5",
       "round": 2,
       "type": "LOSER",
       "next_match_id": "lb_r3_m3",
       "team_1": "BLUBBBARSCHBUBEN",
-      "team_2": null
+      "team_2": "IRON_BULLS"
     },
     {
       "score_1": 0,
@@ -2040,13 +2040,13 @@
       "score_1": 0,
       "score_2": 0,
       "winner_id": null,
-      "status": "WAITING",
+      "status": "LIVE",
       "id": "lb_r3_m2",
       "round": 3,
       "type": "LOSER",
       "next_match_id": "lb_r4_m2",
-      "team_1": "UIC_PRIME",
-      "team_2": null
+      "team_1": "UNKNOWN_EXE",
+      "team_2": "UIC_PRIME"
     },
     {
       "score_1": 0,
