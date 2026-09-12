@@ -1700,8 +1700,8 @@
     {
       "score_1": 1,
       "score_2": 0,
-      "winner_id": null,
-      "status": "LIVE",
+      "winner_id": "UIC_PHOENIX",
+      "status": "FINISHED",
       "id": "wb_r2_m7",
       "round": 2,
       "type": "WINNER",
@@ -1776,7 +1776,7 @@
       "score_1": 0,
       "score_2": 0,
       "winner_id": null,
-      "status": "WAITING",
+      "status": "LIVE",
       "id": "wb_r3_m4",
       "round": 3,
       "type": "WINNER",
@@ -1784,7 +1784,7 @@
       "next_slot": 2,
       "loser_match_id": "lb_r4_m4",
       "loser_slot": 2,
-      "team_1": null,
+      "team_1": "UIC_PHOENIX",
       "team_2": "SEND_IT"
     },
     {
@@ -1943,14 +1943,14 @@
     {
       "score_1": 0,
       "score_2": 0,
-      "winner_id": null,
-      "status": "WAITING",
+      "winner_id": "TIAMATS_LEGACY_BORN",
+      "status": "FINISHED",
       "id": "lb_r2_m2",
       "round": 2,
       "type": "LOSER",
       "next_match_id": "lb_r3_m1",
-      "team_1": "[BYE]",
-      "team_2": null
+      "team_1": "TIAMATS_LEGACY_BORN",
+      "team_2": "[BYE]"
     },
     {
       "score_1": 0,
@@ -2028,13 +2028,13 @@
       "score_1": 0,
       "score_2": 0,
       "winner_id": null,
-      "status": "WAITING",
+      "status": "LIVE",
       "id": "lb_r3_m1",
       "round": 3,
       "type": "LOSER",
       "next_match_id": "lb_r4_m1",
       "team_1": "7S_ALLSTARS",
-      "team_2": null
+      "team_2": "TIAMATS_LEGACY_BORN"
     },
     {
       "score_1": 0,
