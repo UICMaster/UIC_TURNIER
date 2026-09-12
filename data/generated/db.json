@@ -1760,8 +1760,8 @@
     {
       "score_1": 0,
       "score_2": 1,
-      "winner_id": null,
-      "status": "LIVE",
+      "winner_id": "PUNCH_FIRST",
+      "status": "FINISHED",
       "id": "wb_r3_m3",
       "round": 3,
       "type": "WINNER",
@@ -1814,7 +1814,7 @@
       "next_slot": 2,
       "loser_match_id": "lb_r6_m1",
       "loser_slot": 2,
-      "team_1": null,
+      "team_1": "PUNCH_FIRST",
       "team_2": null
     },
     {
@@ -2105,7 +2105,7 @@
       "round": 4,
       "type": "LOSER",
       "next_match_id": "lb_r5_m2",
-      "team_1": null,
+      "team_1": "UIC_SAKURA",
       "team_2": null
     },
     {
