@@ -191,6 +191,10 @@
           {
             "summoner": "Clee#PORO",
             "is_captain": true
+          },
+          {
+            "summoner": "Καιn#DAYSI",
+            "is_captain": false
           }
         ],
         "team_link": "https://www.primeleague.gg/de/leagues/teams/209324",
@@ -1561,8 +1565,8 @@
     {
       "score_1": 1,
       "score_2": 0,
-      "winner_id": null,
-      "status": "LIVE",
+      "winner_id": "TIAMATS_LEGACY_BORN",
+      "status": "FINISHED",
       "id": "wb_r1_m14",
       "round": 1,
       "type": "WINNER",
@@ -1697,7 +1701,7 @@
       "score_1": 0,
       "score_2": 0,
       "winner_id": null,
-      "status": "WAITING",
+      "status": "LIVE",
       "id": "wb_r2_m7",
       "round": 2,
       "type": "WINNER",
@@ -1706,7 +1710,7 @@
       "loser_match_id": "lb_r2_m2",
       "loser_slot": 1,
       "team_1": "UIC_PHOENIX",
-      "team_2": null
+      "team_2": "TIAMATS_LEGACY_BORN"
     },
     {
       "score_1": 0,
@@ -1904,13 +1908,13 @@
       "score_1": 0,
       "score_2": 0,
       "winner_id": null,
-      "status": "WAITING",
+      "status": "LIVE",
       "id": "lb_r1_m7",
       "round": 1,
       "type": "LOSER",
       "next_match_id": "lb_r2_m7",
       "team_1": "AOM_ORION",
-      "team_2": null
+      "team_2": "RISING_DAWN"
     },
     {
       "score_1": 0,
