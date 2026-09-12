@@ -191,10 +191,6 @@
           {
             "summoner": "Clee#PORO",
             "is_captain": true
-          },
-          {
-            "summoner": "Καιn#DAYSI",
-            "is_captain": false
           }
         ],
         "team_link": "https://www.primeleague.gg/de/leagues/teams/209324",
@@ -1173,6 +1169,10 @@
             "is_captain": false
           },
           {
+            "summoner": "UIC Ayumu#LoveK",
+            "is_captain": true
+          },
+          {
             "summoner": "Shoto#Hero4",
             "is_captain": false
           },
@@ -2135,8 +2135,8 @@
     {
       "score_1": 1,
       "score_2": 0,
-      "winner_id": null,
-      "status": "LIVE",
+      "winner_id": "UIC_CYBER",
+      "status": "FINISHED",
       "id": "lb_r5_m2",
       "round": 5,
       "type": "LOSER",
@@ -2160,13 +2160,13 @@
       "score_1": 0,
       "score_2": 0,
       "winner_id": null,
-      "status": "WAITING",
+      "status": "LIVE",
       "id": "lb_r6_m2",
       "round": 6,
       "type": "LOSER",
       "next_match_id": "lb_r7_m1",
       "team_1": "BIE_TABLE",
-      "team_2": null
+      "team_2": "UIC_CYBER"
     },
     {
       "score_1": 0,
