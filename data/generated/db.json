@@ -1883,8 +1883,8 @@
     {
       "score_1": 0,
       "score_2": 1,
-      "winner_id": null,
-      "status": "LIVE",
+      "winner_id": "BLUBBBARSCHBUBEN",
+      "status": "FINISHED",
       "id": "lb_r1_m5",
       "round": 1,
       "type": "LOSER",
@@ -1985,7 +1985,7 @@
       "round": 2,
       "type": "LOSER",
       "next_match_id": "lb_r3_m3",
-      "team_1": null,
+      "team_1": "BLUBBBARSCHBUBEN",
       "team_2": null
     },
     {
