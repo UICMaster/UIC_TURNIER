@@ -1775,8 +1775,8 @@
     {
       "score_1": 1,
       "score_2": 0,
-      "winner_id": null,
-      "status": "LIVE",
+      "winner_id": "UIC_PHOENIX",
+      "status": "FINISHED",
       "id": "wb_r3_m4",
       "round": 3,
       "type": "WINNER",
@@ -1806,7 +1806,7 @@
       "score_1": 0,
       "score_2": 0,
       "winner_id": null,
-      "status": "WAITING",
+      "status": "LIVE",
       "id": "wb_r4_m2",
       "round": 4,
       "type": "WINNER",
@@ -1815,7 +1815,7 @@
       "loser_match_id": "lb_r6_m1",
       "loser_slot": 2,
       "team_1": "PUNCH_FIRST",
-      "team_2": null
+      "team_2": "UIC_PHOENIX"
     },
     {
       "score_1": 0,
@@ -2118,7 +2118,7 @@
       "type": "LOSER",
       "next_match_id": "lb_r5_m2",
       "team_1": null,
-      "team_2": null
+      "team_2": "SEND_IT"
     },
     {
       "score_1": 0,
