@@ -2171,8 +2171,8 @@
     {
       "score_1": 1,
       "score_2": 0,
-      "winner_id": null,
-      "status": "LIVE",
+      "winner_id": "UIC_PRIME",
+      "status": "FINISHED",
       "id": "lb_r7_m1",
       "round": 7,
       "type": "LOSER",
@@ -2184,13 +2184,13 @@
       "score_1": 0,
       "score_2": 0,
       "winner_id": null,
-      "status": "WAITING",
+      "status": "LIVE",
       "id": "lb_r8_m1",
       "round": 8,
       "type": "LOSER",
       "next_match_id": "gf_m1",
       "team_1": "PUNCH_FIRST",
-      "team_2": null
+      "team_2": "UIC_PRIME"
     },
     {
       "score_1": 0,
