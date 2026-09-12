@@ -2051,8 +2051,8 @@
     {
       "score_1": 0,
       "score_2": 1,
-      "winner_id": null,
-      "status": "LIVE",
+      "winner_id": "UIC_CYBER",
+      "status": "FINISHED",
       "id": "lb_r3_m3",
       "round": 3,
       "type": "LOSER",
@@ -2100,13 +2100,13 @@
       "score_1": 0,
       "score_2": 0,
       "winner_id": null,
-      "status": "WAITING",
+      "status": "LIVE",
       "id": "lb_r4_m3",
       "round": 4,
       "type": "LOSER",
       "next_match_id": "lb_r5_m2",
       "team_1": "UIC_SAKURA",
-      "team_2": null
+      "team_2": "UIC_CYBER"
     },
     {
       "score_1": 0,
