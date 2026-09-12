@@ -1625,8 +1625,8 @@
     {
       "score_1": 1,
       "score_2": 0,
-      "winner_id": null,
-      "status": "LIVE",
+      "winner_id": "UIC_NOVA",
+      "status": "FINISHED",
       "id": "wb_r2_m2",
       "round": 2,
       "type": "WINNER",
@@ -1740,7 +1740,7 @@
       "loser_match_id": "lb_r4_m1",
       "loser_slot": 1,
       "team_1": null,
-      "team_2": null
+      "team_2": "UIC_NOVA"
     },
     {
       "score_1": 0,
@@ -2004,13 +2004,13 @@
       "score_1": 0,
       "score_2": 0,
       "winner_id": null,
-      "status": "WAITING",
+      "status": "LIVE",
       "id": "lb_r2_m7",
       "round": 2,
       "type": "LOSER",
       "next_match_id": "lb_r3_m4",
       "team_1": "RISING_DAWN",
-      "team_2": null
+      "team_2": "NTH_BLUE"
     },
     {
       "score_1": 0,
