@@ -1790,8 +1790,8 @@
     {
       "score_1": 0,
       "score_2": 1,
-      "winner_id": null,
-      "status": "LIVE",
+      "winner_id": "UIC_ASCEND",
+      "status": "FINISHED",
       "id": "wb_r4_m1",
       "round": 4,
       "type": "WINNER",
@@ -1821,7 +1821,7 @@
       "score_1": 0,
       "score_2": 0,
       "winner_id": null,
-      "status": "WAITING",
+      "status": "LIVE",
       "id": "wb_r5_m1",
       "round": 5,
       "type": "WINNER",
@@ -1829,7 +1829,7 @@
       "next_slot": 1,
       "loser_match_id": "lb_r8_m1",
       "loser_slot": 1,
-      "team_1": null,
+      "team_1": "UIC_ASCEND",
       "team_2": "PUNCH_FIRST"
     },
     {
@@ -2087,8 +2087,8 @@
     {
       "score_1": 1,
       "score_2": 0,
-      "winner_id": null,
-      "status": "LIVE",
+      "winner_id": "UIC_PRIME",
+      "status": "FINISHED",
       "id": "lb_r4_m2",
       "round": 4,
       "type": "LOSER",
@@ -2111,8 +2111,8 @@
     {
       "score_1": 0,
       "score_2": 1,
-      "winner_id": null,
-      "status": "LIVE",
+      "winner_id": "SEND_IT",
+      "status": "FINISHED",
       "id": "lb_r4_m4",
       "round": 4,
       "type": "LOSER",
@@ -2124,25 +2124,25 @@
       "score_1": 0,
       "score_2": 0,
       "winner_id": null,
-      "status": "WAITING",
+      "status": "LIVE",
       "id": "lb_r5_m1",
       "round": 5,
       "type": "LOSER",
       "next_match_id": "lb_r6_m1",
       "team_1": "TIAMATS_LEGACY_BORN",
-      "team_2": null
+      "team_2": "UIC_PRIME"
     },
     {
       "score_1": 0,
       "score_2": 0,
       "winner_id": null,
-      "status": "WAITING",
+      "status": "LIVE",
       "id": "lb_r5_m2",
       "round": 5,
       "type": "LOSER",
       "next_match_id": "lb_r6_m2",
       "team_1": "UIC_CYBER",
-      "team_2": null
+      "team_2": "SEND_IT"
     },
     {
       "score_1": 0,
@@ -2165,7 +2165,7 @@
       "round": 6,
       "type": "LOSER",
       "next_match_id": "lb_r7_m1",
-      "team_1": null,
+      "team_1": "BIE_TABLE",
       "team_2": null
     },
     {
