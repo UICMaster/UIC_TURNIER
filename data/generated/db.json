@@ -2015,8 +2015,8 @@
     {
       "score_1": 1,
       "score_2": 0,
-      "winner_id": null,
-      "status": "LIVE",
+      "winner_id": "NTH_PINK",
+      "status": "FINISHED",
       "id": "lb_r2_m8",
       "round": 2,
       "type": "LOSER",
@@ -2069,7 +2069,7 @@
       "round": 3,
       "type": "LOSER",
       "next_match_id": "lb_r4_m4",
-      "team_1": null,
+      "team_1": "NTH_PINK",
       "team_2": null
     },
     {
