@@ -1475,8 +1475,8 @@
     {
       "score_1": 0,
       "score_2": 1,
-      "winner_id": null,
-      "status": "LIVE",
+      "winner_id": "UIC_ASCEND",
+      "status": "FINISHED",
       "id": "wb_r1_m8",
       "round": 1,
       "type": "WINNER",
@@ -1505,8 +1505,8 @@
     {
       "score_1": 1,
       "score_2": 0,
-      "winner_id": null,
-      "status": "LIVE",
+      "winner_id": "UIC_SAKURA",
+      "status": "FINISHED",
       "id": "wb_r1_m10",
       "round": 1,
       "type": "WINNER",
@@ -1656,7 +1656,7 @@
       "score_1": 0,
       "score_2": 0,
       "winner_id": null,
-      "status": "WAITING",
+      "status": "LIVE",
       "id": "wb_r2_m4",
       "round": 2,
       "type": "WINNER",
@@ -1665,13 +1665,13 @@
       "loser_match_id": "lb_r2_m5",
       "loser_slot": 2,
       "team_1": "IRON_BULLS",
-      "team_2": null
+      "team_2": "UIC_ASCEND"
     },
     {
       "score_1": 0,
       "score_2": 0,
       "winner_id": null,
-      "status": "WAITING",
+      "status": "LIVE",
       "id": "wb_r2_m5",
       "round": 2,
       "type": "WINNER",
@@ -1680,7 +1680,7 @@
       "loser_match_id": "lb_r2_m4",
       "loser_slot": 1,
       "team_1": "GIG_LIZARDS",
-      "team_2": null
+      "team_2": "UIC_SAKURA"
     },
     {
       "score_1": 0,
@@ -1871,26 +1871,26 @@
     {
       "score_1": 0,
       "score_2": 0,
-      "winner_id": null,
-      "status": "WAITING",
+      "winner_id": "UIC_PRIME",
+      "status": "FINISHED",
       "id": "lb_r1_m4",
       "round": 1,
       "type": "LOSER",
       "next_match_id": "lb_r2_m4",
       "team_1": "[BYE]",
-      "team_2": null
+      "team_2": "UIC_PRIME"
     },
     {
       "score_1": 0,
       "score_2": 0,
       "winner_id": null,
-      "status": "WAITING",
+      "status": "LIVE",
       "id": "lb_r1_m5",
       "round": 1,
       "type": "LOSER",
       "next_match_id": "lb_r2_m5",
       "team_1": "ODE_PARANOIA",
-      "team_2": null
+      "team_2": "BLUBBBARSCHBUBEN"
     },
     {
       "score_1": 0,
@@ -1973,7 +1973,7 @@
       "round": 2,
       "type": "LOSER",
       "next_match_id": "lb_r3_m2",
-      "team_1": null,
+      "team_1": "UIC_PRIME",
       "team_2": null
     },
     {
