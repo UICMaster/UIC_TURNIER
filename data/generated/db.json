@@ -1610,8 +1610,8 @@
     {
       "score_1": 0,
       "score_2": 1,
-      "winner_id": null,
-      "status": "LIVE",
+      "winner_id": "BIE_TABLE",
+      "status": "FINISHED",
       "id": "wb_r2_m1",
       "round": 2,
       "type": "WINNER",
@@ -1731,7 +1731,7 @@
       "score_1": 0,
       "score_2": 0,
       "winner_id": null,
-      "status": "WAITING",
+      "status": "LIVE",
       "id": "wb_r3_m1",
       "round": 3,
       "type": "WINNER",
@@ -1739,7 +1739,7 @@
       "next_slot": 1,
       "loser_match_id": "lb_r4_m1",
       "loser_slot": 1,
-      "team_1": null,
+      "team_1": "BIE_TABLE",
       "team_2": "UIC_NOVA"
     },
     {
@@ -2021,7 +2021,7 @@
       "round": 2,
       "type": "LOSER",
       "next_match_id": "lb_r3_m4",
-      "team_1": null,
+      "team_1": "NTH_PINK",
       "team_2": null
     },
     {
