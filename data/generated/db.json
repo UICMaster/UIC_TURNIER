@@ -1979,8 +1979,8 @@
     {
       "score_1": 1,
       "score_2": 0,
-      "winner_id": null,
-      "status": "LIVE",
+      "winner_id": "BLUBBBARSCHBUBEN",
+      "status": "FINISHED",
       "id": "lb_r2_m5",
       "round": 2,
       "type": "LOSER",
@@ -1991,8 +1991,8 @@
     {
       "score_1": 1,
       "score_2": 0,
-      "winner_id": null,
-      "status": "LIVE",
+      "winner_id": "UIC_CYBER",
+      "status": "FINISHED",
       "id": "lb_r2_m6",
       "round": 2,
       "type": "LOSER",
@@ -2052,13 +2052,13 @@
       "score_1": 0,
       "score_2": 0,
       "winner_id": null,
-      "status": "WAITING",
+      "status": "LIVE",
       "id": "lb_r3_m3",
       "round": 3,
       "type": "LOSER",
       "next_match_id": "lb_r4_m3",
-      "team_1": null,
-      "team_2": null
+      "team_1": "BLUBBBARSCHBUBEN",
+      "team_2": "UIC_CYBER"
     },
     {
       "score_1": 0,
