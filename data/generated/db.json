@@ -1580,8 +1580,8 @@
     {
       "score_1": 0,
       "score_2": 1,
-      "winner_id": null,
-      "status": "LIVE",
+      "winner_id": "7S_ALLSTARS",
+      "status": "FINISHED",
       "id": "wb_r1_m15",
       "round": 1,
       "type": "WINNER",
@@ -1724,7 +1724,7 @@
       "next_slot": 2,
       "loser_match_id": "lb_r2_m1",
       "loser_slot": 2,
-      "team_1": null,
+      "team_1": "7S_ALLSTARS",
       "team_2": null
     },
     {
@@ -1925,7 +1925,7 @@
       "round": 1,
       "type": "LOSER",
       "next_match_id": "lb_r2_m8",
-      "team_1": null,
+      "team_1": "UIC_OG",
       "team_2": null
     },
     {
