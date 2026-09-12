@@ -1535,8 +1535,8 @@
     {
       "score_1": 1,
       "score_2": 0,
-      "winner_id": null,
-      "status": "LIVE",
+      "winner_id": "PUNCH_FIRST",
+      "status": "FINISHED",
       "id": "wb_r1_m12",
       "round": 1,
       "type": "WINNER",
@@ -1686,7 +1686,7 @@
       "score_1": 0,
       "score_2": 0,
       "winner_id": null,
-      "status": "WAITING",
+      "status": "LIVE",
       "id": "wb_r2_m6",
       "round": 2,
       "type": "WINNER",
@@ -1695,7 +1695,7 @@
       "loser_match_id": "lb_r2_m3",
       "loser_slot": 2,
       "team_1": "UNKNOWN_EXE",
-      "team_2": null
+      "team_2": "PUNCH_FIRST"
     },
     {
       "score_1": 0,
@@ -1896,13 +1896,13 @@
       "score_1": 0,
       "score_2": 0,
       "winner_id": null,
-      "status": "WAITING",
+      "status": "LIVE",
       "id": "lb_r1_m6",
       "round": 1,
       "type": "LOSER",
       "next_match_id": "lb_r2_m6",
       "team_1": "UIC_ECLIPSE",
-      "team_2": null
+      "team_2": "ODE_ABSOLUTE_ZERO"
     },
     {
       "score_1": 0,
