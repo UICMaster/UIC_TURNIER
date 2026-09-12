@@ -1670,8 +1670,8 @@
     {
       "score_1": 0,
       "score_2": 1,
-      "winner_id": null,
-      "status": "LIVE",
+      "winner_id": "UIC_SAKURA",
+      "status": "FINISHED",
       "id": "wb_r2_m5",
       "round": 2,
       "type": "WINNER",
@@ -1769,7 +1769,7 @@
       "next_slot": 1,
       "loser_match_id": "lb_r4_m3",
       "loser_slot": 1,
-      "team_1": null,
+      "team_1": "UIC_SAKURA",
       "team_2": null
     },
     {
@@ -1968,13 +1968,13 @@
       "score_1": 0,
       "score_2": 0,
       "winner_id": null,
-      "status": "WAITING",
+      "status": "LIVE",
       "id": "lb_r2_m4",
       "round": 2,
       "type": "LOSER",
       "next_match_id": "lb_r3_m2",
-      "team_1": "UIC_PRIME",
-      "team_2": null
+      "team_1": "GIG_LIZARDS",
+      "team_2": "UIC_PRIME"
     },
     {
       "score_1": 0,
