@@ -2003,8 +2003,8 @@
     {
       "score_1": 0,
       "score_2": 1,
-      "winner_id": null,
-      "status": "LIVE",
+      "winner_id": "NTH_BLUE",
+      "status": "FINISHED",
       "id": "lb_r2_m7",
       "round": 2,
       "type": "LOSER",
@@ -2064,13 +2064,13 @@
       "score_1": 0,
       "score_2": 0,
       "winner_id": null,
-      "status": "WAITING",
+      "status": "LIVE",
       "id": "lb_r3_m4",
       "round": 3,
       "type": "LOSER",
       "next_match_id": "lb_r4_m4",
-      "team_1": "NTH_PINK",
-      "team_2": null
+      "team_1": "NTH_BLUE",
+      "team_2": "NTH_PINK"
     },
     {
       "score_1": 0,
