@@ -2027,8 +2027,8 @@
     {
       "score_1": 0,
       "score_2": 1,
-      "winner_id": null,
-      "status": "LIVE",
+      "winner_id": "TIAMATS_LEGACY_BORN",
+      "status": "FINISHED",
       "id": "lb_r3_m1",
       "round": 3,
       "type": "LOSER",
@@ -2076,13 +2076,13 @@
       "score_1": 0,
       "score_2": 0,
       "winner_id": null,
-      "status": "WAITING",
+      "status": "LIVE",
       "id": "lb_r4_m1",
       "round": 4,
       "type": "LOSER",
       "next_match_id": "lb_r5_m1",
       "team_1": "UIC_NOVA",
-      "team_2": null
+      "team_2": "TIAMATS_LEGACY_BORN"
     },
     {
       "score_1": 0,
