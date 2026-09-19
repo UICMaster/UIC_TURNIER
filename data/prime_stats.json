@@ -18,16 +18,12 @@
     "last_match": null,
     "roster": [
       {
-        "summoner": "Askir#Jhin",
-        "is_captain": false
-      },
-      {
         "summoner": "xauberdave#dlmd",
         "is_captain": false
       },
       {
         "summoner": "UIC Pjure#CYS",
-        "is_captain": true
+        "is_captain": false
       },
       {
         "summoner": "UIC Ðărkø#SAI",
@@ -40,10 +36,6 @@
       {
         "summoner": "Pavus#Zephr",
         "is_captain": false
-      },
-      {
-        "summoner": "UIC Panda#CSX",
-        "is_captain": true
       }
     ],
     "team_link": "https://www.primeleague.gg/de/leagues/teams/198490",
