@@ -7,23 +7,36 @@
       "div": "Division 6"
     },
     "stats": {
-      "wins": 0,
+      "wins": 3,
       "losses": 0,
-      "points": 0,
-      "games": 0,
-      "win_rate": 0,
-      "form": []
+      "points": 3,
+      "games": 3,
+      "win_rate": 100,
+      "form": [
+        "W",
+        "W",
+        "W"
+      ]
     },
     "next_match": null,
-    "last_match": null,
+    "last_match": {
+      "result": "SIEG",
+      "score": "1 - 0",
+      "enemy": "LNCA",
+      "date": "2026-09-19T16:20:00+02:00"
+    },
     "roster": [
+      {
+        "summoner": "Askir#Jhin",
+        "is_captain": false
+      },
       {
         "summoner": "xauberdave#dlmd",
         "is_captain": false
       },
       {
         "summoner": "UIC Pjure#CYS",
-        "is_captain": false
+        "is_captain": true
       },
       {
         "summoner": "UIC Ðărkø#SAI",
@@ -36,6 +49,10 @@
       {
         "summoner": "Pavus#Zephr",
         "is_captain": false
+      },
+      {
+        "summoner": "UIC Panda#CSX",
+        "is_captain": true
       }
     ],
     "team_link": "https://www.primeleague.gg/de/leagues/teams/198490",
