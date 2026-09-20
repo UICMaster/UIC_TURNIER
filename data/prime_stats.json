@@ -8,27 +8,24 @@
     },
     "stats": {
       "wins": 3,
-      "losses": 1,
+      "losses": 2,
       "points": 3,
-      "games": 4,
-      "win_rate": 75,
+      "games": 5,
+      "win_rate": 60,
       "form": [
         "W",
         "W",
         "W",
+        "L",
         "L"
       ]
     },
-    "next_match": {
-      "date": "2026-09-20T14:00:00+02:00",
-      "tag": "AUTRY",
-      "link": "https://www.primeleague.gg/de/leagues/matches/1164800"
-    },
+    "next_match": null,
     "last_match": {
       "result": "NIEDERLAGE",
       "score": "0 - 1",
-      "enemy": "goob",
-      "date": "2026-09-19T17:30:00+02:00"
+      "enemy": "AUTRY",
+      "date": "2026-09-20T14:00:00+02:00"
     },
     "roster": [
       {
