@@ -7,25 +7,25 @@
       "div": "Division 6"
     },
     "stats": {
-      "wins": 3,
+      "wins": 6,
       "losses": 2,
-      "points": 3,
-      "games": 5,
-      "win_rate": 60,
+      "points": 6,
+      "games": 8,
+      "win_rate": 75,
       "form": [
-        "W",
-        "W",
-        "W",
         "L",
-        "L"
+        "L",
+        "W",
+        "W",
+        "W"
       ]
     },
     "next_match": null,
     "last_match": {
-      "result": "NIEDERLAGE",
-      "score": "0 - 1",
-      "enemy": "AUTRY",
-      "date": "2026-09-20T14:00:00+02:00"
+      "result": "SIEG",
+      "score": "1 - 0",
+      "enemy": "BFE",
+      "date": "2026-09-20T17:45:00+02:00"
     },
     "roster": [
       {
