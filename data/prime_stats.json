@@ -20,7 +20,11 @@
         "W"
       ]
     },
-    "next_match": null,
+    "next_match": {
+      "date": "2026-10-04T19:00:00+02:00",
+      "tag": "BEE",
+      "link": "https://www.primeleague.gg/de/leagues/matches/1167320"
+    },
     "last_match": {
       "result": "SIEG",
       "score": "1 - 0",
@@ -51,10 +55,6 @@
       {
         "summoner": "Pavus#Zephr",
         "is_captain": false
-      },
-      {
-        "summoner": "UIC Panda#CSX",
-        "is_captain": true
       }
     ],
     "team_link": "https://www.primeleague.gg/de/leagues/teams/198490",
@@ -75,7 +75,11 @@
       "win_rate": 0,
       "form": []
     },
-    "next_match": null,
+    "next_match": {
+      "date": "2026-10-04T17:00:00+02:00",
+      "tag": "LES PBD",
+      "link": "https://www.primeleague.gg/de/leagues/matches/1165807"
+    },
     "last_match": null,
     "roster": [
       {
@@ -125,7 +129,11 @@
       "win_rate": 0,
       "form": []
     },
-    "next_match": null,
+    "next_match": {
+      "date": "2026-10-04T19:00:00+02:00",
+      "tag": "TLD TFC",
+      "link": "https://www.primeleague.gg/de/leagues/matches/1168719"
+    },
     "last_match": null,
     "roster": [
       {
