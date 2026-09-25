@@ -95,10 +95,6 @@
         "is_captain": false
       },
       {
-        "summoner": "UIC Ayumu#LoveK",
-        "is_captain": true
-      },
-      {
         "summoner": "Shoto#Hero4",
         "is_captain": false
       },
@@ -151,10 +147,6 @@
       {
         "summoner": "SimonDerFuchs#361",
         "is_captain": false
-      },
-      {
-        "summoner": "GIG L3IN0x#NNO",
-        "is_captain": true
       }
     ],
     "team_link": "https://www.primeleague.gg/de/leagues/teams/209324",
