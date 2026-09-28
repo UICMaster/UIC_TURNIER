@@ -42,7 +42,7 @@
       },
       {
         "summoner": "UIC Pjure#CYS",
-        "is_captain": true
+        "is_captain": false
       },
       {
         "summoner": "UIC Ðărkø#SAI",
@@ -142,10 +142,6 @@
       },
       {
         "summoner": "Sorenai#2265",
-        "is_captain": false
-      },
-      {
-        "summoner": "ECO Freyja#ECO",
         "is_captain": false
       },
       {
