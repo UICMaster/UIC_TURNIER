@@ -55,6 +55,10 @@
       {
         "summoner": "Pavus#Zephr",
         "is_captain": false
+      },
+      {
+        "summoner": "UIC Panda#CSX",
+        "is_captain": true
       }
     ],
     "team_link": "https://www.primeleague.gg/de/leagues/teams/198490",
@@ -95,10 +99,6 @@
         "is_captain": false
       },
       {
-        "summoner": "UIC Ayumu#LoveK",
-        "is_captain": true
-      },
-      {
         "summoner": "Shoto#Hero4",
         "is_captain": false
       },
@@ -130,7 +130,7 @@
       "form": []
     },
     "next_match": {
-      "date": "2026-10-04T19:00:00+02:00",
+      "date": "2026-10-09T20:00:00+02:00",
       "tag": "TLD TFC",
       "link": "https://www.primeleague.gg/de/leagues/matches/1168719"
     },
