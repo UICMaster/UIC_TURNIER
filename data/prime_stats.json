@@ -99,6 +99,10 @@
         "is_captain": false
       },
       {
+        "summoner": "UIC Ayumu#LoveK",
+        "is_captain": true
+      },
+      {
         "summoner": "Shoto#Hero4",
         "is_captain": false
       },
@@ -142,6 +146,10 @@
       },
       {
         "summoner": "Sorenai#2265",
+        "is_captain": false
+      },
+      {
+        "summoner": "ECO Freyja#ECO",
         "is_captain": false
       },
       {
