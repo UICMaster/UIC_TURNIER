@@ -83,15 +83,19 @@
     "last_match": null,
     "roster": [
       {
-        "summoner": "UIC Shapeshift#UIC",
-        "is_captain": true
+        "summoner": "zab77#EUW",
+        "is_captain": false
+      },
+      {
+        "summoner": "UIC Ayumu#LoveK",
+        "is_captain": false
       },
       {
         "summoner": "Kreuzfeuer#EUW",
-        "is_captain": true
+        "is_captain": false
       },
       {
-        "summoner": "zab77#EUW",
+        "summoner": "UIC Shapeshift#UIC",
         "is_captain": false
       },
       {
@@ -100,11 +104,11 @@
       },
       {
         "summoner": "Unranked#ADC",
-        "is_captain": true
+        "is_captain": false
       },
       {
         "summoner": "Daydream#161",
-        "is_captain": true
+        "is_captain": false
       }
     ],
     "team_link": "https://www.primeleague.gg/de/leagues/teams/208851",
