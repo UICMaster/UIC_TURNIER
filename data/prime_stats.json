@@ -87,6 +87,10 @@
         "is_captain": false
       },
       {
+        "summoner": "Ayumu#AEX",
+        "is_captain": true
+      },
+      {
         "summoner": "Kreuzfeuer#EUW",
         "is_captain": true
       },
@@ -155,6 +159,10 @@
       {
         "summoner": "SimonDerFuchs#361",
         "is_captain": false
+      },
+      {
+        "summoner": "GIG L3IN0x#NNO",
+        "is_captain": true
       }
     ],
     "team_link": "https://www.primeleague.gg/de/leagues/teams/209324",
