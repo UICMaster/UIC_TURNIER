@@ -87,10 +87,6 @@
         "is_captain": false
       },
       {
-        "summoner": "Ayumu#AEX",
-        "is_captain": true
-      },
-      {
         "summoner": "Kreuzfeuer#EUW",
         "is_captain": true
       },
@@ -149,12 +145,12 @@
         "is_captain": false
       },
       {
-        "summoner": "ECO Freyja#ECO",
-        "is_captain": false
-      },
-      {
         "summoner": "Finni#PORO",
         "is_captain": true
+      },
+      {
+        "summoner": "ECO Freyja#ECO",
+        "is_captain": false
       },
       {
         "summoner": "SimonDerFuchs#361",
