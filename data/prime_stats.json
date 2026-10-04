@@ -21,9 +21,9 @@
       ]
     },
     "next_match": {
-      "date": "2026-10-04T19:00:00+02:00",
-      "tag": "BEE",
-      "link": "https://www.primeleague.gg/de/leagues/matches/1167320"
+      "date": "2026-10-07T19:30:00+02:00",
+      "tag": "BWC",
+      "link": "https://www.primeleague.gg/de/leagues/matches/1167323"
     },
     "last_match": {
       "result": "SIEG",
@@ -69,26 +69,29 @@
     },
     "stats": {
       "wins": 0,
-      "losses": 0,
+      "losses": 2,
       "points": 0,
-      "games": 0,
+      "games": 2,
       "win_rate": 0,
-      "form": []
+      "form": [
+        "L"
+      ]
     },
     "next_match": {
       "date": "2026-10-11T17:00:00+02:00",
       "tag": "DoeS",
       "link": "https://www.primeleague.gg/de/leagues/matches/1165812"
     },
-    "last_match": null,
+    "last_match": {
+      "result": "NIEDERLAGE",
+      "score": "0 - 2",
+      "enemy": "LES PBD",
+      "date": "2026-10-04T14:00:00+02:00"
+    },
     "roster": [
       {
         "summoner": "zab77#EUW",
         "is_captain": false
-      },
-      {
-        "summoner": "Ayumu#AEX",
-        "is_captain": true
       },
       {
         "summoner": "Kreuzfeuer#EUW",
@@ -155,6 +158,14 @@
       {
         "summoner": "SimonDerFuchs#361",
         "is_captain": false
+      },
+      {
+        "summoner": "ECO Freyja#ECO",
+        "is_captain": false
+      },
+      {
+        "summoner": "GIG L3IN0x#NNO",
+        "is_captain": true
       }
     ],
     "team_link": "https://www.primeleague.gg/de/leagues/teams/209324",
