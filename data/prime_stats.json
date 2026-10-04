@@ -91,6 +91,10 @@
         "is_captain": false
       },
       {
+        "summoner": "Ayumu#AEX",
+        "is_captain": true
+      },
+      {
         "summoner": "Kreuzfeuer#EUW",
         "is_captain": true
       },
