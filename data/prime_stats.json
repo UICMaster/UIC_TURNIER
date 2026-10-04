@@ -7,14 +7,14 @@
       "div": "Division 6"
     },
     "stats": {
-      "wins": 6,
-      "losses": 2,
-      "points": 6,
-      "games": 8,
-      "win_rate": 75,
+      "wins": 8,
+      "losses": 3,
+      "points": 8,
+      "games": 11,
+      "win_rate": 73,
       "form": [
         "L",
-        "L",
+        "W",
         "W",
         "W",
         "W"
@@ -27,9 +27,9 @@
     },
     "last_match": {
       "result": "SIEG",
-      "score": "1 - 0",
-      "enemy": "BFE",
-      "date": "2026-09-20T17:45:00+02:00"
+      "score": "2 - 1",
+      "enemy": "BEE",
+      "date": "2026-10-04T19:00:00+02:00"
     },
     "roster": [
       {
@@ -42,7 +42,7 @@
       },
       {
         "summoner": "UIC Pjure#CYS",
-        "is_captain": true
+        "is_captain": false
       },
       {
         "summoner": "UIC Ðărkø#SAI",
@@ -99,6 +99,10 @@
       },
       {
         "summoner": "UIC Shapeshift#UIC",
+        "is_captain": true
+      },
+      {
+        "summoner": "Ayumu#AEX",
         "is_captain": true
       },
       {
@@ -162,10 +166,6 @@
       {
         "summoner": "ECO Freyja#ECO",
         "is_captain": false
-      },
-      {
-        "summoner": "GIG L3IN0x#NNO",
-        "is_captain": true
       }
     ],
     "team_link": "https://www.primeleague.gg/de/leagues/teams/209324",
