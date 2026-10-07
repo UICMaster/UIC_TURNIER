@@ -8,16 +8,16 @@
     },
     "stats": {
       "wins": 8,
-      "losses": 3,
+      "losses": 5,
       "points": 8,
-      "games": 11,
-      "win_rate": 73,
+      "games": 13,
+      "win_rate": 62,
       "form": [
-        "L",
         "W",
         "W",
         "W",
-        "W"
+        "W",
+        "L"
       ]
     },
     "next_match": {
@@ -26,10 +26,10 @@
       "link": "https://www.primeleague.gg/de/leagues/matches/1167330"
     },
     "last_match": {
-      "result": "SIEG",
-      "score": "2 - 1",
-      "enemy": "BEE",
-      "date": "2026-10-04T19:00:00+02:00"
+      "result": "NIEDERLAGE",
+      "score": "0 - 2",
+      "enemy": "BWC",
+      "date": "2026-10-07T19:30:00+02:00"
     },
     "roster": [
       {
@@ -78,7 +78,7 @@
       ]
     },
     "next_match": {
-      "date": "2026-10-11T17:00:00+02:00",
+      "date": "2026-10-11T15:00:00+02:00",
       "tag": "DoeS",
       "link": "https://www.primeleague.gg/de/leagues/matches/1165812"
     },
@@ -94,20 +94,16 @@
         "is_captain": false
       },
       {
-        "summoner": "Kreuzfeuer#EUW",
-        "is_captain": true
-      },
-      {
         "summoner": "UIC Shapeshift#UIC",
-        "is_captain": true
-      },
-      {
-        "summoner": "Ayumu#AEX",
         "is_captain": true
       },
       {
         "summoner": "Shoto#Hero4",
         "is_captain": false
+      },
+      {
+        "summoner": "Kreuzfeuer#EUW",
+        "is_captain": true
       },
       {
         "summoner": "Unranked#ADC",
@@ -161,6 +157,10 @@
       },
       {
         "summoner": "SimonDerFuchs#361",
+        "is_captain": false
+      },
+      {
+        "summoner": "ECO Freyja#ECO",
         "is_captain": false
       },
       {
