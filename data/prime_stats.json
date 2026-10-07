@@ -21,9 +21,9 @@
       ]
     },
     "next_match": {
-      "date": "2026-10-07T19:30:00+02:00",
-      "tag": "BWC",
-      "link": "https://www.primeleague.gg/de/leagues/matches/1167323"
+      "date": "2026-10-18T19:00:00+02:00",
+      "tag": "BAGF",
+      "link": "https://www.primeleague.gg/de/leagues/matches/1167330"
     },
     "last_match": {
       "result": "SIEG",
@@ -161,10 +161,6 @@
       },
       {
         "summoner": "SimonDerFuchs#361",
-        "is_captain": false
-      },
-      {
-        "summoner": "ECO Freyja#ECO",
         "is_captain": false
       },
       {
