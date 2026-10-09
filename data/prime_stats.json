@@ -55,10 +55,6 @@
       {
         "summoner": "Pavus#Zephr",
         "is_captain": false
-      },
-      {
-        "summoner": "UIC Panda#CSX",
-        "is_captain": true
       }
     ],
     "team_link": "https://www.primeleague.gg/de/leagues/teams/198490",
@@ -99,10 +95,6 @@
       },
       {
         "summoner": "UIC Shapeshift#UIC",
-        "is_captain": true
-      },
-      {
-        "summoner": "Ayumu#AEX",
         "is_captain": true
       },
       {
@@ -149,6 +141,10 @@
     "roster": [
       {
         "summoner": "Rouf#1337",
+        "is_captain": false
+      },
+      {
+        "summoner": "ECO Freyja#ECO",
         "is_captain": false
       },
       {
