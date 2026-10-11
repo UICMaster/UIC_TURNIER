@@ -68,25 +68,26 @@
       "div": "Division 5"
     },
     "stats": {
-      "wins": 0,
+      "wins": 2,
       "losses": 2,
-      "points": 0,
-      "games": 2,
-      "win_rate": 0,
+      "points": 2,
+      "games": 4,
+      "win_rate": 50,
       "form": [
-        "L"
+        "L",
+        "W"
       ]
     },
     "next_match": {
-      "date": "2026-10-11T15:00:00+02:00",
-      "tag": "DoeS",
-      "link": "https://www.primeleague.gg/de/leagues/matches/1165812"
+      "date": "2026-10-18T17:00:00+02:00",
+      "tag": "ABL",
+      "link": "https://www.primeleague.gg/de/leagues/matches/1165817"
     },
     "last_match": {
-      "result": "NIEDERLAGE",
-      "score": "0 - 2",
-      "enemy": "LES PBD",
-      "date": "2026-10-04T14:00:00+02:00"
+      "result": "SIEG",
+      "score": "2 - 0",
+      "enemy": "DoeS",
+      "date": "2026-10-11T15:00:00+02:00"
     },
     "roster": [
       {
@@ -140,8 +141,8 @@
     },
     "next_match": {
       "date": "2026-10-18T19:00:00+02:00",
-      "tag": "CURSE",
-      "link": "https://www.primeleague.gg/de/leagues/matches/1168727"
+      "tag": "ODE",
+      "link": "https://www.primeleague.gg/de/leagues/matches/1168726"
     },
     "last_match": {
       "result": "SIEG",
@@ -160,10 +161,6 @@
       },
       {
         "summoner": "Sorenai#2265",
-        "is_captain": false
-      },
-      {
-        "summoner": "ECO Freyja#ECO",
         "is_captain": false
       },
       {
