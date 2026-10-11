@@ -55,10 +55,6 @@
       {
         "summoner": "Pavus#Zephr",
         "is_captain": false
-      },
-      {
-        "summoner": "UIC Panda#CSX",
-        "is_captain": true
       }
     ],
     "team_link": "https://www.primeleague.gg/de/leagues/teams/198490",
@@ -104,10 +100,6 @@
       {
         "summoner": "Shoto#Hero4",
         "is_captain": false
-      },
-      {
-        "summoner": "Ayumu#AEX",
-        "is_captain": true
       },
       {
         "summoner": "Kreuzfeuer#EUW",
@@ -164,6 +156,10 @@
       },
       {
         "summoner": "Sorenai#2265",
+        "is_captain": false
+      },
+      {
+        "summoner": "ECO Freyja#ECO",
         "is_captain": false
       },
       {
