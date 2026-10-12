@@ -79,7 +79,7 @@
       ]
     },
     "next_match": {
-      "date": "2026-10-18T17:00:00+02:00",
+      "date": "2026-10-18T19:00:00+02:00",
       "tag": "ABL",
       "link": "https://www.primeleague.gg/de/leagues/matches/1165817"
     },
@@ -96,7 +96,7 @@
       },
       {
         "summoner": "UIC Shapeshift#UIC",
-        "is_captain": true
+        "is_captain": false
       },
       {
         "summoner": "Shoto#Hero4",
@@ -104,19 +104,19 @@
       },
       {
         "summoner": "Kreuzfeuer#EUW",
-        "is_captain": true
+        "is_captain": false
       },
       {
         "summoner": "Unranked#ADC",
-        "is_captain": true
+        "is_captain": false
       },
       {
         "summoner": "Ayumu#AEX",
-        "is_captain": true
+        "is_captain": false
       },
       {
         "summoner": "Daydream#161",
-        "is_captain": true
+        "is_captain": false
       }
     ],
     "team_link": "https://www.primeleague.gg/de/leagues/teams/208851",
