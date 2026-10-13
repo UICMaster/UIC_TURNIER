@@ -96,7 +96,7 @@
       },
       {
         "summoner": "UIC Shapeshift#UIC",
-        "is_captain": false
+        "is_captain": true
       },
       {
         "summoner": "Shoto#Hero4",
@@ -104,19 +104,19 @@
       },
       {
         "summoner": "Kreuzfeuer#EUW",
-        "is_captain": false
-      },
-      {
-        "summoner": "Unranked#ADC",
-        "is_captain": false
+        "is_captain": true
       },
       {
         "summoner": "Ayumu#AEX",
-        "is_captain": false
+        "is_captain": true
+      },
+      {
+        "summoner": "Unranked#ADC",
+        "is_captain": true
       },
       {
         "summoner": "Daydream#161",
-        "is_captain": false
+        "is_captain": true
       }
     ],
     "team_link": "https://www.primeleague.gg/de/leagues/teams/208851",
@@ -161,10 +161,6 @@
       },
       {
         "summoner": "Sorenai#2265",
-        "is_captain": false
-      },
-      {
-        "summoner": "ECO Freyja#ECO",
         "is_captain": false
       },
       {
