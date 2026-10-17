@@ -55,6 +55,10 @@
       {
         "summoner": "Pavus#Zephr",
         "is_captain": false
+      },
+      {
+        "summoner": "UIC Panda#CSX",
+        "is_captain": true
       }
     ],
     "team_link": "https://www.primeleague.gg/de/leagues/teams/198490",
@@ -120,7 +124,7 @@
       }
     ],
     "team_link": "https://www.primeleague.gg/de/leagues/teams/208851",
-    "logo": "https://cdn0.heartbase.gg/league_team_logos/208000/208851.jpg?1775950554"
+    "logo": "https://cdn0.heartbase.gg/league_team_logos/208000/208851.jpg?1792259989"
   },
   "GIG_LIZARDS": {
     "id": "209324",
