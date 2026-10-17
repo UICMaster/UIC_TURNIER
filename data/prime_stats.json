@@ -111,6 +111,10 @@
         "is_captain": true
       },
       {
+        "summoner": "Ayumu#AEX",
+        "is_captain": true
+      },
+      {
         "summoner": "Daydream#161",
         "is_captain": true
       }
@@ -170,10 +174,6 @@
       {
         "summoner": "ECO Freyja#ECO",
         "is_captain": false
-      },
-      {
-        "summoner": "GIG L3IN0x#NNO",
-        "is_captain": true
       }
     ],
     "team_link": "https://www.primeleague.gg/de/leagues/teams/209324",
