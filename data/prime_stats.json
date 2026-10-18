@@ -115,10 +115,6 @@
         "is_captain": true
       },
       {
-        "summoner": "Ayumu#AEX",
-        "is_captain": true
-      },
-      {
         "summoner": "Daydream#161",
         "is_captain": true
       }
@@ -173,10 +169,6 @@
       },
       {
         "summoner": "SimonDerFuchs#361",
-        "is_captain": false
-      },
-      {
-        "summoner": "ECO Freyja#ECO",
         "is_captain": false
       }
     ],
