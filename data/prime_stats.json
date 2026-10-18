@@ -68,7 +68,7 @@
     "id": "208851",
     "key": "UIC_SAKURA",
     "meta": {
-      "name": "Ultra Instinct Crew Sakura",
+      "name": "Clowning Kittens",
       "div": "Division 5"
     },
     "stats": {
@@ -169,6 +169,10 @@
       },
       {
         "summoner": "SimonDerFuchs#361",
+        "is_captain": false
+      },
+      {
+        "summoner": "ECO Freyja#ECO",
         "is_captain": false
       }
     ],
