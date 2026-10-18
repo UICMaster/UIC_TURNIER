@@ -21,9 +21,9 @@
       ]
     },
     "next_match": {
-      "date": "2026-10-18T19:00:00+02:00",
-      "tag": "BAGF",
-      "link": "https://www.primeleague.gg/de/leagues/matches/1167330"
+      "date": "2026-10-25T19:00:00+01:00",
+      "tag": "PRS",
+      "link": "https://www.primeleague.gg/de/leagues/matches/1167333"
     },
     "last_match": {
       "result": "NIEDERLAGE",
@@ -55,10 +55,6 @@
       {
         "summoner": "Pavus#Zephr",
         "is_captain": false
-      },
-      {
-        "summoner": "UIC Panda#CSX",
-        "is_captain": true
       }
     ],
     "team_link": "https://www.primeleague.gg/de/leagues/teams/198490",
@@ -72,32 +68,16 @@
       "div": "Division 5"
     },
     "stats": {
-      "wins": 2,
-      "losses": 2,
-      "points": 2,
-      "games": 4,
-      "win_rate": 50,
-      "form": [
-        "L",
-        "W"
-      ]
+      "wins": 0,
+      "losses": 0,
+      "points": 0,
+      "games": 0,
+      "win_rate": 0,
+      "form": []
     },
-    "next_match": {
-      "date": "2026-10-18T19:00:00+02:00",
-      "tag": "ABL",
-      "link": "https://www.primeleague.gg/de/leagues/matches/1165817"
-    },
-    "last_match": {
-      "result": "SIEG",
-      "score": "2 - 0",
-      "enemy": "DoeS",
-      "date": "2026-10-11T15:00:00+02:00"
-    },
+    "next_match": null,
+    "last_match": null,
     "roster": [
-      {
-        "summoner": "zab77#EUW",
-        "is_captain": false
-      },
       {
         "summoner": "UIC Shapeshift#UIC",
         "is_captain": true
@@ -120,7 +100,7 @@
       }
     ],
     "team_link": "https://www.primeleague.gg/de/leagues/teams/208851",
-    "logo": "https://cdn0.heartbase.gg/league_team_logos/208000/208851.jpg?1792259989"
+    "logo": "https://cdn0.heartbase.gg/league_team_logos/208000/208851.jpg?1792334238"
   },
   "GIG_LIZARDS": {
     "id": "209324",
@@ -140,9 +120,9 @@
       ]
     },
     "next_match": {
-      "date": "2026-10-18T19:00:00+02:00",
-      "tag": "ODE",
-      "link": "https://www.primeleague.gg/de/leagues/matches/1168726"
+      "date": "2026-10-25T19:00:00+01:00",
+      "tag": "CURSE",
+      "link": "https://www.primeleague.gg/de/leagues/matches/1168727"
     },
     "last_match": {
       "result": "SIEG",
@@ -165,14 +145,10 @@
       },
       {
         "summoner": "Finni#PORO",
-        "is_captain": true
-      },
-      {
-        "summoner": "SimonDerFuchs#361",
         "is_captain": false
       },
       {
-        "summoner": "ECO Freyja#ECO",
+        "summoner": "SimonDerFuchs#361",
         "is_captain": false
       }
     ],
