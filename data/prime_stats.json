@@ -149,7 +149,15 @@
         "is_captain": false
       },
       {
+        "summoner": "ECO Freyja#ECO",
+        "is_captain": false
+      },
+      {
         "summoner": "Finni#PORO",
+        "is_captain": true
+      },
+      {
+        "summoner": "GIG L3IN0x#NNO",
         "is_captain": true
       }
     ],
