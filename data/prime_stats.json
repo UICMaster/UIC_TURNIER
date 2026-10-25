@@ -7,17 +7,17 @@
       "div": "Division 6"
     },
     "stats": {
-      "wins": 9,
+      "wins": 11,
       "losses": 7,
-      "points": 9,
-      "games": 16,
-      "win_rate": 56,
+      "points": 11,
+      "games": 18,
+      "win_rate": 61,
       "form": [
         "W",
         "W",
-        "W",
         "L",
-        "L"
+        "L",
+        "W"
       ]
     },
     "next_match": {
@@ -26,10 +26,10 @@
       "link": "https://www.primeleague.gg/de/leagues/matches/1167335"
     },
     "last_match": {
-      "result": "NIEDERLAGE",
-      "score": "1 - 2",
-      "enemy": "BAGF",
-      "date": "2026-10-18T19:00:00+02:00"
+      "result": "SIEG",
+      "score": "2 - 0",
+      "enemy": "PRS",
+      "date": "2026-10-25T20:15:00+01:00"
     },
     "roster": [
       {
@@ -110,14 +110,15 @@
       "div": "Division 7"
     },
     "stats": {
-      "wins": 2,
-      "losses": 2,
-      "points": 2,
-      "games": 4,
-      "win_rate": 50,
+      "wins": 4,
+      "losses": 3,
+      "points": 4,
+      "games": 7,
+      "win_rate": 57,
       "form": [
         "W",
-        "L"
+        "L",
+        "W"
       ]
     },
     "next_match": {
@@ -126,10 +127,10 @@
       "link": "https://www.primeleague.gg/de/leagues/matches/1168733"
     },
     "last_match": {
-      "result": "NIEDERLAGE",
-      "score": "0 - 2",
-      "enemy": "ODE",
-      "date": "2026-10-18T19:00:00+02:00"
+      "result": "SIEG",
+      "score": "2 - 1",
+      "enemy": "CURSE",
+      "date": "2026-10-25T19:00:00+01:00"
     },
     "roster": [
       {
@@ -154,6 +155,10 @@
       },
       {
         "summoner": "Finni#PORO",
+        "is_captain": true
+      },
+      {
+        "summoner": "GIG L3IN0x#NNO",
         "is_captain": true
       }
     ],
