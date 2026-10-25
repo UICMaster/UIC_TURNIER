@@ -21,9 +21,9 @@
       ]
     },
     "next_match": {
-      "date": "2026-10-25T20:15:00+01:00",
-      "tag": "PRS",
-      "link": "https://www.primeleague.gg/de/leagues/matches/1167333"
+      "date": "2026-11-01T19:00:00+01:00",
+      "tag": "Merz",
+      "link": "https://www.primeleague.gg/de/leagues/matches/1167335"
     },
     "last_match": {
       "result": "NIEDERLAGE",
@@ -55,10 +55,6 @@
       {
         "summoner": "Pavus#Zephr",
         "is_captain": false
-      },
-      {
-        "summoner": "UIC Panda#CSX",
-        "is_captain": true
       }
     ],
     "team_link": "https://www.primeleague.gg/de/leagues/teams/198490",
@@ -125,9 +121,9 @@
       ]
     },
     "next_match": {
-      "date": "2026-10-25T19:00:00+01:00",
-      "tag": "CURSE",
-      "link": "https://www.primeleague.gg/de/leagues/matches/1168727"
+      "date": "2026-10-30T19:00:00+01:00",
+      "tag": "EoV",
+      "link": "https://www.primeleague.gg/de/leagues/matches/1168733"
     },
     "last_match": {
       "result": "NIEDERLAGE",
@@ -158,7 +154,7 @@
       },
       {
         "summoner": "Finni#PORO",
-        "is_captain": false
+        "is_captain": true
       }
     ],
     "team_link": "https://www.primeleague.gg/de/leagues/teams/209324",
