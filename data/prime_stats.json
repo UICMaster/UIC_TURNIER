@@ -55,6 +55,10 @@
       {
         "summoner": "Pavus#Zephr",
         "is_captain": false
+      },
+      {
+        "summoner": "UIC Panda#CSX",
+        "is_captain": true
       }
     ],
     "team_link": "https://www.primeleague.gg/de/leagues/teams/198490",
@@ -155,10 +159,6 @@
       },
       {
         "summoner": "Finni#PORO",
-        "is_captain": true
-      },
-      {
-        "summoner": "GIG L3IN0x#NNO",
         "is_captain": true
       }
     ],
