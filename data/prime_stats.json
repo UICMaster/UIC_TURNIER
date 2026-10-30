@@ -42,7 +42,7 @@
       },
       {
         "summoner": "UIC Pjure#CYS",
-        "is_captain": true
+        "is_captain": false
       },
       {
         "summoner": "UIC Ðărkø#SAI",
@@ -111,26 +111,27 @@
     },
     "stats": {
       "wins": 4,
-      "losses": 3,
+      "losses": 5,
       "points": 4,
-      "games": 7,
-      "win_rate": 57,
+      "games": 9,
+      "win_rate": 44,
       "form": [
         "W",
         "L",
-        "W"
+        "W",
+        "L"
       ]
     },
     "next_match": {
-      "date": "2026-10-30T19:00:00+01:00",
-      "tag": "EoV",
-      "link": "https://www.primeleague.gg/de/leagues/matches/1168733"
+      "date": "2026-11-01T20:00:00+01:00",
+      "tag": "BNF",
+      "link": "https://www.primeleague.gg/de/leagues/matches/1168736"
     },
     "last_match": {
-      "result": "SIEG",
-      "score": "2 - 1",
-      "enemy": "CURSE",
-      "date": "2026-10-25T19:00:00+01:00"
+      "result": "NIEDERLAGE",
+      "score": "0 - 2",
+      "enemy": "EoV",
+      "date": "2026-10-30T19:00:00+01:00"
     },
     "roster": [
       {
@@ -151,6 +152,10 @@
       },
       {
         "summoner": "Finni#PORO",
+        "is_captain": true
+      },
+      {
+        "summoner": "GIG L3IN0x#NNO",
         "is_captain": true
       }
     ],
