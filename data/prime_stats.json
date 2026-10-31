@@ -42,7 +42,7 @@
       },
       {
         "summoner": "UIC Pjure#CYS",
-        "is_captain": false
+        "is_captain": true
       },
       {
         "summoner": "UIC Ðărkø#SAI",
@@ -152,6 +152,10 @@
       },
       {
         "summoner": "Finni#PORO",
+        "is_captain": true
+      },
+      {
+        "summoner": "GIG L3IN0x#NNO",
         "is_captain": true
       }
     ],
