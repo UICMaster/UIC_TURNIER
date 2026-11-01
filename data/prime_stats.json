@@ -110,16 +110,17 @@
       "div": "Division 7"
     },
     "stats": {
-      "wins": 4,
+      "wins": 6,
       "losses": 5,
-      "points": 4,
-      "games": 9,
-      "win_rate": 44,
+      "points": 6,
+      "games": 11,
+      "win_rate": 55,
       "form": [
         "W",
         "L",
         "W",
-        "L"
+        "L",
+        "W"
       ]
     },
     "next_match": {
@@ -128,10 +129,10 @@
       "link": "https://www.primeleague.gg/de/leagues/matches/1168741"
     },
     "last_match": {
-      "result": "NIEDERLAGE",
-      "score": "0 - 2",
-      "enemy": "EoV",
-      "date": "2026-10-30T19:00:00+01:00"
+      "result": "SIEG",
+      "score": "2 - 0",
+      "enemy": "BNF",
+      "date": "2026-11-01T20:00:00+01:00"
     },
     "roster": [
       {
