@@ -21,7 +21,7 @@
       ]
     },
     "next_match": {
-      "date": "2026-11-15T19:00:00+01:00",
+      "date": "2026-11-15T17:00:00+01:00",
       "tag": "BeKFF",
       "link": "https://www.primeleague.gg/de/leagues/matches/1167343"
     },
@@ -110,16 +110,16 @@
       "div": "Division 7"
     },
     "stats": {
-      "wins": 6,
-      "losses": 5,
-      "points": 6,
-      "games": 11,
-      "win_rate": 55,
+      "wins": 8,
+      "losses": 6,
+      "points": 8,
+      "games": 14,
+      "win_rate": 57,
       "form": [
-        "W",
         "L",
         "W",
         "L",
+        "W",
         "W"
       ]
     },
@@ -130,9 +130,9 @@
     },
     "last_match": {
       "result": "SIEG",
-      "score": "2 - 0",
-      "enemy": "BNF",
-      "date": "2026-11-01T20:00:00+01:00"
+      "score": "2 - 1",
+      "enemy": "EYE",
+      "date": "2026-11-08T19:00:00+01:00"
     },
     "roster": [
       {
