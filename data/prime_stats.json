@@ -110,17 +110,17 @@
       "div": "Division 7"
     },
     "stats": {
-      "wins": 8,
-      "losses": 6,
-      "points": 8,
-      "games": 14,
-      "win_rate": 57,
+      "wins": 6,
+      "losses": 7,
+      "points": 6,
+      "games": 13,
+      "win_rate": 46,
       "form": [
         "L",
         "W",
         "L",
         "W",
-        "W"
+        "L"
       ]
     },
     "next_match": {
@@ -129,8 +129,8 @@
       "link": "https://www.primeleague.gg/de/leagues/matches/1168744"
     },
     "last_match": {
-      "result": "SIEG",
-      "score": "2 - 1",
+      "result": "NIEDERLAGE",
+      "score": "0 - 2",
       "enemy": "EYE",
       "date": "2026-11-08T19:00:00+01:00"
     },
