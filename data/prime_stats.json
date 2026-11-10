@@ -49,12 +49,16 @@
         "is_captain": false
       },
       {
-        "summoner": "UIC DANY#RFA40",
+        "summoner": "DANY#RFA40",
         "is_captain": false
       },
       {
         "summoner": "Pavus#Zephr",
         "is_captain": false
+      },
+      {
+        "summoner": "UIC Panda#CSX",
+        "is_captain": true
       }
     ],
     "team_link": "https://www.primeleague.gg/de/leagues/teams/198490",
