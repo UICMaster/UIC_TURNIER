@@ -127,11 +127,7 @@
         "L"
       ]
     },
-    "next_match": {
-      "date": "2026-11-13T19:00:00+01:00",
-      "tag": "ABH",
-      "link": "https://www.primeleague.gg/de/leagues/matches/1168744"
-    },
+    "next_match": null,
     "last_match": {
       "result": "NIEDERLAGE",
       "score": "0 - 2",
@@ -157,7 +153,7 @@
       },
       {
         "summoner": "Finni#PORO",
-        "is_captain": true
+        "is_captain": false
       }
     ],
     "team_link": "https://www.primeleague.gg/de/leagues/teams/209324",
