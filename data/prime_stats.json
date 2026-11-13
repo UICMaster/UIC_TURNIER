@@ -114,25 +114,25 @@
       "div": "Division 7"
     },
     "stats": {
-      "wins": 6,
-      "losses": 7,
-      "points": 6,
-      "games": 13,
-      "win_rate": 46,
+      "wins": 8,
+      "losses": 8,
+      "points": 8,
+      "games": 16,
+      "win_rate": 50,
       "form": [
-        "L",
         "W",
         "L",
         "W",
-        "L"
+        "L",
+        "W"
       ]
     },
     "next_match": null,
     "last_match": {
-      "result": "NIEDERLAGE",
-      "score": "0 - 2",
-      "enemy": "EYE",
-      "date": "2026-11-08T19:00:00+01:00"
+      "result": "SIEG",
+      "score": "2 - 1",
+      "enemy": "ABH",
+      "date": "2026-11-13T19:00:00+01:00"
     },
     "roster": [
       {
