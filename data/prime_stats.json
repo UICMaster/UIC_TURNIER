@@ -7,15 +7,15 @@
       "div": "Division 6"
     },
     "stats": {
-      "wins": 13,
+      "wins": 15,
       "losses": 7,
-      "points": 13,
-      "games": 20,
-      "win_rate": 65,
+      "points": 15,
+      "games": 22,
+      "win_rate": 68,
       "form": [
+        "L",
+        "L",
         "W",
-        "L",
-        "L",
         "W",
         "W"
       ]
@@ -24,8 +24,8 @@
     "last_match": {
       "result": "SIEG",
       "score": "2 - 0",
-      "enemy": "Merz",
-      "date": "2026-11-01T19:00:00+01:00"
+      "enemy": "BeKFF",
+      "date": "2026-11-15T17:00:00+01:00"
     },
     "roster": [
       {
