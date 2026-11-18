@@ -3,7 +3,7 @@
     "id": "198490",
     "key": "UIC_CYBER",
     "meta": {
-      "name": "Ultra Instinct Crew Cyber",
+      "name": "Cyberspace",
       "div": "Division 6"
     },
     "stats": {
@@ -29,10 +29,6 @@
     },
     "roster": [
       {
-        "summoner": "Askir#Jhin",
-        "is_captain": false
-      },
-      {
         "summoner": "xauberdave#dlmd",
         "is_captain": false
       },
@@ -51,10 +47,14 @@
       {
         "summoner": "Pavus#Zephr",
         "is_captain": false
+      },
+      {
+        "summoner": "UIC Panda#CSX",
+        "is_captain": true
       }
     ],
     "team_link": "https://www.primeleague.gg/de/leagues/teams/198490",
-    "logo": "https://cdn0.heartbase.gg/league_team_logos/198000/198490.jpg?1774785721"
+    "logo": "https://cdn0.heartbase.gg/league_team_logos/198000/198490.jpg?1794932693"
   },
   "UIC_SAKURA": {
     "id": "208851",
@@ -137,6 +137,10 @@
       },
       {
         "summoner": "SimonDerFuchs#361",
+        "is_captain": false
+      },
+      {
+        "summoner": "ECO Freyja#ECO",
         "is_captain": false
       },
       {
