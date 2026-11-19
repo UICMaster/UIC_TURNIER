@@ -7,26 +7,15 @@
       "div": "Division 6"
     },
     "stats": {
-      "wins": 15,
-      "losses": 7,
-      "points": 15,
-      "games": 22,
-      "win_rate": 68,
-      "form": [
-        "L",
-        "L",
-        "W",
-        "W",
-        "W"
-      ]
+      "wins": 0,
+      "losses": 0,
+      "points": 0,
+      "games": 0,
+      "win_rate": 0,
+      "form": []
     },
     "next_match": null,
-    "last_match": {
-      "result": "SIEG",
-      "score": "2 - 0",
-      "enemy": "BeKFF",
-      "date": "2026-11-15T17:00:00+01:00"
-    },
+    "last_match": null,
     "roster": [
       {
         "summoner": "xauberdave#dlmd",
